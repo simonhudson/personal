@@ -1,0 +1,19 @@
+{
+  "name": "personal",
+  "version": "0.0.1",
+  "description": "Personal website of Simon Hudson",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonhudson/personal.git"
+  },
+  "author": "Simon Hudson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonhudson/personal/issues"
+  },
+  "homepage": "https://github.com/simonhudson/personal#readme"
+}
