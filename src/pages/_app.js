@@ -12,12 +12,11 @@ if (process.env.APP_ENV !== 'production' && typeof window !== 'undefined') {
 }
 
 const App = ({ Component, pageProps }) => {
-
 	return (
 		<>
 			<Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<title>Simon Hudson | User Interface Design &amp;Development</title>
+				<title>Simon Hudson | User Interface Design &amp; Development</title>
 			</Head>
 			<ThemeProvider theme={Theme}>
 				<GlobalStyles />

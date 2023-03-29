@@ -7,7 +7,6 @@ const H1 = styled.h1`
 	font-size: ${rem(36)};
 	font-weight: 700;
 	margin: 0 0 ${({ theme }) => theme.spacing.md};
-	text-transform: uppercase;
 
 	${({ theme }) =>
 		theme.media(
