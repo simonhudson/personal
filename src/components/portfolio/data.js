@@ -53,6 +53,30 @@ module.exports = [
 		],
 		date: '2019',
 	},
+	{
+		slug: 'experian-marketplace',
+		title: 'Marketplace',
+		client: 'Experian',
+		text: [
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget odio lacinia, sollicitudin urna et, lacinia ex. Mauris malesuada tortor tristique dui eleifend luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque augue, eu maximus orci. Vivamus in elit eu sem tincidunt sodales nec ac sapien',
+		],
+		url: 'https://creditmatcher.experian.co.uk',
+		metadata: [
+			{
+				label: 'Made with',
+				items: [EXPRESS_JS, NODE_JS, JAVASCRIPT, HANDLEBARS, SASS, REACT, STYLED_COMPONENTS],
+			},
+			{
+				label: 'Tested with',
+				items: [JEST_ENZYME, CHAI_MOCHA, NIGHTWATCH, VERACODE, AQUASEC, RAPID_7],
+			},
+			{
+				label: 'Built with',
+				items: [AWS_CODEBUILD_CODEPIPELINE],
+			},
+		],
+		date: '2019',
+	},
 	// {
 	// 	slug: 'experian-boost',
 	// 	title: 'Boost',

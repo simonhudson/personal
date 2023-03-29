@@ -37,8 +37,7 @@ const Title = styled(typography.H3)`
 `;
 
 const Client = styled.span`
-	display: block;
-	margin: 0 0 ${({ theme }) => theme.spacing.default};
+	font-weight: 400;
 `;
 
 const MetadataList = styled.dl`
