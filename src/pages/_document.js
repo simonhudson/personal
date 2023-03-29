@@ -1,7 +1,6 @@
 import React from 'react';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
-import MainNavigation from '~/components/navigation/main-navigation';
 
 class Layout extends Document {
 	static async getInitialProps(ctx) {
@@ -41,7 +40,6 @@ class Layout extends Document {
 					/>
 					<script src="https://kit.fontawesome.com/6331124e0b.js" crossOrigin="anonymous"></script>
 				</Head>
-				<MainNavigation />
 				<body id="top">
 					<Main />
 					<NextScript />
