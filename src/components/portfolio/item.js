@@ -1,8 +1,8 @@
 import React from 'react';
-import { Wrap, Img, Content, Text, Title, Client, MadeWithList, MadeWithItem } from './item.styles';
+import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataItem } from './item.styles';
 import PropTypes from 'prop-types';
 
-const Item = ({ client, date, madeWith, omit, slug, text, title, url }) => {
+const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 	if (omit) return null;
 
 	// const generateCopyMarkup = (props) => {
@@ -18,11 +18,18 @@ const Item = ({ client, date, madeWith, omit, slug, text, title, url }) => {
 				<Text>
 					<Title data-test="portfolio-item__title">{title}</Title>
 					<Client>{client}</Client>
-					{/* <MadeWithList>
-						{madeWith.map((item, index) => {
-							return <MadeWithItem key={`made-with-${index}`}>{item}</MadeWithItem>;
+					<MetadataList>
+						{metadata.map((item, index) => {
+							return (
+								<>
+									<dl>{item.label}</dl>
+									{item.items.map((item, index) => {
+										return <MetadataItem key={`made-with-${index}`}>{item}</MetadataItem>;
+									})}
+								</>
+							);
 						})}
-					</MadeWithList> */}
+					</MetadataList>
 				</Text>
 			</Content>
 		</Wrap>
