@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrap, Img, Content, Text, Title, MadeWithList, MadeWithItem } from './item.styles';
+import { Wrap, Img, Content, Text, Title, Client, MadeWithList, MadeWithItem } from './item.styles';
 import PropTypes from 'prop-types';
 
 const Item = ({ client, date, madeWith, omit, slug, text, title, url }) => {
@@ -16,14 +16,13 @@ const Item = ({ client, date, madeWith, omit, slug, text, title, url }) => {
 			<Img alt={`${title} screen shot`} />
 			<Content>
 				<Text>
-					<Title data-test="portfolio-item__title">
-						<span>{title}</span> <span>{client}</span>
-					</Title>
-					{/* <MadeWithList>
+					<Title data-test="portfolio-item__title">{title}</Title>
+					<Client>{client}</Client>
+					<MadeWithList>
 						{madeWith.map((item, index) => {
 							return <MadeWithItem key={`made-with-${index}`}>{item}</MadeWithItem>;
 						})}
-					</MadeWithList> */}
+					</MadeWithList>
 				</Text>
 			</Content>
 		</Wrap>
