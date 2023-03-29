@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { font } from '~/theme';
+import { font, palette } from '~/theme';
 
 const GlobalStyles = createGlobalStyle`
 
@@ -52,6 +52,12 @@ const GlobalStyles = createGlobalStyle`
 
     details summary::marker {
         display: none;
+    }
+
+    a {
+        border-bottom: 1px solid ${palette.primary.bodyText};
+        color: ${palette.primary.bodyText};
+        text-decoration: none;
     }
     
 `;

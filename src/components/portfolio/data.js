@@ -5,6 +5,7 @@ const CODEBUILD = 'CodeBuild';
 const CODEPIPELINE = 'CodePipeline';
 const CSS = 'CSS';
 const CYPRESS = 'Cypress';
+const DOT_NET = '.NET';
 const ENZYME = 'Enzyme';
 const EXPRESS_JS = 'Express.js';
 const GITHUB = 'Cypress';
@@ -12,6 +13,7 @@ const HANDLEBARS = 'Handlebars';
 const HTML = 'HTML';
 const JAVASCRIPT = 'Javascript';
 const JEST = 'Jest';
+const JQUERY = 'jQuery';
 const MOCHA = 'Mocha';
 const NEXT_JS = 'Next.js';
 const NIGHTWATCH = 'Nightwatch';
@@ -19,15 +21,18 @@ const NODE_JS = 'Node.js';
 const RAPID_7 = 'Rapid7';
 const REACT = 'React';
 const SASS = 'Sass';
+const SHAREPOINT = 'Sharepoint';
 const STYLED_COMPONENTS = 'Styled Components';
 const VERACODE = 'Veracode';
-const JQUERY = 'jQuery';
 
 const AWS_CODEBUILD_CODEPIPELINE = `${AWS} (${CODEBUILD} / ${CODEPIPELINE})`;
 const CHAI_MOCHA = `${CHAI}/${MOCHA}`;
 const ES6 = `${JAVASCRIPT} (ES6)`;
 const JEST_ENZYME = `${JEST}/${ENZYME}`;
 
+const MADE_WITH = 'Made with';
+const TESTED_WITH = 'Tested with';
+const BUILT_WITH = 'Built with';
 module.exports = [
 	{
 		slug: 'experian-offers-hub',
@@ -39,15 +44,15 @@ module.exports = [
 		url: 'https://offers.experian.co.uk',
 		metadata: [
 			{
-				label: 'Made with',
+				label: MADE_WITH,
 				items: [NODE_JS, NEXT_JS, REACT, STYLED_COMPONENTS],
 			},
 			{
-				label: 'Tested with',
+				label: TESTED_WITH,
 				items: [JEST_ENZYME, CHAI_MOCHA, CYPRESS, VERACODE, AQUASEC, RAPID_7],
 			},
 			{
-				label: 'Built with',
+				label: BUILT_WITH,
 				items: [AWS_CODEBUILD_CODEPIPELINE],
 			},
 		],
@@ -63,31 +68,57 @@ module.exports = [
 		url: 'https://creditmatcher.experian.co.uk',
 		metadata: [
 			{
-				label: 'Made with',
+				label: MADE_WITH,
 				items: [EXPRESS_JS, NODE_JS, JAVASCRIPT, HANDLEBARS, SASS, REACT, STYLED_COMPONENTS],
 			},
 			{
-				label: 'Tested with',
+				label: TESTED_WITH,
 				items: [JEST_ENZYME, CHAI_MOCHA, NIGHTWATCH, VERACODE, AQUASEC, RAPID_7],
 			},
 			{
-				label: 'Built with',
+				label: BUILT_WITH,
 				items: [AWS_CODEBUILD_CODEPIPELINE],
 			},
 		],
 		date: '2019',
 	},
-	// {
-	// 	slug: 'experian-boost',
-	// 	title: 'Boost',
-	// 	client: 'Experian',
-	// 	text: [
-	// 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget odio lacinia, sollicitudin urna et, lacinia ex. Mauris malesuada tortor tristique dui eleifend luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque augue, eu maximus orci. Vivamus in elit eu sem tincidunt sodales nec ac sapien',
-	// 	],
-	// 	url: 'https://www.experian.co.uk/experian-account/boost.html',
-	// 	madeWith: [HTML, SASS, JAVASCRIPT],
-	// 	date: '2019',
-	// },
+	{
+		slug: 'experian-boost',
+		title: 'Boost',
+		client: 'Experian',
+		text: [
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget odio lacinia, sollicitudin urna et, lacinia ex. Mauris malesuada tortor tristique dui eleifend luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque augue, eu maximus orci. Vivamus in elit eu sem tincidunt sodales nec ac sapien',
+		],
+		url: 'https://www.experian.co.uk/experian-account/boost.html',
+		metadata: [
+			{
+				label: MADE_WITH,
+				items: [HTML, SASS, JAVASCRIPT],
+			},
+		],
+		date: '2019',
+	},
+	{
+		slug: 'nhs-choices',
+		title: 'NHS Choices',
+		client: 'Capita',
+		text: [
+			'Working on one of the largest websites in Europe, it was my responsibility to create front-end code to the highest standards and then liaise with the back-end developers to ensure it was integrated properly into the solution.</p><p>As a public health information site, accessibility was at the forefront of everything we did, and as such my knowledge of progressive enhancement & graceful degradation, assistive technologies and cross-browser compatibility was increased hugely, helped in no small part by regular contact with third parties, such as the <a href="http://www.rnib.org.uk" rel="noopener noreferrer" target="_blank">R.N.I.B</a> and <a href="https://www.abilitynet.org.uk" rel="noopener noreferrer" target="_blank">AbilityNet</a>.',
+		],
+		url: 'http://www.nhs.uk',
+		metadata: [
+			{
+				label: MADE_WITH,
+				items: [HTML, CSS, JAVASCRIPT, JQUERY],
+			},
+			{
+				label: BUILT_WITH,
+				items: [DOT_NET, SHAREPOINT],
+			},
+		],
+		date: '2009 — 2013',
+	},
+
 	// {
 	// 	slug: 'portfolio',
 	// 	title: 'Portfolio',
@@ -172,30 +203,7 @@ module.exports = [
 	// 	date: '2015',
 	// 	omit: true,
 	// },
-	// {
-	// 	slug: 'nhs-choices',
-	// 	title: 'NHS Choices',
-	// 	client: 'Capita',
-	// 	text: [
-	// 		'Working on one of the largest websites in Europe, it was my responsibility to create front-end code to the highest standards and then liaise with the back-end developers to ensure it was integrated properly into the solution.</p><p>As a public health information site, accessibility was at the forefront of everything we did, and as such my knowledge of progressive enhancement & graceful degradation, assistive technologies and cross-browser compatibility was increased hugely, helped in no small part by regular contact with third parties, such as the <a href="http://www.rnib.org.uk" rel="noopener noreferrer" target="_blank">R.N.I.B</a> and <a href="https://www.abilitynet.org.uk" rel="noopener noreferrer" target="_blank">AbilityNet</a>.',
-	// 	],
-	// 	url: 'http://www.nhs.uk',
-	// 	madeWith: ['HTML', 'CSS', 'JavaScript/jQuery', 'Sharepoint', '.NET'],
-	// 	date: '2009 — 2013',
-	// },
-	// {
-	// 	slug: 'nhs-choices-pims',
-	// 	title: 'NHS Choices Provider Information Management System',
-	// 	client: 'Capita',
-	// 	text: [
-	// 		'NHS Choices provided healthcare organisations (such as dentists, GPs and clinics) with an internal <abbr title="Content Management System">CMS</abbr> through which they could update their profile on the NHS website.',
-	// 		'The profiles were built up of customisable modules, allowing organisations to add videos, news articles, registration information, opening times and numerous other details about their service.',
-	// 		'Making heavy use of JavaScript and jQuery, it was a constantly evolving system which required regular updates and refinement in response to the needs of the organisations.',
-	// 	],
-	// 	url: 'http://www.nhs.uk/Services/gp/Overview/DefaultView.aspx?id=39571',
-	// 	madeWith: ['HTML', 'CSS', 'JavaScript/jQuery', '.NET', 'Sharepoint'],
-	// 	date: '2009 — 2013',
-	// },
+
 	// {
 	// 	slug: 'nhs-choices-media-library',
 	// 	title: 'NHS Choices Media Library',

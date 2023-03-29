@@ -34,6 +34,15 @@ const Title = styled(typography.H3)`
 	font-size: ${({ theme }) => rem(theme.font.size)};
 	font-weight: 700;
 	margin: 0;
+	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+
+	&::after {
+		content: '';
+		display: block;
+		border-bottom: 2px solid ${({ theme }) => theme.palette.primary.brand};
+		margin: ${({ theme }) => theme.spacing.sm} 0;
+		width: 10%;
+	}
 `;
 
 const Client = styled.span`
@@ -41,14 +50,21 @@ const Client = styled.span`
 `;
 
 const MetadataList = styled.dl`
-	list-style: none;
+	color: ${({ theme }) => theme.palette.primary.bodyText};
+	font-size: ${rem(14)};
 	margin: 0;
-	padding: 0;
+	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+`;
+
+const MetadataTitle = styled.dt`
+	display: inline-block;
+	font-weight: 700;
+	margin: 0 ${({ theme }) => theme.spacing.sm} 0 0;
 `;
 
 const MetadataItem = styled.dd`
 	display: inline;
-	font-size: ${rem(14)};
+	margin: 0;
 
 	&:not(:last-of-type) {
 		&:after {
@@ -57,4 +73,4 @@ const MetadataItem = styled.dd`
 	}
 `;
 
-export { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataItem };
+export { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem };

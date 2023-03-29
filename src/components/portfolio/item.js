@@ -1,5 +1,6 @@
 import React from 'react';
-import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataItem } from './item.styles';
+import Link from 'next/link';
+import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem } from './item.styles';
 import PropTypes from 'prop-types';
 
 const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
@@ -20,18 +21,23 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 						{title} <Client>({client})</Client>
 					</Title>
 
-					<MetadataList>
-						{metadata.map((item, index) => {
-							return (
-								<>
-									<dl>{item.label}</dl>
-									{item.items.map((item, index) => {
-										return <MetadataItem key={`made-with-${index}`}>{item}</MetadataItem>;
-									})}
-								</>
-							);
-						})}
-					</MetadataList>
+					{metadata.map((item, index) => {
+						return (
+							<MetadataList>
+								<MetadataTitle>{item.label}:</MetadataTitle>
+								{item.items.map((item, index) => {
+									return <MetadataItem key={`made-with-${index}`}>{item}</MetadataItem>;
+								})}
+							</MetadataList>
+						);
+					})}
+					{url && (
+						<p>
+							<Link href={url}>
+								<a>{url.split('//')[1]}</a>
+							</Link>
+						</p>
+					)}
 				</Text>
 			</Content>
 		</Wrap>
@@ -41,7 +47,7 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 Item.propTypes = {
 	client: PropTypes.string.isRequired,
 	date: PropTypes.string.isRequired,
-	madeWith: PropTypes.arrayOf(PropTypes.string).isRequired,
+	metadata: PropTypes.arrayOf(PropTypes.object).isRequired,
 	omit: PropTypes.bool,
 	slug: PropTypes.string.isRequired,
 	text: PropTypes.arrayOf(PropTypes.string).isRequired,

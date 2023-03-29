@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { layout } from '~/theme';
 import Routes from '~/constants/routes';
 import { Section } from '~/theme/layout';
 import { H1, Paragraph } from '~/theme/typography';
