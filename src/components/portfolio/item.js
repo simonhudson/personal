@@ -18,11 +18,11 @@ const Item = ({ client, date, madeWith, omit, slug, text, title, url }) => {
 				<Text>
 					<Title data-test="portfolio-item__title">{title}</Title>
 					<Client>{client}</Client>
-					<MadeWithList>
+					{/* <MadeWithList>
 						{madeWith.map((item, index) => {
 							return <MadeWithItem key={`made-with-${index}`}>{item}</MadeWithItem>;
 						})}
-					</MadeWithList>
+					</MadeWithList> */}
 				</Text>
 			</Content>
 		</Wrap>

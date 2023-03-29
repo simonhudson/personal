@@ -11,6 +11,7 @@ const Wrap = styled.div`
 		theme.media(
 			'tablet-l',
 			`
+			flex-direction: row;
 			gap: ${theme.spacing.md};
 			`
 		)};

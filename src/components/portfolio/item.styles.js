@@ -14,6 +14,7 @@ const Wrap = styled.div`
 			'tablet-l',
 			`
 			flex-direction: row;
+            width: 48.8%;
 			`
 		)};
 `;
@@ -26,13 +27,21 @@ const Img = styled.img`
 		theme.media(
 			'tablet-l',
 			`
-			width: 50%;
+            width: 50%;
 			`
 		)};
 `;
 
 const Content = styled.div`
 	padding: ${({ theme }) => theme.spacing.default};
+
+	${({ theme }) =>
+		theme.media(
+			'tablet-l',
+			`
+            width: 50%;
+			`
+		)};
 `;
 
 const Text = styled.div``;
