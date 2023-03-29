@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
         text-rendering: optimizeLegibility;
     }
     html, body {
+        background: #fff;
         height: 100%;
     }
 

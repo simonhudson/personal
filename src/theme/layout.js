@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { rem } from 'polished';
 
 const Wrap = styled.div`
 	margin: 0 auto;
@@ -13,7 +14,15 @@ const Wrap = styled.div`
 		theme.media(
 			'tablet-l',
 			`
-			width: 984px;
+			width: ${rem(theme.breakpoints['tablet-l'] + 'px')};
+			`
+		)};
+
+	${({ theme }) =>
+		theme.media(
+			'desktop',
+			`
+			width: ${rem(theme.breakpoints.desktop + 'px')};
 			`
 		)};
 `;
@@ -39,7 +48,6 @@ const Inner = styled.div`
 
 const StyledSection = styled.section`
 	align-items: center;
-	background: ${({ theme }) => theme.palette.primary.white};
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;

@@ -1,5 +1,6 @@
 module.exports = {
 	size: 16,
+	heading: `Poppins, arial, helvetica, sans-serif`,
 	sansSerif: `'Open Sans', arial, helvetica, sans-serif`,
 	serif: `'Lora', 'times new roman', serif`,
 	semiBold: 'opensans_semibold',

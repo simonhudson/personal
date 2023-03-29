@@ -4,7 +4,8 @@ describe('theme/font', () => {
 	it('should return expected values', () => {
 		expect(font).toEqual({
 			size: 16,
-			sansSerif: `Poppins, arial, helvetica, sans-serif`,
+			heading: `Poppins, arial, helvetica, sans-serif`,
+			sansSerif: `'Open Sans', arial, helvetica, sans-serif`,
 			serif: `'Lora', 'times new roman', serif`,
 			semiBold: 'opensans_semibold',
 			bold: 'opensans_bold',

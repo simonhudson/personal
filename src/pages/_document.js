@@ -35,7 +35,7 @@ class Layout extends Document {
 					<meta name="description" content="" />
 					<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 					<link
-						href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&amp;family=Open+Sans:wght@400;500;700&amp;display=swap"
+						href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;700&amp;family=Open+Sans:wght@400;500;700&amp;family=Poppins:wght@400;700&amp;display=swap"
 						rel="stylesheet"
 					/>
 					<script src="https://kit.fontawesome.com/6331124e0b.js" crossOrigin="anonymous"></script>

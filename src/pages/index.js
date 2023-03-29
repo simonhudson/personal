@@ -1,8 +1,8 @@
 import React from 'react';
-import { H1 } from '~/theme/typography';
+import Hero from '~/components/hero';
 
 const Home = () => {
-	return <H1>Simon Hudson</H1>;
+	return <Hero />;
 };
 
 export default Home;
