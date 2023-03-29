@@ -34,16 +34,6 @@ const Inner = styled.div`
 		height: 100%;
 		justify-content: space-evenly;
 	}
-
-	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
-			display: block;
-			margin: 0 auto;
-			width: 75%;
-			`
-		)};
 `;
 
 const StyledSection = styled.section`
@@ -53,8 +43,8 @@ const StyledSection = styled.section`
 	justify-content: flex-start;
 	padding: ${({ theme }) => theme.spacing.lg} 0;
 
-	&:not(:last-of-type) {
-		padding: ${({ theme }) => theme.spacing.lg} 0 0;
+	&:nth-of-type(2n) {
+		background: #f9f9f9;
 	}
 
 	${({ theme }) =>
@@ -62,6 +52,7 @@ const StyledSection = styled.section`
 			'tablet-l',
 			`
 			height: auto;
+			padding: ${({ theme }) => theme.spacing.xxlg} 0;
 			`
 		)};
 `;
