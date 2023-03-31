@@ -1,19 +1,21 @@
 import React from 'react';
-import { Strong, Paragraph } from '~/theme/typography';
+import { Strong } from '~/theme/typography';
 import { Section } from '~/theme/layout';
-import { StyledH1, Span } from './styles';
+import { StyledH1, Span, StyledParagraph } from './styles';
+import Logo from '~/components/logo';
 
 const Hero = () => {
 	return (
 		<Section>
+			<Logo />
 			<StyledH1>
 				Hello, my name&apos;s <Span>Simon Hudson</Span>
 			</StyledH1>
-			<Paragraph>
+			<StyledParagraph>
 				I am an experienced <Strong>user interface developer</Strong> who uses <Strong>HTML</Strong>,{' '}
 				<Strong>CSS</Strong> and <Strong>JavaScript</Strong> to create <Strong>accessible</Strong> and{' '}
 				<Strong>usable</Strong> websites and applications.
-			</Paragraph>
+			</StyledParagraph>
 		</Section>
 	);
 };

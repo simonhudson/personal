@@ -6,12 +6,6 @@ import PropTypes from 'prop-types';
 const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 	if (omit) return null;
 
-	// const generateCopyMarkup = (props) => {
-	// 	let paragraphs = [];
-	// 	text.map((item, index) => paragraphs.push(`<p>${item}</p>`));
-	// 	return paragraphs.join(' ');
-	// };
-
 	return (
 		<Wrap data-test="portfolio-item">
 			<Img alt={`${title} screen shot`} />
@@ -23,10 +17,10 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 
 					{metadata.map((item, index) => {
 						return (
-							<MetadataList>
+							<MetadataList key={`metadata-list--${index}`}>
 								<MetadataTitle>{item.label}:</MetadataTitle>
 								{item.items.map((item, index) => {
-									return <MetadataItem key={`made-with-${index}`}>{item}</MetadataItem>;
+									return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
 								})}
 							</MetadataList>
 						);

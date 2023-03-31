@@ -3,7 +3,7 @@ const { createSecureHeaders } = require('next-secure-headers');
 
 const setEnvVars = () => {
 	const envObj = {};
-	const KEYS_TO_SET = ['ATLAS_URI', 'DB_PORT', 'DB_URI', 'DB_NAME', 'CLUB_NAME'];
+	const KEYS_TO_SET = ['LASTFM_API_KEY', 'LASTFM_USERNAME'];
 	for (let key in process.env) {
 		if (KEYS_TO_SET.includes(key)) envObj[key] = process.env[key];
 	}
