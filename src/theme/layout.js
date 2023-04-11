@@ -70,9 +70,9 @@ const Section = ({ children }) => {
 const BoxShadow = `0 0 10px #ddd`;
 
 const ButtonLink = styled.a`
-	background: ${({ theme }) => theme.palette.primary.brand};
-	border: 0;
-	border-radius: ${rem(5)};
+	background: transparent;
+	border: ${({ theme }) => `2px solid ${theme.palette.primary.bodyText}`};
+	border-radius: ${rem(25)};
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 	font-size: ${rem(14)};
 	font-weight: 700;

@@ -3,7 +3,6 @@ import Link from 'next/link';
 import useIsMount from '~/utilities/useIsMount';
 import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon } from './index.styles';
 import Loading from '~/components/loading';
-
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
