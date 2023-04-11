@@ -24,8 +24,9 @@ const SASS = 'Sass';
 const SHAREPOINT = 'Sharepoint';
 const STYLED_COMPONENTS = 'Styled Components';
 const VERACODE = 'Veracode';
+const WEBPACK = 'Webpack';
 
-const AWS_CODEBUILD_CODEPIPELINE = `${AWS} (${CODEBUILD} / ${CODEPIPELINE})`;
+const AWS_CODEBUILD_CODEPIPELINE = `${AWS} (${CODEBUILD}/${CODEPIPELINE})`;
 const CHAI_MOCHA = `${CHAI}/${MOCHA}`;
 const ES6 = `${JAVASCRIPT} (ES6)`;
 const JEST_ENZYME = `${JEST}/${ENZYME}`;
@@ -45,7 +46,7 @@ module.exports = [
 		metadata: [
 			{
 				label: MADE_WITH,
-				items: [NODE_JS, NEXT_JS, REACT, STYLED_COMPONENTS],
+				items: [NODE_JS, NEXT_JS, REACT, ES6, STYLED_COMPONENTS, WEBPACK],
 			},
 			{
 				label: TESTED_WITH,
@@ -69,7 +70,7 @@ module.exports = [
 		metadata: [
 			{
 				label: MADE_WITH,
-				items: [EXPRESS_JS, NODE_JS, JAVASCRIPT, HANDLEBARS, SASS, REACT, STYLED_COMPONENTS],
+				items: [EXPRESS_JS, NODE_JS, ES6, HANDLEBARS, SASS, REACT, STYLED_COMPONENTS, WEBPACK],
 			},
 			{
 				label: TESTED_WITH,

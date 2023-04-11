@@ -12,6 +12,8 @@ if (process.env.APP_ENV !== 'production' && typeof window !== 'undefined') {
 }
 
 const App = ({ Component, pageProps }) => {
+	pageProps.holdingMode = process?.env?.HOLDING_MODE?.toLowerCase() === 'true';
+
 	return (
 		<>
 			<Head>

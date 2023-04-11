@@ -44,7 +44,7 @@ const StyledSection = styled.section`
 	padding: ${({ theme }) => theme.spacing.lg} 0;
 
 	&:nth-of-type(2n) {
-		background: #f9f9f9;
+		background: ${({ theme }) => theme.palette.primary.lightGrey};
 	}
 
 	${({ theme }) =>
