@@ -12,7 +12,7 @@ const Wrap = styled.div`
 			'tablet-l',
 			`
 			flex-direction: row;
-			gap: ${theme.spacing.md};
+			gap: ${theme.spacing.lg};
 			`
 		)};
 `;

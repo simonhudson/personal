@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem } from './item.styles';
+import { ButtonLink } from '~/theme/layout';
 import PropTypes from 'prop-types';
 
 const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
@@ -8,7 +9,7 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 
 	return (
 		<Wrap data-test="portfolio-item">
-			<Img alt={`${title} screen shot`} />
+			<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
 			<Content>
 				<Text>
 					<Title data-test="portfolio-item__title">
@@ -28,7 +29,7 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 					{url && (
 						<p>
 							<Link href={url}>
-								<a>{url.split('//')[1]}</a>
+								<ButtonLink href={url}>View site</ButtonLink>
 							</Link>
 						</p>
 					)}

@@ -8,11 +8,15 @@
         ["styled-components", { "ssr": true, "displayName": true } ],
         ["babel-plugin-root-import",
             {
-                "paths": [{
+                "paths": [
+                    {
                         "rootPathPrefix": "~",
                         "rootPathSuffix": "src"
+                    },
+                    {
+                        "rootPathPrefix": "%",
+                        "rootPathSuffix": "public"
                     }
-                   
                 ]
             }
         ]

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
 import useIsMount from '~/utilities/useIsMount';
-import { Wrap, InnerWrap, Heading, StyledParagraph, Image, StyledIcon } from './index.styles';
+import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon } from './index.styles';
 import Loading from '~/components/loading';
 
 import dayjs from 'dayjs';
@@ -22,10 +23,8 @@ const LastFm = () => {
 				);
 				const data = await response.json();
 				const recentTrack = data?.recenttracks?.track[0];
-				const displayData = {
-					...recentTrack,
-					relativeTime: dayjs().to(dayjs(recentTrack.date['#text'])),
-				};
+				const displayData = { ...recentTrack };
+				if (recentTrack.date) displayData.relativeTime = dayjs().to(dayjs(recentTrack.date['#text']));
 				setData(displayData);
 				setIsLoading(false);
 			}
@@ -34,10 +33,10 @@ const LastFm = () => {
 
 	return (
 		<Wrap>
-			<Heading>
+			<HeadingWrap>
 				<StyledIcon type="brand" name="square-lastfm" />
-				Now playing
-			</Heading>
+				<Heading>Now playing</Heading>
+			</HeadingWrap>
 			<Loading isLoading={isLoading} />
 			{data && (
 				<InnerWrap>
@@ -47,7 +46,9 @@ const LastFm = () => {
 					/>
 					<StyledParagraph>
 						<span>
-							<a href={data?.url}>{data?.name}</a>
+							<Link href={data?.url}>
+								<a>{data?.name}</a>
+							</Link>
 						</span>
 						<span>{data?.artist['#text']}</span>
 						<span title={data?.date['#text']}>{data?.relativeTime}</span>

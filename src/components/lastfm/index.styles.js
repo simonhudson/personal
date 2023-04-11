@@ -5,6 +5,7 @@ import Icon from '~/components/icon';
 
 const Wrap = styled.div`
 	background: ${({ theme }) => theme.palette.primary.lightGrey};
+	border: 1px solid #eee;
 	border-radius: ${rem(15)};
 	padding: ${({ theme }) => theme.spacing.default};
 
@@ -21,9 +22,16 @@ const InnerWrap = styled.div`
 	display: flex;
 `;
 
+const HeadingWrap = styled.div`
+	align-items: center;
+	display: flex;
+	margin: 0 0 ${rem(24)};
+`;
+
 const Heading = styled(Paragraph)`
 	font-weight: 700;
 	line-height: ${rem(16)};
+	margin: 0;
 	text-transform: uppercase;
 `;
 
@@ -63,10 +71,9 @@ const Image = styled.img`
 `;
 
 const StyledIcon = styled(Icon)`
-	&::before {
-		border-top: 10px solid red;
-		margin-right: ${({ theme }) => theme.spacing.md};
-	}
+	color: ${({ theme }) => theme.palette.brands.lastFm};
+	font-size: 30px;
+	margin-right: ${({ theme }) => theme.spacing.sm};
 `;
 
-export { Wrap, InnerWrap, Heading, StyledParagraph, Image, StyledIcon };
+export { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon };

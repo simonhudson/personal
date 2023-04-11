@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { typography } from '~/theme';
+import { typography, layout } from '~/theme';
 
 const Wrap = styled.div`
 	border-radius: ${rem(5)};
@@ -12,15 +12,16 @@ const Wrap = styled.div`
 		theme.media(
 			'tablet-l',
 			`
-            width: 48.8%;
+            width: 47.3%;
 			`
 		)};
 `;
 
 const Img = styled.img`
 	background: #ddd;
+	box-shadow: ${layout.BoxShadow};
 	display: block;
-	height: 200px;
+	height: auto;
 	margin: 0 0 ${({ theme }) => theme.spacing.default};
 	width: 100%;
 `;

@@ -52,7 +52,7 @@ const StyledSection = styled.section`
 			'tablet-l',
 			`
 			height: auto;
-			padding: ${({ theme }) => theme.spacing.xxlg} 0;
+			padding: ${theme.spacing.lg} 0;
 			`
 		)};
 `;
@@ -69,4 +69,14 @@ const Section = ({ children }) => {
 
 const BoxShadow = `0 0 10px #ddd`;
 
-export { Wrap, Section, BoxShadow };
+const ButtonLink = styled.a`
+	background: ${({ theme }) => theme.palette.primary.brand};
+	border: 0;
+	border-radius: ${rem(5)};
+	color: ${({ theme }) => theme.palette.primary.bodyText};
+	font-size: ${rem(14)};
+	font-weight: 700;
+	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+`;
+
+export { Wrap, Section, BoxShadow, ButtonLink };

@@ -17,6 +17,14 @@ const StyledH1 = styled(H1)`
 		margin: ${({ theme }) => theme.spacing.md} 0;
 		width: 15%;
 	}
+
+	${({ theme }) =>
+		theme.media(
+			'tablet-l',
+			`
+			font-size: ${rem(40)};
+			`
+		)};
 `;
 
 const StyledParagraph = styled(Paragraph)`
@@ -37,6 +45,14 @@ const StyledParagraph = styled(Paragraph)`
 const Span = styled(Strong)`
 	display: block;
 	font-size: ${rem(40)};
+
+	${({ theme }) =>
+		theme.media(
+			'tablet-l',
+			`
+			display: inline;
+			`
+		)};
 `;
 
 export { Wrap, StyledH1, StyledParagraph, Span };

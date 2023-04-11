@@ -17,5 +17,6 @@ module.exports = {
 		linkedIn: '#0077b5',
 		github: '#333',
 		stackOverflow: '#f48024',
+		lastFm: '#e82c0c',
 	},
 };
