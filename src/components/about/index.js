@@ -1,5 +1,5 @@
 import React from 'react';
-import { H2, Paragraph } from '~/theme/typography';
+import { H2, Paragraph, Strong } from '~/theme/typography';
 import { Section } from '~/theme/layout';
 import { Wrap, Content, Aside } from './index.styles';
 import LastFm from '~/components/lastfm';
@@ -11,16 +11,16 @@ const AboutMe = () => {
 			<Wrap>
 				<Content>
 					<Paragraph>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et lectus consequat, suscipit
-						mi eget, viverra tortor. Sed rutrum congue odio, ut tempor diam convallis sit amet. In facilisis
-						turpis a nunc venenatis, et dapibus risus sagittis. Quisque posuere diam a semper faucibus.
-						Aenean id odio mi. Duis eget nisi est. Nullam dolor velit, eleifend id est quis, hendrerit
-						finibus urna. Donec ac auctor nisi. Mauris semper lacus vitae urna faucibus, vel sodales augue
-						placerat. Aliquam molestie mollis elit, eget commodo velit. Nam vitae mauris et leo dapibus
-						tincidunt vel vitae lectus. Duis tempus nibh turpis, egestas accumsan sapien convallis sed.
-						Curabitur odio odio, placerat vitae eleifend id, vestibulum a lorem. Pellentesque ornare
-						efficitur nulla. Donec id tortor sollicitudin, venenatis magna nec, vehicula est. Proin molestie
-						auctor quam ut scelerisque.
+						<Strong>
+							I am an experienced user interface developer who uses HTML, CSS and JavaScript to create
+							accessible and usable websites and applications.
+						</Strong>
+					</Paragraph>
+					<Paragraph>
+						I have been working in web design and development since 2004 and have a strong understanding of
+						WCAG/WAI requirements, progressive enhancement/graceful degradation, as well as experience
+						developing for assistive technologies. I am passionate about what I do and meticulous in all
+						stages of my work, from planning and coding, through to reviewing and bug fixing.
 					</Paragraph>
 				</Content>
 				<Aside>
