@@ -4,8 +4,7 @@ import { Paragraph } from '~/theme/typography';
 import Icon from '~/components/icon';
 
 const Wrap = styled.div`
-	background: ${({ theme }) => theme.palette.primary.lightGrey};
-	border: 1px solid #eee;
+	background: linear-gradient(transparent, #f9f9f9);
 	border-radius: ${rem(15)};
 	padding: ${({ theme }) => theme.spacing.default};
 
