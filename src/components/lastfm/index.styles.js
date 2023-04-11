@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { H1, Strong, Paragraph } from '~/theme/typography';
+import { Paragraph } from '~/theme/typography';
+import Icon from '~/components/icon';
 
 const Wrap = styled.div`
 	background: ${({ theme }) => theme.palette.primary.lightGrey};
@@ -34,6 +35,15 @@ const StyledParagraph = styled(Paragraph)`
 		&:first-of-type {
 			font-weight: 700;
 		}
+
+		&:nth-of-type(2) {
+			font-family: ${({ theme }) => theme.font.serif};
+			font-size: ${rem(16)};
+		}
+
+		&:nth-of-type(3) {
+			font-size: ${rem(12)};
+		}
 	}
 `;
 
@@ -52,4 +62,11 @@ const Image = styled.img`
 		)};
 `;
 
-export { Wrap, InnerWrap, Heading, StyledParagraph, Image };
+const StyledIcon = styled(Icon)`
+	&::before {
+		border-top: 10px solid red;
+		margin-right: ${({ theme }) => theme.spacing.md};
+	}
+`;
+
+export { Wrap, InnerWrap, Heading, StyledParagraph, Image, StyledIcon };
