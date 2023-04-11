@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import useIsMount from '~/utilities/useIsMount';
 import { Wrap, InnerWrap, Heading, StyledParagraph, Image } from './index.styles';
 
-const API_URL = 'http://ws.audioscrobbler.com/2.0/?method=';
+const API_URL = 'https://ws.audioscrobbler.com/2.0/?method=';
 
 const LastFm = () => {
 	const isMount = useIsMount();
@@ -17,10 +17,6 @@ const LastFm = () => {
 					`${API_URL}user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`
 				);
 				const data = await response.json();
-				console.log('----------------');
-				console.log(data);
-				console.log('----------------');
-
 				setData(data?.recenttracks?.track[0]);
 				setIsLoading(false);
 			}
