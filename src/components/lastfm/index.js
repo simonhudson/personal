@@ -7,8 +7,6 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 
-const API_URL = 'https://ws.audioscrobbler.com/2.0/?method=';
-
 const LastFm = () => {
 	const isMount = useIsMount();
 	const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +16,7 @@ const LastFm = () => {
 		(async () => {
 			if (isMount) {
 				const response = await fetch(
-					`${API_URL}user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`
+					`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`
 				);
 				const data = await response.json();
 				const recentTrack = data?.recenttracks?.track[0];

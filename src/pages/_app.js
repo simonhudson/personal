@@ -18,7 +18,7 @@ const App = ({ Component, pageProps }) => {
 		<>
 			<Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<title>Simon Hudson | User Interface Design &amp; Development</title>
+				<title>Simon Hudson | Front&ndash;end Developer</title>
 			</Head>
 			<ThemeProvider theme={Theme}>
 				<GlobalStyles />

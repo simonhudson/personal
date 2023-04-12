@@ -14,7 +14,7 @@ const AboutMe = () => {
 				<Content>
 					<Paragraph>
 						<Strong>
-							I am an experienced user interface developer who uses HTML, CSS and JavaScript to create
+							I am an experienced front&ndash;end developer who uses HTML, CSS and JavaScript to create
 							accessible and usable websites and applications.
 						</Strong>
 					</Paragraph>

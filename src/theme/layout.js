@@ -77,6 +77,12 @@ const ButtonLink = styled.a`
 	font-size: ${rem(14)};
 	font-weight: 700;
 	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+
+	&:focus-visible {
+		background: ${({ theme }) => theme.palette.primary.bodyText};
+		color: ${({ theme }) => theme.palette.primary.white};
+		text-decoration: underline;
+	}
 `;
 
 export { Wrap, Section, BoxShadow, ButtonLink };

@@ -12,7 +12,7 @@ const Hero = () => {
 				Hello, my name&apos;s <Span>Simon Hudson</Span>
 			</StyledH1>
 			<StyledParagraph>
-				I am an experienced <Strong>user interface developer</Strong> who uses <Strong>HTML</Strong>,{' '}
+				I am an experienced <Strong>front&ndash;end developer</Strong> who uses <Strong>HTML</Strong>,{' '}
 				<Strong>CSS</Strong> and <Strong>JavaScript</Strong> to create <Strong>accessible</Strong> and{' '}
 				<Strong>usable</Strong> websites and applications.
 			</StyledParagraph>
