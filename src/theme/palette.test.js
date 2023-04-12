@@ -9,6 +9,7 @@ describe('theme/palette', () => {
 				bodyText: '#5d5d5d',
 				black: '#333',
 				white: '#fff',
+				lightGrey: '#f9f9f9',
 			},
 			status: {
 				error: '#fbebe6',
@@ -20,6 +21,7 @@ describe('theme/palette', () => {
 				linkedIn: '#0077b5',
 				github: '#333',
 				stackOverflow: '#f48024',
+				lastFm: '#e82c0c',
 			},
 		});
 	});
