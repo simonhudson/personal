@@ -5,6 +5,7 @@ import Icon from '~/components/icon';
 
 const Wrap = styled.div`
 	background: linear-gradient(transparent, #f9f9f9);
+	border: 1px solid #f9f9f9;
 	border-radius: ${rem(15)};
 	padding: ${({ theme }) => theme.spacing.default};
 
