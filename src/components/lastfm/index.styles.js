@@ -39,13 +39,17 @@ const StyledParagraph = styled(Paragraph)`
 		display: block;
 		font-size: ${rem(14)};
 
+		em {
+			font-size: ${rem(12)};
+			font-weight: 400;
+		}
+
 		&:first-of-type {
 			font-weight: 700;
 		}
 
 		&:nth-of-type(2) {
-			font-family: ${({ theme }) => theme.font.serif};
-			font-size: ${rem(16)};
+			font-size: ${rem(14)};
 		}
 
 		&:nth-of-type(3) {
@@ -70,8 +74,7 @@ const Image = styled.img`
 `;
 
 const StyledIcon = styled(Icon)`
-	color: ${({ theme }) => theme.palette.brands.lastFm};
-	font-size: 30px;
+	color: ${({ theme }) => theme.palette.brands.bodyText};
 	margin-right: ${({ theme }) => theme.spacing.sm};
 `;
 

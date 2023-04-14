@@ -31,24 +31,29 @@ const LastFm = () => {
 	return (
 		<Wrap>
 			<HeadingWrap>
-				<StyledIcon type="brand" name="square-lastfm" />
+				<StyledIcon type="solid" name="music" />
 				<Heading>Now playing</Heading>
 			</HeadingWrap>
 			<Loading isLoading={isLoading} />
 			{data && (
 				<InnerWrap>
 					<Image
-						alt={`Now playing &quot;${data?.name}&quot; by ${data?.artist['#text']} on Last.fm`}
-						src={data?.image[1]['#text']}
+						alt={`Now playing "${data.name}" by ${data.artist['#text']} on Last.fm`}
+						src={data.image[2]['#text']}
 					/>
 					<StyledParagraph>
 						<span>
-							<Link href={data?.url}>
-								<a>{data?.name}</a>
+							<Link href={data.url}>
+								<a>&quot;{data.name}&quot;</a>
 							</Link>
 						</span>
-						<span>{data?.artist['#text']}</span>
-						<span title={data?.date['#text']}>{data?.relativeTime}</span>
+						<span>
+							<em>by</em>{' '}
+							<Link href={data.url.split('_')[0]}>
+								<a>{data.artist['#text']}</a>
+							</Link>
+						</span>
+						<span>{data.album['#text']}</span>
 					</StyledParagraph>
 				</InnerWrap>
 			)}
