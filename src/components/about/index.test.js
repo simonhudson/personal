@@ -5,8 +5,6 @@ import About from './index';
 import LastFmData from '&/data/lastfm';
 import { screen } from '@testing-library/react';
 
-// import { Foo } from './index.styles';
-
 const baseProps = {};
 
 const ORIGINAL_FETCH = global.fetch;
@@ -34,12 +32,10 @@ describe('About', () => {
 		// When
 		initialise(props);
 
-		console.log('----------------');
-		console.log(Object.keys(screen.getByText('About me')));
-		console.log('----------------');
-
 		// Then
-		expect(screen.getByText('About me').elementType).toEqual('h2');
+		expect(screen.getByTestId('heading').textContent).toEqual('About me');
+		expect(screen.getByTestId('cv-link').textContent).toEqual('Download my CV');
+		expect(screen.getByTestId('cv-link')).toHaveAttribute('href', '/files/Simon_Hudson_CV.pdf');
 	});
 
 	const initialise = (props) => {

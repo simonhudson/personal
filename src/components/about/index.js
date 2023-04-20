@@ -9,7 +9,7 @@ import LastFm from '~/components/lastfm';
 const AboutMe = () => {
 	return (
 		<Section>
-			<H2>About me</H2>
+			<H2 data-testid="heading">About me</H2>
 			<Wrap>
 				<Content>
 					<Paragraph>
@@ -26,7 +26,7 @@ const AboutMe = () => {
 					</Paragraph>
 					<Paragraph>
 						<Link href="/files/Simon_Hudson_CV.pdf">
-							<ButtonLink href="/files/Simon_Hudson_CV.pdf">
+							<ButtonLink href="/files/Simon_Hudson_CV.pdf" data-testid="cv-link">
 								Download my CV
 								<StyledIcon type="solid" name="file-pdf" />
 							</ButtonLink>

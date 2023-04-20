@@ -36,14 +36,6 @@ const Title = styled(typography.H3)`
 	font-weight: 700;
 	margin: 0;
 	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
-
-	&::after {
-		content: '';
-		display: block;
-		border-bottom: 2px solid ${({ theme }) => theme.palette.primary.brand};
-		margin: ${({ theme }) => theme.spacing.sm} 0;
-		width: 10%;
-	}
 `;
 
 const Client = styled.span`
