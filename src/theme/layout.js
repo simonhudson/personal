@@ -74,6 +74,7 @@ const ButtonLink = styled.a`
 	border: ${({ theme }) => `2px solid ${theme.palette.primary.bodyText}`};
 	border-radius: ${rem(25)};
 	color: ${({ theme }) => theme.palette.primary.bodyText};
+	display: inline-block;
 	font-size: ${rem(14)};
 	font-weight: 700;
 	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};

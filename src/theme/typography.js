@@ -23,7 +23,7 @@ const H2 = styled.h2`
 	font-size: ${rem(20)};
 	font-weight: 700;
 	line-height: ${rem(16)};
-	margin: 0 0 ${({ theme }) => theme.spacing.lg};
+	margin: 0 0 ${({ theme }) => theme.spacing.md};
 	text-transform: uppercase;
 
 	&::after {
