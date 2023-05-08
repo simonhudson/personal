@@ -8,7 +8,7 @@ const CYPRESS = 'Cypress';
 const DOT_NET = '.NET';
 const ENZYME = 'Enzyme';
 const EXPRESS_JS = 'Express.js';
-const GITHUB = 'Cypress';
+const GITHUB = 'Github';
 const HANDLEBARS = 'Handlebars';
 const HTML = 'HTML';
 const JAVASCRIPT = 'Javascript';
@@ -34,6 +34,7 @@ const JEST_ENZYME = `${JEST}/${ENZYME}`;
 const MADE_WITH = 'Made with';
 const TESTED_WITH = 'Tested with';
 const BUILT_WITH = 'Built with';
+
 module.exports = [
 	{
 		slug: 'experian-offers-hub',
@@ -54,7 +55,7 @@ module.exports = [
 			},
 			{
 				label: BUILT_WITH,
-				items: [AWS_CODEBUILD_CODEPIPELINE],
+				items: [GITHUB, AWS_CODEBUILD_CODEPIPELINE],
 			},
 		],
 		date: '2019',
@@ -78,7 +79,7 @@ module.exports = [
 			},
 			{
 				label: BUILT_WITH,
-				items: [AWS_CODEBUILD_CODEPIPELINE],
+				items: [GITHUB, AWS_CODEBUILD_CODEPIPELINE],
 			},
 		],
 		date: '2019',
@@ -95,6 +96,10 @@ module.exports = [
 			{
 				label: MADE_WITH,
 				items: [HTML, SASS, JAVASCRIPT],
+			},
+			{
+				label: BUILT_WITH,
+				items: [GITHUB, AWS_CODEBUILD_CODEPIPELINE],
 			},
 		],
 		date: '2019',

@@ -12,9 +12,8 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 			<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
 			<Content>
 				<Text>
-					<Title data-test="portfolio-item__title">
-						{title} <Client>({client})</Client>
-					</Title>
+					<Client>{client}</Client>
+					<Title data-test="portfolio-item__title">{title}</Title>
 
 					{metadata.map((item, index) => {
 						return (

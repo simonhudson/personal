@@ -18,8 +18,6 @@ const Wrap = styled.div`
 `;
 
 const Img = styled.img`
-	background: #ddd;
-	box-shadow: ${layout.BoxShadow};
 	display: block;
 	height: auto;
 	margin: 0 0 ${({ theme }) => theme.spacing.default};
@@ -35,11 +33,15 @@ const Title = styled(typography.H3)`
 	font-size: ${({ theme }) => rem(theme.font.size)};
 	font-weight: 700;
 	margin: 0;
-	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+	padding: 0 0 ${({ theme }) => theme.spacing.default} 0;
 `;
 
 const Client = styled.span`
+	color: ${({ theme }) => theme.palette.primary.grey};
+	font-size: ${({ theme }) => rem(theme.font.size * 0.75)};
 	font-weight: 400;
+	letter-spacing: ${rem(1)};
+	text-transform: uppercase;
 `;
 
 const MetadataList = styled.dl`
