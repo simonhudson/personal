@@ -28,11 +28,9 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url, isArchived
 						);
 					})}
 					{url && (
-						<p>
-							<Link href={url}>
-								<ButtonLink href={url}>View site{isArchived ? ' (archived)' : ''}</ButtonLink>
-							</Link>
-						</p>
+						<Link href={url}>
+							<ButtonLink href={url}>View site{isArchived ? ' (archived)' : ''}</ButtonLink>
+						</Link>
 					)}
 				</Text>
 			</Content>

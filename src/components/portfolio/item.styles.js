@@ -6,12 +6,13 @@ const Wrap = styled.div`
 	border-radius: ${rem(5)};
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 ${({ theme }) => theme.spacing.md};
+	margin: 0 0 ${({ theme }) => theme.spacing.xlg};
 
 	${({ theme }) =>
 		theme.media(
 			'tablet-l',
 			`
+			margin: 0 0 ${theme.spacing.sm};
             width: 47.3%;
 			`
 		)};
@@ -49,6 +50,10 @@ const MetadataList = styled.dl`
 	font-size: ${rem(14)};
 	margin: 0;
 	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+
+	&:last-of-type {
+		margin: 0 0 ${({ theme }) => theme.spacing.default} 0;
+	}
 `;
 
 const MetadataTitle = styled.dt`
