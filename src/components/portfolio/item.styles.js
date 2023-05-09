@@ -8,6 +8,10 @@ const Wrap = styled.div`
 	flex-direction: column;
 	margin: 0 0 ${({ theme }) => theme.spacing.xlg};
 
+	&:last-of-type {
+		margin: 0;
+	}
+
 	${({ theme }) =>
 		theme.media(
 			'tablet-l',
