@@ -5,7 +5,7 @@ module.exports = {
 		bodyText: '#5d5d5d',
 		black: '#333',
 		white: '#fff',
-		grey: '#777',
+		grey: '#707070',
 		lightGrey: '#f9f9f9',
 	},
 	status: {
