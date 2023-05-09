@@ -1,6 +1,6 @@
 import React from 'react';
-import { H2 } from '~/theme/typography';
-import { Section } from '~/theme/layout';
+import { H2 } from 'src/theme/typography';
+import { Section } from 'src/theme/layout';
 import { Wrap } from './index.styles';
 import data from './data';
 import Item from './item';

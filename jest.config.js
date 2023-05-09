@@ -1,0 +1,27 @@
+module.exports = {
+	testEnvironment: 'jsdom',
+	snapshotSerializers: ['enzyme-to-json/serializer'],
+	setupFiles: ['./test/jestsetup.js'],
+	setupFilesAfterEnv: ['./test/jestsetup-after.js'],
+	transform: {
+		'^.+\\.jsx?$': 'babel-jest',
+		'.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
+	},
+	moduleNameMapper: {
+		'\\.(css|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
+		'^\\~(.*)$': '<rootDir>/public/js$1',
+		'^\\$(.*)$': '<rootDir>/components$1',
+		'^\\&(.*)$': '<rootDir>/app$1',
+	},
+	coverageDirectory: 'coverage/jest',
+	collectCoverageFrom: ['src/**/*.js'],
+	coverageReporters: ['json', 'lcov', 'text-summary', 'clover'],
+	coverageThreshold: {
+		global: {
+			branches: 90,
+			functions: 95,
+			lines: 97,
+			statements: 97,
+		},
+	},
+};

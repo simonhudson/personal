@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { H1, Strong } from '~/theme/typography';
+import { H1, Strong } from 'src/theme/typography';
 
 const Wrap = styled.div`
 	display: flex;
@@ -12,7 +12,7 @@ const Wrap = styled.div`
 			'tablet-l',
 			`
 			flex-direction: row;
-			gap: ${theme.spacing.md};
+			gap: ${theme.spacing.lg};
 			`
 		)};
 `;

@@ -1,4 +1,4 @@
-import { NOT_FOUND } from '~/constants/httpStatusCodes';
+import { NOT_FOUND } from 'src/constants/httpStatusCodes';
 
 export const HOME = 'Home';
 

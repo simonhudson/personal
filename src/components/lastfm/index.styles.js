@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { Paragraph } from '~/theme/typography';
-import Icon from '~/components/icon';
+import { Paragraph } from 'src/theme/typography';
+import Icon from 'src/components/icon';
 
 const Wrap = styled.div`
-	background: ${({ theme }) => theme.palette.primary.lightGrey};
+	background: linear-gradient(transparent, #f9f9f9);
+	border: 1px solid #f9f9f9;
 	border-radius: ${rem(15)};
 	padding: ${({ theme }) => theme.spacing.default};
 
@@ -21,9 +22,16 @@ const InnerWrap = styled.div`
 	display: flex;
 `;
 
+const HeadingWrap = styled.div`
+	align-items: center;
+	display: flex;
+	margin: 0 0 ${rem(24)};
+`;
+
 const Heading = styled(Paragraph)`
 	font-weight: 700;
 	line-height: ${rem(16)};
+	margin: 0;
 	text-transform: uppercase;
 `;
 
@@ -32,13 +40,17 @@ const StyledParagraph = styled(Paragraph)`
 		display: block;
 		font-size: ${rem(14)};
 
+		em {
+			font-size: ${rem(12)};
+			font-weight: 400;
+		}
+
 		&:first-of-type {
 			font-weight: 700;
 		}
 
 		&:nth-of-type(2) {
-			font-family: ${({ theme }) => theme.font.serif};
-			font-size: ${rem(16)};
+			font-size: ${rem(14)};
 		}
 
 		&:nth-of-type(3) {
@@ -63,10 +75,8 @@ const Image = styled.img`
 `;
 
 const StyledIcon = styled(Icon)`
-	&::before {
-		border-top: 10px solid red;
-		margin-right: ${({ theme }) => theme.spacing.md};
-	}
+	color: ${({ theme }) => theme.palette.brands.bodyText};
+	margin-right: ${({ theme }) => theme.spacing.sm};
 `;
 
-export { Wrap, InnerWrap, Heading, StyledParagraph, Image, StyledIcon };
+export { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon };

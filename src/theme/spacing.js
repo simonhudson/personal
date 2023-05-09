@@ -1,5 +1,6 @@
 import { rem } from 'polished';
-const BASE_SIZE = 14;
+import { size as baseFontSize } from './font';
+const BASE_SIZE = baseFontSize;
 
 const spacing = {
 	default: BASE_SIZE,

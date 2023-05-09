@@ -1,26 +1,30 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { typography } from '~/theme';
+import { typography, layout } from 'src/theme';
 
 const Wrap = styled.div`
 	border-radius: ${rem(5)};
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 ${({ theme }) => theme.spacing.md};
+	margin: 0 0 ${({ theme }) => theme.spacing.xlg};
+
+	&:last-of-type {
+		margin: 0;
+	}
 
 	${({ theme }) =>
 		theme.media(
 			'tablet-l',
 			`
-            width: 48.8%;
+			margin: 0 0 ${theme.spacing.sm};
+            width: 47.3%;
 			`
 		)};
 `;
 
 const Img = styled.img`
-	background: #ddd;
 	display: block;
-	height: 200px;
+	height: auto;
 	margin: 0 0 ${({ theme }) => theme.spacing.default};
 	width: 100%;
 `;
@@ -34,19 +38,15 @@ const Title = styled(typography.H3)`
 	font-size: ${({ theme }) => rem(theme.font.size)};
 	font-weight: 700;
 	margin: 0;
-	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
-
-	&::after {
-		content: '';
-		display: block;
-		border-bottom: 2px solid ${({ theme }) => theme.palette.primary.brand};
-		margin: ${({ theme }) => theme.spacing.sm} 0;
-		width: 10%;
-	}
+	padding: 0 0 ${({ theme }) => theme.spacing.default} 0;
 `;
 
 const Client = styled.span`
+	color: ${({ theme }) => theme.palette.primary.grey};
+	font-size: ${({ theme }) => rem(theme.font.size * 0.75)};
 	font-weight: 400;
+	letter-spacing: ${rem(1)};
+	text-transform: uppercase;
 `;
 
 const MetadataList = styled.dl`
@@ -54,6 +54,10 @@ const MetadataList = styled.dl`
 	font-size: ${rem(14)};
 	margin: 0;
 	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+
+	&:last-of-type {
+		margin: 0 0 ${({ theme }) => theme.spacing.default} 0;
+	}
 `;
 
 const MetadataTitle = styled.dt`

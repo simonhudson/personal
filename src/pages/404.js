@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import Routes from '~/constants/routes';
-import { Section } from '~/theme/layout';
-import { H1, Paragraph } from '~/theme/typography';
-import { HOME } from '~/constants/routes';
-import getRoute from '~/utilities/getRoute';
+import Routes from 'src/constants/routes';
+import { Section } from 'src/theme/layout';
+import { H1, Paragraph } from 'src/theme/typography';
+import { HOME } from 'src/constants/routes';
+import getRoute from 'src/utilities/getRoute';
 
 const Error404 = () => {
 	const homePageLink = Routes.find((route) => route.label.toLowerCase() === 'home').path;

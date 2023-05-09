@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StyledLoading } from './index.styles';
-import { palette } from '~/theme';
+import { palette } from 'src/theme';
 
 const Loading = ({ isLoading }) => {
 	if (!isLoading) return null;

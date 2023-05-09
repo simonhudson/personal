@@ -52,7 +52,7 @@ const StyledSection = styled.section`
 			'tablet-l',
 			`
 			height: auto;
-			padding: ${({ theme }) => theme.spacing.xxlg} 0;
+			padding: ${theme.spacing.lg} 0;
 			`
 		)};
 `;
@@ -69,4 +69,21 @@ const Section = ({ children }) => {
 
 const BoxShadow = `0 0 10px #ddd`;
 
-export { Wrap, Section, BoxShadow };
+const ButtonLink = styled.a`
+	background: transparent;
+	border: ${({ theme }) => `2px solid ${theme.palette.primary.bodyText}`};
+	border-radius: ${rem(25)};
+	color: ${({ theme }) => theme.palette.primary.bodyText};
+	display: inline-block;
+	font-size: ${rem(14)};
+	font-weight: 700;
+	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+
+	&:focus-visible {
+		background: ${({ theme }) => theme.palette.primary.bodyText};
+		color: ${({ theme }) => theme.palette.primary.white};
+		text-decoration: underline;
+	}
+`;
+
+export { Wrap, Section, BoxShadow, ButtonLink };

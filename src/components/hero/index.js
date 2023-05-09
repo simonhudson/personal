@@ -1,8 +1,8 @@
 import React from 'react';
-import { Strong } from '~/theme/typography';
-import { Section } from '~/theme/layout';
+import { Strong } from 'src/theme/typography';
+import { Section } from 'src/theme/layout';
 import { StyledH1, Span, StyledParagraph } from './styles';
-import Logo from '~/components/logo';
+import Logo from 'src/components/logo';
 
 const Hero = () => {
 	return (
@@ -12,7 +12,7 @@ const Hero = () => {
 				Hello, my name&apos;s <Span>Simon Hudson</Span>
 			</StyledH1>
 			<StyledParagraph>
-				I am an experienced <Strong>user interface developer</Strong> who uses <Strong>HTML</Strong>,{' '}
+				I am an experienced <Strong>front&ndash;end developer</Strong> who uses <Strong>HTML</Strong>,{' '}
 				<Strong>CSS</Strong> and <Strong>JavaScript</Strong> to create <Strong>accessible</Strong> and{' '}
 				<Strong>usable</Strong> websites and applications.
 			</StyledParagraph>

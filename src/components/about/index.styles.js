@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
+import Icon from 'src/components/icon';
 
 const Wrap = styled.div`
 	${({ theme }) =>
@@ -32,4 +33,9 @@ const Aside = styled.aside`
 		)};
 `;
 
-export { Wrap, Content, Aside };
+const StyledIcon = styled(Icon)`
+	font-size: ${rem(16)};
+	margin-left: ${({ theme }) => theme.spacing.sm};
+`;
+
+export { Wrap, Content, Aside, StyledIcon };

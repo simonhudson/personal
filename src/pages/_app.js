@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import Theme from '~/theme';
-import { GlobalStyles } from '~/theme/global.styles';
+import Theme from 'src/theme';
+import { GlobalStyles } from 'src/theme/global.styles';
 
 // Log accessibility issues to console in non-production environments
 if (process.env.APP_ENV !== 'production' && typeof window !== 'undefined') {
@@ -18,7 +18,7 @@ const App = ({ Component, pageProps }) => {
 		<>
 			<Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<title>Simon Hudson | User Interface Design &amp; Development</title>
+				<title>Simon Hudson | Front&ndash;end Developer</title>
 			</Head>
 			<ThemeProvider theme={Theme}>
 				<GlobalStyles />
