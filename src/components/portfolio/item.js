@@ -4,7 +4,7 @@ import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, M
 import { ButtonLink } from 'src/theme/layout';
 import PropTypes from 'prop-types';
 
-const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
+const Item = ({ client, date, metadata, omit, slug, text, title, url, isArchived }) => {
 	if (omit) return null;
 
 	return (
@@ -30,7 +30,7 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 					{url && (
 						<p>
 							<Link href={url}>
-								<ButtonLink href={url}>View site</ButtonLink>
+								<ButtonLink href={url}>View site{isArchived ? ' (archived)' : ''}</ButtonLink>
 							</Link>
 						</p>
 					)}
@@ -43,6 +43,7 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {
 Item.propTypes = {
 	client: PropTypes.string.isRequired,
 	date: PropTypes.string.isRequired,
+	isArchived: PropTypes.bool,
 	metadata: PropTypes.arrayOf(PropTypes.object).isRequired,
 	omit: PropTypes.bool,
 	slug: PropTypes.string.isRequired,
