@@ -58,7 +58,7 @@ module.exports = [
 				items: [GITHUB, AWS_CODEBUILD_CODEPIPELINE],
 			},
 		],
-		date: '2019',
+		date: '2019 - present',
 	},
 	{
 		slug: 'experian-marketplace',
@@ -82,7 +82,7 @@ module.exports = [
 				items: [GITHUB, AWS_CODEBUILD_CODEPIPELINE],
 			},
 		],
-		date: '2019',
+		date: '2016 - present',
 	},
 	{
 		slug: 'experian-boost',
