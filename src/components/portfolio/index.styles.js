@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { H1, Strong } from '~/theme/typography';
+import { H1, Strong } from 'src/theme/typography';
 
 const Wrap = styled.div`
 	display: flex;

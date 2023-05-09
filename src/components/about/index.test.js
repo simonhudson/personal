@@ -1,8 +1,8 @@
 import React from 'react';
-import { render } from '&/utils';
+import { render } from 'test/utils';
 import cloneDeep from 'lodash/cloneDeep';
 import About from './index';
-import LastFmData from '&/data/lastfm';
+import LastFmData from 'test/data/lastfm';
 import { screen } from '@testing-library/react';
 
 const baseProps = {};

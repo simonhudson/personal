@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { H1, Strong, Paragraph } from '~/theme/typography';
+import { H1, Strong, Paragraph } from 'src/theme/typography';
 
 const Wrap = styled.div`
 	background: ${({ theme }) => theme.palette.primary.brand};

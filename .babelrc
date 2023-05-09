@@ -10,15 +10,15 @@
             {
                 "paths": [
                     {
-                        "rootPathPrefix": "~",
+                        "rootPathPrefix": "src",
                         "rootPathSuffix": "src"
                     },
                     {
-                        "rootPathPrefix": "%",
+                        "rootPathPrefix": "public",
                         "rootPathSuffix": "public"
                     },
                     {
-                        "rootPathPrefix": "&",
+                        "rootPathPrefix": "test",
                         "rootPathSuffix": "test"
                     }
                 ]

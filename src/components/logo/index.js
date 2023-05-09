@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledLogo } from './index.styles';
-import { palette } from '~/theme';
+import { palette } from 'src/theme';
 import PropTypes from 'prop-types';
 
 const Logo = ({ context }) => {

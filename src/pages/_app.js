@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import Theme from '~/theme';
-import { GlobalStyles } from '~/theme/global.styles';
+import Theme from 'src/theme';
+import { GlobalStyles } from 'src/theme/global.styles';
 
 // Log accessibility issues to console in non-production environments
 if (process.env.APP_ENV !== 'production' && typeof window !== 'undefined') {

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Strong } from '~/theme/typography';
-import { Section } from '~/theme/layout';
+import { Strong } from 'src/theme/typography';
+import { Section } from 'src/theme/layout';
 import { StyledH1, Span, StyledParagraph } from './styles';
-import Logo from '~/components/logo';
+import Logo from 'src/components/logo';
 
 const Hero = () => {
 	return (

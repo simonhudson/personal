@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem } from './item.styles';
-import { ButtonLink } from '~/theme/layout';
+import { ButtonLink } from 'src/theme/layout';
 import PropTypes from 'prop-types';
 
 const Item = ({ client, date, metadata, omit, slug, text, title, url }) => {

@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import { H2, Paragraph, Strong } from '~/theme/typography';
-import { Section } from '~/theme/layout';
-import { ButtonLink } from '~/theme/layout';
+import { H2, Paragraph, Strong } from 'src/theme/typography';
+import { Section } from 'src/theme/layout';
+import { ButtonLink } from 'src/theme/layout';
 import { Wrap, Content, Aside, StyledIcon } from './index.styles';
-import LastFm from '~/components/lastfm';
+import LastFm from 'src/components/lastfm';
 
 const AboutMe = () => {
 	return (
