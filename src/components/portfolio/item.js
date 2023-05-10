@@ -17,16 +17,17 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url, isArchived
 					</Client>
 					<Title data-test="portfolio-item__title">{title}</Title>
 
-					{metadata.map((item, index) => {
-						return (
-							<MetadataList key={`metadata-list--${index}`}>
-								<MetadataTitle>{item.label}</MetadataTitle>
-								{item.items.map((item, index) => {
-									return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
-								})}
-							</MetadataList>
-						);
-					})}
+					{metadata &&
+						metadata.map((item, index) => {
+							return (
+								<MetadataList key={`metadata-list--${index}`}>
+									<MetadataTitle>{item.label}</MetadataTitle>
+									{item.items.map((item, index) => {
+										return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
+									})}
+								</MetadataList>
+							);
+						})}
 					{url && (
 						<Link href={url}>
 							<ButtonLink href={url}>
