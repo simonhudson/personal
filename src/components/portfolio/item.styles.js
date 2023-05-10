@@ -6,7 +6,7 @@ const Wrap = styled.div`
 	border-radius: ${rem(5)};
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 ${({ theme }) => theme.spacing.xlg};
+	margin: 0 0 ${({ theme }) => theme.spacing.lg};
 
 	&:last-of-type {
 		margin: 0;
@@ -39,6 +39,7 @@ const Title = styled(typography.H3)`
 	font-weight: 700;
 	margin: 0;
 	padding: 0 0 ${({ theme }) => theme.spacing.default} 0;
+	text-transform: uppercase;
 `;
 
 const Client = styled.span`
