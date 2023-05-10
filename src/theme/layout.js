@@ -86,4 +86,16 @@ const ButtonLink = styled.a`
 	}
 `;
 
-export { Wrap, Section, BoxShadow, ButtonLink };
+const VisuallyHidden = styled.span`
+	border: 0;
+	clip: rect(0 0 0 0);
+	color: ${({ theme }) => theme.palette.primary.white};
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+`;
+
+export { Wrap, Section, BoxShadow, ButtonLink, VisuallyHidden };

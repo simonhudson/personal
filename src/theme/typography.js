@@ -70,6 +70,10 @@ const Paragraph = styled.p`
 	margin: 0 0 ${rem(24)};
 `;
 
+const SmallerParagraph = styled(Paragraph)`
+	font-size: ${({ theme }) => rem(theme.font.size * 0.9)};
+`;
+
 const Strong = styled.strong`
 	color: inherit;
 	font-weight: 700;
@@ -83,4 +87,4 @@ const ListItem = styled.li`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 `;
 
-export { H1, H2, H3, Paragraph, Strong, Small, ListItem };
+export { H1, H2, H3, Paragraph, SmallerParagraph, Strong, Small, ListItem };

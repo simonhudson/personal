@@ -21,7 +21,7 @@ const LastFm = () => {
 				const data = await response.json();
 				const recentTrack = data?.recenttracks?.track[0];
 				const displayData = { ...recentTrack };
-				if (recentTrack.date) displayData.relativeTime = dayjs().to(dayjs(recentTrack.date['#text']));
+				if (recentTrack.date) displayData.relativeTime = dayjs(recentTrack.date['#text']).fromNow();
 				setData(displayData);
 				setIsLoading(false);
 			}
@@ -37,10 +37,14 @@ const LastFm = () => {
 			<Loading isLoading={isLoading} />
 			{data && (
 				<InnerWrap>
-					<Image
-						alt={`Now playing "${data.name}" by ${data.artist['#text']} on Last.fm`}
-						src={data.image[2]['#text']}
-					/>
+					<Link href={data.url}>
+						<a>
+							<Image
+								alt={`Now playing "${data.name}" by ${data.artist['#text']} on Last.fm`}
+								src={data.image[2]['#text']}
+							/>
+						</a>
+					</Link>
 					<StyledParagraph>
 						<span>
 							<Link href={data.url}>
@@ -53,7 +57,7 @@ const LastFm = () => {
 								<a>{data.artist['#text']}</a>
 							</Link>
 						</span>
-						<span>{data.album['#text']}</span>
+						<span>{data.relativeTime}</span>
 					</StyledParagraph>
 				</InnerWrap>
 			)}

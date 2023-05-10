@@ -65,6 +65,10 @@ const MetadataTitle = styled.dt`
 	display: inline-block;
 	font-weight: 700;
 	margin: 0 ${({ theme }) => theme.spacing.sm} 0 0;
+
+	&::after {
+		content: ': ';
+	}
 `;
 
 const MetadataItem = styled.dd`
@@ -72,7 +76,7 @@ const MetadataItem = styled.dd`
 	margin: 0;
 
 	&:not(:last-of-type) {
-		&:after {
+		&::after {
 			content: ', ';
 		}
 	}

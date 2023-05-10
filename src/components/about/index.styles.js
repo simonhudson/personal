@@ -14,10 +14,13 @@ const Wrap = styled.div`
 `;
 
 const Content = styled.div`
+	margin: 0 0 ${({ theme }) => theme.spacing.lg};
+
 	${({ theme }) =>
 		theme.media(
 			'tablet-l',
 			`
+			margin: 0;
 			width: 65%;
 			`
 		)};
