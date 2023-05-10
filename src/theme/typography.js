@@ -31,7 +31,7 @@ const H2 = styled.h2`
 		display: block;
 		border-bottom: 3px solid ${({ theme }) => theme.palette.primary.brand};
 		margin: ${({ theme }) => theme.spacing.default} 0;
-		width: 10%;
+		width: 5%;
 	}
 
 	${({ theme }) =>
