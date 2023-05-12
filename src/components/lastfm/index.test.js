@@ -10,11 +10,6 @@ const ORIGINAL_LASTFM_API_KEY = process.env.LASTFM_API_KEY;
 
 describe('LastFm', () => {
 	beforeEach(() => {
-		// global.fetch = jest.fn(() =>
-		// 	Promise.resolve({
-		// 		json: () => Promise.resolve(LastFmData),
-		// 	})
-		// );
 		global.fetch = jest.fn();
 		process.env.LASTFM_USERNAME = 'LASTFM_USERNAME';
 		process.env.LASTFM_API_KEY = 'LASTFM_API_KEY';
