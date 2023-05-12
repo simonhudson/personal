@@ -1,8 +1,7 @@
 module.exports = {
 	testEnvironment: 'jsdom',
 	snapshotSerializers: ['enzyme-to-json/serializer'],
-	setupFiles: ['./test/jestsetup.js'],
-	setupFilesAfterEnv: ['./test/jestsetup-after.js'],
+	setupFilesAfterEnv: ['<rootDir>/test/jestsetup.js'],
 	transform: {
 		'^.+\\.jsx?$': 'babel-jest',
 		'.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
