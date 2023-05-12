@@ -6,6 +6,7 @@ module.exports = [
 			type: 'solid',
 			name: 'file-pdf',
 		},
+		testid: 'link-cv',
 	},
 	{
 		text: 'Github profile',
@@ -14,6 +15,7 @@ module.exports = [
 			type: 'brand',
 			name: 'github',
 		},
+		testid: 'link-github',
 	},
 	{
 		text: 'LinkedIn profile',
@@ -22,5 +24,6 @@ module.exports = [
 			type: 'brand',
 			name: 'linkedin',
 		},
+		testid: 'link-linkedin',
 	},
 ];

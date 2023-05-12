@@ -31,10 +31,7 @@ const AboutMe = () => {
 								return (
 									<LinksItem key={`link-${index}`}>
 										<Link href={item.link}>
-											<ButtonLink
-												href={item.link}
-												data-testid={`link-${item.text.replace(/\s/g, '-').toLowerCase()}`}
-											>
+											<ButtonLink href={item.link} data-testid={item.testid}>
 												{item.text}
 												<StyledIcon type={item.icon.type} name={item.icon.name} />
 											</ButtonLink>
