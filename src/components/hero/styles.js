@@ -2,10 +2,6 @@ import styled from 'styled-components';
 import { rem } from 'polished';
 import { H1, Strong, Paragraph } from 'src/theme/typography';
 
-const Wrap = styled.div`
-	background: ${({ theme }) => theme.palette.primary.brand};
-`;
-
 const StyledH1 = styled(H1)`
 	font-size: ${rem(30)};
 	line-height: ${rem(50)};
@@ -55,4 +51,4 @@ const Span = styled(Strong)`
 		)};
 `;
 
-export { Wrap, StyledH1, StyledParagraph, Span };
+export { StyledH1, StyledParagraph, Span };
