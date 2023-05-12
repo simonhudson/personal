@@ -6,11 +6,15 @@ import dayjs from 'dayjs';
 
 const Footer = () => {
 	return (
-		<Section>
-			<Wrapper>
-				<StyledParagraph>&copy; {dayjs().year()} Simon Hudson</StyledParagraph>
-			</Wrapper>
-		</Section>
+		<footer data-testid="footer">
+			<Section>
+				<Wrapper>
+					<StyledParagraph data-testid="footer__copyright">
+						&copy; {dayjs().year()} Simon Hudson
+					</StyledParagraph>
+				</Wrapper>
+			</Section>
+		</footer>
 	);
 };
 

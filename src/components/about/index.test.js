@@ -1,18 +1,12 @@
 import React from 'react';
 import { render } from 'test/utils';
-import cloneDeep from 'lodash/cloneDeep';
 import About from './index';
 import LastFmData from 'test/data/lastfm';
-import { screen } from '@testing-library/react';
-// import '@testing-library/jest-dom';
-
-const baseProps = {};
+import { getByTestId } from 'test/utils';
 
 const ORIGINAL_FETCH = global.fetch;
 
 describe('About', () => {
-	let objectUnderTest;
-
 	beforeEach(() => {
 		global.fetch = jest.fn(() =>
 			Promise.resolve({
@@ -27,22 +21,16 @@ describe('About', () => {
 	});
 
 	it(`should render expected heading`, () => {
-		// Given
-		const props = cloneDeep(baseProps);
-
 		// When
-		initialise(props);
+		initialise();
 
 		// Then
-		expect(screen.getByTestId('heading').textContent).toEqual('About me');
+		expect(getByTestId('heading').textContent).toEqual('About me');
 	});
 
 	it(`should render expected links`, () => {
-		// Given
-		const props = cloneDeep(baseProps);
-
 		// When
-		initialise(props);
+		initialise();
 
 		// Then
 		[
@@ -54,13 +42,10 @@ describe('About', () => {
 				href: 'https://www.linkedin.com/in/hellosimonhudson/',
 			},
 		].forEach((item) => {
-			expect(screen.getByTestId(item.testid).textContent).toEqual(item.text);
-			expect(screen.getByTestId(item.testid)).toHaveAttribute('href', item.href);
+			expect(getByTestId(item.testid).textContent).toEqual(item.text);
+			expect(getByTestId(item.testid)).toHaveAttribute('href', item.href);
 		});
 	});
 
-	const initialise = (props) => {
-		props = props || cloneDeep(baseProps);
-		objectUnderTest = render(<About {...props} />);
-	};
+	const initialise = () => render(<About />);
 });
