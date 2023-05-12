@@ -1,8 +1,7 @@
 import React from 'react';
-import { render as doRender } from '@testing-library/react';
+import { render as doRender, screen } from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
 import Theme from 'src/theme';
-import { screen } from '@testing-library/react';
 
 const theme = { ...Theme };
 

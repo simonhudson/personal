@@ -2,6 +2,7 @@ import React from 'react';
 import About from './index';
 import LastFmData from 'test/data/lastfm';
 import { getByTestId, render } from 'test/utils';
+import { act } from 'react-test-renderer';
 
 const ORIGINAL_FETCH = global.fetch;
 
@@ -19,17 +20,17 @@ describe('About', () => {
 		global.fetch = ORIGINAL_FETCH;
 	});
 
-	it(`should render expected heading`, () => {
+	it(`should render expected heading`, async () => {
 		// When
-		initialise();
+		await initialise();
 
 		// Then
 		expect(getByTestId('heading').textContent).toEqual('About me');
 	});
 
-	it(`should render expected links`, () => {
+	it(`should render expected links`, async () => {
 		// When
-		initialise();
+		await initialise();
 
 		// Then
 		[
@@ -54,5 +55,5 @@ describe('About', () => {
 		});
 	});
 
-	const initialise = () => render(<About />);
+	const initialise = async () => await act(async () => render(<About />));
 });
