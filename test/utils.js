@@ -7,6 +7,9 @@ import { screen } from '@testing-library/react';
 const theme = { ...Theme };
 
 module.exports = {
+	getByRole(role) {
+		return screen.getByRole(role);
+	},
 	getByTestId(testid) {
 		return screen.getByTestId(testid);
 	},

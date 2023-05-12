@@ -1,8 +1,7 @@
 import React from 'react';
-import { render } from 'test/utils';
 import About from './index';
 import LastFmData from 'test/data/lastfm';
-import { getByTestId } from 'test/utils';
+import { getByTestId, render } from 'test/utils';
 
 const ORIGINAL_FETCH = global.fetch;
 

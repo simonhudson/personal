@@ -12,7 +12,7 @@ const Icon = ({ type, name, className }) => {
 		<StyledIcon
 			className={`${typeMapping[type]} fa-${name} ${className}`}
 			aria-hidden="true"
-			data-test="icon"
+			data-testid={`icon-${type}-${name}`}
 		></StyledIcon>
 	);
 };
