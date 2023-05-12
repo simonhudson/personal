@@ -36,9 +36,17 @@ const Aside = styled.aside`
 		)};
 `;
 
+const LinksList = styled.ul`
+	display: flex;
+	gap: ${({ theme }) => theme.spacing.lg};
+	list-style: none;
+`;
+
+const LinksItem = styled.li``;
+
 const StyledIcon = styled(Icon)`
 	font-size: ${rem(16)};
 	margin-left: ${({ theme }) => theme.spacing.sm};
 `;
 
-export { Wrap, Content, Aside, StyledIcon };
+export { Wrap, Content, Aside, StyledIcon, LinksList, LinksItem };

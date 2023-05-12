@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { H2, Paragraph, Strong } from 'src/theme/typography';
 import { Section } from 'src/theme/layout';
 import { ButtonLink } from 'src/theme/layout';
-import { Wrap, Content, Aside, StyledIcon } from './index.styles';
+import { Wrap, Content, Aside, StyledIcon, LinksList, LinksItem } from './index.styles';
 import LastFm from 'src/components/lastfm';
+import Links from './links';
 
 const AboutMe = () => {
 	return (
@@ -24,14 +25,25 @@ const AboutMe = () => {
 						developing for assistive technologies. I am passionate about what I do and meticulous in all
 						stages of my work, from planning and coding, through to reviewing and bug fixing.
 					</Paragraph>
-					<Paragraph>
-						<Link href="/files/Simon_Hudson_CV.pdf">
-							<ButtonLink href="/files/Simon_Hudson_CV.pdf" data-testid="cv-link">
-								Download my CV
-								<StyledIcon type="solid" name="file-pdf" />
-							</ButtonLink>
-						</Link>
-					</Paragraph>
+					{Links && (
+						<LinksList>
+							{Links.map((item, index) => {
+								return (
+									<LinksItem key={`link-${index}`}>
+										<Link href={item.link}>
+											<ButtonLink
+												href={item.link}
+												data-testid={`link-${item.text.replace(/\s/g, '-').toLowerCase()}`}
+											>
+												{item.text}
+												<StyledIcon type={item.icon.type} name={item.icon.name} />
+											</ButtonLink>
+										</Link>
+									</LinksItem>
+								);
+							})}
+						</LinksList>
+					)}
 				</Content>
 				<Aside>
 					<LastFm />
