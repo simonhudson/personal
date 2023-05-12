@@ -33,8 +33,16 @@ describe('About', () => {
 
 		// Then
 		[
-			{ testid: 'link-cv', text: 'Download my CV', href: '/files/Simon_Hudson_CV.pdf' },
-			{ testid: 'link-github', text: 'Github profile', href: 'https://github.com/simonhudson' },
+			{
+				testid: 'link-cv',
+				text: 'Download my CV',
+				href: '/files/Simon_Hudson_CV.pdf',
+			},
+			{
+				testid: 'link-github',
+				text: 'Github profile',
+				href: 'https://github.com/simonhudson',
+			},
 			{
 				testid: 'link-linkedin',
 				text: 'LinkedIn profile',
