@@ -14,7 +14,7 @@ module.exports = {
 	},
 	coverageDirectory: 'coverage/jest',
 	collectCoverageFrom: ['src/**/*.js'],
-	coverageReporters: ['json', 'lcov', 'text-summary', 'clover'],
+	coverageReporters: ['json', 'lcov', 'html'],
 	coverageThreshold: {
 		global: {
 			branches: 90,

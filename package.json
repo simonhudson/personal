@@ -9,8 +9,8 @@
     "start": "next start -p $PORT",
     "lint": "eslint ./**/**.js",
     "lint:fix": "eslint ./**/**.js --fix",
-    "server": "node ./src/server/index.js",
-    "test": "jest"
+    "test": "./node_modules/.bin/jest",
+    "test:coverage": "./node_modules/.bin/jest --coverage"
   },
   "repository": {
     "type": "git",
