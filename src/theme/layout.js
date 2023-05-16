@@ -57,9 +57,9 @@ const StyledSection = styled.section`
 		)};
 `;
 
-const Section = ({ children }) => {
+const Section = ({ children, className }) => {
 	return (
-		<StyledSection>
+		<StyledSection className={className}>
 			<Wrap>
 				<Inner>{children}</Inner>
 			</Wrap>

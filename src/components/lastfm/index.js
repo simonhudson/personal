@@ -66,7 +66,7 @@ const LastFm = () => {
 						</span>
 						<span>
 							<em>by</em>{' '}
-							<Link href={data.url?.split('_')[0]}>
+							<Link href={data.url}>
 								<a data-testid="lastfm__artist__link">{data.artist?.['#text']}</a>
 							</Link>
 						</span>

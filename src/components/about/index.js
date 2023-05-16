@@ -2,8 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { H2, Paragraph, Strong } from 'src/theme/typography';
 import { Section } from 'src/theme/layout';
-import { ButtonLink } from 'src/theme/layout';
-import { Wrap, Content, Aside, StyledIcon, LinksList, LinksItem } from './index.styles';
+import { Wrap, Content, Aside, StyledIcon, LinksList, LinksItem, LinksLink } from './index.styles';
 import LastFm from 'src/components/lastfm';
 import Links from './links';
 
@@ -31,10 +30,10 @@ const AboutMe = () => {
 								return (
 									<LinksItem key={`link-${index}`}>
 										<Link href={item.link}>
-											<ButtonLink href={item.link} data-testid={item.testid}>
+											<LinksLink href={item.link} data-testid={item.testid}>
 												{item.text}
 												<StyledIcon type={item.icon.type} name={item.icon.name} />
-											</ButtonLink>
+											</LinksLink>
 										</Link>
 									</LinksItem>
 								);
