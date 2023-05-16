@@ -1,3 +1,7 @@
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
+
 module.exports = {
 	recenttracks: {
 		track: [
@@ -29,7 +33,7 @@ module.exports = {
 				name: 'Track Name',
 				url: 'track-url',
 				date: {
-					'#text': '25 Dec 1970, 13:00',
+					'#text': dayjs().subtract(2, 'hour'),
 				},
 			},
 		],

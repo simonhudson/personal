@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem } from './item.styles';
-import { ButtonLink } from 'src/theme/layout';
+import { ButtonLink, VisuallyHidden } from 'src/theme/layout';
 import PropTypes from 'prop-types';
 
 const Item = ({ client, date, metadata, omit, slug, text, title, url, isArchived }) => {
@@ -17,19 +17,22 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url, isArchived
 					</Client>
 					<Title data-test="portfolio-item__title">{title}</Title>
 
-					{metadata.map((item, index) => {
-						return (
-							<MetadataList key={`metadata-list--${index}`}>
-								<MetadataTitle>{item.label}:</MetadataTitle>
-								{item.items.map((item, index) => {
-									return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
-								})}
-							</MetadataList>
-						);
-					})}
+					{metadata &&
+						metadata.map((item, index) => {
+							return (
+								<MetadataList key={`metadata-list--${index}`}>
+									<MetadataTitle>{item.label}</MetadataTitle>
+									{item.items.map((item, index) => {
+										return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
+									})}
+								</MetadataList>
+							);
+						})}
 					{url && (
 						<Link href={url}>
-							<ButtonLink href={url}>View site{isArchived ? ' (archived)' : ''}</ButtonLink>
+							<ButtonLink href={url}>
+								View <VisuallyHidden>{title}&nbsp;</VisuallyHidden>site{isArchived ? ' (archived)' : ''}
+							</ButtonLink>
 						</Link>
 					)}
 				</Text>

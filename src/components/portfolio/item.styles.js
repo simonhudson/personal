@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { typography, layout } from 'src/theme';
+import { typography } from 'src/theme';
 
 const Wrap = styled.div`
 	border-radius: ${rem(5)};
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 ${({ theme }) => theme.spacing.xlg};
+	margin: 0 0 ${({ theme }) => theme.spacing.lg};
 
 	&:last-of-type {
 		margin: 0;
@@ -38,7 +38,16 @@ const Title = styled(typography.H3)`
 	font-size: ${({ theme }) => rem(theme.font.size)};
 	font-weight: 700;
 	margin: 0;
-	padding: 0 0 ${({ theme }) => theme.spacing.default} 0;
+	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+	text-transform: uppercase;
+
+	&::after {
+		content: '';
+		display: block;
+		border-bottom: 2px solid ${({ theme }) => theme.palette.primary.brand};
+		margin: ${({ theme }) => theme.spacing.sm} 0;
+		width: 5%;
+	}
 `;
 
 const Client = styled.span`
@@ -62,8 +71,12 @@ const MetadataList = styled.dl`
 
 const MetadataTitle = styled.dt`
 	display: inline-block;
-	font-weight: 700;
+	font-weight: 500;
 	margin: 0 ${({ theme }) => theme.spacing.sm} 0 0;
+
+	&::after {
+		content: ': ';
+	}
 `;
 
 const MetadataItem = styled.dd`
@@ -71,7 +84,7 @@ const MetadataItem = styled.dd`
 	margin: 0;
 
 	&:not(:last-of-type) {
-		&:after {
+		&::after {
 			content: ', ';
 		}
 	}

@@ -4,8 +4,8 @@ import { Paragraph } from 'src/theme/typography';
 import Icon from 'src/components/icon';
 
 const Wrap = styled.div`
-	background: linear-gradient(transparent, #f9f9f9);
-	border: 1px solid #f9f9f9;
+	background: ${({ theme }) => `linear-gradient(transparent, ${theme.palette.primary.lightGrey})`};
+	border: ${({ theme }) => `1px solid ${theme.palette.primary.lightGrey}`};
 	border-radius: ${rem(15)};
 	padding: ${({ theme }) => theme.spacing.default};
 
@@ -51,6 +51,7 @@ const StyledParagraph = styled(Paragraph)`
 
 		&:nth-of-type(2) {
 			font-size: ${rem(14)};
+			font-weight: 500;
 		}
 
 		&:nth-of-type(3) {

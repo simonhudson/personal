@@ -1,17 +1,12 @@
 import React from 'react';
-import { render } from 'test/utils';
-import cloneDeep from 'lodash/cloneDeep';
 import About from './index';
 import LastFmData from 'test/data/lastfm';
-import { screen } from '@testing-library/react';
-
-const baseProps = {};
+import { getByTestId, render } from 'test/utils';
+import { act } from 'react-test-renderer';
 
 const ORIGINAL_FETCH = global.fetch;
 
 describe('About', () => {
-	let objectUnderTest;
-
 	beforeEach(() => {
 		global.fetch = jest.fn(() =>
 			Promise.resolve({
@@ -25,21 +20,40 @@ describe('About', () => {
 		global.fetch = ORIGINAL_FETCH;
 	});
 
-	it(`should render as expected`, () => {
-		// Given
-		const props = cloneDeep(baseProps);
-
+	it(`should render expected heading`, async () => {
 		// When
-		initialise(props);
+		await initialise();
 
 		// Then
-		expect(screen.getByTestId('heading').textContent).toEqual('About me');
-		expect(screen.getByTestId('cv-link').textContent).toEqual('Download my CV');
-		expect(screen.getByTestId('cv-link')).toHaveAttribute('href', '/files/Simon_Hudson_CV.pdf');
+		expect(getByTestId('heading').textContent).toEqual('About me');
 	});
 
-	const initialise = (props) => {
-		props = props || cloneDeep(baseProps);
-		objectUnderTest = render(<About {...props} />);
-	};
+	it(`should render expected links`, async () => {
+		// When
+		await initialise();
+
+		// Then
+		[
+			{
+				testid: 'link-cv',
+				text: 'Download my CV',
+				href: '/files/Simon_Hudson_CV.pdf',
+			},
+			{
+				testid: 'link-github',
+				text: 'Github profile',
+				href: 'https://github.com/simonhudson',
+			},
+			{
+				testid: 'link-linkedin',
+				text: 'LinkedIn profile',
+				href: 'https://www.linkedin.com/in/hellosimonhudson/',
+			},
+		].forEach((item) => {
+			expect(getByTestId(item.testid).textContent).toEqual(item.text);
+			expect(getByTestId(item.testid)).toHaveAttribute('href', item.href);
+		});
+	});
+
+	const initialise = async () => await act(async () => render(<About />));
 });

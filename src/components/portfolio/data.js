@@ -125,19 +125,6 @@ module.exports = [
 		date: '2009 — 2013',
 		isArchived: true,
 	},
-
-	// {
-	// 	slug: 'portfolio',
-	// 	title: 'Portfolio',
-	// 	client: 'Personal',
-	// 	text: [
-	// 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget odio lacinia, sollicitudin urna et, lacinia ex. Mauris malesuada tortor tristique dui eleifend luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque augue, eu maximus orci. Vivamus in elit eu sem tincidunt sodales nec ac sapien',
-	// 	],
-	// 	github: 'portfolio-next',
-	// 	madeWith: ['Next.js', 'Sass'],
-	// 	date: '2019',
-	// 	omit: true,
-	// },
 	// {
 	// 	slug: 'react-yeoman-generator',
 	// 	title: 'React Yeoman Generator',
@@ -163,29 +150,6 @@ module.exports = [
 	// 	omit: true,
 	// },
 	// {
-	// 	slug: 'experian-marketplace',
-	// 	title: 'Marketplace',
-	// 	client: 'Experian',
-	// 	text: [
-	// 		'Experian Marketplace offers users the chance to search the market for the Credit Cards, Loans and Mortgages which are right for them.',
-	// 	],
-	// 	url: 'https://creditmatcher.experian.co.uk',
-	// 	madeWith: ['NodeJS', ''],
-	// 	date: '2016 — present',
-	// },
-	// {
-	// 	slug: 'experian-credit-expert',
-	// 	title: 'CreditExpert',
-	// 	client: 'Experian',
-	// 	text: [
-	// 		'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget odio lacinia, sollicitudin urna et, lacinia ex. Mauris malesuada tortor tristique dui eleifend luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque augue, eu maximus orci. Vivamus in elit eu sem tincidunt sodales nec ac sapien',
-	// 		'Fusce dapibus porttitor euismod. Fusce vel pharetra tortor. Pellentesque sit amet dapibus ante. Suspendisse consequat congue purus.',
-	// 	],
-	// 	url: 'https://www.creditexpert.co.uk',
-	// 	madeWith: ['HTML', 'CSS', 'Sass', 'JavaScript/jQuery', 'Angular', 'Swig'],
-	// 	date: '2014 — 2015',
-	// },
-	// {
 	// 	slug: 'lastfm',
 	// 	title: 'Last.fm',
 	// 	client: 'Personal',
@@ -196,6 +160,7 @@ module.exports = [
 	// 	github: 'lastfm',
 	// 	madeWith: ['HTML', 'CSS', 'JavaScript/jQuery', 'Last.fm API'],
 	// 	date: '2015',
+	// 	omit: true,
 	// },
 	// {
 	// 	slug: 'gov-petitions',
@@ -210,7 +175,6 @@ module.exports = [
 	// 	date: '2015',
 	// 	omit: true,
 	// },
-
 	// {
 	// 	slug: 'nhs-choices-media-library',
 	// 	title: 'NHS Choices Media Library',
@@ -222,6 +186,7 @@ module.exports = [
 	// 	url: 'https://www.nhs.uk/video/Pages/nhs-health-check-rashmis-story.aspx',
 	// 	madeWith: ['HTML', 'CSS', 'JavaScript/jQuery', 'BEML', '.NET', 'Sharepoint'],
 	// 	date: '2009 — 2013',
+	// 	omit: true,
 	// },
 	// {
 	// 	slug: 'dept-health-summer-campaign',
@@ -231,10 +196,19 @@ module.exports = [
 	// 		'Whilst working at NHS Choices, I was often part of the development team on campaign microsites for the Department of Health.',
 	// 		'This was a simple one-page site to encourage users to sign up for healthy living emails. Campaign sites were built using the same basic front-end framework, however during the development of this site, I made several accessibility improvements and streamlined some of the markup which not only provided benefits for this site, but also for future sites using the framework.',
 	// 	],
-	// 	url: 'http://www.nhs.uk/summer',
-	// 	madeWith: ['HTML', 'CSS', '.NET', 'Sharepoint'],
-	// 	date: '2009 — 2013',
-	// 	omit: true,
+	// 	url: 'https://web.archive.org/web/20110427065508/http://www.nhs.uk/summer/Pages/summer.aspx',
+	// 	metadata: [
+	// 		{
+	// 			label: MADE_WITH,
+	// 			items: [HTML, CSS],
+	// 		},
+	// 		{
+	// 			label: BUILT_WITH,
+	// 			items: [DOT_NET, SHAREPOINT],
+	// 		},
+	// 	],
+	// 	date: '2011',
+	// 	isArchived: true,
 	// },
 	// {
 	// 	slug: 'marshalls-tree-surgeons',
