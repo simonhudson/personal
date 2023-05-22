@@ -12,6 +12,9 @@ module.exports = {
 	getByTestId(testid) {
 		return screen.getByTestId(testid);
 	},
+	queryByTestId(testid) {
+		return screen.queryByTestId(testid);
+	},
 	render(childToRender) {
 		return doRender(<ThemeProvider theme={theme}>{childToRender}</ThemeProvider>);
 	},

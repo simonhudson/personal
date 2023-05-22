@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import useIsMount from 'src/utilities/useIsMount';
-import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon } from './index.styles';
+import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon } from './index.styles';
 import Loading from 'src/components/loading';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -29,7 +29,10 @@ const LastFm = () => {
 					const recentTrack = data?.recenttracks?.track[0];
 					if (recentTrack) {
 						const displayData = { ...recentTrack };
-						if (recentTrack?.date) displayData.relativeTime = dayjs(recentTrack.date['#text']).fromNow();
+						displayData.relativeTime = recentTrack?.date
+							? dayjs(recentTrack.date['#text']).fromNow()
+							: 'Now playing';
+						if (!recentTrack?.date) displayData.isCurrentlyPlaying = true;
 						setData(displayData);
 					} else {
 						setErrorMsg(ERROR_MSG);
@@ -43,8 +46,8 @@ const LastFm = () => {
 	return (
 		<Wrap>
 			<HeadingWrap>
-				<StyledIcon type="solid" name="music" />
-				<Heading data-testid="lastfm__heading">Now playing</Heading>
+				<StyledIcon type="brand" name="lastfm-square" />
+				<Heading data-testid="lastfm__heading">Last.fm</Heading>
 			</HeadingWrap>
 			<Loading isLoading={isLoading} />
 			{!errorMsg && data && (
@@ -70,7 +73,15 @@ const LastFm = () => {
 								<a data-testid="lastfm__artist__link">{data.artist?.['#text']}</a>
 							</Link>
 						</span>
-						{data.relativeTime && <span data-testid="lastfm__relative-time">{data.relativeTime}</span>}
+						<span data-testid="lastfm__relative-time">{data.relativeTime}</span>
+						{data.isCurrentlyPlaying && (
+							<SoundIcon
+								alt=""
+								aria-hidden="true"
+								data-testid="lastfm__sound-icon"
+								src="/images/icon-audio-wave.gif"
+							/>
+						)}
 					</StyledParagraph>
 				</InnerWrap>
 			)}

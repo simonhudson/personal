@@ -1,8 +1,9 @@
 import React from 'react';
 import LastFm from './index';
 import LastFmData from 'test/data/lastfm';
-import { getByTestId, render } from 'test/utils';
+import { getByTestId, queryByTestId, render } from 'test/utils';
 import { act } from 'react-test-renderer';
+import { cloneDeep } from 'lodash';
 
 const ORIGINAL_FETCH = global.fetch;
 const ORIGINAL_LASTFM_USERNAME = process.env.LASTFM_USERNAME;
@@ -27,12 +28,29 @@ describe('LastFm', () => {
 		expect(getByTestId('lastfm__error').textContent).toEqual(`Sorry, couldn't load data from Last.fm :o(`);
 	};
 
+	const assertCommonDataRendered = () => {
+		const imageLink = getByTestId('lastfm__image__link');
+		const image = getByTestId('lastfm__image__image');
+		const titleLink = getByTestId('lastfm__title__link');
+		const artistLink = getByTestId('lastfm__artist__link');
+
+		expect(imageLink).toHaveAttribute('href', '/track-url');
+		expect(image).toHaveAttribute('alt', `Now playing "Track Name" by Artist on Last.fm`);
+		expect(image).toHaveAttribute('src', `large.jpg`);
+
+		expect(titleLink).toHaveAttribute('href', '/track-url');
+		expect(titleLink.textContent).toEqual(`"Track Name"`);
+
+		expect(artistLink).toHaveAttribute('href', '/track-url');
+		expect(artistLink.textContent).toEqual(`Artist`);
+	};
+
 	it('should render basic UI', async () => {
 		// When
 		await initialise();
 
 		// Then
-		expect(getByTestId('lastfm__heading').textContent).toEqual('Now playing');
+		expect(getByTestId('lastfm__heading').textContent).toEqual('Last.fm');
 	});
 
 	describe('Fetching data', () => {
@@ -93,23 +111,29 @@ describe('LastFm', () => {
 				await initialise();
 
 				// Then
-				const imageLink = getByTestId('lastfm__image__link');
-				const image = getByTestId('lastfm__image__image');
-				const titleLink = getByTestId('lastfm__title__link');
-				const artistLink = getByTestId('lastfm__artist__link');
-				const relativeTime = getByTestId('lastfm__relative-time');
+				assertCommonDataRendered();
+				expect(getByTestId('lastfm__relative-time').textContent).toEqual(`2 hours ago`);
+				expect(queryByTestId('lastfm__sound-icon')).not.toBeInTheDocument();
+			});
 
-				expect(imageLink).toHaveAttribute('href', '/track-url');
-				expect(image).toHaveAttribute('alt', `Now playing "Track Name" by Artist on Last.fm`);
-				expect(image).toHaveAttribute('src', `large.jpg`);
+			it(`should render data when currently playing`, async () => {
+				// Given
+				const data = cloneDeep(LastFmData);
+				delete data.recenttracks.track[0].date;
+				global.fetch = jest.fn(() =>
+					Promise.resolve({
+						json: () => Promise.resolve(data),
+						status: 200,
+					})
+				);
 
-				expect(titleLink).toHaveAttribute('href', '/track-url');
-				expect(titleLink.textContent).toEqual(`"Track Name"`);
+				// When
+				await initialise();
 
-				expect(artistLink).toHaveAttribute('href', '/track-url');
-				expect(artistLink.textContent).toEqual(`Artist`);
-
-				expect(relativeTime.textContent).toEqual(`2 hours ago`);
+				// Then
+				assertCommonDataRendered();
+				expect(getByTestId('lastfm__relative-time').textContent).toEqual(`Now playing`);
+				expect(queryByTestId('lastfm__sound-icon')).toBeInTheDocument();
 			});
 		});
 	});
