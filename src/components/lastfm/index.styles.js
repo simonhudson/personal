@@ -76,8 +76,13 @@ const Image = styled.img`
 `;
 
 const StyledIcon = styled(Icon)`
-	color: ${({ theme }) => theme.palette.brands.bodyText};
+	color: ${({ theme }) => theme.palette.brands.lastFm};
+	font-size: ${rem(32)};
 	margin-right: ${({ theme }) => theme.spacing.sm};
 `;
 
-export { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon };
+const SoundIcon = styled.img`
+	height: ${rem(32)};
+`;
+
+export { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon };
