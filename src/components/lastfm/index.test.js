@@ -46,23 +46,6 @@ describe('LastFm', () => {
 		expect(artistLink.textContent).toEqual(`Artist`);
 	};
 
-	const assertCommonDataRendered = () => {
-		const imageLink = getByTestId('lastfm__image__link');
-		const image = getByTestId('lastfm__image__image');
-		const titleLink = getByTestId('lastfm__title__link');
-		const artistLink = getByTestId('lastfm__artist__link');
-
-		expect(imageLink).toHaveAttribute('href', '/track-url');
-		expect(image).toHaveAttribute('alt', `Now playing "Track Name" by Artist on Last.fm`);
-		expect(image).toHaveAttribute('src', `large.jpg`);
-
-		expect(titleLink).toHaveAttribute('href', '/track-url');
-		expect(titleLink.textContent).toEqual(`"Track Name"`);
-
-		expect(artistLink).toHaveAttribute('href', '/track-url');
-		expect(artistLink.textContent).toEqual(`Artist`);
-	};
-
 	it('should render basic UI', async () => {
 		// When
 		await initialise();
