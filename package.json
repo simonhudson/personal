@@ -1,11 +1,11 @@
 {
   "name": "personal",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Personal website of Simon Hudson",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec \"next dev -p 3001\"",
-    "build": "next build",
+    "build:prod": "next build",
     "start": "next start -p $PORT",
     "lint": "eslint ./**/**.js",
     "lint:fix": "eslint ./**/**.js --fix",
