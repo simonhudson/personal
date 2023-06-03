@@ -2,20 +2,31 @@ import React from 'react';
 import Link from 'next/link';
 import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem } from './item.styles';
 import { ButtonLink, VisuallyHidden } from 'src/theme/layout';
+import githubUrl from 'src/constants/githubUrl';
 import PropTypes from 'prop-types';
 
-const Item = ({ client, date, metadata, omit, slug, text, title, url, isArchived }) => {
+const Item = ({ client, date, metadata, omit, slug, title, url, isArchived }) => {
 	if (omit) return null;
 
+	const ctaText = url.startsWith(githubUrl) ? (
+		<>
+			View <VisuallyHidden>{title} </VisuallyHidden>on Github
+		</>
+	) : (
+		<>
+			View <VisuallyHidden>{title} </VisuallyHidden>site{isArchived ? ' (archived)' : ''}
+		</>
+	);
+
 	return (
-		<Wrap data-test="portfolio-item">
+		<Wrap data-testid="portfolio-item">
 			<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
 			<Content>
 				<Text>
-					<Client>
+					<Client data-testid="portfolio-item__client">
 						{client} / {date}
 					</Client>
-					<Title data-test="portfolio-item__title">{title}</Title>
+					<Title>{title}</Title>
 
 					{metadata &&
 						metadata.map((item, index) => {
@@ -30,9 +41,7 @@ const Item = ({ client, date, metadata, omit, slug, text, title, url, isArchived
 						})}
 					{url && (
 						<Link href={url}>
-							<ButtonLink href={url}>
-								View <VisuallyHidden>{title}&nbsp;</VisuallyHidden>site{isArchived ? ' (archived)' : ''}
-							</ButtonLink>
+							<ButtonLink href={url}>{ctaText}</ButtonLink>
 						</Link>
 					)}
 				</Text>
@@ -48,7 +57,6 @@ Item.propTypes = {
 	metadata: PropTypes.arrayOf(PropTypes.object).isRequired,
 	omit: PropTypes.bool,
 	slug: PropTypes.string.isRequired,
-	text: PropTypes.arrayOf(PropTypes.string).isRequired,
 	title: PropTypes.string.isRequired,
 	url: PropTypes.string,
 };

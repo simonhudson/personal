@@ -1,16 +1,16 @@
 import React from 'react';
-import Hero from './index';
+import Logo from './index';
 import { render } from 'test/utils';
 import { screen } from '@testing-library/react';
 
-describe('Hero', () => {
+describe('Logo', () => {
 	it(`should render as expected`, () => {
 		// When
 		initialise();
 
 		// Then
-		expect(screen.getByRole('heading').textContent).toEqual(`Hello, my name's Simon Hudson`);
+		expect(screen.getByRole('img')).toBeInTheDocument();
 	});
 
-	const initialise = () => render(<Hero />);
+	const initialise = () => render(<Logo />);
 });

@@ -1,3 +1,5 @@
+import githubUrl from 'src/constants/githubUrl';
+
 const AQUASEC = 'Aquasec';
 const AWS = 'AWS';
 const CHAI = 'Chai';
@@ -15,11 +17,13 @@ const JAVASCRIPT = 'Javascript';
 const JEST = 'Jest';
 const JQUERY = 'jQuery';
 const MOCHA = 'Mocha';
+const NETLIFY = 'Netlify';
 const NEXT_JS = 'Next.js';
 const NIGHTWATCH = 'Nightwatch';
 const NODE_JS = 'Node.js';
 const RAPID_7 = 'Rapid7';
 const REACT = 'React';
+const REACT_TESTING_LIBRARY = 'React Testing Library';
 const SASS = 'Sass';
 const SHAREPOINT = 'Sharepoint';
 const STYLED_COMPONENTS = 'Styled Components';
@@ -36,6 +40,30 @@ const TESTED_WITH = 'Tested with';
 const BUILT_WITH = 'Built with';
 
 module.exports = [
+	{
+		slug: 'personal',
+		title: 'Personal site',
+		client: 'Personal',
+		text: [
+			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget odio lacinia, sollicitudin urna et, lacinia ex. Mauris malesuada tortor tristique dui eleifend luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque augue, eu maximus orci. Vivamus in elit eu sem tincidunt sodales nec ac sapien',
+		],
+		url: `${githubUrl}personal`,
+		metadata: [
+			{
+				label: MADE_WITH,
+				items: [NEXT_JS, REACT, ES6, STYLED_COMPONENTS],
+			},
+			{
+				label: TESTED_WITH,
+				items: [JEST, REACT_TESTING_LIBRARY],
+			},
+			{
+				label: BUILT_WITH,
+				items: [NETLIFY],
+			},
+		],
+		date: '2023',
+	},
 	{
 		slug: 'experian-offers-hub',
 		title: 'Your Offers',

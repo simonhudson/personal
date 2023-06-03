@@ -11,7 +11,7 @@ const Error404 = () => {
 	return (
 		<Section>
 			<H1>Page not found</H1>
-			<Paragraph>
+			<Paragraph data-testid="404-copy">
 				Looks like we couldn&apos;t find that page. Would you like to{' '}
 				<Link href={getRoute(HOME)}>
 					<a>go back to the home page?</a>

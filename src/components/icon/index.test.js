@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from './index';
-import { getByTestId, render } from 'test/utils';
+import { render } from 'test/utils';
+import { screen } from '@testing-library/react';
 
 describe('Hero', () => {
 	it(`should render as expected`, () => {
@@ -14,7 +15,7 @@ describe('Hero', () => {
 		initialise(props);
 
 		// Then
-		const icon = getByTestId('icon-solid-foo');
+		const icon = screen.getByTestId('icon-solid-foo');
 		expect(icon).toBeInTheDocument();
 		expect(icon.getAttribute('class')).toContain('fas fa-foo bar');
 		expect(icon).toHaveAttribute('aria-hidden', 'true');

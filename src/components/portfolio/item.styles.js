@@ -58,7 +58,7 @@ const Client = styled.span`
 	text-transform: uppercase;
 `;
 
-const MetadataList = styled.dl`
+const MetadataList = styled.ul`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 	font-size: ${rem(14)};
 	margin: 0;
@@ -69,7 +69,7 @@ const MetadataList = styled.dl`
 	}
 `;
 
-const MetadataTitle = styled.dt`
+const MetadataTitle = styled.h4`
 	display: inline-block;
 	font-weight: 500;
 	margin: 0 ${({ theme }) => theme.spacing.sm} 0 0;
@@ -79,7 +79,7 @@ const MetadataTitle = styled.dt`
 	}
 `;
 
-const MetadataItem = styled.dd`
+const MetadataItem = styled.li`
 	display: inline;
 	margin: 0;
 

@@ -1,7 +1,8 @@
 import React from 'react';
 import LastFm from './index';
 import LastFmData from 'test/data/lastfm';
-import { getByTestId, queryByTestId, render } from 'test/utils';
+import { render } from 'test/utils';
+import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
 import { cloneDeep } from 'lodash';
 
@@ -24,15 +25,15 @@ describe('LastFm', () => {
 	});
 
 	const assertError = () => {
-		expect(getByTestId('lastfm__error')).toBeInTheDocument();
-		expect(getByTestId('lastfm__error').textContent).toEqual(`Sorry, couldn't load data from Last.fm :o(`);
+		expect(screen.getByTestId('lastfm__error')).toBeInTheDocument();
+		expect(screen.getByTestId('lastfm__error').textContent).toEqual(`Sorry, couldn't load data from Last.fm :o(`);
 	};
 
 	const assertCommonDataRendered = () => {
-		const imageLink = getByTestId('lastfm__image__link');
-		const image = getByTestId('lastfm__image__image');
-		const titleLink = getByTestId('lastfm__title__link');
-		const artistLink = getByTestId('lastfm__artist__link');
+		const imageLink = screen.getByTestId('lastfm__image__link');
+		const image = screen.getByTestId('lastfm__image__image');
+		const titleLink = screen.getByTestId('lastfm__title__link');
+		const artistLink = screen.getByTestId('lastfm__artist__link');
 
 		expect(imageLink).toHaveAttribute('href', '/track-url');
 		expect(image).toHaveAttribute('alt', `Now playing "Track Name" by Artist on Last.fm`);
@@ -50,7 +51,7 @@ describe('LastFm', () => {
 		await initialise();
 
 		// Then
-		expect(getByTestId('lastfm__heading').textContent).toEqual('Last.fm');
+		expect(screen.getByTestId('lastfm__heading').textContent).toEqual('Last.fm');
 	});
 
 	describe('Fetching data', () => {
@@ -112,8 +113,8 @@ describe('LastFm', () => {
 
 				// Then
 				assertCommonDataRendered();
-				expect(getByTestId('lastfm__relative-time').textContent).toEqual(`2 hours ago`);
-				expect(queryByTestId('lastfm__sound-icon')).not.toBeInTheDocument();
+				expect(screen.getByTestId('lastfm__relative-time').textContent).toEqual(`2 hours ago`);
+				expect(screen.queryByTestId('lastfm__sound-icon')).not.toBeInTheDocument();
 			});
 
 			it(`should render data when currently playing`, async () => {
@@ -132,8 +133,8 @@ describe('LastFm', () => {
 
 				// Then
 				assertCommonDataRendered();
-				expect(getByTestId('lastfm__relative-time').textContent).toEqual(`Now playing`);
-				expect(queryByTestId('lastfm__sound-icon')).toBeInTheDocument();
+				expect(screen.getByTestId('lastfm__relative-time').textContent).toEqual(`Now playing`);
+				expect(screen.queryByTestId('lastfm__sound-icon')).toBeInTheDocument();
 			});
 		});
 	});

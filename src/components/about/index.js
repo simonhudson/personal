@@ -9,7 +9,7 @@ import Links from './links';
 const AboutMe = () => {
 	return (
 		<Section>
-			<H2 data-testid="heading">About me</H2>
+			<H2>About me</H2>
 			<Wrap>
 				<Content>
 					<Paragraph>

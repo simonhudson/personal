@@ -1,20 +1,11 @@
 import React from 'react';
 import { StyledLogo } from './index.styles';
 import { palette } from 'src/theme';
-import PropTypes from 'prop-types';
 
-const Logo = ({ context }) => {
+const Logo = () => {
 	const fillColor = 'brand';
 	return (
-		<StyledLogo
-			data-test="site-logo"
-			onClick={(e) => (context === 'footer' ? scrollToElement(e, 'top') : null)}
-			context={context}
-			xmlns="http://www.w3.org/2000/svg"
-			width="58"
-			height="58"
-			viewBox="0 0 58 58"
-		>
+		<StyledLogo role="img" xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58">
 			<defs>
 				<style>{`.cls-1 { fill: ${palette.primary[fillColor]}; fill-rule: evenodd; }`}</style>
 			</defs>
@@ -46,14 +37,6 @@ const Logo = ({ context }) => {
 			/>
 		</StyledLogo>
 	);
-};
-
-Logo.propTypes = {
-	context: PropTypes.oneOf([undefined, 'footer']),
-};
-
-Logo.defaultProps = {
-	context: undefined,
 };
 
 export default Logo;
