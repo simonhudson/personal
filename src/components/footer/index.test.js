@@ -1,6 +1,7 @@
 import React from 'react';
 import Footer from './index';
-import { getByTestId, render } from 'test/utils';
+import { render } from 'test/utils';
+import { screen } from '@testing-library/react';
 
 describe('Footer', () => {
 	it(`should render as expected`, () => {
@@ -8,7 +9,7 @@ describe('Footer', () => {
 		initialise();
 
 		// Then
-		expect(getByTestId('footer')).toBeInTheDocument();
+		expect(screen.getByTestId('footer')).toBeInTheDocument();
 	});
 
 	const initialise = () => render(<Footer />);

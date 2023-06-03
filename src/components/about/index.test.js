@@ -1,7 +1,8 @@
 import React from 'react';
 import About from './index';
 import LastFmData from 'test/data/lastfm';
-import { getByTestId, render } from 'test/utils';
+import { render } from 'test/utils';
+import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
 
 const ORIGINAL_FETCH = global.fetch;
@@ -25,7 +26,7 @@ describe('About', () => {
 		await initialise();
 
 		// Then
-		expect(getByTestId('heading').textContent).toEqual('About me');
+		expect(screen.getByRole('heading').textContent).toEqual('About me');
 	});
 
 	it(`should render expected links`, async () => {
@@ -50,8 +51,8 @@ describe('About', () => {
 				href: 'https://www.linkedin.com/in/hellosimonhudson/',
 			},
 		].forEach((item) => {
-			expect(getByTestId(item.testid).textContent).toEqual(item.text);
-			expect(getByTestId(item.testid)).toHaveAttribute('href', item.href);
+			expect(screen.getByTestId(item.testid).textContent).toEqual(item.text);
+			expect(screen.getByTestId(item.testid)).toHaveAttribute('href', item.href);
 		});
 	});
 

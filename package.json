@@ -1,6 +1,6 @@
 {
   "name": "personal",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Personal website of Simon Hudson",
   "main": "index.js",
   "scripts": {
@@ -44,6 +44,7 @@
     "@babel/core": "^7.18.9",
     "@babel/preset-env": "^7.21.4",
     "@babel/preset-react": "^7.18.6",
+    "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "babel-jest": "^29.5.0",
