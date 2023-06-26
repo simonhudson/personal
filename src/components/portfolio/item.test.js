@@ -3,7 +3,7 @@ import Item from './item';
 import { render } from 'test/utils';
 import { screen } from '@testing-library/react';
 import { within } from '@testing-library/dom';
-import { cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
 
 const baseProps = {
 	slug: 'some-slug',
@@ -21,7 +21,7 @@ const baseProps = {
 		},
 		{
 			label: 'Built with',
-			items: ['Bryson', 'Hughes', 'Thorne'],
+			items: ['Bryson', 'Hughes', 'Eustace'],
 		},
 	],
 	date: '2023',
@@ -41,7 +41,7 @@ describe('Item', () => {
 		initialise(props);
 
 		// Then
-		expect(screen.queryByTestId('portfolio-item')).not.toBeInTheDocument();
+		expect(screen.queryByRole('heading', { level: 3 })).not.toBeInTheDocument();
 	});
 
 	describe(`should render with expected`, () => {
@@ -50,7 +50,7 @@ describe('Item', () => {
 			initialise(props);
 
 			// Then
-			expect(screen.queryByTestId('portfolio-item')).toBeInTheDocument();
+			expect(screen.getByRole('heading', { level: 3 })).toBeInTheDocument();
 
 			const image = screen.getByRole('img');
 			expect(image).toHaveAttribute('alt', 'Foo title screen shot');
@@ -62,9 +62,8 @@ describe('Item', () => {
 			initialise(props);
 
 			// Then
-			expect(screen.queryByTestId('portfolio-item')).toBeInTheDocument();
-			expect(screen.getByTestId('portfolio-item__client').textContent).toEqual('Some client / 2023');
-			expect(screen.getAllByRole('heading')[0].textContent).toEqual('Foo title');
+			expect(screen.getByText('Some client / 2023')).toBeInTheDocument();
+			expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Foo title');
 		});
 
 		it('metadata', () => {
@@ -72,26 +71,35 @@ describe('Item', () => {
 			initialise(props);
 
 			// Then
-			expect(screen.queryByTestId('portfolio-item')).toBeInTheDocument();
+			const metadataHeadings = screen.getAllByRole('heading', { level: 4 });
+			expect(metadataHeadings.at(0)).toHaveTextContent('Made with');
+			expect(metadataHeadings.at(0)).toHaveAttribute('id', 'metadata-some-slug-made-with');
+			expect(metadataHeadings.at(1)).toHaveTextContent('Tested with');
+			expect(metadataHeadings.at(1)).toHaveAttribute('id', 'metadata-some-slug-tested-with');
+			expect(metadataHeadings.at(2)).toHaveTextContent('Built with');
+			expect(metadataHeadings.at(2)).toHaveAttribute('id', 'metadata-some-slug-built-with');
 
-			expect(screen.getAllByRole('heading')[1].textContent).toEqual('Made with');
-			const listOneItems = within(screen.getAllByRole('list')[0]).getAllByRole('listitem');
-			expect(listOneItems[0].textContent).toEqual('Bruce');
-			expect(listOneItems[1].textContent).toEqual('Clarence');
-			expect(listOneItems[2].textContent).toEqual('Steve');
+			const listOne = screen.getAllByRole('list').at(0);
+			expect(listOne).toHaveAttribute('aria-labelledby', 'metadata-some-slug-made-with');
+			const listOneItems = within(listOne).getAllByRole('listitem');
+			expect(listOneItems.at(0)).toHaveTextContent('Bruce');
+			expect(listOneItems.at(1)).toHaveTextContent('Clarence');
+			expect(listOneItems.at(2)).toHaveTextContent('Steve');
 
-			expect(screen.getAllByRole('heading')[2].textContent).toEqual('Tested with');
-			const listTwoItems = within(screen.getAllByRole('list')[1]).getAllByRole('listitem');
-			expect(listTwoItems[0].textContent).toEqual('Mick');
-			expect(listTwoItems[1].textContent).toEqual('Keith');
-			expect(listTwoItems[2].textContent).toEqual('Ronnie');
-			expect(listTwoItems[3].textContent).toEqual('Charlie');
+			const listTwo = screen.getAllByRole('list').at(1);
+			expect(listTwo).toHaveAttribute('aria-labelledby', 'metadata-some-slug-tested-with');
+			const listTwoItems = within(listTwo).getAllByRole('listitem');
+			expect(listTwoItems.at(0)).toHaveTextContent('Mick');
+			expect(listTwoItems.at(1)).toHaveTextContent('Keith');
+			expect(listTwoItems.at(2)).toHaveTextContent('Ronnie');
+			expect(listTwoItems.at(3)).toHaveTextContent('Charlie');
 
-			expect(screen.getAllByRole('heading')[3].textContent).toEqual('Built with');
-			const listThreeItems = within(screen.getAllByRole('list')[2]).getAllByRole('listitem');
-			expect(listThreeItems[0].textContent).toEqual('Bryson');
-			expect(listThreeItems[1].textContent).toEqual('Hughes');
-			expect(listThreeItems[2].textContent).toEqual('Thorne');
+			const listThree = screen.getAllByRole('list').at(2);
+			expect(listThree).toHaveAttribute('aria-labelledby', 'metadata-some-slug-built-with');
+			const listThreeItems = within(listThree).getAllByRole('listitem');
+			expect(listThreeItems.at(0)).toHaveTextContent('Bryson');
+			expect(listThreeItems.at(1)).toHaveTextContent('Hughes');
+			expect(listThreeItems.at(2)).toHaveTextContent('Eustace');
 		});
 
 		describe('link', () => {
@@ -104,7 +112,7 @@ describe('Item', () => {
 
 				// Then
 				const link = screen.getByRole('link');
-				expect(link.textContent).toEqual('View Foo title on Github');
+				expect(link).toHaveTextContent('View Foo title on Github');
 				expect(link).toHaveAttribute('href', 'https://github.com/simonhudson/foo');
 			});
 
@@ -114,7 +122,7 @@ describe('Item', () => {
 
 				// Then
 				const link = screen.getByRole('link');
-				expect(link.textContent).toEqual('View Foo title site');
+				expect(link).toHaveTextContent('View Foo title site');
 				expect(link).toHaveAttribute('href', 'http://foo.com');
 			});
 
@@ -127,7 +135,7 @@ describe('Item', () => {
 
 				// Then
 				const link = screen.getByRole('link');
-				expect(link.textContent).toEqual('View Foo title site (archived)');
+				expect(link).toHaveTextContent('View Foo title site (archived)');
 				expect(link).toHaveAttribute('href', 'http://foo.com');
 			});
 		});

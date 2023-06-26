@@ -22,6 +22,11 @@ const Wrap = styled.div`
 		)};
 `;
 
+const TitleWrap = styled.div`
+	display: flex;
+	flex-direction: column-reverse;
+`;
+
 const Img = styled.img`
 	display: block;
 	height: auto;
@@ -58,20 +63,25 @@ const Client = styled.span`
 	text-transform: uppercase;
 `;
 
-const MetadataList = styled.ul`
-	color: ${({ theme }) => theme.palette.primary.bodyText};
-	font-size: ${rem(14)};
-	margin: 0;
-	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+const MetadataWrap = styled.div`
+	display: flex;
 
 	&:last-of-type {
 		margin: 0 0 ${({ theme }) => theme.spacing.default} 0;
 	}
 `;
 
+const MetadataList = styled.ul`
+	color: ${({ theme }) => theme.palette.primary.bodyText};
+	font-size: ${rem(14)};
+	margin: 0;
+	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+`;
+
 const MetadataTitle = styled.h4`
 	display: inline-block;
 	font-weight: 500;
+	font-size: ${rem(14)};
 	margin: 0 ${({ theme }) => theme.spacing.sm} 0 0;
 
 	&::after {
@@ -90,4 +100,4 @@ const MetadataItem = styled.li`
 	}
 `;
 
-export { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem };
+export { Wrap, TitleWrap, Img, Content, Text, Title, Client, MetadataWrap, MetadataList, MetadataTitle, MetadataItem };

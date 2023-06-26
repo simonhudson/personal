@@ -9,7 +9,8 @@ describe('Footer', () => {
 		initialise();
 
 		// Then
-		expect(screen.getByTestId('footer')).toBeInTheDocument();
+		expect(screen.getByRole('contentinfo')).toBeInTheDocument();
+		expect(screen.getByText('Simon Hudson', { exact: false })).toBeInTheDocument();
 	});
 
 	const initialise = () => render(<Footer />);

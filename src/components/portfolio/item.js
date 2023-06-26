@@ -1,9 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem } from './item.styles';
+import {
+	Wrap,
+	TitleWrap,
+	Img,
+	Content,
+	Text,
+	Title,
+	Client,
+	MetadataWrap,
+	MetadataList,
+	MetadataTitle,
+	MetadataItem,
+} from './item.styles';
 import { ButtonLink, VisuallyHidden } from 'src/theme/layout';
 import githubUrl from 'src/constants/githubUrl';
 import PropTypes from 'prop-types';
+import kebabCase from 'lodash/kebabCase';
 
 const Item = ({ client, date, metadata, omit, slug, title, url, isArchived }) => {
 	if (omit) return null;
@@ -19,24 +32,28 @@ const Item = ({ client, date, metadata, omit, slug, title, url, isArchived }) =>
 	);
 
 	return (
-		<Wrap data-testid="portfolio-item">
-			<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
+		<Wrap>
 			<Content>
 				<Text>
-					<Client data-testid="portfolio-item__client">
-						{client} / {date}
-					</Client>
-					<Title>{title}</Title>
-
+					<TitleWrap>
+						<Title>{title}</Title>
+						<Client>
+							{client} / {date}
+						</Client>
+						<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
+					</TitleWrap>
 					{metadata &&
 						metadata.map((item, index) => {
+							const ariaLabel = `metadata-${slug}-${kebabCase(item.label)}`;
 							return (
-								<MetadataList key={`metadata-list--${index}`}>
-									<MetadataTitle>{item.label}</MetadataTitle>
-									{item.items.map((item, index) => {
-										return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
-									})}
-								</MetadataList>
+								<MetadataWrap>
+									<MetadataTitle id={ariaLabel}>{item.label}</MetadataTitle>
+									<MetadataList key={ariaLabel} aria-labelledby={ariaLabel}>
+										{item.items.map((item, index) => {
+											return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
+										})}
+									</MetadataList>
+								</MetadataWrap>
 							);
 						})}
 					{url && (

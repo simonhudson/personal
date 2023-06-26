@@ -26,7 +26,7 @@ describe('About', () => {
 		await initialise();
 
 		// Then
-		expect(screen.getByRole('heading').textContent).toEqual('About me');
+		expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('About me');
 	});
 
 	it(`should render expected links`, async () => {
@@ -50,9 +50,9 @@ describe('About', () => {
 				text: 'LinkedIn profile',
 				href: 'https://www.linkedin.com/in/hellosimonhudson/',
 			},
-		].forEach((item) => {
-			expect(screen.getByTestId(item.testid).textContent).toEqual(item.text);
-			expect(screen.getByTestId(item.testid)).toHaveAttribute('href', item.href);
+		].forEach((item, index) => {
+			expect(screen.getAllByRole('link').at(index)).toHaveTextContent(item.text);
+			expect(screen.getAllByRole('link').at(index)).toHaveAttribute('href', item.href);
 		});
 	});
 

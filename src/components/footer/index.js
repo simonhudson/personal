@@ -5,12 +5,10 @@ import dayjs from 'dayjs';
 
 const Footer = () => {
 	return (
-		<footer data-testid="footer">
+		<footer>
 			<StyledSection>
 				<Wrapper>
-					<StyledParagraph data-testid="footer__copyright">
-						&copy; {dayjs().year()} Simon Hudson
-					</StyledParagraph>
+					<StyledParagraph>&copy; {dayjs().year()} Simon Hudson</StyledParagraph>
 				</Wrapper>
 			</StyledSection>
 		</footer>

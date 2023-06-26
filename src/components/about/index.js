@@ -30,7 +30,7 @@ const AboutMe = () => {
 								return (
 									<LinksItem key={`link-${index}`}>
 										<Link href={item.link}>
-											<LinksLink href={item.link} data-testid={item.testid}>
+											<LinksLink href={item.link}>
 												{item.text}
 												<StyledIcon type={item.icon.type} name={item.icon.name} />
 											</LinksLink>

@@ -9,7 +9,7 @@ describe('Hero', () => {
 		initialise();
 
 		// Then
-		expect(screen.getByRole('heading').textContent).toEqual(`Hello, my name's Simon Hudson`);
+		expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent(`Hello, my name's Simon Hudson`);
 	});
 
 	const initialise = () => render(<Hero />);

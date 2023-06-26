@@ -23,7 +23,7 @@ const Loading = ({ isLoading }) => {
 };
 
 Loading.propTypes = {
-	isLoading: PropTypes.bool.isRequired,
+	isLoading: PropTypes.bool,
 };
 
 export default Loading;

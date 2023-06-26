@@ -9,8 +9,7 @@ describe('Portfolio', () => {
 		initialise();
 
 		// Then
-		expect(screen.getAllByRole('heading')[0].textContent).toEqual('My work');
-		expect(screen.getByTestId('portfolio-wrap')).toBeInTheDocument();
+		expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('My work');
 	});
 
 	const initialise = () => render(<Portfolio />);
