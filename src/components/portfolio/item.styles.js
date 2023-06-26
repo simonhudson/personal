@@ -22,6 +22,11 @@ const Wrap = styled.div`
 		)};
 `;
 
+const TitleWrap = styled.div`
+	display: flex;
+	flex-direction: column-reverse;
+`;
+
 const Img = styled.img`
 	display: block;
 	height: auto;
@@ -90,4 +95,4 @@ const MetadataItem = styled.li`
 	}
 `;
 
-export { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem };
+export { Wrap, TitleWrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem };

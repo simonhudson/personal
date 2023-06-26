@@ -1,6 +1,17 @@
 import React from 'react';
 import Link from 'next/link';
-import { Wrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem } from './item.styles';
+import {
+	Wrap,
+	TitleWrap,
+	Img,
+	Content,
+	Text,
+	Title,
+	Client,
+	MetadataList,
+	MetadataTitle,
+	MetadataItem,
+} from './item.styles';
 import { ButtonLink, VisuallyHidden } from 'src/theme/layout';
 import githubUrl from 'src/constants/githubUrl';
 import PropTypes from 'prop-types';
@@ -20,14 +31,15 @@ const Item = ({ client, date, metadata, omit, slug, title, url, isArchived }) =>
 
 	return (
 		<Wrap data-testid="portfolio-item">
-			<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
 			<Content>
 				<Text>
-					<Client data-testid="portfolio-item__client">
-						{client} / {date}
-					</Client>
-					<Title>{title}</Title>
-
+					<TitleWrap>
+						<Title>{title}</Title>
+						<Client data-testid="portfolio-item__client">
+							{client} / {date}
+						</Client>
+						<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
+					</TitleWrap>
 					{metadata &&
 						metadata.map((item, index) => {
 							return (
