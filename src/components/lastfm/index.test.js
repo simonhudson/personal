@@ -25,15 +25,15 @@ describe('LastFm', () => {
 	});
 
 	const assertError = () => {
-		expect(screen.getByTestId('lastfm__error')).toBeInTheDocument();
-		expect(screen.getByTestId('lastfm__error').textContent).toEqual(`Sorry, couldn't load data from Last.fm :o(`);
+		expect(screen.queryByText(`Sorry, couldn't load data from Last.fm :o(`)).toBeInTheDocument();
 	};
 
 	const assertCommonDataRendered = () => {
-		const imageLink = screen.getByTestId('lastfm__image__link');
-		const image = screen.getByTestId('lastfm__image__image');
-		const titleLink = screen.getByTestId('lastfm__title__link');
-		const artistLink = screen.getByTestId('lastfm__artist__link');
+		const links = screen.getAllByRole('link');
+		const imageLink = links.at(0);
+		const image = screen.getByRole('img');
+		const titleLink = links.at(1);
+		const artistLink = links.at(2);
 
 		expect(imageLink).toHaveAttribute('href', '/track-url');
 		expect(image).toHaveAttribute('alt', `Now playing "Track Name" by Artist on Last.fm`);
@@ -51,7 +51,7 @@ describe('LastFm', () => {
 		await initialise();
 
 		// Then
-		expect(screen.getByTestId('lastfm__heading').textContent).toEqual('Last.fm');
+		expect(screen.getByRole('heading')).toHaveTextContent('Last.fm');
 	});
 
 	describe('Fetching data', () => {
@@ -113,8 +113,7 @@ describe('LastFm', () => {
 
 				// Then
 				assertCommonDataRendered();
-				expect(screen.getByTestId('lastfm__relative-time').textContent).toEqual(`2 hours ago`);
-				expect(screen.queryByTestId('lastfm__sound-icon')).not.toBeInTheDocument();
+				expect(screen.getByText('2 hours ago')).toBeInTheDocument();
 			});
 
 			it(`should render data when currently playing`, async () => {
@@ -133,8 +132,11 @@ describe('LastFm', () => {
 
 				// Then
 				assertCommonDataRendered();
-				expect(screen.getByTestId('lastfm__relative-time').textContent).toEqual(`Now playing`);
-				expect(screen.queryByTestId('lastfm__sound-icon')).toBeInTheDocument();
+				expect(screen.getByText('Now playing')).toBeInTheDocument();
+				expect(screen.getAllByRole('img', { hidden: true }).at(2)).toHaveAttribute(
+					'src',
+					'/images/icon-audio-wave.gif'
+				);
 			});
 		});
 	});

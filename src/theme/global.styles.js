@@ -8,7 +8,7 @@ const GlobalStyles = createGlobalStyle`
     fieldset {
         box-sizing: border-box;
         font-family: ${font.sansSerif};
-        font-size: ${font.size};
+        font-size: ${font.size}px;
         font-weight: ${font.weight};
         margin: 0;
         padding: 0;

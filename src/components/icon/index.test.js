@@ -15,9 +15,9 @@ describe('Hero', () => {
 		initialise(props);
 
 		// Then
-		const icon = screen.getByTestId('icon-solid-foo');
+		const icon = screen.getByRole('img', { hidden: true });
 		expect(icon).toBeInTheDocument();
-		expect(icon.getAttribute('class')).toContain('fas fa-foo bar');
+		expect(icon).toHaveClass('fas fa-foo bar');
 		expect(icon).toHaveAttribute('aria-hidden', 'true');
 	});
 

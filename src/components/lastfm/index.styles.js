@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { Paragraph } from 'src/theme/typography';
+import { Paragraph, H3 } from 'src/theme/typography';
 import Icon from 'src/components/icon';
 
 const Wrap = styled.div`

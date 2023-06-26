@@ -47,45 +47,39 @@ const LastFm = () => {
 		<Wrap>
 			<HeadingWrap>
 				<StyledIcon type="brand" name="lastfm-square" />
-				<Heading data-testid="lastfm__heading">Last.fm</Heading>
+				<Heading role="heading">Last.fm</Heading>
 			</HeadingWrap>
 			<Loading isLoading={isLoading} />
 			{!errorMsg && data && (
 				<InnerWrap>
 					<Link href={data.url}>
-						<a data-testid="lastfm__image__link">
+						<a>
 							<Image
 								alt={`Now playing "${data.name}" by ${data.artist?.['#text']} on Last.fm`}
 								src={data?.image?.[2]?.['#text']}
-								data-testid="lastfm__image__image"
 							/>
 						</a>
 					</Link>
 					<StyledParagraph>
 						<span>
 							<Link href={data.url}>
-								<a data-testid="lastfm__title__link">&quot;{data.name}&quot;</a>
+								<a>&quot;{data.name}&quot;</a>
 							</Link>
 						</span>
 						<span>
 							<em>by</em>{' '}
 							<Link href={data.url}>
-								<a data-testid="lastfm__artist__link">{data.artist?.['#text']}</a>
+								<a>{data.artist?.['#text']}</a>
 							</Link>
 						</span>
-						<span data-testid="lastfm__relative-time">{data.relativeTime}</span>
+						<span>{data.relativeTime}</span>
 						{data.isCurrentlyPlaying && (
-							<SoundIcon
-								alt=""
-								aria-hidden="true"
-								data-testid="lastfm__sound-icon"
-								src="/images/icon-audio-wave.gif"
-							/>
+							<SoundIcon alt="" aria-hidden="true" src="/images/icon-audio-wave.gif" />
 						)}
 					</StyledParagraph>
 				</InnerWrap>
 			)}
-			{errorMsg && <p data-testid="lastfm__error">{errorMsg}</p>}
+			{errorMsg && <p>{errorMsg}</p>}
 		</Wrap>
 	);
 };

@@ -8,6 +8,7 @@ import {
 	Text,
 	Title,
 	Client,
+	MetadataWrap,
 	MetadataList,
 	MetadataTitle,
 	MetadataItem,
@@ -15,6 +16,7 @@ import {
 import { ButtonLink, VisuallyHidden } from 'src/theme/layout';
 import githubUrl from 'src/constants/githubUrl';
 import PropTypes from 'prop-types';
+import kebabCase from 'lodash/kebabCase';
 
 const Item = ({ client, date, metadata, omit, slug, title, url, isArchived }) => {
 	if (omit) return null;
@@ -30,25 +32,28 @@ const Item = ({ client, date, metadata, omit, slug, title, url, isArchived }) =>
 	);
 
 	return (
-		<Wrap data-testid="portfolio-item">
+		<Wrap>
 			<Content>
 				<Text>
 					<TitleWrap>
 						<Title>{title}</Title>
-						<Client data-testid="portfolio-item__client">
+						<Client>
 							{client} / {date}
 						</Client>
 						<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
 					</TitleWrap>
 					{metadata &&
 						metadata.map((item, index) => {
+							const ariaLabel = `metadata-${slug}-${kebabCase(item.label)}`;
 							return (
-								<MetadataList key={`metadata-list--${index}`}>
-									<MetadataTitle>{item.label}</MetadataTitle>
-									{item.items.map((item, index) => {
-										return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
-									})}
-								</MetadataList>
+								<MetadataWrap>
+									<MetadataTitle id={ariaLabel}>{item.label}</MetadataTitle>
+									<MetadataList key={ariaLabel} aria-labelledby={ariaLabel}>
+										{item.items.map((item, index) => {
+											return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
+										})}
+									</MetadataList>
+								</MetadataWrap>
 							);
 						})}
 					{url && (

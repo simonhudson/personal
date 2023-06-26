@@ -10,9 +10,9 @@ const Icon = ({ type, name, className }) => {
 
 	return (
 		<StyledIcon
-			className={`${typeMapping[type]} fa-${name} ${className}`}
+			role="img"
 			aria-hidden="true"
-			data-testid={`icon-${type}-${name}`}
+			className={`${typeMapping[type]} fa-${name} ${className}`}
 		></StyledIcon>
 	);
 };

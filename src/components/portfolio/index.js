@@ -9,7 +9,7 @@ const Portfolio = () => {
 	return (
 		<Section>
 			<H2>My work</H2>
-			<Wrap data-testid="portfolio-wrap">
+			<Wrap>
 				{data.map((item, index) => (
 					<Item key={index} {...item} />
 				))}
