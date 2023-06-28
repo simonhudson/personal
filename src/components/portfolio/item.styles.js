@@ -59,8 +59,7 @@ const Client = styled.span`
 const MetadataList = styled.ul`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 	font-size: ${rem(14)};
-	margin: 0 0 ${({ theme }) => theme.spacing.sm};
-	padding: 0 0 ${({ theme }) => theme.spacing.sm};
+	margin: 0 0 ${({ theme }) => theme.spacing.default};
 
 	&:last-of-type {
 		margin: 0 0 ${({ theme }) => theme.spacing.md};
