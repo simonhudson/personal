@@ -46,7 +46,6 @@ const Item = ({ client, date, metadata, omit, slug, title, url, isArchived }) =>
 							const ariaLabel = `metadata-${slug}-${kebabCase(item.label)}`;
 							return (
 								<>
-									{' '}
 									<MetadataTitle id={ariaLabel}>{item.label}</MetadataTitle>
 									<MetadataList key={ariaLabel} aria-labelledby={ariaLabel}>
 										{item.items.map((item, index) => {
