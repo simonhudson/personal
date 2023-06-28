@@ -5,7 +5,14 @@ import { palette } from 'src/theme';
 const Logo = () => {
 	const fillColor = 'brand';
 	return (
-		<StyledLogo role="img" xmlns="http://www.w3.org/2000/svg" width="58" height="58" viewBox="0 0 58 58">
+		<StyledLogo
+			aria-label="Simon Hudson logo"
+			role="img"
+			xmlns="http://www.w3.org/2000/svg"
+			width="58"
+			height="58"
+			viewBox="0 0 58 58"
+		>
 			<defs>
 				<style>{`.cls-1 { fill: ${palette.primary[fillColor]}; fill-rule: evenodd; }`}</style>
 			</defs>
