@@ -45,14 +45,14 @@ const Item = ({ client, date, metadata, omit, slug, title, url, isArchived }) =>
 						metadata.map((item, index) => {
 							const ariaLabel = `metadata-${slug}-${kebabCase(item.label)}`;
 							return (
-								<>
+								<React.Fragment key={`${ariaLabel}-${index}`}>
 									<MetadataTitle id={ariaLabel}>{item.label}</MetadataTitle>
 									<MetadataList key={ariaLabel} aria-labelledby={ariaLabel}>
 										{item.items.map((item, index) => {
 											return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
 										})}
 									</MetadataList>
-								</>
+								</React.Fragment>
 							);
 						})}
 					{url && (
