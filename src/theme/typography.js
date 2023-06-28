@@ -45,11 +45,13 @@ const H2 = styled.h2`
 
 const H3 = styled.h3`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
-	font-family: ${({ theme }) => theme.font.heading};
-	font-size: ${rem(18)};
-	font-weight: 400;
+	font-family: ${({ theme }) => theme.font.sansSerif};
+	font-size: ${({ theme }) => rem(theme.font.size)};
+	font-weight: 700;
 	line-height: ${rem(30)};
 	margin: 0 0 ${({ theme }) => theme.spacing.sm};
+	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+	text-transform: uppercase;
 
 	${({ theme }) =>
 		theme.media(

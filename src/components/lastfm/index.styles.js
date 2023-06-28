@@ -28,11 +28,9 @@ const HeadingWrap = styled.div`
 	margin: 0 0 ${rem(24)};
 `;
 
-const Heading = styled(Paragraph)`
-	font-weight: 700;
-	line-height: ${rem(16)};
+const Heading = styled(H3)`
 	margin: 0;
-	text-transform: uppercase;
+	padding: 0;
 `;
 
 const StyledParagraph = styled(Paragraph)`

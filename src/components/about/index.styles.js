@@ -54,6 +54,7 @@ const LinksList = styled.ul`
 `;
 
 const LinksItem = styled.li`
+	margin: 0 0 ${({ theme }) => theme.spacing.default};
 	text-align: center;
 	width: 100%;
 `;
