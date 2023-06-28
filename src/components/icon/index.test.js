@@ -3,7 +3,7 @@ import Icon from './index';
 import { render } from 'test/utils';
 import { screen } from '@testing-library/react';
 
-describe('Hero', () => {
+describe('Icon', () => {
 	it(`should render as expected`, () => {
 		// Given
 		const props = {

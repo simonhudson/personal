@@ -3,6 +3,7 @@ module.exports = {
 	snapshotSerializers: ['enzyme-to-json/serializer'],
 	setupFilesAfterEnv: ['<rootDir>/test/jestsetup.js'],
 	transform: {
+		'^.+\\.(ts|tsx)?$': 'ts-jest',
 		'^.+\\.jsx?$': 'babel-jest',
 		'.+\\.(css|styl|less|sass|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
 	},
