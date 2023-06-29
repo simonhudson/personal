@@ -7,14 +7,13 @@ type Props = {
 	className: string
 }
 
-const Icon: React.FC<Props> = ({type, name, className}) => {
-	const typeMapping = {
-		solid: 'fas',
-		brand: 'fab',
-	};
+const typeMapping = {
+	solid: 'fas',
+	brand: 'fab',
+};
 
+const Icon: React.FC<Props> = ({type, name, className}) => {
 	return <StyledIcon role="img" aria-hidden="true" className={`${typeMapping[type]} fa-${name} ${className}`}></StyledIcon>
-	
 };
 
 export default Icon;

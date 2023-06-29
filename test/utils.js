@@ -5,8 +5,6 @@ import Theme from 'src/theme';
 
 const theme = { ...Theme };
 
-module.exports = {
-	render(childToRender) {
-		return doRender(<ThemeProvider theme={theme}>{childToRender}</ThemeProvider>);
-	},
+export const render = (childToRender) => {
+	return doRender(<ThemeProvider theme={theme}>{childToRender}</ThemeProvider>);
 };
