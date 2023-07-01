@@ -24,7 +24,7 @@ const AboutMe = () => {
 					</Paragraph>
 					<Paragraph>
 						I have a real passion for building accessible user interfaces which can be easily used by as many people as possible. I enjoy trying to identify any barriers which people may face when using applications, and coming up with creative solutions to make their experience as frictionless as possible. I'm also a big fan of clean code, test-driven development, and semantic HTML.
-					</Paragraph>
+          </Paragraph>
 					{Links && (
 						<LinksList>
 							{Links.map((item, index) => {
