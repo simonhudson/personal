@@ -12,14 +12,12 @@ const AboutMe = () => {
 			<H2>About me</H2>
 			<Wrap>
 				<Content>
-					<Paragraph>
-						<Strong>
-							I am an experienced front&ndash;end developer who uses HTML, CSS and JavaScript to create
-							accessible and usable websites and applications.
+		<Paragraph>						<Strong>
+							I've been working in web development since 2004, back when all this was just fields and we had to use <Link href="https://gist.github.com/Awilum/5589742"><a href="https://gist.github.com/Awilum/5589742">all manner of nasty hacks to get our CSS working</a></Link>.
 						</Strong>
-					</Paragraph>
+		</Paragraph>
 					<Paragraph>
-						I've been working in web development since 2004, back when all this was just fields and we had to use <Link href="https://gist.github.com/Awilum/5589742"><a href="https://gist.github.com/Awilum/5589742">all manner of nasty hacks to get our CSS working</a></Link>. In that time I have worked on a wide range of projects, from small brochure-ware microsites through to enterprise-level single-page web apps serving millions of users.
+		In that time I have worked on a wide range of projects, from small brochure-ware microsites through to enterprise-level single-page web apps serving millions of users.
 					</Paragraph>
 					<Paragraph>
 						I'm currently working at Experian, where I spend most of my day working with React and Node to build and maintain their <Link href="https://creditmatcher.experian.co.uk"><a href="https://creditmatcher.experian.co.uk">Marketplace</a></Link> web app.
