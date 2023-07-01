@@ -78,7 +78,7 @@ const ButtonLink = styled.a`
 	font-size: ${rem(14)};
 	font-weight: 700;
 	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
-
+ text-decoration: none;
 	&:focus-visible {
 		background: ${({ theme }) => theme.palette.primary.bodyText};
 		color: ${({ theme }) => theme.palette.primary.white};
