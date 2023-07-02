@@ -23,7 +23,7 @@ const AboutMe = () => {
 						I'm currently working at Experian, where I spend most of my day working with React and Node to build and maintain their <Link href="https://creditmatcher.experian.co.uk"><a href="https://creditmatcher.experian.co.uk">Marketplace</a></Link> web app.
 					</Paragraph>
 					<Paragraph>
-						I have a real passion for building accessible user interfaces which can be easily used by as many people as possible. I enjoy trying to identify any barriers which people may face when using applications, and coming up with creative solutions to make their experience as frictionless as possible. I'm also a big fan of clean code, test-driven development, and semantic HTML.
+						I have a real passion for building accessible user interfaces which can be easily used by as many people as possible. I enjoy trying to identify any barriers which people may face when using applications, and coming up with creative solutions to make their experience as frictionless as it can be. I'm also a big fan of clean code, test-driven development, and semantic HTML.
           </Paragraph>
 					{Links && (
 						<LinksList>
