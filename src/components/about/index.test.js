@@ -4,6 +4,7 @@ import LastFmData from 'test/data/lastfm';
 import { render } from 'test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
+import { within } from '@testing-library/dom';
 
 const ORIGINAL_FETCH = global.fetch;
 
@@ -36,23 +37,21 @@ describe('About', () => {
 		// Then
 		[
 			{
-				testid: 'link-cv',
 				text: 'Download my CV',
 				href: '/files/Simon_Hudson_CV.pdf',
 			},
 			{
-				testid: 'link-github',
 				text: 'Github profile',
 				href: 'https://github.com/simonhudson',
 			},
 			{
-				testid: 'link-linkedin',
 				text: 'LinkedIn profile',
 				href: 'https://www.linkedin.com/in/hellosimonhudson/',
 			},
 		].forEach((item, index) => {
-			expect(screen.getAllByRole('link').at(index)).toHaveTextContent(item.text);
-			expect(screen.getAllByRole('link').at(index)).toHaveAttribute('href', item.href);
+			const link = within(document.querySelector('ul')).getAllByRole('link').at(index);
+			expect(link).toHaveTextContent(item.text);
+			expect(link).toHaveAttribute('href', item.href);
 		});
 	});
 
