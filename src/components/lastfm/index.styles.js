@@ -21,9 +21,9 @@ const Wrap = styled.div`
 const InnerWrap = styled.div`
 	display: flex;
 
- a {
- text-decoration: none;
- }
+	a {
+		text-decoration: none;
+	}
 `;
 
 const HeadingWrap = styled.div`
