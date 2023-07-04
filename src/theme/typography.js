@@ -9,12 +9,9 @@ const H1 = styled.h1`
 	margin: 0;
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			font-size: ${rem(42)};
-			`
-		)};
+			`)};
 `;
 
 const H2 = styled.h2`
@@ -35,12 +32,9 @@ const H2 = styled.h2`
 	}
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			line-height: ${rem(36)};
-			`
-		)};
+			`)};
 `;
 
 const H3 = styled.h3`
@@ -54,13 +48,10 @@ const H3 = styled.h3`
 	text-transform: uppercase;
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			font-size: ${rem(18)};
 			line-height: ${rem(30)};
-			`
-		)};
+			`)};
 `;
 
 const Paragraph = styled.p`

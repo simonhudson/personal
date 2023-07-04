@@ -13,13 +13,10 @@ const Wrap = styled.div`
 	}
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			margin: 0 0 ${theme.spacing.sm};
             width: 47.3%;
-			`
-		)};
+			`)};
 `;
 
 const TitleWrap = styled.div`

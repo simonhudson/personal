@@ -15,12 +15,9 @@ const StyledH1 = styled(H1)`
 	}
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			font-size: ${rem(40)};
-			`
-		)};
+			`)};
 `;
 
 const StyledParagraph = styled(Paragraph)`
@@ -29,13 +26,10 @@ const StyledParagraph = styled(Paragraph)`
 	margin: 0;
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			font-size: ${rem(24)};
 			width: 70%;
-			`
-		)};
+			`)};
 `;
 
 const Span = styled(Strong)`
@@ -43,12 +37,9 @@ const Span = styled(Strong)`
 	font-size: ${rem(40)};
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			display: inline;
-			`
-		)};
+			`)};
 `;
 
 export { StyledH1, StyledParagraph, Span };
