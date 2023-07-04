@@ -8,13 +8,10 @@ const Wrap = styled.div`
 	flex-wrap: wrap;
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			flex-direction: row;
 			gap: ${theme.spacing.lg};
-			`
-		)};
+			`)};
 `;
 
 export { Wrap };

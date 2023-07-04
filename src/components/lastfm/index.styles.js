@@ -10,12 +10,9 @@ const Wrap = styled.div`
 	padding: ${({ theme }) => theme.spacing.default};
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			padding: ${theme.spacing.md};
-			`
-		)};
+			`)};
 `;
 
 const InnerWrap = styled.div`
@@ -69,12 +66,9 @@ const Image = styled.img`
 	width: ${rem(100)};
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			margin: 0 ${({ theme }) => theme.spacing.md} 0 0;
-			`
-		)};
+			`)};
 `;
 
 const StyledIcon = styled(Icon)`

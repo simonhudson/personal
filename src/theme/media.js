@@ -1,7 +1,18 @@
 import breakpoints from './breakpoints';
 
-module.exports = (media, styles) => {
-    const breakpoint = breakpoints[media];
-    if (!breakpoint) return null;
-    return `@media (min-width: ${breakpoints[media]}px) { ${styles} }`;
+const applyStyles = (viewportWidth, styles) => `@media (min-width: ${viewportWidth}px) { ${styles} }`;
+
+module.exports = {
+	phonePortrait(styles) {
+		return applyStyles(breakpoints['phone-p'], styles);
+	},
+	tabletPortrait(styles) {
+		return applyStyles(breakpoints['tablet-p'], styles);
+	},
+	tabletLandscape(styles) {
+		return applyStyles(breakpoints['tablet-l'], styles);
+	},
+	desktop(styles) {
+		return applyStyles(breakpoints.desktop, styles);
+	},
 };

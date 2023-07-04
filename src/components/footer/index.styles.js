@@ -10,12 +10,9 @@ const StyledParagraph = styled(SmallerParagraph)`
 	text-align: center;
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			text-align: left;
-			`
-		)};
+			`)};
 `;
 
 const StyledSection = styled(Section)`
