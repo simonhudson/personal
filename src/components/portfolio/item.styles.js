@@ -47,15 +47,15 @@ const Title = styled(typography.H3)`
 
 const Client = styled.span`
 	color: ${({ theme }) => theme.palette.primary.grey};
-	font-size: ${({ theme }) => rem(theme.font.size * 0.75)};
+	font-size: ${({ theme }) => rem(theme.font.size * 0.9)};
 	font-weight: 400;
 	letter-spacing: ${rem(1)};
+	margin-bottom: ${rem(5)};
 	text-transform: uppercase;
 `;
 
 const MetadataList = styled.ul`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
-	font-size: ${rem(14)};
 	margin: 0 0 ${({ theme }) => theme.spacing.default};
 
 	&:last-of-type {
@@ -65,7 +65,6 @@ const MetadataList = styled.ul`
 
 const MetadataTitle = styled.h4`
 	font-weight: 500;
-	font-size: ${rem(14)};
 	margin: 0 0 ${({ theme }) => theme.spacing.sm};
 
 	&::after {
@@ -75,6 +74,7 @@ const MetadataTitle = styled.h4`
 
 const MetadataItem = styled.li`
 	display: inline;
+	line-height: ${({ theme }) => rem(theme.font.size * 1.6)};
 	margin: 0;
 
 	&:not(:last-of-type) {

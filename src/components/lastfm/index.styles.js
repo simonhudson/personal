@@ -37,10 +37,9 @@ const Heading = styled(H3)`
 const StyledParagraph = styled(Paragraph)`
 	span {
 		display: block;
-		font-size: ${rem(14)};
 
 		em {
-			font-size: ${rem(12)};
+			font-size: ${rem(14)};
 			font-weight: 400;
 		}
 
@@ -49,12 +48,11 @@ const StyledParagraph = styled(Paragraph)`
 		}
 
 		&:nth-of-type(2) {
-			font-size: ${rem(14)};
 			font-weight: 500;
 		}
 
 		&:nth-of-type(3) {
-			font-size: ${rem(12)};
+			font-size: ${rem(14)};
 		}
 	}
 `;
