@@ -10,16 +10,17 @@ const Wrap = styled.div`
 	padding: ${({ theme }) => theme.spacing.default};
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			padding: ${theme.spacing.md};
-			`
-		)};
+			`)};
 `;
 
 const InnerWrap = styled.div`
 	display: flex;
+
+	a {
+		text-decoration: none;
+	}
 `;
 
 const HeadingWrap = styled.div`
@@ -36,10 +37,9 @@ const Heading = styled(H3)`
 const StyledParagraph = styled(Paragraph)`
 	span {
 		display: block;
-		font-size: ${rem(14)};
 
 		em {
-			font-size: ${rem(12)};
+			font-size: ${rem(14)};
 			font-weight: 400;
 		}
 
@@ -48,12 +48,11 @@ const StyledParagraph = styled(Paragraph)`
 		}
 
 		&:nth-of-type(2) {
-			font-size: ${rem(14)};
 			font-weight: 500;
 		}
 
 		&:nth-of-type(3) {
-			font-size: ${rem(12)};
+			font-size: ${rem(14)};
 		}
 	}
 `;
@@ -65,12 +64,9 @@ const Image = styled.img`
 	width: ${rem(100)};
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			margin: 0 ${({ theme }) => theme.spacing.md} 0 0;
-			`
-		)};
+			`)};
 `;
 
 const StyledIcon = styled(Icon)`

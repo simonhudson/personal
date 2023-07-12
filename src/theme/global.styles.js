@@ -57,7 +57,6 @@ const GlobalStyles = createGlobalStyle`
 
     a {
         color: ${palette.primary.bodyText};
-        text-decoration: none;
     }
     
 `;

@@ -11,20 +11,14 @@ const Wrap = styled.div`
 	}
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			width: ${rem(theme.breakpoints['tablet-l'] + 'px')};
-			`
-		)};
+			`)};
 
 	${({ theme }) =>
-		theme.media(
-			'desktop',
-			`
+		theme.media.desktop(`
 			width: ${rem(theme.breakpoints.desktop + 'px')};
-			`
-		)};
+			`)};
 `;
 
 const Inner = styled.div`
@@ -48,13 +42,10 @@ const StyledSection = styled.section`
 	}
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			height: auto;
 			padding: ${theme.spacing.lg} 0;
-			`
-		)};
+			`)};
 `;
 
 const Section = ({ children, className }) => {
@@ -75,10 +66,9 @@ const ButtonLink = styled.a`
 	border-radius: ${rem(25)};
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 	display: inline-block;
-	font-size: ${rem(14)};
 	font-weight: 700;
 	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
-
+	text-decoration: none;
 	&:focus-visible {
 		background: ${({ theme }) => theme.palette.primary.bodyText};
 		color: ${({ theme }) => theme.palette.primary.white};

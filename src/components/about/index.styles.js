@@ -5,8 +5,7 @@ import { ButtonLink } from 'src/theme/layout';
 
 const Wrap = styled.div`
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
+		theme.media.tabletLandscape(
 			`
             gap: ${rem(40)};
             display: flex;
@@ -18,23 +17,17 @@ const Content = styled.div`
 	margin: 0 0 ${({ theme }) => theme.spacing.lg};
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			margin: 0;
 			width: 65%;
-			`
-		)};
+			`)};
 `;
 
 const Aside = styled.aside`
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			width: 35%;
-			`
-		)};
+			`)};
 `;
 
 const LinksList = styled.ul`
@@ -45,12 +38,9 @@ const LinksList = styled.ul`
 	padding: ${({ theme }) => `${theme.spacing.default} 0 0 0`};
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-p',
-			`
+		theme.media.tabletPortrait(`
 			flex-direction: row;
-			`
-		)};
+			`)};
 `;
 
 const LinksItem = styled.li`

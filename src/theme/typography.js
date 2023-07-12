@@ -9,18 +9,15 @@ const H1 = styled.h1`
 	margin: 0;
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			font-size: ${rem(42)};
-			`
-		)};
+			`)};
 `;
 
 const H2 = styled.h2`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 	font-family: ${({ theme }) => theme.font.sansSerif};
-	font-size: ${rem(20)};
+	font-size: ${rem(24)};
 	font-weight: 700;
 	line-height: ${rem(16)};
 	margin: 0 0 ${({ theme }) => theme.spacing.md};
@@ -35,18 +32,15 @@ const H2 = styled.h2`
 	}
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			line-height: ${rem(36)};
-			`
-		)};
+			`)};
 `;
 
 const H3 = styled.h3`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 	font-family: ${({ theme }) => theme.font.sansSerif};
-	font-size: ${({ theme }) => rem(theme.font.size)};
+	font-size: ${({ theme }) => rem(theme.font.size * 1.15)};
 	font-weight: 700;
 	line-height: ${rem(30)};
 	margin: 0 0 ${({ theme }) => theme.spacing.sm};
@@ -54,13 +48,10 @@ const H3 = styled.h3`
 	text-transform: uppercase;
 
 	${({ theme }) =>
-		theme.media(
-			'tablet-l',
-			`
+		theme.media.tabletLandscape(`
 			font-size: ${rem(18)};
 			line-height: ${rem(30)};
-			`
-		)};
+			`)};
 `;
 
 const Paragraph = styled.p`
