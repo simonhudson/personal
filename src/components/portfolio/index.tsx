@@ -1,14 +1,14 @@
 import React from 'react';
-import { H2 } from 'src/theme/typography';
-import { Section } from 'src/theme/layout';
+import Typography from 'src/theme/typography';
+import Layout from 'src/theme/layout';
 import { Wrap } from './index.styles';
 import data from './data';
 import Item from './item';
 
 const Portfolio: React.FC = () => {
 	return (
-		<Section>
-			<H2>My work</H2>
+		<Layout.Section>
+			<Typography.H2>My work</Typography.H2>
 			<Wrap>
 				{data.map((item, index) => (
 					<Item
@@ -24,7 +24,7 @@ const Portfolio: React.FC = () => {
 					/>
 				))}
 			</Wrap>
-		</Section>
+		</Layout.Section>
 	);
 };
 

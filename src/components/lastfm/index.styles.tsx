@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { Paragraph, H3 } from 'src/theme/typography';
+import Typography from 'src/theme/typography';
 import Icon from 'src/components/icon';
 
 const Wrap = styled.div`
@@ -29,12 +29,12 @@ const HeadingWrap = styled.div`
 	margin: 0 0 ${rem(24)};
 `;
 
-const Heading = styled(H3)`
+const Heading = styled(Typography.H3)`
 	margin: 0;
 	padding: 0;
 `;
 
-const StyledParagraph = styled(Paragraph)`
+const StyledParagraph = styled(Typography.Paragraph)`
 	span {
 		display: block;
 

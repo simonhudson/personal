@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import { H2, Paragraph, Strong } from 'src/theme/typography';
-import { Section } from 'src/theme/layout';
+import Typography from 'src/theme/typography';
+import Layout from 'src/theme/layout';
 import { Wrap, Content, Aside, StyledIcon, LinksList, LinksItem, LinksLink } from './index.styles';
 import LastFm from 'src/components/lastfm';
 import Links from './links';
@@ -12,39 +12,39 @@ const AboutMe: React.FC = () => {
 	const EXPERIAN_MARKETPLACE_LINK = data!.find((item) => item.slug === 'experian-marketplace')!.url;
 
 	return (
-		<Section>
-			<H2>About me</H2>
+		<Layout.Section>
+			<Typography.H2>About me</Typography.H2>
 			<Wrap>
 				<Content>
-					<Paragraph>
-						<Strong>
+					<Typography.Paragraph>
+						<Typography.Strong>
 							I've been working in web development since 2004, back when all this was just fields and we
 							had to use{' '}
 							<Link href={CSS_HACKS_LINK}>
 								<a href={CSS_HACKS_LINK}>all manner of nasty hacks to get our CSS working</a>
 							</Link>
 							.
-						</Strong>
-					</Paragraph>
-					<Paragraph>
+						</Typography.Strong>
+					</Typography.Paragraph>
+					<Typography.Paragraph>
 						In that time I have worked on a wide range of projects, from small brochure-ware microsites
 						through to enterprise-level single-page web apps serving millions of users.
-					</Paragraph>
-					<Paragraph>
+					</Typography.Paragraph>
+					<Typography.Paragraph>
 						I'm currently working at Experian, where I spend most of my day working with React and Node to
 						build and maintain their{' '}
 						<Link href={EXPERIAN_MARKETPLACE_LINK}>
 							<a href={EXPERIAN_MARKETPLACE_LINK}>Marketplace</a>
 						</Link>{' '}
 						web app.
-					</Paragraph>
-					<Paragraph>
+					</Typography.Paragraph>
+					<Typography.Paragraph>
 						I have a real passion for building accessible user interfaces which can be easily used by as
 						many people as possible. I enjoy trying to identify any barriers which people may face when
 						using applications, and coming up with creative solutions to make their experience as
 						frictionless as it can be. I'm also a big fan of clean code, test-driven development, and
 						semantic HTML.
-					</Paragraph>
+					</Typography.Paragraph>
 					{Links && (
 						<LinksList>
 							{Links.map((item, index) => {
@@ -66,7 +66,7 @@ const AboutMe: React.FC = () => {
 					<LastFm />
 				</Aside>
 			</Wrap>
-		</Section>
+		</Layout.Section>
 	);
 };
 

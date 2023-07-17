@@ -12,7 +12,7 @@ import {
 	MetadataTitle,
 	MetadataItem,
 } from './item.styles';
-import { ButtonLink, VisuallyHidden } from 'src/theme/layout';
+import Layout from 'src/theme/layout';
 import githubUrl from 'src/constants/githubUrl';
 import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
@@ -33,11 +33,11 @@ const Item = ({
 
 	const ctaText = url.startsWith(githubUrl) ? (
 		<>
-			View <VisuallyHidden>{title} </VisuallyHidden>on Github
+			View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>on Github
 		</>
 	) : (
 		<>
-			View <VisuallyHidden>{title} </VisuallyHidden>site{isArchived ? ' (archived)' : ''}
+			View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>site{isArchived ? ' (archived)' : ''}
 		</>
 	);
 
@@ -68,7 +68,7 @@ const Item = ({
 						})}
 					{url && (
 						<Link href={url}>
-							<ButtonLink href={url}>{ctaText}</ButtonLink>
+							<Layout.ButtonLink href={url}>{ctaText}</Layout.ButtonLink>
 						</Link>
 					)}
 				</Text>

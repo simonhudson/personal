@@ -80,4 +80,4 @@ const ListItem = styled.li`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 `;
 
-export { H1, H2, H3, Paragraph, SmallerParagraph, Strong, Small, ListItem };
+export default { H1, H2, H3, Paragraph, SmallerParagraph, Strong, Small, ListItem };

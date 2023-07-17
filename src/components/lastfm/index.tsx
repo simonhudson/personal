@@ -8,12 +8,12 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 import httpStatusCodes from 'src/constants/httpStatusCodes';
 dayjs.extend(relativeTime);
 
-interface ILastFmDataImage {
+type ILastFmDataImage = {
 	size: 'small' | 'medium' | 'large' | 'extralarge';
 	'#text': 'small.jpg' | 'medium.jpg' | 'large.jpg' | 'extralarge.jpg'
 }
 
-interface ILastFmData {
+type ILastFmData = {
 	artist: { '#text': string };
 	image: Array<ILastFmDataImage>;
 	album: { '#text': string };
@@ -24,7 +24,7 @@ interface ILastFmData {
 	isCurrentlyPlaying?: Boolean
 }
 
-const LastFm: React.FC = () => {
+const LastFm = () => {
 	const isMount = useIsMount();
 	const [isLoading, setIsLoading] = useState(true);
 	const [data, setData] = useState<ILastFmData>();
@@ -38,11 +38,12 @@ const LastFm: React.FC = () => {
 				const response = await fetch(
 					`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`
 				);
+		
 				if (response?.status !== httpStatusCodes.OK) {
 					setErrorMsg(ERROR_MSG);
 				} else {
 					const data = await response?.json();
-					const recentTrack: ILastFmData = data?.recenttracks?.track[0];
+					const recentTrack: ILastFmData = data?.recenttracks?.track[0];		
 					if (recentTrack) {
 						const displayData = { ...recentTrack };
 						displayData.relativeTime = recentTrack?.date
@@ -66,7 +67,7 @@ const LastFm: React.FC = () => {
 				<Heading role="heading">Last.fm</Heading>
 			</HeadingWrap>
 			<Loading isLoading={isLoading} />
-			{!!errorMsg && data && (
+			{!errorMsg && !errorMsg.length && data && (
 				<InnerWrap>
 					<Link href={data.url}>
 						<a>

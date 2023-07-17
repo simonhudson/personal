@@ -1,14 +1,26 @@
+import animation from './animation';
+import breakpoints from './breakpoints';
+import font from './font';
+import layout from './layout';
+import media from './media';
+import palette from './palette';
+import paths from './paths';
+import spacing from './spacing';
+import typography from './typography';
+import zIndex from './z-index';
+
 const theme = {
-	animation: require('./animation'),
-	breakpoints: require('./breakpoints'),
-	font: require('./font'),
-	layout: require('./layout'),
-	media: require('./media'),
-	palette: require('./palette'),
-	paths: require('./paths'),
-	spacing: require('./spacing'),
-	typography: require('./typography'),
-	zIndex: require('./z-index'),
+	animation,
+	breakpoints,
+	font,
+	layout,
+	media,
+	palette,
+	paths,
+	spacing,
+	typography,
+	zIndex
 };
+
 
 export default theme;

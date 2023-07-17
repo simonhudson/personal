@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { any, string } from 'prop-types';
 
 const Wrap = styled.div `
 	margin: 0 auto;
@@ -28,7 +27,7 @@ const Inner = styled.div `
 	}
 `;
 
-const Section = styled.section`
+const StyledSection = styled.section`
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -46,33 +45,19 @@ const Section = styled.section`
 			`)};
 `;
 
-// const StyledSection = styled.section`
-// 	align-items: center;
-// 	display: flex;
-// 	flex-direction: column;
-// 	justify-content: flex-start;
-// 	padding: ${({ theme }) => theme.spacing.lg} 0;
-
-// 	&:nth-of-type(2n) {
-// 		background: ${({ theme }) => theme.palette.primary.lightGrey};
-// 	}
-
-// 	${({ theme }) =>
-// 		theme.media.tabletLandscape(`
-// 			height: auto;
-// 			padding: ${theme.spacing.lg} 0;
-// 			`)};
-// `;
-
-// const Section = ({ children: any, className?: string }) => {
-// 	return (
-// 		<StyledSection className={className}>
-// 			<Wrap>
-// 				<Inner>{children}</Inner>
-// 			</Wrap>
-// 		</StyledSection>
-// 	);
-// };
+type SectionProps = {
+	children: object;
+	className?: string
+}
+const Section = ({ children, className }: SectionProps) => {
+	return (
+		<StyledSection className={className}>
+			<Wrap>
+				<Inner>{children}</Inner>
+			</Wrap>
+		</StyledSection>
+	);
+};
 
 const BoxShadow = `0 0 10px #ddd`;
 
@@ -104,4 +89,4 @@ const VisuallyHidden = styled.span `
 	width: 1px;
 `;
 
-export { Wrap, Section, BoxShadow, ButtonLink, VisuallyHidden };
+export default { Wrap, Section, BoxShadow, ButtonLink, VisuallyHidden };

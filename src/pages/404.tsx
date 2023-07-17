@@ -1,21 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
 import Routes from 'src/constants/routes';
-import { Section } from 'src/theme/layout';
-import { H1, Paragraph } from 'src/theme/typography';
+import Typography from 'src/theme/typography';
+import Layout from 'src/theme/layout';
 
 const Error404 = () => {
 	const homePageLink = Routes!.find((route) => route.label.toLowerCase() === 'home')!.path;
 	return (
-		<Section>
-			<H1>Page not found</H1>
-			<Paragraph data-testid="404-copy">
+		<Layout.Section>
+			<Typography.H1>Page not found</Typography.H1>
+			<Typography.Paragraph data-testid="404-copy">
 				Looks like we couldn&apos;t find that page. Would you like to{' '}
 				<Link href={homePageLink}>
 					<a>go back to the home page?</a>
 				</Link>
-			</Paragraph>
-		</Section>
+			</Typography.Paragraph>
+		</Layout.Section>
 	);
 };
 

@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 import { rem } from 'polished';
-import { SmallerParagraph } from 'src/theme/typography';
-import { Section } from 'src/theme/layout';
+import Typography from 'src/theme/typography';
+import Layout from 'src/theme/layout';
 
 const Wrapper = styled.div``;
 
-const StyledParagraph = styled(SmallerParagraph)`
+const StyledParagraph = styled(Typography.SmallerParagraph)`
 	margin: 0;
 	text-align: center;
 
@@ -15,7 +15,7 @@ const StyledParagraph = styled(SmallerParagraph)`
 			`)};
 `;
 
-const StyledSection = styled(Section)`
+const StyledSection = styled(Layout.Section)`
 	border-top: ${({ theme }) => `1px solid ${theme.palette.primary.brand}`};
 	padding: ${({ theme }) => theme.spacing.md} 0;
 `;

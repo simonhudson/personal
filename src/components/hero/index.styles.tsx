@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import { H1, Strong, Paragraph } from 'src/theme/typography';
+import Typography from 'src/theme/typography';
 
-const StyledH1 = styled(H1)`
+const StyledH1 = styled(Typography.H1)`
 	font-size: ${rem(30)};
 	line-height: ${rem(50)};
 
@@ -20,7 +20,7 @@ const StyledH1 = styled(H1)`
 			`)};
 `;
 
-const StyledParagraph = styled(Paragraph)`
+const StyledParagraph = styled(Typography.Paragraph)`
 	font-family: ${({ theme }) => theme.font.serif};
 	font-size: ${rem(20)};
 	margin: 0;
@@ -32,7 +32,7 @@ const StyledParagraph = styled(Paragraph)`
 			`)};
 `;
 
-const Span = styled(Strong)`
+const Span = styled(Typography.Strong)`
 	display: block;
 	font-size: ${rem(40)};
 

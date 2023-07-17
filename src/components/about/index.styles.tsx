@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 import Icon from 'src/components/icon';
-import { ButtonLink } from 'src/theme/layout';
+import Layout from 'src/theme/layout';
 
 const Wrap = styled.div`
 	${({ theme }) =>
@@ -49,7 +49,7 @@ const LinksItem = styled.li`
 	width: 100%;
 `;
 
-const LinksLink = styled(ButtonLink)`
+const LinksLink = styled(Layout.ButtonLink)`
 	display: block;
 `;
 
