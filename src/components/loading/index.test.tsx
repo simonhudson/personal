@@ -12,13 +12,15 @@ describe('Loading', () => {
 		expect(screen.getByRole('img')).toBeInTheDocument();
 		expect(screen.getByRole('img')).toHaveAttribute('aria-label', 'Loading');
 	});
-	it(`should not render when not loading`, () => {
-		// When
-		initialise();
+	[null, {}, { isLoading: false }].forEach((props) => {
+		it(`should render nothing when props are ${JSON.stringify(props)}`, () => {
+			// When
+			initialise(props);
 
-		// Then
-		expect(screen.queryByRole('img')).not.toBeInTheDocument();
+			// Then
+			expect(screen.queryByRole('img')).not.toBeInTheDocument();
+		});
 	});
 
-	const initialise = (props) => render(<Loading {...props} />);
+	const initialise = (props?) => render(<Loading {...props} />);
 });
