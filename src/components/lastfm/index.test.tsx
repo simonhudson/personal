@@ -18,7 +18,7 @@ describe('LastFm', () => {
 	});
 
 	afterEach(() => {
-		fetch.mockClear();
+		jest.clearAllMocks();
 		global.fetch = ORIGINAL_FETCH;
 		process.env.LASTFM_USERNAME = ORIGINAL_LASTFM_USERNAME;
 		process.env.LASTFM_API_KEY = ORIGINAL_LASTFM_API_KEY;
@@ -62,7 +62,7 @@ describe('LastFm', () => {
 			// Then
 			expect(global.fetch).toHaveBeenCalledTimes(1);
 			expect(global.fetch).toHaveBeenCalledWith(
-				`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=LASTFM_USERNAME&api_key=LASTFM_API_KEY&format=json&limit=1`
+				`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=LASTFM_USERNAME&api_key=LASTFM_API_KEY&format=json&limit=1`,
 			);
 		});
 
@@ -72,8 +72,8 @@ describe('LastFm', () => {
 				global.fetch = jest.fn(() =>
 					Promise.resolve({
 						status: 400,
-					})
-				);
+					}),
+				) as jest.Mock;
 
 				// When
 				await initialise();
@@ -88,8 +88,8 @@ describe('LastFm', () => {
 					Promise.resolve({
 						json: () => Promise.resolve('foo'),
 						status: 200,
-					})
-				);
+					}),
+				) as jest.Mock;
 
 				// When
 				await initialise();
@@ -105,8 +105,8 @@ describe('LastFm', () => {
 					Promise.resolve({
 						json: () => Promise.resolve(LastFmData),
 						status: 200,
-					})
-				);
+					}),
+				) as jest.Mock;
 
 				// When
 				await initialise();
@@ -124,8 +124,8 @@ describe('LastFm', () => {
 					Promise.resolve({
 						json: () => Promise.resolve(data),
 						status: 200,
-					})
-				);
+					}),
+				) as jest.Mock;
 
 				// When
 				await initialise();
@@ -135,7 +135,7 @@ describe('LastFm', () => {
 				expect(screen.getByText('Now playing')).toBeInTheDocument();
 				expect(screen.getAllByRole('img', { hidden: true }).at(2)).toHaveAttribute(
 					'src',
-					'/images/icon-audio-wave.gif'
+					'/images/icon-audio-wave.gif',
 				);
 			});
 		});

@@ -3,7 +3,7 @@ import { StyledParagraph } from './index.styles';
 import { Wrapper, StyledSection } from './index.styles';
 import dayjs from 'dayjs';
 
-const Footer = () => {
+const Footer: React.FC = () => {
 	return (
 		<footer>
 			<StyledSection>

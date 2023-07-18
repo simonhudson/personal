@@ -21,5 +21,5 @@ describe('Icon', () => {
 		expect(icon).toHaveAttribute('aria-hidden', 'true');
 	});
 
-	const initialise = (props) => render(<Icon {...props} />);
+	const initialise = (props) => render(<Icon type={props.type} name={props.name} className={props.className} />);
 });

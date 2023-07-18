@@ -4,7 +4,6 @@ import LastFmData from 'test/data/lastfm';
 import { render } from 'test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
-import { within } from '@testing-library/dom';
 
 const ORIGINAL_FETCH = global.fetch;
 
@@ -13,12 +12,12 @@ describe('About', () => {
 		global.fetch = jest.fn(() =>
 			Promise.resolve({
 				json: () => Promise.resolve(LastFmData),
-			})
-		);
+			}),
+		) as jest.Mock;
 	});
 
 	afterEach(() => {
-		fetch.mockClear();
+		jest.clearAllMocks();
 		global.fetch = ORIGINAL_FETCH;
 	});
 
@@ -48,10 +47,8 @@ describe('About', () => {
 				text: 'LinkedIn profile',
 				href: 'https://www.linkedin.com/in/hellosimonhudson/',
 			},
-		].forEach((item, index) => {
-			const link = within(document.querySelector('ul')).getAllByRole('link').at(index);
-			expect(link).toHaveTextContent(item.text);
-			expect(link).toHaveAttribute('href', item.href);
+		].forEach((item) => {
+			expect(screen.getByText(item.text)).toHaveAttribute('href', item.href);
 		});
 	});
 

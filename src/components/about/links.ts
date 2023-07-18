@@ -5,10 +5,9 @@ type Link = {
 		type: 'solid' | 'brand';
 		name: string;
 	};
-	testid: string;
-}
+};
 
-type Links =  Array<Link>;
+type Links = Array<Link>;
 
 const links: Links = [
 	{
@@ -18,7 +17,6 @@ const links: Links = [
 			type: 'solid',
 			name: 'file-pdf',
 		},
-		testid: 'link-cv',
 	},
 	{
 		text: 'Github profile',
@@ -27,7 +25,6 @@ const links: Links = [
 			type: 'brand',
 			name: 'github',
 		},
-		testid: 'link-github',
 	},
 	{
 		text: 'LinkedIn profile',
@@ -36,7 +33,6 @@ const links: Links = [
 			type: 'brand',
 			name: 'linkedin',
 		},
-		testid: 'link-linkedin',
 	},
 ];
 

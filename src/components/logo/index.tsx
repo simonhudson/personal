@@ -2,7 +2,7 @@ import React from 'react';
 import { StyledLogo } from './index.styles';
 import theme from 'src/theme';
 
-const Logo = () => {
+const Logo: React.FC = () => {
 	const fillColor = 'brand';
 	return (
 		<StyledLogo

@@ -9,7 +9,7 @@ import httpStatusCodes from 'src/constants/httpStatusCodes';
 dayjs.extend(relativeTime);
 import { ILastFmDisplayData } from './lastfm.d';
 
-const LastFm = () => {
+const LastFm: React.FC = () => {
 	const isMount = useIsMount();
 	const [isLoading, setIsLoading] = useState(true);
 	const [data, setData] = useState<ILastFmDisplayData>();
