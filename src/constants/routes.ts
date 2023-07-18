@@ -2,7 +2,15 @@ import httpStatusCodes from 'src/constants/httpStatusCodes';
 
 export const HOME = 'Home';
 
-export default [
+type Route = {
+	path: string;
+	label: string;
+	omitFromNavigation?: boolean;
+}
+
+type Routes = Array<Route>
+
+const routes: Routes = [
 	{
 		path: '/',
 		label: HOME,
@@ -13,3 +21,4 @@ export default [
 		omitFromNavigation: true,
 	},
 ];
+export default routes;

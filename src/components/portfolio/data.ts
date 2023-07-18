@@ -1,4 +1,4 @@
-import { IData } from './data.interface';
+import Data from './data.type';
 import githubUrl from 'src/constants/githubUrl';
 
 const AQUASEC: string = 'Aquasec';
@@ -40,7 +40,7 @@ const MADE_WITH = 'Made with';
 const TESTED_WITH = 'Tested with';
 const BUILT_WITH = 'Built with';
 
-let data: IData = [
+let data: Data = [
 	{
 		slug: 'personal',
 		title: 'Personal site',

@@ -16,7 +16,7 @@ import Layout from 'src/theme/layout';
 import githubUrl from 'src/constants/githubUrl';
 import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
-import { IDataItem } from './data.interface';
+import { DataItem } from './data.type';
 
 const Item = ({
 	client,
@@ -28,7 +28,7 @@ const Item = ({
 	text,
 	title,
 	url
-}: IDataItem) => {
+}: DataItem) => {
 	if (omit) return null;
 
 	const ctaText = url.startsWith(githubUrl) ? (
