@@ -23,7 +23,6 @@ const LastFm = () => {
 				const response = await fetch(
 					`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
 				);
-
 				if (response?.status !== httpStatusCodes.OK) {
 					setErrorMsg(ERROR_MSG);
 				} else {
