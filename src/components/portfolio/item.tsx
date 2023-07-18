@@ -16,19 +16,9 @@ import Layout from 'src/theme/layout';
 import githubUrl from 'src/constants/githubUrl';
 import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
-import { DataItem } from './data.type';
+import { DataItem } from './data.d';
 
-const Item = ({
-	client,
-	date,
-	isArchived,
-	metadata,
-	omit,
-	slug,
-	text,
-	title,
-	url
-}: DataItem) => {
+const Item = ({ client, date, isArchived, metadata, omit, slug, text, title, url }: DataItem) => {
 	if (omit) return null;
 
 	const ctaText = url.startsWith(githubUrl) ? (

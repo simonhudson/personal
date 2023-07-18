@@ -7,27 +7,12 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import httpStatusCodes from 'src/constants/httpStatusCodes';
 dayjs.extend(relativeTime);
-
-type LastFmDataImage = {
-	size: 'small' | 'medium' | 'large' | 'extralarge';
-	'#text': 'small.jpg' | 'medium.jpg' | 'large.jpg' | 'extralarge.jpg'
-}
-
-type LastFmData = {
-	artist: { '#text': string };
-	image: Array<LastFmDataImage>;
-	album: { '#text': string };
-	name: string;
-	url: string;
-	date: { '#text': string };
-	relativeTime: string;
-	isCurrentlyPlaying?: Boolean
-}
+import { ILastFmDisplayData } from './lastfm.d';
 
 const LastFm = () => {
 	const isMount = useIsMount();
 	const [isLoading, setIsLoading] = useState(true);
-	const [data, setData] = useState<LastFmData>();
+	const [data, setData] = useState<ILastFmDisplayData>();
 	const [errorMsg, setErrorMsg] = useState('');
 
 	const ERROR_MSG = `Sorry, couldn't load data from Last.fm :o(`;
@@ -36,14 +21,14 @@ const LastFm = () => {
 		(async () => {
 			if (isMount) {
 				const response = await fetch(
-					`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`
+					`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
 				);
-		
+
 				if (response?.status !== httpStatusCodes.OK) {
 					setErrorMsg(ERROR_MSG);
 				} else {
 					const data = await response?.json();
-					const recentTrack: LastFmData = data?.recenttracks?.track[0];		
+					const recentTrack: ILastFmDisplayData = data?.recenttracks?.track[0];
 					if (recentTrack) {
 						const displayData = { ...recentTrack };
 						displayData.relativeTime = recentTrack?.date

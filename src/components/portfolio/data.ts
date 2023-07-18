@@ -1,4 +1,4 @@
-import Data from './data.type';
+import Data from './data.d';
 import githubUrl from 'src/constants/githubUrl';
 
 const AQUASEC: string = 'Aquasec';

@@ -1,8 +1,9 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
+import { LastFmApiResponse } from 'src/components/lastfm/lastfm.d';
 
-module.exports = {
+const LastFmTestData: LastFmApiResponse = {
 	recenttracks: {
 		track: [
 			{
@@ -39,3 +40,5 @@ module.exports = {
 		],
 	},
 };
+
+export default LastFmTestData;
