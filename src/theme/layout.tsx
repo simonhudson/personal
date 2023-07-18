@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 
-const Wrap = styled.div `
+const Wrap = styled.div`
 	margin: 0 auto;
 	width: 90%;
 
@@ -9,16 +9,18 @@ const Wrap = styled.div `
 		height: 100%;
 	}
 
-	${({ theme }) => theme.media.tabletLandscape(`
+	${({ theme }) =>
+		theme.media.tabletLandscape(`
 			width: ${rem(theme.breakpoints['tablet-l'] + 'px')};
 			`)};
 
-	${({ theme }) => theme.media.desktop(`
+	${({ theme }) =>
+		theme.media.desktop(`
 			width: ${rem(theme.breakpoints.desktop + 'px')};
 			`)};
 `;
 
-const Inner = styled.div `
+const Inner = styled.div`
 	&:first-of-type {
 		display: flex;
 		flex-direction: column;
@@ -47,8 +49,8 @@ const StyledSection = styled.section`
 
 type SectionProps = {
 	children: object;
-	className?: string
-}
+	className?: string;
+};
 const Section = ({ children, className }: SectionProps) => {
 	return (
 		<StyledSection className={className}>
@@ -61,7 +63,7 @@ const Section = ({ children, className }: SectionProps) => {
 
 const BoxShadow = `0 0 10px #ddd`;
 
-const ButtonLink = styled.a `
+const ButtonLink = styled.a`
 	background: transparent;
 	border: ${({ theme }) => `2px solid ${theme.palette.primary.bodyText}`};
 	border-radius: ${rem(25)};
@@ -77,7 +79,7 @@ const ButtonLink = styled.a `
 	}
 `;
 
-const VisuallyHidden = styled.span `
+const VisuallyHidden = styled.span`
 	border: 0;
 	clip: rect(0 0 0 0);
 	color: ${({ theme }) => theme.palette.primary.white};

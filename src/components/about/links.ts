@@ -1,4 +1,4 @@
-interface ILink {
+type Link = {
 	text: string;
 	link: string;
 	icon: {
@@ -8,9 +8,9 @@ interface ILink {
 	testid: string;
 }
 
-interface ILinks extends Array<ILink> {}
+type Links =  Array<Link>;
 
-const links: ILinks = [
+const links: Links = [
 	{
 		text: 'Download my CV',
 		link: '/files/Simon_Hudson_CV.pdf',

@@ -19,8 +19,7 @@ const theme = {
 	paths,
 	spacing,
 	typography,
-	zIndex
+	zIndex,
 };
-
 
 export default theme;
