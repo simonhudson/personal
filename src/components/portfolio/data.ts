@@ -28,6 +28,7 @@ const REACT_TESTING_LIBRARY: string = 'React Testing Library';
 const SASS: string = 'Sass';
 const SHAREPOINT: string = 'Sharepoint';
 const STYLED_COMPONENTS: string = 'Styled Components';
+const TYPESCRIPT: string = 'Typescript';
 const VERACODE: string = 'Veracode';
 const WEBPACK: string = 'Webpack';
 
@@ -52,7 +53,7 @@ let data: Data = [
 		metadata: [
 			{
 				label: MADE_WITH,
-				items: [NEXT_JS, REACT, ES6, STYLED_COMPONENTS],
+				items: [NEXT_JS, REACT, TYPESCRIPT, STYLED_COMPONENTS],
 			},
 			{
 				label: TESTED_WITH,
