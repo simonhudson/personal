@@ -1,4 +1,28 @@
-const palette = {
+type Palette = {
+		primary: {
+			bodyBackground: string;
+			brand: string;
+			bodyText: string;
+			black: string;
+			white: string;
+			grey: string;
+			lightGrey: string;
+		},
+		status: {
+			error: string;
+			info:  string;
+			success: string;
+			warning: string;
+		},
+		brands: {
+			linkedIn:  string;
+			github: string;
+			stackOverflow: string;
+			lastFm:  string;
+		},
+	};
+
+const palette: Palette = {
 	primary: {
 		bodyBackground: '#fef9f5',
 		brand: '#FFDE59',

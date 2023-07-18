@@ -1,5 +1,6 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
 module.exports = {
+	moduleFileExtensions: ['ts', 'tsx', 'js'],
 	moduleNameMapper: {
 		'\\.(css|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
 		'^public/(.*)$': '<rootDir>/public/js$1',

@@ -2,7 +2,18 @@ import { rem } from 'polished';
 import font from './font';
 const BASE_SIZE = font.size;
 
-const spacing = {
+type Spacing = {
+	default: number;
+	xsm: number;
+	sm: number;
+	md: number;
+	lg: number;
+	xlg: number;
+	xxlg: number;
+	xxxlg: number;
+}
+
+const spacing: Spacing = {
 	default: BASE_SIZE,
 	xsm: BASE_SIZE / 4,
 	sm: BASE_SIZE / 2,
