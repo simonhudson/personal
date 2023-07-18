@@ -9,6 +9,8 @@
 	},
 	"extends": [
 		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
 		"plugin:react/recommended"
 	],
 	"parser": "babel-eslint",
@@ -32,7 +34,8 @@
 		"no-var": 2
 	},
 	"plugins": [
-		"react"
+		"react",
+		"@typescript-eslint"
 	],
 	"settings": {
 		"react": {
