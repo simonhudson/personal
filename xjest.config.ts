@@ -1,5 +1,9 @@
-/** @type {import('ts-jest').JestConfigWithTsJest} */
-module.exports = {
+import type { JestConfigWithTsJest } from 'ts-jest'
+
+const jestConfig: JestConfigWithTsJest = {
+	transform: {
+		"^.+\\.tsx?$": "ts-jest"
+	  },
 	moduleNameMapper: {
 		'\\.(css|scss)$': '<rootDir>/node_modules/jest-css-modules-transform',
 		'^public/(.*)$': '<rootDir>/public/js$1',
@@ -8,8 +12,6 @@ module.exports = {
 	},
 	preset: 'ts-jest',
 	testEnvironment: 'node',
-	transform: {
-		'^.+\\.ts?$': 'ts-jest',
-		'^.+\\.tsx?$': 'ts-jest',
-	},
 };
+
+export default jestConfig

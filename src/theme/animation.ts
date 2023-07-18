@@ -27,7 +27,13 @@ const slideOutToLeft = `
     }
 `;
 
-const animation = {
+type Animation = {
+    defaults: string;
+	slideInFromLeft: string;
+	slideOutToLeft: string;
+}
+
+const animation: Animation = {
 	defaults,
 	slideInFromLeft,
 	slideOutToLeft,

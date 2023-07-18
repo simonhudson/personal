@@ -1,4 +1,16 @@
-const fonts = {
+type Fonts = {
+	size: number;
+	heading: string;
+	sansSerif: string;
+	serif: string;
+	semiBold: string;
+	bold: string;
+	code: string;
+	weight: number;
+	lineHeight: number;
+};
+
+const fonts: Fonts = {
 	size: 16,
 	heading: `Poppins, arial, helvetica, sans-serif`,
 	sansSerif: `'Open Sans', arial, helvetica, sans-serif`,
