@@ -9,7 +9,9 @@ describe('Logo', () => {
 		initialise();
 
 		// Then
-		expect(screen.getByRole('img')).toBeInTheDocument();
+		const logo = screen.getByRole('img');
+		expect(logo).toBeInTheDocument();
+		expect(logo).toHaveAttribute('aria-label', 'Simon Hudson logo');
 	});
 
 	const initialise = () => render(<Logo />);

@@ -39,7 +39,9 @@ const AboutMe: React.FC = () => {
 						web app.
 					</Typography.Paragraph>
 					<Typography.Paragraph>
-						I am passionate about web accessibility and how to build for assistive technologies. I'm also a big fan of test-driven development, clean code, and striving for simple solutions to complex problems.
+						I am passionate about web accessibility and how to build for assistive technologies. I'm also a
+						big fan of test-driven development, clean code, and striving for simple solutions to complex
+						problems.
 					</Typography.Paragraph>
 					{Links && (
 						<LinksList>

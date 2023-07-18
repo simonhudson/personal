@@ -10,7 +10,6 @@ describe('Links', () => {
 					type: 'solid',
 					name: 'file-pdf',
 				},
-				testid: 'link-cv',
 			},
 			{
 				text: 'Github profile',
@@ -19,7 +18,6 @@ describe('Links', () => {
 					type: 'brand',
 					name: 'github',
 				},
-				testid: 'link-github',
 			},
 			{
 				text: 'LinkedIn profile',
@@ -28,7 +26,6 @@ describe('Links', () => {
 					type: 'brand',
 					name: 'linkedin',
 				},
-				testid: 'link-linkedin',
 			},
 		]);
 	});
