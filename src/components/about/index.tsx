@@ -39,11 +39,7 @@ const AboutMe: React.FC = () => {
 						web app.
 					</Typography.Paragraph>
 					<Typography.Paragraph>
-						I have a real passion for building accessible user interfaces which can be easily used by as
-						many people as possible. I enjoy trying to identify any barriers which people may face when
-						using applications, and coming up with creative solutions to make their experience as
-						frictionless as it can be. I'm also a big fan of clean code, test-driven development, and
-						semantic HTML.
+						I am passionate about web accessibility and how to build for assistive technologies. I'm also a big fan of test-driven development, clean code, and striving for simple solutions to complex problems.
 					</Typography.Paragraph>
 					{Links && (
 						<LinksList>
