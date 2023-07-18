@@ -118,8 +118,7 @@
   ],
   "exclude": [
     "node_modules",
-    "**/*.interface.js",
-    "**/*.type.js",
+    "**/*.d.ts",
     "**/*.test.ts",
     "**/*.test.tsx"
   ]
