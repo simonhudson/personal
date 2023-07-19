@@ -1,6 +1,6 @@
 {
   "name": "personal",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Personal website of Simon Hudson",
   "main": "index.js",
   "scripts": {
