@@ -14,15 +14,19 @@ const App = ({ Component, pageProps }) => {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<title>Simon Hudson | Front&ndash;end Developer</title>
 			</Head>
-			<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJLJ613G5T" />
-			<Script id="google-analytics">
-				{`
-					window.dataLayer = window.dataLayer || [];
-					function gtag(){dataLayer.push(arguments);}
-					gtag('js', new Date());
-					gtag('config', 'G-BJLJ613G5T');
-				`}
-			</Script>
+			{process.env.APP_ENV === 'production' && (
+				<>
+					<script async src="https://www.googletagmanager.com/gtag/js?id=G-BJLJ613G5T" />
+					<Script id="google-analytics">
+						{`
+							window.dataLayer = window.dataLayer || [];
+							function gtag(){dataLayer.push(arguments);}
+							gtag('js', new Date());
+							gtag('config', 'G-BJLJ613G5T');
+						`}
+					</Script>
+				</>
+			)}
 			<ThemeProvider theme={Theme}>
 				<GlobalStyles />
 				<main>
