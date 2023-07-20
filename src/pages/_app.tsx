@@ -5,13 +5,6 @@ import { ThemeProvider } from 'styled-components';
 import Theme from 'src/theme';
 import { GlobalStyles } from 'src/theme/global.styles';
 
-// Log accessibility issues to console in non-production environments
-if (process.env.APP_ENV !== 'production' && typeof window !== 'undefined') {
-	const ReactDOM = require('react-dom');
-	const axe = require('react-axe');
-	axe(React, ReactDOM, 1000);
-}
-
 const App = ({ Component, pageProps }) => {
 	pageProps.holdingMode = process?.env?.HOLDING_MODE?.toLowerCase() === 'true';
 
