@@ -1,4 +1,4 @@
-import httpStatusCodes from 'src/constants/httpStatusCodes';
+import httpStatusCodes from '@/src/constants/httpStatusCodes';
 
 export const HOME = 'Home';
 
@@ -6,9 +6,9 @@ type Route = {
 	path: string;
 	label: string;
 	omitFromNavigation?: boolean;
-}
+};
 
-type Routes = Array<Route>
+type Routes = Array<Route>;
 
 const routes: Routes = [
 	{

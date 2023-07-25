@@ -12,7 +12,7 @@ const typeMapping = {
 	brand: 'fab',
 };
 
-const Icon: React.FC<Props> = ({ type, name, className }) => {
+const Icon = ({ type, name, className }: Props) => {
 	return (
 		<StyledIcon
 			role="img"

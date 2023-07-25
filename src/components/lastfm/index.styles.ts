@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import Typography from 'src/theme/typography';
-import Icon from 'src/components/icon';
+import Typography from '@/src/theme/typography';
+import Icon from '@/src/components/icon';
 
 const Wrap = styled.div`
 	background: ${({ theme }) => `linear-gradient(transparent, ${theme.palette.primary.lightGrey})`};

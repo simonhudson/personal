@@ -1,13 +1,12 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { StyledLoading } from './index.styles';
-import theme from 'src/theme';
+import theme from '@/src/theme';
 
 type Props = {
 	isLoading?: boolean;
 };
 
-const Loading: React.FC<Props> = ({ isLoading }) => {
+const Loading = ({ isLoading }: Props) => {
 	if (!isLoading) return null;
 
 	return (

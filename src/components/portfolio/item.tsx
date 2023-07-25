@@ -12,8 +12,8 @@ import {
 	MetadataTitle,
 	MetadataItem,
 } from './item.styles';
-import Layout from 'src/theme/layout';
-import githubUrl from 'src/constants/githubUrl';
+import Layout from '@/src/theme/layout';
+import githubUrl from '@/src/constants/githubUrl';
 import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
 import { DataItem } from './data.d';

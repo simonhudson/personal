@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import Typography from 'src/theme/typography';
+import Typography from '@/src/theme/typography';
 
 const StyledH1 = styled(Typography.H1)`
 	font-size: ${rem(30)};

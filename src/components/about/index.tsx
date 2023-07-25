@@ -1,13 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import Typography from 'src/theme/typography';
-import Layout from 'src/theme/layout';
+import Typography from '@/src/theme/typography';
+import Layout from '@/src/theme/layout';
 import { Wrap, Content, Aside, StyledIcon, LinksList, LinksItem, LinksLink } from './index.styles';
-import LastFm from 'src/components/lastfm';
-import Links from './links';
-import data from 'src/components/portfolio/data';
+import LastFm from '@/src/components/lastfm';
+import Links from './links.d';
+import data from '@/src/components/portfolio/data';
 
-const AboutMe: React.FC = () => {
+const AboutMe = () => {
 	const CSS_HACKS_LINK = 'https://gist.github.com/Awilum/5589742';
 	const EXPERIAN_MARKETPLACE_LINK = data!.find((item) => item.slug === 'experian-marketplace')!.url;
 

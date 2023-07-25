@@ -2,8 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
 import { ThemeProvider } from 'styled-components';
-import Theme from 'src/theme';
-import { GlobalStyles } from 'src/theme/global.styles';
+import Theme from '@/src/theme';
+import { GlobalStyles } from '@/src/theme/global.styles';
 
 const App = ({ Component, pageProps }) => {
 	pageProps.holdingMode = process?.env?.HOLDING_MODE?.toLowerCase() === 'true';

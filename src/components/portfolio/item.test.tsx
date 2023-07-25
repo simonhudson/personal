@@ -1,6 +1,6 @@
 import React from 'react';
 import Item from './item';
-import { render } from 'test/utils';
+import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { within } from '@testing-library/dom';
 import cloneDeep from 'lodash/cloneDeep';

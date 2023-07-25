@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import theme from 'src/theme';
+import theme from '@/src/theme';
 
 const Wrap = styled.div`
 	border-radius: ${rem(5)};

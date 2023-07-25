@@ -1,5 +1,5 @@
 import Data from './data.d';
-import githubUrl from 'src/constants/githubUrl';
+import githubUrl from '@/src/constants/githubUrl';
 
 const AQUASEC: string = 'Aquasec';
 const AWS: string = 'AWS';
