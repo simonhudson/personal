@@ -1,10 +1,10 @@
 import React from 'react';
-import Typography from 'src/theme/typography';
-import Layout from 'src/theme/layout';
+import Typography from '@/src/theme/typography';
+import Layout from '@/src/theme/layout';
 import { StyledH1, Span, StyledParagraph } from './index.styles';
-import Logo from 'src/components/logo';
+import Logo from '@/src/components/logo';
 
-const Hero: React.FC = () => {
+const Hero = () => {
 	return (
 		<Layout.Section>
 			<Logo />

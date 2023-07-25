@@ -26,15 +26,9 @@
     "moduleResolution": "node", /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./", /* Specify the base directory to resolve non-relative module names. */
     "paths": {
-      "public": [
-        "public"
-      ],
-      "src": [
-        "src"
-      ],
-      "test": [
-        "test"
-      ]
+      "@/src/*": ["./src/*"],
+      "@/public/*": ["./public/*"],
+      "@/test/*": ["./test/*"]
     }, /* Specify a set of entries that re-map imports to additional lookup locations. */ // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
     // "typeRoots": [],                                  /* Specify multiple folders that act like './node_modules/@types'. */
     // "types": [],                                      /* Specify type package names to be included without being referenced in a source file. */
@@ -111,15 +105,6 @@
     "incremental": true,
     "noEmit": false
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "**/*.d.ts",
-    "**/*.test.ts",
-    "**/*.test.tsx"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

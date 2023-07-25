@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import Icon from 'src/components/icon';
-import Layout from 'src/theme/layout';
+import Icon from '@/src/components/icon';
+import Layout from '@/src/theme/layout';
 
 const Wrap = styled.div`
 	${({ theme }) =>
@@ -9,7 +9,7 @@ const Wrap = styled.div`
 			`
             gap: ${rem(40)};
             display: flex;
-            `
+            `,
 		)};
 `;
 
