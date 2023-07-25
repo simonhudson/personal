@@ -8,8 +8,8 @@ import Links from './links';
 import data from '@/src/components/portfolio/data';
 
 const AboutMe = () => {
-	const CSS_HACKS_LINK = 'https://gist.github.com/Awilum/5589742';
-	const EXPERIAN_MARKETPLACE_LINK = data!.find((item) => item.slug === 'experian-marketplace')!.url;
+	const CSS_HACKS_LINK: string = 'https://gist.github.com/Awilum/5589742';
+	const EXPERIAN_MARKETPLACE_LINK: string = data.find((item) => item.slug === 'experian-marketplace')!.url;
 
 	return (
 		<Layout.Section>
