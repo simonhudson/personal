@@ -4,7 +4,7 @@ import Typography from '@/src/theme/typography';
 import Layout from '@/src/theme/layout';
 import { Wrap, Content, Aside, StyledIcon, LinksList, LinksItem, LinksLink } from './index.styles';
 import LastFm from '@/src/components/lastfm';
-import Links from './links.d';
+import Links from './links';
 import data from '@/src/components/portfolio/data';
 
 const AboutMe = () => {
