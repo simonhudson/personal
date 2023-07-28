@@ -17,19 +17,21 @@ import githubUrl from '@/src/constants/githubUrl';
 import PropTypes from 'prop-types';
 import kebabCase from 'lodash/kebabCase';
 import { DataItem } from './data.d';
+import { slugify } from '@/src/utilities/slugify';
 
-const Item = ({ client, date, isArchived, metadata, omit, slug, text, title, url }: DataItem) => {
+const Item = ({ client, date, isArchived, metadata, omit, slug, text, title, urls }: DataItem) => {
 	if (omit) return null;
 
-	const ctaText = url.startsWith(githubUrl) ? (
-		<>
-			View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>on Github
-		</>
-	) : (
-		<>
-			View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>site{isArchived ? ' (archived)' : ''}
-		</>
-	);
+	const getCtaText = (url: string) =>
+		url.startsWith(githubUrl) ? (
+			<>
+				View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>on Github
+			</>
+		) : (
+			<>
+				View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>site{isArchived ? ' (archived)' : ''}
+			</>
+		);
 
 	return (
 		<Wrap>
@@ -56,11 +58,17 @@ const Item = ({ client, date, isArchived, metadata, omit, slug, text, title, url
 								</React.Fragment>
 							);
 						})}
-					{url && (
-						<Link href={url}>
-							<Layout.ButtonLink href={url}>{ctaText}</Layout.ButtonLink>
-						</Link>
-					)}
+					<Layout.ButtonLinksList>
+						{urls.map((url: string, index: number) => {
+							return (
+								<Layout.ButtonLinksItem key={`link--${slugify(title)}-${index}`}>
+									<Link href={url}>
+										<Layout.ButtonLinksLink href={url}>{getCtaText(url)}</Layout.ButtonLinksLink>
+									</Link>
+								</Layout.ButtonLinksItem>
+							);
+						})}
+					</Layout.ButtonLinksList>
 				</Text>
 			</Content>
 		</Wrap>
