@@ -71,7 +71,9 @@ const ButtonLink = styled.a`
 	display: inline-block;
 	font-weight: 700;
 	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+	text-align: center;
 	text-decoration: none;
+
 	&:focus-visible {
 		background: ${({ theme }) => theme.palette.primary.bodyText};
 		color: ${({ theme }) => theme.palette.primary.white};
@@ -91,4 +93,36 @@ const VisuallyHidden = styled.span`
 	width: 1px;
 `;
 
-export default { Wrap, Section, BoxShadow, ButtonLink, VisuallyHidden };
+const ButtonLinksList = styled.ul`
+	display: flex;
+	flex-direction: column;
+	gap: ${({ theme }) => theme.spacing.default};
+	list-style: none;
+	padding: ${({ theme }) => `${theme.spacing.default} 0 0 0`};
+
+	${({ theme }) =>
+		theme.media.phoneLandscape(`
+			flex-direction: row;
+		`)};
+`;
+
+const ButtonLinksItem = styled.li`
+	margin: 0 0 ${({ theme }) => theme.spacing.default};
+	text-align: center;
+`;
+
+const ButtonLinksLink = styled(ButtonLink)`
+	display: block;
+	text-align: center;
+`;
+
+export default {
+	Wrap,
+	Section,
+	BoxShadow,
+	ButtonLink,
+	VisuallyHidden,
+	ButtonLinksList,
+	ButtonLinksItem,
+	ButtonLinksLink,
+};

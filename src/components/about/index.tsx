@@ -2,14 +2,15 @@ import React from 'react';
 import Link from 'next/link';
 import Typography from '@/src/theme/typography';
 import Layout from '@/src/theme/layout';
-import { Wrap, Content, Aside, StyledIcon, LinksList, LinksItem, LinksLink } from './index.styles';
+import { Wrap, Content, Aside, StyledIcon } from './index.styles';
 import LastFm from '@/src/components/lastfm';
 import Links from './links';
 import data from '@/src/components/portfolio/data';
+import { slugify } from '@/src/utilities/slugify';
 
 const AboutMe = () => {
 	const CSS_HACKS_LINK: string = 'https://gist.github.com/Awilum/5589742';
-	const EXPERIAN_MARKETPLACE_LINK: string = data.find((item) => item.slug === 'experian-marketplace')!.url;
+	const EXPERIAN_MARKETPLACE_LINK: string = data.find((item) => item.slug === 'experian-marketplace')!.urls[0];
 
 	return (
 		<Layout.Section>
@@ -44,20 +45,20 @@ const AboutMe = () => {
 						problems.
 					</Typography.Paragraph>
 					{Links && (
-						<LinksList>
-							{Links.map((item, index) => {
+						<Layout.ButtonLinksList>
+							{Links.map((item, index: number) => {
 								return (
-									<LinksItem key={`link-${index}`}>
+									<Layout.ButtonLinksItem key={`link-${slugify(item.text)}-${index}`}>
 										<Link href={item.link}>
-											<LinksLink href={item.link}>
+											<Layout.ButtonLinksLink href={item.link}>
 												{item.text}
 												<StyledIcon type={item.icon.type} name={item.icon.name} />
-											</LinksLink>
+											</Layout.ButtonLinksLink>
 										</Link>
-									</LinksItem>
+									</Layout.ButtonLinksItem>
 								);
 							})}
-						</LinksList>
+						</Layout.ButtonLinksList>
 					)}
 				</Content>
 				<Aside>

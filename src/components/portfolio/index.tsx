@@ -20,7 +20,7 @@ const Portfolio = () => {
 						omit={item.omit}
 						slug={item.slug}
 						title={item.title}
-						url={item.url}
+						urls={item.urls}
 					/>
 				))}
 			</Wrap>

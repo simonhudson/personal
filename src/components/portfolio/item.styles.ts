@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 import theme from '@/src/theme';
+import Link from 'next/link';
 
 const Wrap = styled.div`
 	border-radius: ${rem(5)};
