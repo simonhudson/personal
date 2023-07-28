@@ -1,7 +1,7 @@
 import React from 'react';
 import LastFm from './index';
-import LastFmData from 'test/data/lastfm';
-import { render } from 'test/utils';
+import LastFmData from '@/test/data/lastfm';
+import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
 import { cloneDeep } from 'lodash';

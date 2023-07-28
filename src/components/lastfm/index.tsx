@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import useIsMount from 'src/utilities/useIsMount';
+import useIsMount from '@/src/utilities/useIsMount';
 import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon } from './index.styles';
-import Loading from 'src/components/loading';
+import Loading from '@/src/components/loading';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import httpStatusCodes from 'src/constants/httpStatusCodes';
+import httpStatusCodes from '@/src/constants/httpStatusCodes';
 dayjs.extend(relativeTime);
 import { ILastFmDisplayData } from './lastfm.d';
 
-const LastFm: React.FC = () => {
+const LastFm = () => {
 	const isMount = useIsMount();
 	const [isLoading, setIsLoading] = useState(true);
 	const [data, setData] = useState<ILastFmDisplayData>();

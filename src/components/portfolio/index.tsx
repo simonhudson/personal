@@ -1,11 +1,11 @@
 import React from 'react';
-import Typography from 'src/theme/typography';
-import Layout from 'src/theme/layout';
+import Typography from '@/src/theme/typography';
+import Layout from '@/src/theme/layout';
 import { Wrap } from './index.styles';
 import data from './data';
 import Item from './item';
 
-const Portfolio: React.FC = () => {
+const Portfolio = () => {
 	return (
 		<Layout.Section>
 			<Typography.H2>My work</Typography.H2>

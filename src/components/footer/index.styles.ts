@@ -1,7 +1,6 @@
-import styled, { css } from 'styled-components';
-import { rem } from 'polished';
-import Typography from 'src/theme/typography';
-import Layout from 'src/theme/layout';
+import styled from 'styled-components';
+import Typography from '@/src/theme/typography';
+import Layout from '@/src/theme/layout';
 
 const Wrapper = styled.div``;
 

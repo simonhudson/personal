@@ -1,6 +1,6 @@
 import getRoute from './getRoute';
 
-jest.mock('src/constants/routes', () => [
+jest.mock('@/src/constants/routes', () => [
 	{ label: 'Foo', path: '/foo' },
 	{ label: 'Bar', path: '/bar' },
 	{ label: 'Lorem' },
