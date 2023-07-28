@@ -74,7 +74,11 @@ let data: Data = [
 		text: [
 			'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget odio lacinia, sollicitudin urna et, lacinia ex. Mauris malesuada tortor tristique dui eleifend luctus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at pellentesque augue, eu maximus orci. Vivamus in elit eu sem tincidunt sodales nec ac sapien',
 		],
+<<<<<<< HEAD
 		urls: [`https://typeahead-simonhudson.netlify.app/`, `https://github.com/simonhudson/accessible-typeahead`],
+=======
+		url: `https://typeahead-simonhudson.netlify.app/`,
+>>>>>>> main
 		metadata: [
 			{
 				label: MADE_WITH,
