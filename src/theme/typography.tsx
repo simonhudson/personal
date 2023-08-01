@@ -16,7 +16,7 @@ const H1 = styled.h1`
 
 const H2 = styled.h2`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
-	font-family: ${({ theme }) => theme.font.sansSerif};
+	font-family: ${({ theme }) => theme.font.serif};
 	font-size: ${rem(24)};
 	font-weight: 700;
 	line-height: ${rem(16)};
