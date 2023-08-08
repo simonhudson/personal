@@ -3,18 +3,16 @@ type MetadataItem = {
 	items: Array<string>;
 };
 
-export type DataItem = {
+type Item = {
 	client: string;
 	date: string;
-	isArchived?: Boolean | null | undefined;
+	isArchived?: boolean;
 	metadata: MetadataItem[];
-	omit?: Boolean;
+	omit?: boolean;
 	slug: string;
 	text?: string[];
 	title: string;
 	urls: string[];
 };
 
-type Data = Array<DataItem>;
-
-export default Data;
+export default Item;

@@ -14,12 +14,10 @@ import {
 } from './item.styles';
 import Layout from '@/src/theme/layout';
 import githubUrl from '@/src/constants/githubUrl';
-import PropTypes from 'prop-types';
-import kebabCase from 'lodash/kebabCase';
-import { DataItem } from './data.d';
+import type Item from './item.d';
 import { slugify } from '@/src/utilities/slugify';
 
-const Item = ({ client, date, isArchived, metadata, omit, slug, text, title, urls }: DataItem) => {
+const PortfolioItem = ({ client, date, isArchived, metadata, omit, slug, text, title, urls }: Item) => {
 	if (omit) return null;
 
 	const getCtaText = (url: string) =>
@@ -46,7 +44,7 @@ const Item = ({ client, date, isArchived, metadata, omit, slug, text, title, url
 					</TitleWrap>
 					{metadata &&
 						metadata.map((item, index) => {
-							const ariaLabel = `metadata-${slug}-${kebabCase(item.label)}`;
+							const ariaLabel = `metadata-${slug}-${slugify(item.label)}`;
 							return (
 								<React.Fragment key={`${ariaLabel}-${index}`}>
 									<MetadataTitle id={ariaLabel}>{item.label}</MetadataTitle>
@@ -75,15 +73,4 @@ const Item = ({ client, date, isArchived, metadata, omit, slug, text, title, url
 	);
 };
 
-Item.propTypes = {
-	client: PropTypes.string.isRequired,
-	date: PropTypes.string.isRequired,
-	isArchived: PropTypes.bool,
-	metadata: PropTypes.arrayOf(PropTypes.object).isRequired,
-	omit: PropTypes.bool,
-	slug: PropTypes.string.isRequired,
-	title: PropTypes.string.isRequired,
-	url: PropTypes.string,
-};
-
-export default Item;
+export default PortfolioItem;
