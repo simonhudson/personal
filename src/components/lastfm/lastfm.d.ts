@@ -14,7 +14,7 @@ interface ILastFmApiResponseTrack {
 
 export interface ILastFmDisplayData extends ILastFmApiResponseTrack {
 	relativeTime: string;
-	isCurrentlyPlaying?: Boolean;
+	isCurrentlyPlaying?: boolean;
 }
 
 export type LastFmApiResponse = {

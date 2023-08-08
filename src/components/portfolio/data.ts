@@ -1,4 +1,4 @@
-import Data from './data.d';
+import type Item from './item.d';
 import githubUrl from '@/src/constants/githubUrl';
 
 const AQUASEC: string = 'Aquasec';
@@ -42,7 +42,7 @@ const MADE_WITH = 'Made with';
 const TESTED_WITH = 'Tested with';
 const BUILT_WITH = 'Built with';
 
-let data: Data = [
+const data: Array<Item> = [
 	{
 		slug: 'personal',
 		title: 'Personal site',
