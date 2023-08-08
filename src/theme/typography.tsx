@@ -4,14 +4,23 @@ import { rem } from 'polished';
 const H1 = styled.h1`
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 	font-family: ${({ theme }) => theme.font.serif};
-	font-size: ${rem(36)};
+	font-size: ${rem(30)};
 	font-weight: 400;
+	line-height: ${rem(50)};
 	margin: 0;
+
+	&::after {
+		content: '';
+		display: block;
+		border-bottom: 5px solid ${({ theme }) => theme.palette.primary.brand};
+		margin: ${({ theme }) => theme.spacing.md} 0;
+		width: 15%;
+	}
 
 	${({ theme }) =>
 		theme.media.tabletLandscape(`
-			font-size: ${rem(42)};
-			`)};
+			font-size: ${rem(40)};
+		`)};
 `;
 
 const H2 = styled.h2`
