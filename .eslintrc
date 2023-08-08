@@ -29,7 +29,6 @@
 		"no-extra-boolean-cast": 0,
 		"no-unused-vars": ["error", {"args": "none"}],
 		"no-mixed-spaces-and-tabs": "off",
-		"react/prop-types": 0,
 		"no-useless-escape": 0,
 		"no-var": 2
 	},

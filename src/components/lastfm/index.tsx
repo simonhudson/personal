@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import httpStatusCodes from '@/src/constants/httpStatusCodes';
 dayjs.extend(relativeTime);
-import { ILastFmDisplayData } from './lastfm.d';
+import type { ILastFmDisplayData } from './lastfm.d';
 
 const LastFm = () => {
 	const isMount = useIsMount();
