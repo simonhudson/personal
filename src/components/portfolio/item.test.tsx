@@ -9,7 +9,7 @@ const baseProps = {
 	slug: 'some-slug',
 	title: 'Foo title',
 	client: 'Some client',
-	url: 'http://foo.com',
+	urls: ['http://foo.com'],
 	metadata: [
 		{
 			label: 'Made with',
@@ -105,15 +105,16 @@ describe('Item', () => {
 		describe('link', () => {
 			it('for Github URL', () => {
 				// Given
-				props.url = 'https://github.com/simonhudson/foo';
+				props.urls = ['https://github.com/simonhudson/foo'];
 
 				// When
 				initialise(props);
 
 				// Then
-				const link = screen.getByRole('link');
-				expect(link).toHaveTextContent('View Foo title on Github');
-				expect(link).toHaveAttribute('href', 'https://github.com/simonhudson/foo');
+				const links = screen.getAllByRole('link');
+				expect(links.length).toEqual(1);
+				expect(links[0]).toHaveTextContent('View Foo title on Github');
+				expect(links[0]).toHaveAttribute('href', 'https://github.com/simonhudson/foo');
 			});
 
 			it('for non-Github URL', () => {
@@ -121,9 +122,10 @@ describe('Item', () => {
 				initialise(props);
 
 				// Then
-				const link = screen.getByRole('link');
-				expect(link).toHaveTextContent('View Foo title site');
-				expect(link).toHaveAttribute('href', 'http://foo.com');
+				const links = screen.getAllByRole('link');
+				expect(links.length).toEqual(1);
+				expect(links[0]).toHaveTextContent('View Foo title site');
+				expect(links[0]).toHaveAttribute('href', 'http://foo.com');
 			});
 
 			it('for archived URL', () => {
@@ -134,9 +136,26 @@ describe('Item', () => {
 				initialise(props);
 
 				// Then
-				const link = screen.getByRole('link');
-				expect(link).toHaveTextContent('View Foo title site (archived)');
-				expect(link).toHaveAttribute('href', 'http://foo.com');
+				const links = screen.getAllByRole('link');
+				expect(links.length).toEqual(1);
+				expect(links[0]).toHaveTextContent('View Foo title site (archived)');
+				expect(links[0]).toHaveAttribute('href', 'http://foo.com');
+			});
+
+			it('for multiple links', () => {
+				// Given
+				props.urls = [...props.urls, 'https://github.com/simonhudson/foo'];
+
+				// When
+				initialise(props);
+
+				// Then
+				const links = screen.getAllByRole('link');
+				expect(links.length).toEqual(2);
+				expect(links[0]).toHaveTextContent('View Foo title site');
+				expect(links[0]).toHaveAttribute('href', 'http://foo.com');
+				expect(links[1]).toHaveTextContent('View Foo title on Github');
+				expect(links[1]).toHaveAttribute('href', 'https://github.com/simonhudson/foo');
 			});
 		});
 	});
