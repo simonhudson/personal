@@ -14,7 +14,6 @@ import {
 } from './item.styles';
 import Layout from '@/src/theme/layout';
 import githubUrl from '@/src/constants/githubUrl';
-import PropTypes from 'prop-types';
 import type Item from './item.d';
 import { slugify } from '@/src/utilities/slugify';
 
