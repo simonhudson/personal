@@ -1,16 +1,9 @@
 import httpStatusCodes from '@/src/constants/httpStatusCodes';
+import type Route from './route';
 
 export const HOME = 'Home';
 
-type Route = {
-	path: string;
-	label: string;
-	omitFromNavigation?: boolean;
-};
-
-type Routes = Array<Route>;
-
-const routes: Routes = [
+const routes: Array<Route> = [
 	{
 		path: '/',
 		label: HOME,
