@@ -65,9 +65,9 @@ const BoxShadow = `0 0 10px #ddd`;
 
 const ButtonLink = styled.a`
 	background: transparent;
-	border: ${({ theme }) => `2px solid ${theme.palette.primary.bodyText}`};
+	border: ${({ theme }) => `2px solid ${theme.palette.primary.brand}`};
 	border-radius: ${rem(25)};
-	color: ${({ theme }) => theme.palette.primary.bodyText};
+	color: ${({ theme }) => theme.palette.primary.brand};
 	display: inline-block;
 	font-weight: 700;
 	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
@@ -75,7 +75,7 @@ const ButtonLink = styled.a`
 	text-decoration: none;
 
 	&:focus-visible {
-		background: ${({ theme }) => theme.palette.primary.bodyText};
+		background: ${({ theme }) => theme.palette.primary.brand};
 		color: ${({ theme }) => theme.palette.primary.white};
 		text-decoration: underline;
 	}
