@@ -4,7 +4,7 @@ describe('theme/palette', () => {
         expect(palette).toEqual({
             primary: {
                 bodyBackground: '#fef9f5',
-                brand: '#fa5c35',
+                brand: '#C72C05',
                 bodyText: '#5d5d5d',
                 black: '#333',
                 white: '#fff',
