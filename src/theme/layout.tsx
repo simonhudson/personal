@@ -65,7 +65,7 @@ const BoxShadow = `0 0 10px #ddd`;
 
 const ButtonLink = styled.a`
 	background: transparent;
-	border: ${({ theme }) => `2px solid ${theme.palette.primary.bodyText`};
+	border: ${({ theme }) => `2px solid ${theme.palette.primary.bodyText}`;
 	border-radius: ${rem(25)};
 	color: ${({ theme }) => theme.palette.primary.bodyText};
 	display: inline-block;
