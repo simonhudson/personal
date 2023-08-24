@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 import theme from '@/src/theme';
-import Link from 'next/link';
+import { BASE_SIZE } from '@/src/theme/spacing';
 
 const Wrap = styled.div`
-	border-radius: ${rem(5)};
+	background: ${({ theme }) => `linear-gradient(${theme.palette.primary.white}, transparent)`};
+	border-radius: ${rem(BASE_SIZE)};
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 ${({ theme }) => theme.spacing.lg};
+	margin: 0;
+	padding: ${rem(40)};
 
 	&:last-of-type {
 		margin: 0;
@@ -16,8 +18,8 @@ const Wrap = styled.div`
 	${({ theme }) =>
 		theme.media.tabletLandscape(`
 			margin: 0 0 ${theme.spacing.sm};
-            width: 47.3%;
-			`)};
+            width: 40.6%;
+		`)};
 `;
 
 const TitleWrap = styled.div`
