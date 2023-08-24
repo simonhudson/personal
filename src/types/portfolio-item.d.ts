@@ -7,7 +7,7 @@ export type PortfolioItem = {
 	isArchived?: boolean;
 	madeWith?: string[];
 	omit?: boolean;
-	pinnedPosition?: number;
+	position?: number;
 	slug: string;
 	testedWith?: string[];
 	title: string;

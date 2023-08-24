@@ -27,8 +27,8 @@ export const getStaticProps = async () => {
 		portfolioItems.forEach((item) => (item.slug = slugify(item.title)));
 
 		portfolioItems.sort((a, b) => {
-			const keyA = a.pinnedPosition;
-			const keyB = b.pinnedPosition;
+			const keyA = a.position;
+			const keyB = b.position;
 			if (keyA && keyB) {
 				if (keyA < keyB) return -1;
 				if (keyA > keyB) return 1;

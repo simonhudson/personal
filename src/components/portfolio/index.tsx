@@ -22,7 +22,7 @@ const Portfolio = ({ data }: { data: PortfolioItem[] }) => {
 							key={index}
 							madeWith={item.madeWith}
 							omit={item.omit}
-							pinnedPosition={item.pinnedPosition}
+							position={item.position}
 							slug={item.slug}
 							testedWith={item.testedWith}
 							title={item.title}

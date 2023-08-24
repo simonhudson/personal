@@ -42,7 +42,7 @@ type ApiResponseItem = {
 		date: string;
 		isArchived?: boolean;
 		omit?: boolean;
-		pinnedPosition?: number;
+		position?: number;
 	};
 };
 
