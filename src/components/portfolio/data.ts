@@ -14,7 +14,7 @@ const EXPRESS_JS: string = 'Express.js';
 const GITHUB: string = 'Github';
 const HANDLEBARS: string = 'Handlebars';
 const HTML: string = 'HTML';
-const JAVASCRIPT: string = 'Javascript';
+const JAVASCRIPT: string = 'JavaScript';
 const JEST: string = 'Jest';
 const JQUERY: string = 'jQuery';
 const MOCHA: string = 'Mocha';
@@ -29,7 +29,7 @@ const REACT_TESTING_LIBRARY: string = 'React Testing Library';
 const SASS: string = 'Sass';
 const SHAREPOINT: string = 'Sharepoint';
 const STYLED_COMPONENTS: string = 'Styled Components';
-const TYPESCRIPT: string = 'Typescript';
+const TYPESCRIPT: string = 'TypeScript';
 const VERACODE: string = 'Veracode';
 const WEBPACK: string = 'Webpack';
 
