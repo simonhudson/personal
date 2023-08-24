@@ -30,7 +30,8 @@ const Aside = styled.aside`
 `;
 
 const StyledIcon = styled(Icon)`
-	font-size: ${rem(16)};
+	color: ${({ theme }) => theme.palette.brand};
+        font-size: ${rem(16)};
 	margin-left: ${({ theme }) => theme.spacing.sm};
 `;
 

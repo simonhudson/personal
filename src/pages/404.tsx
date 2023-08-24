@@ -9,7 +9,7 @@ const Error404 = () => {
 	return (
 		<Layout.Section>
 			<Typography.H1>Page not found</Typography.H1>
-			<Typography.Paragraph data-testid="404-copy">
+			<Typography.Paragraph>
 				Looks like we couldn&apos;t find that page. Would you like to{' '}
 				<Link href={homePageLink}>
 					<a>go back to the home page?</a>
