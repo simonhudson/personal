@@ -26,6 +26,16 @@ export const getStaticProps = async () => {
 		});
 		portfolioItems.forEach((item) => (item.slug = slugify(item.title)));
 
+		portfolioItems.sort((a, b) => {
+			const keyA = a.pinnedPosition;
+			const keyB = b.pinnedPosition;
+			if (keyA && keyB) {
+				if (keyA < keyB) return -1;
+				if (keyA > keyB) return 1;
+			}
+			return 0;
+		});
+
 		return {
 			props: {
 				portfolioItems,
