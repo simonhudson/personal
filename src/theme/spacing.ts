@@ -1,6 +1,6 @@
 import { rem } from 'polished';
 import font from './font';
-const BASE_SIZE = font.size;
+export const BASE_SIZE = font.size;
 
 type Spacing = {
 	default: number;
@@ -11,7 +11,7 @@ type Spacing = {
 	xlg: number;
 	xxlg: number;
 	xxxlg: number;
-}
+};
 
 const spacing: Spacing = {
 	default: BASE_SIZE,

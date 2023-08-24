@@ -98,7 +98,7 @@ const ButtonLinksList = styled.ul`
 	flex-direction: column;
 	gap: ${({ theme }) => theme.spacing.default};
 	list-style: none;
-	padding: ${({ theme }) => `${theme.spacing.default} 0 0 0`};
+	padding: ${({ theme }) => `${theme.spacing.default} 0`};
 
 	${({ theme }) =>
 		theme.media.phoneLandscape(`
@@ -107,7 +107,6 @@ const ButtonLinksList = styled.ul`
 `;
 
 const ButtonLinksItem = styled.li`
-	margin: 0 0 ${({ theme }) => theme.spacing.default};
 	text-align: center;
 `;
 
