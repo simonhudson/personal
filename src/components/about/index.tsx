@@ -5,12 +5,11 @@ import Layout from '@/src/theme/layout';
 import { Wrap, Content, Aside, StyledIcon } from './index.styles';
 import LastFm from '@/src/components/lastfm';
 import Links from './links';
-import data from '@/src/components/portfolio/data';
 import { slugify } from '@/src/utilities/slugify';
 
 const AboutMe = () => {
 	const CSS_HACKS_LINK: string = 'https://gist.github.com/Awilum/5589742';
-	const EXPERIAN_MARKETPLACE_LINK: string = data.find((item) => item.slug === 'experian-marketplace')!.urls[0];
+	const EXPERIAN_MARKETPLACE_LINK: string = 'https://creditmatcher.experian.co.uk';
 
 	return (
 		<Layout.Section>

@@ -1,13 +1,4 @@
-type Link = {
-	text: string;
-	link: string;
-	icon: {
-		type: 'solid' | 'brand';
-		name: string;
-	};
-};
-
-type Links = Array<Link>;
+import type { Links } from '@/src/types/links.d';
 
 const links: Links = [
 	{
