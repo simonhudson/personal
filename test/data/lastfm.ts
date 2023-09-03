@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
-import type { LastFmApiResponse } from '@/src/components/lastfm/lastfm.d';
+import type { LastFmApiResponse } from '@/src/types/lastfm.d';
 
 const LastFmTestData: LastFmApiResponse = {
 	recenttracks: {

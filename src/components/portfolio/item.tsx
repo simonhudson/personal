@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import {
 	Wrap,
 	TitleWrap,
@@ -13,23 +12,23 @@ import {
 	MetadataItem,
 } from './item.styles';
 import Layout from '@/src/theme/layout';
-import githubUrl from '@/src/constants/githubUrl';
-import type Item from './item.d';
-import { slugify } from '@/src/utilities/slugify';
+import type { PortfolioItem } from '@/src/types/portfolio-item';
 
-const PortfolioItem = ({ client, date, isArchived, metadata, omit, slug, text, title, urls }: Item) => {
+const Item = ({
+	builtWith,
+	client,
+	copy,
+	date,
+	githubUrl,
+	isArchived,
+	madeWith,
+	omit,
+	slug,
+	testedWith,
+	title,
+	url,
+}: PortfolioItem) => {
 	if (omit) return null;
-
-	const getCtaText = (url: string) =>
-		url.startsWith(githubUrl) ? (
-			<>
-				View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>on Github
-			</>
-		) : (
-			<>
-				View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>site{isArchived ? ' (archived)' : ''}
-			</>
-		);
 
 	return (
 		<Wrap>
@@ -42,30 +41,50 @@ const PortfolioItem = ({ client, date, isArchived, metadata, omit, slug, text, t
 						</Client>
 						<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
 					</TitleWrap>
-					{metadata &&
-						metadata.map((item, index) => {
-							const ariaLabel = `metadata-${slug}-${slugify(item.label)}`;
-							return (
-								<React.Fragment key={`${ariaLabel}-${index}`}>
-									<MetadataTitle id={ariaLabel}>{item.label}</MetadataTitle>
-									<MetadataList key={ariaLabel} aria-labelledby={ariaLabel}>
-										{item.items.map((item, index) => {
-											return <MetadataItem key={`metadata-item--${index}`}>{item}</MetadataItem>;
-										})}
-									</MetadataList>
-								</React.Fragment>
-							);
-						})}
+					{madeWith && (
+						<>
+							<MetadataTitle id={`${slug}-made-with`}>Made with</MetadataTitle>
+							<MetadataList aria-labelledby={`${slug}-made-with`}>
+								{madeWith.map((item, index) => {
+									return <MetadataItem key={index}>{item}</MetadataItem>;
+								})}
+							</MetadataList>
+						</>
+					)}
+					{testedWith && (
+						<>
+							<MetadataTitle id={`${slug}-tested-with`}>Tested with</MetadataTitle>
+							<MetadataList aria-labelledby={`${slug}-tested-with`}>
+								{testedWith.map((item, index) => {
+									return <MetadataItem key={index}>{item}</MetadataItem>;
+								})}
+							</MetadataList>
+						</>
+					)}
+					{builtWith && (
+						<>
+							<MetadataTitle id={`${slug}-built-with`}>Built with</MetadataTitle>
+							<MetadataList aria-labelledby={`${slug}-built-with`}>
+								{builtWith.map((item, index) => {
+									return <MetadataItem key={index}>{item}</MetadataItem>;
+								})}
+							</MetadataList>
+						</>
+					)}
+
 					<Layout.ButtonLinksList>
-						{urls.map((url: string, index: number) => {
-							return (
-								<Layout.ButtonLinksItem key={`link--${slugify(title)}-${index}`}>
-									<Link href={url}>
-										<Layout.ButtonLinksLink href={url}>{getCtaText(url)}</Layout.ButtonLinksLink>
-									</Link>
-								</Layout.ButtonLinksItem>
-							);
-						})}
+						{url && (
+							<Layout.ButtonLinksItem>
+								<Layout.ButtonLinksLink href={url}>
+									View {title} site{isArchived ? ' (archived)' : null}
+								</Layout.ButtonLinksLink>
+							</Layout.ButtonLinksItem>
+						)}
+						{githubUrl && (
+							<Layout.ButtonLinksItem>
+								<Layout.ButtonLinksLink href={githubUrl}>View {title} on Github</Layout.ButtonLinksLink>
+							</Layout.ButtonLinksItem>
+						)}
 					</Layout.ButtonLinksList>
 				</Text>
 			</Content>
@@ -73,4 +92,4 @@ const PortfolioItem = ({ client, date, isArchived, metadata, omit, slug, text, t
 	);
 };
 
-export default PortfolioItem;
+export default Item;
