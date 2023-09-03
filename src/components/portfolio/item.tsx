@@ -76,18 +76,14 @@ const Item = ({
 					<Layout.ButtonLinksList>
 						{url && (
 							<Layout.ButtonLinksItem>
-								<Link href={url}>
-									<Layout.ButtonLinksLink>
-										View site{isArchived ? ' (archived)' : null}
-									</Layout.ButtonLinksLink>
-								</Link>
+								<Layout.ButtonLinksLink href={url}>
+									View site{isArchived ? ' (archived)' : null}
+								</Layout.ButtonLinksLink>
 							</Layout.ButtonLinksItem>
 						)}
 						{githubUrl && (
 							<Layout.ButtonLinksItem>
-								<Link href={githubUrl}>
-									<Layout.ButtonLinksLink>View on Github</Layout.ButtonLinksLink>
-								</Link>
+								<Layout.ButtonLinksLink href={githubUrl}>View on Github</Layout.ButtonLinksLink>
 							</Layout.ButtonLinksItem>
 						)}
 					</Layout.ButtonLinksList>

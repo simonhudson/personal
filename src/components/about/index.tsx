@@ -41,11 +41,9 @@ const AboutMe = () => {
 							{Links.map((item, index: number) => {
 								return (
 									<Layout.ButtonLinksItem key={`link-${slugify(item.text)}-${index}`}>
-										<Layout.ButtonLinksLink>
-											<Link href={item.link}>
-												{item.text}
-												<StyledIcon type={item.icon.type} name={item.icon.name} />
-											</Link>
+										<Layout.ButtonLinksLink href={item.link}>
+											{item.text}
+											<StyledIcon type={item.icon.type} name={item.icon.name} />
 										</Layout.ButtonLinksLink>
 									</Layout.ButtonLinksItem>
 								);
