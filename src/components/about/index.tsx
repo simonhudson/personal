@@ -20,10 +20,7 @@ const AboutMe = () => {
 						<Typography.Strong>
 							I've been working in web development since 2004, back when all this was just fields and we
 							had to use{' '}
-							<Link href={CSS_HACKS_LINK}>
-								<a href={CSS_HACKS_LINK}>all manner of nasty hacks to get our CSS working</a>
-							</Link>
-							.
+							<Link href={CSS_HACKS_LINK}>all manner of nasty hacks to get our CSS working</Link>.
 						</Typography.Strong>
 					</Typography.Paragraph>
 					<Typography.Paragraph>
@@ -32,11 +29,7 @@ const AboutMe = () => {
 					</Typography.Paragraph>
 					<Typography.Paragraph>
 						I'm currently working at Experian, where I spend most of my day working with React and Node to
-						build and maintain their{' '}
-						<Link href={EXPERIAN_MARKETPLACE_LINK}>
-							<a href={EXPERIAN_MARKETPLACE_LINK}>Marketplace</a>
-						</Link>{' '}
-						web app.
+						build and maintain their <Link href={EXPERIAN_MARKETPLACE_LINK}>Marketplace</Link> web app.
 					</Typography.Paragraph>
 					<Typography.Paragraph>
 						I am passionate about web accessibility and how to build for assistive technologies. I'm also a
@@ -48,12 +41,12 @@ const AboutMe = () => {
 							{Links.map((item, index: number) => {
 								return (
 									<Layout.ButtonLinksItem key={`link-${slugify(item.text)}-${index}`}>
-										<Link href={item.link}>
-											<Layout.ButtonLinksLink href={item.link}>
+										<Layout.ButtonLinksLink>
+											<Link href={item.link}>
 												{item.text}
 												<StyledIcon type={item.icon.type} name={item.icon.name} />
-											</Layout.ButtonLinksLink>
-										</Link>
+											</Link>
+										</Layout.ButtonLinksLink>
 									</Layout.ButtonLinksItem>
 								);
 							})}

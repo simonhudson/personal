@@ -11,6 +11,9 @@ export const getStaticProps = async () => {
 	let portfolioData: ApiResponse, portfolioItems: PortfolioItem[];
 	const response = await fetch(
 		`https://cdn.contentful.com/spaces/6mgmi9vpnu9n/entries?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`,
+		{
+			next: { tags: ['portfolio'] },
+		},
 	);
 
 	if (response?.status === 200) {

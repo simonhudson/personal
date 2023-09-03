@@ -54,24 +54,17 @@ const LastFm = () => {
 			{!errorMsg && !errorMsg.length && data && (
 				<InnerWrap>
 					<Link href={data.url}>
-						<a>
-							<Image
-								alt={`Now playing "${data.name}" by ${data.artist?.['#text']} on Last.fm`}
-								src={data?.image?.[2]?.['#text']}
-							/>
-						</a>
+						<Image
+							alt={`Now playing "${data.name}" by ${data.artist?.['#text']} on Last.fm`}
+							src={data?.image?.[2]?.['#text']}
+						/>
 					</Link>
 					<StyledParagraph>
 						<span>
-							<Link href={data.url}>
-								<a>&quot;{data.name}&quot;</a>
-							</Link>
+							<Link href={data.url}>&quot;{data.name}&quot;</Link>
 						</span>
 						<span>
-							<em>by</em>{' '}
-							<Link href={data.url}>
-								<a>{data.artist?.['#text']}</a>
-							</Link>
+							<em>by</em> <Link href={data.url}>{data.artist?.['#text']}</Link>
 						</span>
 						<span>{data.relativeTime}</span>
 						{data.isCurrentlyPlaying && (

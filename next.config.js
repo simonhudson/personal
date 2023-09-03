@@ -3,7 +3,14 @@ const { createSecureHeaders } = require('next-secure-headers');
 
 const setEnvVars = () => {
 	const envObj = {};
-	const KEYS_TO_SET = ['APP_ENV', 'CONTENTFUL_ACCESS_TOKEN', 'LASTFM_API_KEY', 'LASTFM_USERNAME', 'HOLDING_MODE'];
+	const KEYS_TO_SET = [
+		'APP_ENV',
+		'CONTENTFUL_ACCESS_TOKEN',
+		'CONTENTFUL_REVALIDATE_TOKEN',
+		'LASTFM_API_KEY',
+		'LASTFM_USERNAME',
+		'HOLDING_MODE',
+	];
 	for (let key in process.env) {
 		if (KEYS_TO_SET.includes(key)) envObj[key] = process.env[key];
 	}
