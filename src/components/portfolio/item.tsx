@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import {
 	Wrap,
 	TitleWrap,
@@ -77,13 +76,13 @@ const Item = ({
 						{url && (
 							<Layout.ButtonLinksItem>
 								<Layout.ButtonLinksLink href={url}>
-									View site{isArchived ? ' (archived)' : null}
+									View {title} site{isArchived ? ' (archived)' : null}
 								</Layout.ButtonLinksLink>
 							</Layout.ButtonLinksItem>
 						)}
 						{githubUrl && (
 							<Layout.ButtonLinksItem>
-								<Layout.ButtonLinksLink href={githubUrl}>View on Github</Layout.ButtonLinksLink>
+								<Layout.ButtonLinksLink href={githubUrl}>View {title} on Github</Layout.ButtonLinksLink>
 							</Layout.ButtonLinksItem>
 						)}
 					</Layout.ButtonLinksList>
