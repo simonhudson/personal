@@ -7,12 +7,12 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import httpStatusCodes from '@/src/constants/httpStatusCodes';
 dayjs.extend(relativeTime);
-import type { ILastFmDisplayData } from './lastfm.d';
+import type { LastFmDisplayData } from '@/src/types/lastfm.d';
 
 const LastFm = () => {
 	const isMount = useIsMount();
 	const [isLoading, setIsLoading] = useState(true);
-	const [data, setData] = useState<ILastFmDisplayData>();
+	const [data, setData] = useState<LastFmDisplayData>();
 	const [errorMsg, setErrorMsg] = useState('');
 
 	const ERROR_MSG = `Sorry, couldn't load data from Last.fm :o(`;
@@ -27,7 +27,7 @@ const LastFm = () => {
 					setErrorMsg(ERROR_MSG);
 				} else {
 					const data = await response?.json();
-					const recentTrack: ILastFmDisplayData = data?.recenttracks?.track[0];
+					const recentTrack = data?.recenttracks?.track[0];
 					if (recentTrack) {
 						const displayData = { ...recentTrack };
 						displayData.relativeTime = recentTrack?.date
@@ -54,24 +54,17 @@ const LastFm = () => {
 			{!errorMsg && !errorMsg.length && data && (
 				<InnerWrap>
 					<Link href={data.url}>
-						<a>
-							<Image
-								alt={`Now playing "${data.name}" by ${data.artist?.['#text']} on Last.fm`}
-								src={data?.image?.[2]?.['#text']}
-							/>
-						</a>
+						<Image
+							alt={`Now playing "${data.name}" by ${data.artist?.['#text']} on Last.fm`}
+							src={data?.image?.[2]?.['#text']}
+						/>
 					</Link>
 					<StyledParagraph>
 						<span>
-							<Link href={data.url}>
-								<a>&quot;{data.name}&quot;</a>
-							</Link>
+							<Link href={data.url}>&quot;{data.name}&quot;</Link>
 						</span>
 						<span>
-							<em>by</em>{' '}
-							<Link href={data.url}>
-								<a>{data.artist?.['#text']}</a>
-							</Link>
+							<em>by</em> <Link href={data.url}>{data.artist?.['#text']}</Link>
 						</span>
 						<span>{data.relativeTime}</span>
 						{data.isCurrentlyPlaying && (

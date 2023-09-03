@@ -3,22 +3,22 @@ type LastFmDataImage = {
 	'#text': 'small.jpg' | 'medium.jpg' | 'large.jpg' | 'extralarge.jpg';
 };
 
-interface ILastFmApiResponseTrack {
+type LastFmApiResponseTrack = {
 	artist: { '#text': string };
-	image: Array<LastFmDataImage>;
+	image: LastFmDataImage[];
 	album: { '#text': string };
 	name: string;
 	url: string;
 	date: { '#text': any };
-}
+};
 
-export interface ILastFmDisplayData extends ILastFmApiResponseTrack {
+export interface LastFmDisplayData extends LastFmApiResponseTrack {
 	relativeTime: string;
 	isCurrentlyPlaying?: boolean;
 }
 
 export type LastFmApiResponse = {
 	recenttracks: {
-		track: Array<ILastFmApiResponseTrack>;
+		track: LastFmApiResponseTrack[];
 	};
 };

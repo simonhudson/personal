@@ -35,14 +35,14 @@ describe('LastFm', () => {
 		const titleLink = links.at(1);
 		const artistLink = links.at(2);
 
-		expect(imageLink).toHaveAttribute('href', '/track-url');
+		expect(imageLink).toHaveAttribute('href', 'track-url');
 		expect(image).toHaveAttribute('alt', `Now playing "Track Name" by Artist on Last.fm`);
 		expect(image).toHaveAttribute('src', `large.jpg`);
 
-		expect(titleLink).toHaveAttribute('href', '/track-url');
+		expect(titleLink).toHaveAttribute('href', 'track-url');
 		expect(titleLink.textContent).toEqual(`"Track Name"`);
 
-		expect(artistLink).toHaveAttribute('href', '/track-url');
+		expect(artistLink).toHaveAttribute('href', 'track-url');
 		expect(artistLink.textContent).toEqual(`Artist`);
 	};
 
