@@ -1,3 +1,5 @@
+import { ContentTypes } from './contentTypes.d';
+
 type ApiResponseItem = {
 	metadata: {
 		tags: string;
@@ -26,7 +28,7 @@ type ApiResponseItem = {
 			sys: {
 				type: string;
 				linkType: string;
-				id: 'portfolioItem';
+				id: ContentTypes;
 			};
 		};
 		locale: 'en-GB';

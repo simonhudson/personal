@@ -7,6 +7,7 @@ import Links from './links';
 import { slugify } from '@/src/utilities/slugify';
 import getContent from '@/src/utilities/getContent';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import Link from 'next/link';
 
 const AboutMe = () => {
 	const CSS_HACKS_LINK: string = 'https://gist.github.com/Awilum/5589742';
@@ -27,8 +28,7 @@ const AboutMe = () => {
 			<Typography.H2>About me</Typography.H2>
 			<Wrap>
 				<Content>
-					<div dangerouslySetInnerHTML={{ __html: copy }}></div>
-					{/* <Typography.Paragraph>
+					<Typography.Paragraph>
 						<Typography.Strong>
 							I've been working in web development since 2004, back when all this was just fields and we
 							had to use{' '}
@@ -47,7 +47,7 @@ const AboutMe = () => {
 						I am passionate about web accessibility and how to build for assistive technologies. I'm also a
 						big fan of test-driven development, clean code, and striving for simple solutions to complex
 						problems.
-					</Typography.Paragraph> */}
+					</Typography.Paragraph>
 					{Links && (
 						<Layout.ButtonLinksList>
 							{Links.map((item, index: number) => {

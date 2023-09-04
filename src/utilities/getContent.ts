@@ -1,4 +1,4 @@
-type ContentTypes = 'aboutMe' | 'portfolioItem';
+import { ContentTypes } from '@/src/types/contentTypes';
 
 const getContent = async (contentType: ContentTypes) => {
 	const response = await fetch(
