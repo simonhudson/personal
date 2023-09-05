@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import useIsMount from '@/src/utilities/useIsMount';
 import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon } from './index.styles';
 import Loading from '@/src/components/loading';
 import dayjs from 'dayjs';
@@ -10,7 +9,6 @@ dayjs.extend(relativeTime);
 import type { LastFmDisplayData } from '@/src/types/lastfm.d';
 
 const LastFm = () => {
-	const isMount = useIsMount();
 	const [isLoading, setIsLoading] = useState(true);
 	const [data, setData] = useState<LastFmDisplayData>();
 	const [errorMsg, setErrorMsg] = useState('');
@@ -19,28 +17,26 @@ const LastFm = () => {
 
 	useEffect(() => {
 		(async () => {
-			if (isMount) {
-				const response = await fetch(
-					`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
-				);
-				if (response?.status !== httpStatusCodes.OK) {
-					setErrorMsg(ERROR_MSG);
+			const response = await fetch(
+				`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
+			);
+			if (response?.status !== httpStatusCodes.OK) {
+				setErrorMsg(ERROR_MSG);
+			} else {
+				const data = await response?.json();
+				const recentTrack = data?.recenttracks?.track[0];
+				if (recentTrack) {
+					const displayData = { ...recentTrack };
+					displayData.relativeTime = recentTrack?.date
+						? dayjs(recentTrack.date['#text']).fromNow()
+						: 'Now playing';
+					if (!recentTrack?.date) displayData.isCurrentlyPlaying = true;
+					setData(displayData);
 				} else {
-					const data = await response?.json();
-					const recentTrack = data?.recenttracks?.track[0];
-					if (recentTrack) {
-						const displayData = { ...recentTrack };
-						displayData.relativeTime = recentTrack?.date
-							? dayjs(recentTrack.date['#text']).fromNow()
-							: 'Now playing';
-						if (!recentTrack?.date) displayData.isCurrentlyPlaying = true;
-						setData(displayData);
-					} else {
-						setErrorMsg(ERROR_MSG);
-					}
+					setErrorMsg(ERROR_MSG);
 				}
-				setIsLoading(false);
 			}
+			setIsLoading(false);
 		})();
 	}, []);
 

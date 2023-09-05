@@ -1,6 +1,5 @@
 import React from 'react';
 import About from './index';
-import LastFmData from '@/test/data/lastfm';
 import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
@@ -11,7 +10,8 @@ describe('About', () => {
 	beforeEach(() => {
 		global.fetch = jest.fn(() =>
 			Promise.resolve({
-				json: () => Promise.resolve(LastFmData),
+				json: () => Promise.resolve({ items: [{ fields: { copy: '<p>Foo</p>' } }] }),
+				status: 200,
 			}),
 		) as jest.Mock;
 	});
@@ -21,19 +21,8 @@ describe('About', () => {
 		global.fetch = ORIGINAL_FETCH;
 	});
 
-	it(`should render expected heading`, async () => {
-		// When
-		await initialise();
-
-		// Then
+	const assertCommonElements = () => {
 		expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('About me');
-	});
-
-	it(`should render expected links`, async () => {
-		// When
-		await initialise();
-
-		// Then
 		[
 			{
 				text: 'Download my CV',
@@ -50,6 +39,32 @@ describe('About', () => {
 		].forEach((item) => {
 			expect(screen.getByText(item.text)).toHaveAttribute('href', item.href);
 		});
+	};
+
+	it.only('should render as expected when CMS call successful', async () => {
+		// When
+		await initialise();
+
+		// Then
+		assertCommonElements();
+		expect(screen.getByText('Foo')).toBeInTheDocument();
+	});
+
+	it('should render as expected when CMS call not successful', async () => {
+		// Given
+		global.fetch = jest.fn(() =>
+			Promise.resolve({
+				json: () => Promise.resolve(undefined),
+				status: 404,
+			}),
+		) as jest.Mock;
+
+		// When
+		await initialise();
+
+		// Then
+		assertCommonElements();
+		expect(screen.getByText('Foo')).not.toBeInTheDocument();
 	});
 
 	const initialise = async () => await act(async () => render(<About />));
