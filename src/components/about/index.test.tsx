@@ -3,6 +3,13 @@ import About from './index';
 import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
+import { LastFmMockData } from '@/test/mock-data/lastfm';
+import { cloneDeep } from 'lodash';
+
+const baseProps = {
+	aboutData: '<p>Foo</p>',
+	lastFmData: LastFmMockData,
+};
 
 describe('About', () => {
 	const assertCommonElements = () => {
@@ -26,8 +33,11 @@ describe('About', () => {
 	};
 
 	it('should render as expected when CMS call successful', async () => {
+		// Given
+		const props = cloneDeep(baseProps);
+
 		// When
-		await initialise();
+		await initialise(props);
 
 		// Then
 		assertCommonElements();
@@ -36,20 +46,17 @@ describe('About', () => {
 
 	it('should render as expected when CMS call not successful', async () => {
 		// Given
-		global.fetch = jest.fn(() =>
-			Promise.resolve({
-				json: () => Promise.resolve(undefined),
-				status: 404,
-			}),
-		) as jest.Mock;
+		const props = cloneDeep(baseProps);
+		delete props.aboutData;
 
 		// When
-		await initialise();
+		await initialise(props);
 
 		// Then
 		assertCommonElements();
-		expect(screen.getByText('Foo')).not.toBeInTheDocument();
+		expect(screen.queryByText('Foo')).not.toBeInTheDocument();
 	});
 
-	const initialise = async () => await act(async () => render(<About />));
+	const initialise = async (props) =>
+		await act(async () => render(<About aboutData={props.aboutData} lastFmData={props.lastFmData} />));
 });

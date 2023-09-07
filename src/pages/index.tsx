@@ -8,7 +8,7 @@ import getContent from '@/src/utilities/getContent';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import httpStatusCodes from '@/src/constants/httpStatusCodes';
+import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
 dayjs.extend(relativeTime);
 
 import type { PortfolioApiResponse } from '@/src/types/contentful/api/portfolio.d';
@@ -53,14 +53,11 @@ const getAboutData = async () => {
 };
 
 const getLastFmData = async () => {
-	let hasError = false,
-		displayData;
+	let displayData;
 	const response = await fetch(
 		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
 	);
-	if (response?.status !== httpStatusCodes.OK) {
-		hasError = true;
-	} else {
+	if (response?.status === httpStatusCodes.OK) {
 		const data = await response?.json();
 		const recentTrack = data?.recenttracks?.track[0];
 		if (recentTrack) {
@@ -68,14 +65,9 @@ const getLastFmData = async () => {
 			displayData.relativeTime = recentTrack?.date ? dayjs(recentTrack.date['#text']).fromNow() : 'Now playing';
 			if (!recentTrack?.date) displayData.isCurrentlyPlaying = true;
 			displayData;
-		} else {
-			hasError = true;
 		}
 	}
-	return {
-		...displayData,
-		hasError,
-	};
+	return displayData;
 };
 
 export const getStaticProps = async () => {

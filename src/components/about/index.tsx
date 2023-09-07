@@ -6,7 +6,14 @@ import LastFm from '@/src/components/lastfm';
 import Links from './links';
 import { slugify } from '@/src/utilities/slugify';
 
-const AboutMe = ({ aboutData, lastFmData }) => {
+import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
+
+interface AboutProps {
+	aboutData?: string;
+	lastFmData?: LastFmDisplayData;
+}
+
+const AboutMe = ({ aboutData, lastFmData }: AboutProps) => {
 	return (
 		<Layout.Section>
 			<Typography.H2>About me</Typography.H2>

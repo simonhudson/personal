@@ -12,7 +12,7 @@ import {
 	MetadataItem,
 } from './item.styles';
 import Layout from '@/src/theme/layout';
-import type { PortfolioItem } from '@/src/types/portfolio-item';
+import type { PortfolioItem } from '@/src/types/contentful/transformed/portfolio.d';
 
 const Item = ({
 	builtWith,

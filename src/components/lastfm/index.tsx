@@ -3,25 +3,29 @@ import Link from 'next/link';
 import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon } from './index.styles';
 import Loading from '@/src/components/loading';
 
-const LastFm = ({ data }) => {
-	const [isLoading, setIsLoading] = useState(true);
-	const [errorMsg, setErrorMsg] = useState('');
+import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
 
-	const ERROR_MSG = `Sorry, couldn't load data from Last.fm :o(`;
+interface LastFmProps {
+	data?: LastFmDisplayData;
+}
+
+const LastFm = ({ data }: LastFmProps) => {
+	const [isLoading, setIsLoading] = useState<boolean>(true);
+	const [errorMsg, setErrorMsg] = useState<string | undefined>();
 
 	useEffect(() => {
-		if (data) setIsLoading(false);
-		if (data?.hasError) setErrorMsg(ERROR_MSG);
+		setIsLoading(false);
+		if (!data) setErrorMsg(`Sorry, couldn't load data from Last.fm :o(`);
 	}, []);
 
 	return (
 		<Wrap>
 			<HeadingWrap>
 				<StyledIcon type="brand" name="lastfm-square" />
-				<Heading role="heading">Last.fm</Heading>
+				<Heading>Last.fm</Heading>
 			</HeadingWrap>
 			<Loading isLoading={isLoading} />
-			{!errorMsg && !errorMsg.length && (
+			{!errorMsg && !isLoading && data && (
 				<InnerWrap>
 					<Link href={data.url}>
 						<Image

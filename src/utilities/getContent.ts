@@ -1,4 +1,5 @@
 import type { ContentTypes } from '@/src/types/contentful/content-types.d';
+import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
 
 const getContent = async (contentType: ContentTypes) => {
 	let data;
@@ -9,7 +10,7 @@ const getContent = async (contentType: ContentTypes) => {
 		},
 	);
 
-	if (response?.status === 200) data = await response.json();
+	if (response?.status === httpStatusCodes.OK) data = await response.json();
 	return data;
 };
 
