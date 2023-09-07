@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { routes } from '@/src/constants/routes';
+import routes from '@/src/constants/routes';
 import Typography from '@/src/theme/typography';
 import Layout from '@/src/theme/layout';
 
