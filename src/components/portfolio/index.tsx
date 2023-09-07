@@ -3,9 +3,9 @@ import Typography from '@/src/theme/typography';
 import Layout from '@/src/theme/layout';
 import { Wrap } from './index.styles';
 import Item from './item';
-import type { PortfolioItem } from '@/src/types/portfolio-item';
+import type { PortfolioItem } from '@/src/types/contentful/transformed/portfolio.d';
 
-const Portfolio = ({ data }: { data: PortfolioItem[] }) => {
+const Portfolio = ({ data }: { data?: PortfolioItem[] }) => {
 	return (
 		<Layout.Section>
 			<Typography.H2>My work</Typography.H2>

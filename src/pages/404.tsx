@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import Routes from '@/src/constants/routes';
+import routes from '@/src/constants/routes';
 import Typography from '@/src/theme/typography';
 import Layout from '@/src/theme/layout';
 
 const Error404 = () => {
-	const homePageLink = Routes!.find((route) => route.label.toLowerCase() === 'home')!.path;
+	const homePageLink = routes!.find((route) => route.label.toLowerCase() === 'home')!.path;
 	return (
 		<Layout.Section>
 			<Typography.H1>Page not found</Typography.H1>

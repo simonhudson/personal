@@ -1,3 +1,5 @@
+import { ContentTypes } from '../content-types';
+
 type ApiResponseItem = {
 	metadata: {
 		tags: string;
@@ -26,7 +28,7 @@ type ApiResponseItem = {
 			sys: {
 				type: string;
 				linkType: string;
-				id: 'portfolioItem';
+				id: ContentTypes;
 			};
 		};
 		locale: 'en-GB';
@@ -46,7 +48,7 @@ type ApiResponseItem = {
 	};
 };
 
-export type ApiResponse = {
+export type PortfolioApiResponse = {
 	sys: {
 		type: string;
 	};

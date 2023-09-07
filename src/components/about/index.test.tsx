@@ -1,39 +1,19 @@
 import React from 'react';
 import About from './index';
-import LastFmData from '@/test/data/lastfm';
 import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
+import { LastFmMockData } from '@/test/mock-data/lastfm';
+import { cloneDeep } from 'lodash';
 
-const ORIGINAL_FETCH = global.fetch;
+const baseProps = {
+	aboutData: '<p>Foo</p>',
+	lastFmData: LastFmMockData,
+};
 
 describe('About', () => {
-	beforeEach(() => {
-		global.fetch = jest.fn(() =>
-			Promise.resolve({
-				json: () => Promise.resolve(LastFmData),
-			}),
-		) as jest.Mock;
-	});
-
-	afterEach(() => {
-		jest.clearAllMocks();
-		global.fetch = ORIGINAL_FETCH;
-	});
-
-	it(`should render expected heading`, async () => {
-		// When
-		await initialise();
-
-		// Then
+	const assertCommonElements = () => {
 		expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('About me');
-	});
-
-	it(`should render expected links`, async () => {
-		// When
-		await initialise();
-
-		// Then
 		[
 			{
 				text: 'Download my CV',
@@ -50,7 +30,33 @@ describe('About', () => {
 		].forEach((item) => {
 			expect(screen.getByText(item.text)).toHaveAttribute('href', item.href);
 		});
+	};
+
+	it('should render as expected when CMS call successful', async () => {
+		// Given
+		const props = cloneDeep(baseProps);
+
+		// When
+		await initialise(props);
+
+		// Then
+		assertCommonElements();
+		expect(screen.getByText('Foo')).toBeInTheDocument();
 	});
 
-	const initialise = async () => await act(async () => render(<About />));
+	it('should render as expected when CMS call not successful', async () => {
+		// Given
+		const props = cloneDeep(baseProps);
+		delete props.aboutData;
+
+		// When
+		await initialise(props);
+
+		// Then
+		assertCommonElements();
+		expect(screen.queryByText('Foo')).not.toBeInTheDocument();
+	});
+
+	const initialise = async (props) =>
+		await act(async () => render(<About aboutData={props.aboutData} lastFmData={props.lastFmData} />));
 });

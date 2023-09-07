@@ -1,31 +1,15 @@
 import React from 'react';
 import LastFm from './index';
-import LastFmData from '@/test/data/lastfm';
 import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
 import { cloneDeep } from 'lodash';
-
-const ORIGINAL_FETCH = global.fetch;
-const ORIGINAL_LASTFM_USERNAME = process.env.LASTFM_USERNAME;
-const ORIGINAL_LASTFM_API_KEY = process.env.LASTFM_API_KEY;
+import { LastFmMockData } from '@/test/mock-data/lastfm';
 
 describe('LastFm', () => {
-	beforeEach(() => {
-		global.fetch = jest.fn();
-		process.env.LASTFM_USERNAME = 'LASTFM_USERNAME';
-		process.env.LASTFM_API_KEY = 'LASTFM_API_KEY';
-	});
-
-	afterEach(() => {
-		jest.clearAllMocks();
-		global.fetch = ORIGINAL_FETCH;
-		process.env.LASTFM_USERNAME = ORIGINAL_LASTFM_USERNAME;
-		process.env.LASTFM_API_KEY = ORIGINAL_LASTFM_API_KEY;
-	});
-
 	const assertError = () => {
-		expect(screen.queryByText(`Sorry, couldn't load data from Last.fm :o(`)).toBeInTheDocument();
+		expect(screen.getByText(`Sorry, couldn't load data from Last.fm :o(`)).toBeInTheDocument();
+		expect(screen.queryByRole('img')).not.toBeInTheDocument();
 	};
 
 	const assertCommonDataRendered = () => {
@@ -47,99 +31,51 @@ describe('LastFm', () => {
 	};
 
 	it('should render basic UI', async () => {
+		// Given
+		const props = cloneDeep(LastFmMockData);
+
+		// When
+		await initialise(props);
+
+		// Then
+		expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Last.fm');
+	});
+
+	it('should handle error response from API', async () => {
 		// When
 		await initialise();
 
 		// Then
-		expect(screen.getByRole('heading')).toHaveTextContent('Last.fm');
+		assertError();
 	});
 
-	describe('Fetching data', () => {
-		it('should make call with expected arguments', async () => {
-			// When
-			await initialise();
+	it(`should render data`, async () => {
+		// Given
+		const props = cloneDeep(LastFmMockData);
 
-			// Then
-			expect(global.fetch).toHaveBeenCalledTimes(1);
-			expect(global.fetch).toHaveBeenCalledWith(
-				`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=LASTFM_USERNAME&api_key=LASTFM_API_KEY&format=json&limit=1`,
-			);
-		});
+		// When
+		await initialise(props);
 
-		describe('Error handling', () => {
-			it('should handle error response', async () => {
-				// Given
-				global.fetch = jest.fn(() =>
-					Promise.resolve({
-						status: 400,
-					}),
-				) as jest.Mock;
-
-				// When
-				await initialise();
-
-				// Then
-				assertError();
-			});
-
-			it('should handle absence of expected data', async () => {
-				// Given
-				global.fetch = jest.fn(() =>
-					Promise.resolve({
-						json: () => Promise.resolve('foo'),
-						status: 200,
-					}),
-				) as jest.Mock;
-
-				// When
-				await initialise();
-
-				// Then
-				assertError();
-			});
-		});
-		describe('Success handling', () => {
-			it(`should render data`, async () => {
-				// Given
-				global.fetch = jest.fn(() =>
-					Promise.resolve({
-						json: () => Promise.resolve(LastFmData),
-						status: 200,
-					}),
-				) as jest.Mock;
-
-				// When
-				await initialise();
-
-				// Then
-				assertCommonDataRendered();
-				expect(screen.getByText('2 hours ago')).toBeInTheDocument();
-			});
-
-			it(`should render data when currently playing`, async () => {
-				// Given
-				const data = cloneDeep(LastFmData);
-				delete data.recenttracks.track[0].date;
-				global.fetch = jest.fn(() =>
-					Promise.resolve({
-						json: () => Promise.resolve(data),
-						status: 200,
-					}),
-				) as jest.Mock;
-
-				// When
-				await initialise();
-
-				// Then
-				assertCommonDataRendered();
-				expect(screen.getByText('Now playing')).toBeInTheDocument();
-				expect(screen.getAllByRole('img', { hidden: true }).at(2)).toHaveAttribute(
-					'src',
-					'/images/icon-audio-wave.gif',
-				);
-			});
-		});
+		// Then
+		assertCommonDataRendered();
+		expect(screen.getByText('2 hours ago')).toBeInTheDocument();
 	});
 
-	const initialise = async () => await act(async () => render(<LastFm />));
+	it(`should render data when currently playing`, async () => {
+		// Given
+		const props = cloneDeep(LastFmMockData);
+		props.isCurrentlyPlaying = true;
+
+		// When
+		await initialise(props);
+
+		// Then
+		assertCommonDataRendered();
+		expect(screen.getAllByRole('img', { hidden: true }).at(2)).toHaveAttribute(
+			'src',
+			'/images/icon-audio-wave.gif',
+		);
+	});
+
+	const initialise = async (props?) => await act(async () => render(<LastFm data={props} />));
 });
