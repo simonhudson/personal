@@ -1,37 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Typography from '@/src/theme/typography';
 import Layout from '@/src/theme/layout';
 import { Wrap, Content, Aside, StyledIcon } from './index.styles';
 import LastFm from '@/src/components/lastfm';
 import Links from './links';
 import { slugify } from '@/src/utilities/slugify';
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import getContent from '@/src/utilities/getContent';
 
-const AboutMe = () => {
-	const [copy, setCopy] = useState<string | undefined>();
-
-	useEffect(() => {
-		(async () => {
-			const data = await getContent('aboutMe');
-			const rawCopy = data?.items[0]?.fields?.copy;
-			console.log('rawCopy----------------');
-			console.log(rawCopy);
-			console.log('/rawCopy----------------');
-			const htmlCopy = documentToHtmlString(rawCopy);
-			console.log('htmlCopy----------------');
-			console.log(htmlCopy);
-			console.log('/htmlCopy----------------');
-			if (rawCopy) setCopy(htmlCopy);
-		})();
-	}, []);
-
+const AboutMe = ({ aboutData, lastFmData }) => {
 	return (
 		<Layout.Section>
 			<Typography.H2>About me</Typography.H2>
 			<Wrap>
 				<Content>
-					{copy && <div dangerouslySetInnerHTML={{ __html: copy }}></div>}
+					{aboutData && <div dangerouslySetInnerHTML={{ __html: aboutData }}></div>}
 					{Links && (
 						<Layout.ButtonLinksList>
 							{Links.map((item, index: number) => {
@@ -48,7 +29,7 @@ const AboutMe = () => {
 					)}
 				</Content>
 				<Aside>
-					<LastFm />
+					<LastFm data={lastFmData} />
 				</Aside>
 			</Wrap>
 		</Layout.Section>

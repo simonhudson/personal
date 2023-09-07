@@ -1,4 +1,4 @@
-import { ContentTypes } from '@/src/types/contentTypes';
+import type { ContentTypes } from '@/src/types/contentful/content-types.d';
 
 const getContent = async (contentType: ContentTypes) => {
 	let data;

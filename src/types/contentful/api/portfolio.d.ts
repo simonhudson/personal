@@ -1,4 +1,4 @@
-import { ContentTypes } from './contentTypes.d';
+import { ContentTypes } from '../content-types';
 
 type ApiResponseItem = {
 	metadata: {
@@ -48,7 +48,7 @@ type ApiResponseItem = {
 	};
 };
 
-export type ApiResponse = {
+export type PortfolioApiResponse = {
 	sys: {
 		type: string;
 	};

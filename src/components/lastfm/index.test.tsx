@@ -1,29 +1,52 @@
 import React from 'react';
 import LastFm from './index';
-import LastFmData from '@/test/data/lastfm';
 import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
 import { cloneDeep } from 'lodash';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 
 const ORIGINAL_FETCH = global.fetch;
 const ORIGINAL_LASTFM_USERNAME = process.env.LASTFM_USERNAME;
 const ORIGINAL_LASTFM_API_KEY = process.env.LASTFM_API_KEY;
 
+const baseProps = {
+	artist: {
+		'#text': 'Artist',
+	},
+	image: [
+		{
+			size: 'small',
+			'#text': 'small.jpg',
+		},
+		{
+			size: 'medium',
+			'#text': 'medium.jpg',
+		},
+		{
+			size: 'large',
+			'#text': 'large.jpg',
+		},
+		{
+			size: 'extralarge',
+			'#text': 'extralarge.jpg',
+		},
+	],
+	album: {
+		'#text': 'Album',
+	},
+	name: 'Track Name',
+	url: 'track-url',
+	date: {
+		'#text': dayjs().subtract(2, 'hour'),
+	},
+	relativeTime: 'One hour ago',
+	isCurrentlyPlaying: false,
+};
+
 describe('LastFm', () => {
-	beforeEach(() => {
-		global.fetch = jest.fn();
-		process.env.LASTFM_USERNAME = 'LASTFM_USERNAME';
-		process.env.LASTFM_API_KEY = 'LASTFM_API_KEY';
-	});
-
-	afterEach(() => {
-		jest.clearAllMocks();
-		global.fetch = ORIGINAL_FETCH;
-		process.env.LASTFM_USERNAME = ORIGINAL_LASTFM_USERNAME;
-		process.env.LASTFM_API_KEY = ORIGINAL_LASTFM_API_KEY;
-	});
-
 	const assertError = () => {
 		expect(screen.queryByText(`Sorry, couldn't load data from Last.fm :o(`)).toBeInTheDocument();
 	};

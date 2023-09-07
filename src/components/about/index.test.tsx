@@ -4,23 +4,7 @@ import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
 
-const ORIGINAL_FETCH = global.fetch;
-
 describe('About', () => {
-	beforeEach(() => {
-		global.fetch = jest.fn(() =>
-			Promise.resolve({
-				json: () => Promise.resolve({ items: [{ fields: { copy: '<p>Foo</p>' } }] }),
-				status: 200,
-			}),
-		) as jest.Mock;
-	});
-
-	afterEach(() => {
-		jest.clearAllMocks();
-		global.fetch = ORIGINAL_FETCH;
-	});
-
 	const assertCommonElements = () => {
 		expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('About me');
 		[
@@ -41,7 +25,7 @@ describe('About', () => {
 		});
 	};
 
-	it.only('should render as expected when CMS call successful', async () => {
+	it('should render as expected when CMS call successful', async () => {
 		// When
 		await initialise();
 
