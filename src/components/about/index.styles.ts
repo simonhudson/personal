@@ -1,38 +1,48 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 import Icon from '@/src/components/icon';
+import { media } from '@/src/theme/media';
+import { BoxShadow } from '@/src/theme/layout';
+import { spacingRem } from '@/src/theme/spacing';
 
 const Wrap = styled.div`
-	${({ theme }) =>
-		theme.media.tabletLandscape(
-			`
-            gap: ${rem(40)};
-            display: flex;
-            `,
-		)};
+	gap: ${rem(40)};
+	display: flex;
+	flex-direction: column;
+
+	${media.tabletLandscape(`
+		flex-direction: row-reverse;
+	`)};
 `;
 
 const Content = styled.div`
-	margin: 0 0 ${({ theme }) => theme.spacing.lg};
-
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			margin: 0;
-			width: 65%;
-			`)};
+	${media.tabletLandscape(`
+		width: 65%;
+	`)};
 `;
 
 const Aside = styled.aside`
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			width: 35%;
-			`)};
+	${media.tabletLandscape(`
+		width: 35%;
+	`)};
 `;
 
 const StyledIcon = styled(Icon)`
-	color: ${({ theme }) => theme.palette.brand};
-        font-size: ${rem(16)};
-	margin-left: ${({ theme }) => theme.spacing.sm};
+	font-size: ${rem(16)};
+	margin-left: ${spacingRem.sm};
 `;
 
-export { Wrap, Content, Aside, StyledIcon };
+const Image = styled.img`
+	border-radius: 100%;
+	box-shadow: ${BoxShadow};
+	display: block;
+	height: ${rem(200)};
+	margin: 0 auto;
+	width: auto;
+
+	${media.tabletPortrait(`
+		height: ${rem(300)}
+	`)};
+`;
+
+export { Wrap, Content, Aside, StyledIcon, Image };

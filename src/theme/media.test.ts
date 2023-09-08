@@ -1,4 +1,5 @@
-import media from './media';
+import { media } from './media';
+
 describe('theme/media', () => {
 	describe('should return expected media query', () => {
 		it('for Phone Portrait', () => {

@@ -11,7 +11,7 @@ import {
 	MetadataTitle,
 	MetadataItem,
 } from './item.styles';
-import Layout from '@/src/theme/layout';
+import { ButtonLinksList, ButtonLinksItem, ButtonLinksLink, VisuallyHidden } from '@/src/theme/layout';
 import type { PortfolioItem } from '@/src/types/contentful/transformed/portfolio.d';
 
 const Item = ({
@@ -72,23 +72,23 @@ const Item = ({
 						</>
 					)}
 
-					<Layout.ButtonLinksList>
+					<ButtonLinksList>
 						{url && (
-							<Layout.ButtonLinksItem>
-								<Layout.ButtonLinksLink href={url}>
-									View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>site
+							<ButtonLinksItem>
+								<ButtonLinksLink href={url}>
+									View <VisuallyHidden>{title} </VisuallyHidden>site
 									{isArchived ? ' (archived)' : null}
-								</Layout.ButtonLinksLink>
-							</Layout.ButtonLinksItem>
+								</ButtonLinksLink>
+							</ButtonLinksItem>
 						)}
 						{githubUrl && (
-							<Layout.ButtonLinksItem>
-								<Layout.ButtonLinksLink href={githubUrl}>
-									View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden> on Github
-								</Layout.ButtonLinksLink>
-							</Layout.ButtonLinksItem>
+							<ButtonLinksItem>
+								<ButtonLinksLink href={githubUrl}>
+									View <VisuallyHidden>{title} </VisuallyHidden> on Github
+								</ButtonLinksLink>
+							</ButtonLinksItem>
 						)}
-					</Layout.ButtonLinksList>
+					</ButtonLinksList>
 				</Text>
 			</Content>
 		</Wrap>

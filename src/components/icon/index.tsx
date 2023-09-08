@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyledIcon } from './index.styles';
 
-type Props = {
+interface Props {
 	type: 'solid' | 'brand';
 	name: string;
 	className: string;
-};
+}
 
 const typeMapping = {
 	solid: 'fas',

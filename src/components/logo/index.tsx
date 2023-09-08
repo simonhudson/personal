@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyledLogo } from './index.styles';
-import theme from '@/src/theme';
+import { palette } from '@/src/theme/palette';
 
 const Logo = () => {
 	const fillColor = 'brand';
@@ -14,7 +14,7 @@ const Logo = () => {
 			viewBox="0 0 58 58"
 		>
 			<defs>
-				<style>{`.cls-1 { fill: ${theme.palette.primary[fillColor]}; fill-rule: evenodd; }`}</style>
+				<style>{`.cls-1 { fill: ${palette.primary[fillColor]}; fill-rule: evenodd; }`}</style>
 			</defs>
 			<path className="cls-1" d="M2.716 27l7.07-7.07 17.68 17.677-7.072 7.07z" />
 			<path

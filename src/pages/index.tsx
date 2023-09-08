@@ -52,50 +52,21 @@ const getAboutData = async () => {
 	return documentToHtmlString(rawCopy);
 };
 
-const getLastFmData = async () => {
-	let displayData;
-	const response = await fetch(
-		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
-	);
-	if (response?.status === httpStatusCodes.OK) {
-		const data = await response?.json();
-		const recentTrack = data?.recenttracks?.track[0];
-		if (recentTrack) {
-			displayData = { ...recentTrack };
-			displayData.relativeTime = recentTrack?.date ? dayjs(recentTrack.date['#text']).fromNow() : 'Now playing';
-			if (!recentTrack?.date) displayData.isCurrentlyPlaying = true;
-			displayData;
-		}
-	}
-	return displayData;
-};
-
 export const getStaticProps = async () => {
-	let returnObj = {
+	return {
 		props: {
 			aboutData: await getAboutData(),
-			lastFmData: await getLastFmData(),
 			portfolioItems: await getPortfolioData(),
 		},
 	};
-
-	return returnObj;
 };
 
-const Home = ({
-	aboutData,
-	lastFmData,
-	portfolioItems,
-}: {
-	aboutData: About;
-	lastFmData: LastFmDisplayData;
-	portfolioItems: PortfolioItem[];
-}) => {
+const Home = ({ aboutData, portfolioItems }: { aboutData: About; portfolioItems: PortfolioItem[] }) => {
 	return (
 		<>
 			<Hero />
 			<Portfolio data={portfolioItems} />
-			<AboutMe aboutData={aboutData} lastFmData={lastFmData} />
+			<AboutMe aboutData={aboutData} />
 			<Footer />
 		</>
 	);

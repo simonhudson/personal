@@ -1,18 +1,20 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import Typography from '@/src/theme/typography';
+import { H3, Paragraph } from '@/src/theme/typography';
 import Icon from '@/src/components/icon';
+import { spacingRem } from '@/src/theme/spacing';
+import { palette } from '@/src/theme/palette';
+import { media } from '@/src/theme/media';
 
 const Wrap = styled.div`
-	background: ${({ theme }) => `linear-gradient(transparent, ${theme.palette.primary.lightGrey})`};
-	border: ${({ theme }) => `1px solid ${theme.palette.primary.lightGrey}`};
+	background: linear-gradient(transparent, ${palette.primary.lightGrey};
+	border: ${palette.primary.lightGrey};
 	border-radius: ${rem(15)};
-	padding: ${({ theme }) => theme.spacing.default};
+	padding: ${spacingRem.default};
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			padding: ${theme.spacing.md};
-			`)};
+	${media.tabletLandscape(`
+		padding: ${spacingRem.md};
+	`)};
 `;
 
 const InnerWrap = styled.div`
@@ -29,12 +31,12 @@ const HeadingWrap = styled.div`
 	margin: 0 0 ${rem(24)};
 `;
 
-const Heading = styled(Typography.H3)`
+const Heading = styled(H3)`
 	margin: 0;
 	padding: 0;
 `;
 
-const StyledParagraph = styled(Typography.Paragraph)`
+const StyledParagraph = styled(Paragraph)`
 	span {
 		display: block;
 
@@ -60,19 +62,18 @@ const StyledParagraph = styled(Typography.Paragraph)`
 const Image = styled.img`
 	border-radius: ${rem(15)};
 	height: auto;
-	margin: 0 ${({ theme }) => theme.spacing.default} 0 0;
+	margin: 0 ${spacingRem.default} 0 0;
 	width: ${rem(100)};
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			margin: 0 ${({ theme }) => theme.spacing.md} 0 0;
-			`)};
+	${media.tabletLandscape(`
+		margin: 0 ${spacingRem.md} 0 0;
+	`)};
 `;
 
 const StyledIcon = styled(Icon)`
-	color: ${({ theme }) => theme.palette.brands.lastFm};
+	color: ${palette.brands.lastFm};
 	font-size: ${rem(32)};
-	margin-right: ${({ theme }) => theme.spacing.sm};
+	margin-right: ${spacingRem.sm};
 `;
 
 const SoundIcon = styled.img`

@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
+import { media } from './media';
+import { breakpoints } from './breakpoints';
+import { spacingRem } from './spacing';
+import { palette } from './palette';
 
-const Wrap = styled.div`
+export const Wrap = styled.div`
 	margin: 0 auto;
 	width: 90%;
 
@@ -9,18 +13,16 @@ const Wrap = styled.div`
 		height: 100%;
 	}
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			width: ${rem(theme.breakpoints['tablet-l'] + 'px')};
-			`)};
+	${media.tabletLandscape(`
+		width: ${rem(breakpoints['tablet-l'] + 'px')};
+	`)};
 
-	${({ theme }) =>
-		theme.media.desktop(`
-			width: ${rem(theme.breakpoints.desktop + 'px')};
-			`)};
+	${media.desktop(`
+		width: ${rem(breakpoints.desktop + 'px')};
+	`)};
 `;
 
-const Inner = styled.div`
+export const Inner = styled.div`
 	&:first-of-type {
 		display: flex;
 		flex-direction: column;
@@ -29,29 +31,28 @@ const Inner = styled.div`
 	}
 `;
 
-const StyledSection = styled.section`
+export const StyledSection = styled.section`
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: ${({ theme }) => theme.spacing.lg} 0;
+	padding: ${spacingRem.lg} 0;
 
 	&:nth-of-type(2n) {
-		background: ${({ theme }) => theme.palette.primary.lightGrey};
+		background: ${palette.primary.lightGrey};
 	}
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			height: auto;
-			padding: ${theme.spacing.lg} 0;
-			`)};
+	${media.tabletLandscape(`
+		height: auto;
+		padding: ${spacingRem.lg} 0;
+	`)};
 `;
 
 type SectionProps = {
 	children: object;
 	className?: string;
 };
-const Section = ({ children, className }: SectionProps) => {
+export const Section = ({ children, className }: SectionProps) => {
 	return (
 		<StyledSection className={className}>
 			<Wrap>
@@ -61,30 +62,30 @@ const Section = ({ children, className }: SectionProps) => {
 	);
 };
 
-const BoxShadow = `0 0 10px #ddd`;
+export const BoxShadow = `0 0 10px #ddd`;
 
-const ButtonLink = styled.a`
+export const ButtonLink = styled.a`
 	background: transparent;
-	border: ${({ theme }) => `2px solid ${theme.palette.primary.bodyText}`};
+	border: 2px solid ${palette.primary.bodyText};
 	border-radius: ${rem(25)};
-	color: ${({ theme }) => theme.palette.primary.bodyText};
+	color: ${palette.primary.bodyText};
 	display: inline-block;
 	font-weight: 700;
-	padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
+	padding: ${spacingRem.sm} ${spacingRem.md};
 	text-align: center;
 	text-decoration: none;
 
 	&:focus-visible {
-		background: ${({ theme }) => theme.palette.primary.bodyText};
-		color: ${({ theme }) => theme.palette.primary.white};
+		background: ${palette.primary.bodyText};
+		color: ${palette.primary.white};
 		text-decoration: underline;
 	}
 `;
 
-const VisuallyHidden = styled.span`
+export const VisuallyHidden = styled.span`
 	border: 0;
 	clip: rect(0 0 0 0);
-	color: ${({ theme }) => theme.palette.primary.white};
+	color: ${palette.primary.white};
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
@@ -93,35 +94,23 @@ const VisuallyHidden = styled.span`
 	width: 1px;
 `;
 
-const ButtonLinksList = styled.ul`
+export const ButtonLinksList = styled.ul`
 	display: flex;
 	flex-direction: column;
-	gap: ${({ theme }) => theme.spacing.default};
+	gap: ${spacingRem.default};
 	list-style: none;
-	padding: ${({ theme }) => `${theme.spacing.default} 0`};
+	padding: ${spacingRem.default} 0;
 
-	${({ theme }) =>
-		theme.media.phoneLandscape(`
-			flex-direction: row;
-		`)};
+	${media.phoneLandscape(`
+		flex-direction: row;
+	`)};
 `;
 
-const ButtonLinksItem = styled.li`
+export const ButtonLinksItem = styled.li`
 	text-align: center;
 `;
 
-const ButtonLinksLink = styled(ButtonLink)`
+export const ButtonLinksLink = styled(ButtonLink)`
 	display: block;
 	text-align: center;
 `;
-
-export default {
-	Wrap,
-	Section,
-	BoxShadow,
-	ButtonLink,
-	VisuallyHidden,
-	ButtonLinksList,
-	ButtonLinksItem,
-	ButtonLinksLink,
-};

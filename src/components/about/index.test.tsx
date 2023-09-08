@@ -30,6 +30,7 @@ describe('About', () => {
 		].forEach((item) => {
 			expect(screen.getByText(item.text)).toHaveAttribute('href', item.href);
 		});
+		expect(screen.getByAltText('Simon Hudson sat at a table with a glass of beer')).toBeInTheDocument();
 	};
 
 	it('should render as expected when CMS call successful', async () => {

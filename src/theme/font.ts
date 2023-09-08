@@ -1,4 +1,4 @@
-type Fonts = {
+interface Font {
 	size: number;
 	heading: string;
 	sansSerif: string;
@@ -8,9 +8,9 @@ type Fonts = {
 	code: string;
 	weight: number;
 	lineHeight: number;
-};
+}
 
-const fonts: Fonts = {
+export const font: Font = {
 	size: 16,
 	heading: `Poppins, arial, helvetica, sans-serif`,
 	sansSerif: `'Open Sans', arial, helvetica, sans-serif`,
@@ -21,5 +21,3 @@ const fonts: Fonts = {
 	weight: 400,
 	lineHeight: 1.8,
 };
-
-export default fonts;

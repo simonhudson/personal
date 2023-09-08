@@ -1,14 +1,14 @@
 import React from 'react';
-import Typography from '@/src/theme/typography';
-import Layout from '@/src/theme/layout';
+import { H2 } from '@/src/theme/typography';
+import { Section } from '@/src/theme/layout';
 import { Wrap } from './index.styles';
 import Item from './item';
 import type { PortfolioItem } from '@/src/types/contentful/transformed/portfolio.d';
 
 const Portfolio = ({ data }: { data?: PortfolioItem[] }) => {
 	return (
-		<Layout.Section>
-			<Typography.H2>My work</Typography.H2>
+		<Section>
+			<H2>My work</H2>
 			<Wrap>
 				{data &&
 					data.map((item, index) => (
@@ -30,7 +30,7 @@ const Portfolio = ({ data }: { data?: PortfolioItem[] }) => {
 						/>
 					))}
 			</Wrap>
-		</Layout.Section>
+		</Section>
 	);
 };
 
