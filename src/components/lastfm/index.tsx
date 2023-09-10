@@ -33,7 +33,7 @@ const LastFm = ({ data }: LastFmProps) => {
 					</Link>
 					<StyledParagraph>
 						<span>
-							<Link href={data.url}>{data.name}</Link>{' '}
+							<Link href={data.url}>&quot;{data.name}&quot;</Link>{' '}
 						</span>
 						<span>
 							<em>by</em>

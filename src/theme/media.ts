@@ -4,11 +4,11 @@ const applyStyles = (viewportWidth: number, styles: string): string =>
 	`@media (min-width: ${viewportWidth}px) { ${styles} }`;
 
 interface Media {
-	phonePortrait: (string) => string;
-	phoneLandscape: (string) => string;
-	tabletPortrait: (string) => string;
-	tabletLandscape: (string) => string;
-	desktop: (string) => string;
+	phonePortrait: (string: string) => string;
+	phoneLandscape: (string: string) => string;
+	tabletPortrait: (string: string) => string;
+	tabletLandscape: (string: string) => string;
+	desktop: (string: string) => string;
 }
 
 export const media: Media = {

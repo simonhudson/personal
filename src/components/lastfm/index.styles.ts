@@ -4,7 +4,6 @@ import { H3, Paragraph } from '@/src/theme/typography';
 import Icon from '@/src/components/icon';
 import { spacingRem } from '@/src/theme/spacing';
 import { palette } from '@/src/theme/palette';
-import { media } from '@/src/theme/media';
 
 const Wrap = styled.div``;
 

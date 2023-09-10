@@ -24,10 +24,10 @@ describe('LastFm', () => {
 		expect(image).toHaveAttribute('src', `large.jpg`);
 
 		expect(titleLink).toHaveAttribute('href', 'track-url');
-		expect(titleLink.textContent).toEqual(`"Track Name"`);
+		expect(titleLink).toHaveTextContent(`"Track Name"`);
 
 		expect(artistLink).toHaveAttribute('href', 'track-url');
-		expect(artistLink.textContent).toEqual(`Artist`);
+		expect(artistLink).toHaveTextContent('Artist');
 	};
 
 	it('should render basic UI', async () => {
