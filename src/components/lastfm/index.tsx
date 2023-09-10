@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon } from './index.styles';
 import Loading from '@/src/components/loading';
 import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
+import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
 
 const getLastFmData = async () => {
 	const response = await fetch(
