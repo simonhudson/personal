@@ -53,50 +53,47 @@ const getAboutData = async () => {
 };
 
 const getLastFmData = async () => {
-	let displayData;
 	const response = await fetch(
 		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
 	);
+
 	if (response?.status === httpStatusCodes.OK) {
 		const data = await response?.json();
 		const recentTrack = data?.recenttracks?.track[0];
 		if (recentTrack) {
-			displayData = { ...recentTrack };
+			const displayData = { ...recentTrack };
 			displayData.relativeTime = recentTrack?.date ? dayjs(recentTrack.date['#text']).fromNow() : 'Now playing';
 			if (!recentTrack?.date) displayData.isCurrentlyPlaying = true;
-			displayData;
+			return displayData;
 		}
 	}
-	return displayData;
 };
 
 export const getServerSideProps = async () => {
-	let returnObj = {
+	return {
 		props: {
 			aboutData: await getAboutData(),
-			lastFmData: await getLastFmData(),
 			portfolioItems: await getPortfolioData(),
+			lastFmData: await getLastFmData(),
 		},
 	};
-
-	return returnObj;
 };
 
 const Home = ({
 	aboutData,
-	lastFmData,
 	portfolioItems,
+	lastFmData,
 }: {
 	aboutData: About;
-	lastFmData: LastFmDisplayData;
 	portfolioItems: PortfolioItem[];
+	lastFmData: LastFmDisplayData;
 }) => {
 	return (
 		<>
 			<Hero />
 			<Portfolio data={portfolioItems} />
-			<AboutMe aboutData={aboutData} lastFmData={lastFmData} />
-			<Footer />
+			<AboutMe aboutData={aboutData} />
+			<Footer lastFmData={lastFmData} />
 		</>
 	);
 };

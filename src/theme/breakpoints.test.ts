@@ -1,4 +1,5 @@
-import breakpoints from './breakpoints';
+import { breakpoints } from './breakpoints';
+
 describe('theme/breakpoints', () => {
 	it('should return expected values', () => {
 		expect(breakpoints).toEqual({

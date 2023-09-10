@@ -1,27 +1,27 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import Typography from '@/src/theme/typography';
+import { Paragraph, Strong } from '@/src/theme/typography';
+import { media } from '@/src/theme/media';
+import { font } from '@/src/theme/font';
 
-const StyledParagraph = styled(Typography.Paragraph)`
-	font-family: ${({ theme }) => theme.font.serif};
+const StyledParagraph = styled(Paragraph)`
+	font-family: ${font.serif};
 	font-size: ${rem(20)};
 	margin: 0;
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			font-size: ${rem(24)};
-			width: 70%;
-			`)};
+	${media.tabletLandscape(`
+		font-size: ${rem(24)};
+		width: 70%;
+	`)};
 `;
 
-const Span = styled(Typography.Strong)`
+const Span = styled(Strong)`
 	display: block;
 	font-size: ${rem(40)};
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			display: inline;
-			`)};
+	${media.tabletLandscape(`
+		display: inline;
+	`)};
 `;
 
 export { StyledParagraph, Span };

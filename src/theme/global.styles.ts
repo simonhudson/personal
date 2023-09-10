@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import theme from '@/src/theme';
+import { font } from './font';
+import { palette } from './palette';
 
 const GlobalStyles = createGlobalStyle`
 
@@ -7,15 +8,15 @@ const GlobalStyles = createGlobalStyle`
     body,
     fieldset {
         box-sizing: border-box;
-        font-family: ${theme.font.sansSerif};
-        font-size: ${theme.font.size}px;
-        font-weight: ${theme.font.weight};
+        font-family: ${font.sansSerif};
+        font-size: ${font.size}px;
+        font-weight: ${font.weight};
         margin: 0;
         padding: 0;
         text-rendering: optimizeLegibility;
     }
     html, body {
-        border-top: 3px solid ${theme.palette.primary.brand};
+        border-top: 3px solid ${palette.primary.brand};
         background: #fff;
         height: 100%;
     }
@@ -56,7 +57,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     a {
-        color: ${theme.palette.primary.bodyText};
+        color: ${palette.primary.bodyText};
     }
     
 `;

@@ -11,7 +11,7 @@ describe('Footer', () => {
 		// Then
 		const footer = screen.getByRole('contentinfo');
 		expect(footer).toBeInTheDocument();
-		expect(footer).toHaveTextContent(/^© (\d){4} Simon Hudson$/i);
+		expect(screen.getByText(/^© (\d){4} Simon Hudson$/i)).toBeInTheDocument();
 	});
 
 	const initialise = () => render(<Footer />);

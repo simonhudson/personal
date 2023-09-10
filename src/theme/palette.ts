@@ -1,4 +1,4 @@
-type Palette = {
+interface Palette {
 	primary: {
 		bodyBackground: string;
 		brand: string;
@@ -20,9 +20,9 @@ type Palette = {
 		stackOverflow: string;
 		lastFm: string;
 	};
-};
+}
 
-const palette: Palette = {
+export const palette: Palette = {
 	primary: {
 		bodyBackground: '#fef9f5',
 		brand: '#FFDE59',
@@ -45,5 +45,3 @@ const palette: Palette = {
 		lastFm: '#e82c0c',
 	},
 };
-
-export default palette;

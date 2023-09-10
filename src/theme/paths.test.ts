@@ -1,4 +1,4 @@
-import paths from './paths';
+import { paths } from './paths';
 
 describe('theme/paths', () => {
 	it('should return expected values', () => {
