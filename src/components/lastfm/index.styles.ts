@@ -67,10 +67,6 @@ const Image = styled.img`
 	height: auto;
 	margin: 0 ${spacingRem.default} 0 0;
 	width: ${rem(75)};
-
-	${media.tabletLandscape(`
-		margin: 0 ${spacingRem.md} 0 0;
-	`)};
 `;
 
 const StyledIcon = styled(Icon)`

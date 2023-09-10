@@ -73,23 +73,26 @@ export const getServerSideProps = async () => {
 	return {
 		props: {
 			aboutData: await getAboutData(),
-			portfolioItems: await getPortfolioData()
+			portfolioItems: await getPortfolioData(),
+			lastFmData: await getLastFmData(),
 		},
 	};
 };
 
 const Home = ({
 	aboutData,
-	portfolioItems
+	portfolioItems,
+	lastFmData,
 }: {
 	aboutData: About;
 	portfolioItems: PortfolioItem[];
+	lastFmData: LastFmDisplayData;
 }) => {
 	return (
 		<>
 			<Hero />
 			<Portfolio data={portfolioItems} />
-			<AboutMe aboutData={aboutData} />
+			<AboutMe aboutData={aboutData} lastFmData={lastFmData} />
 			<Footer />
 		</>
 	);

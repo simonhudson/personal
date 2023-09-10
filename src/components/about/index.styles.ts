@@ -36,8 +36,8 @@ const Image = styled.img`
 	border-radius: 100%;
 	box-shadow: ${BoxShadow};
 	display: block;
-	height: ${rem(200)};
-	margin: 0 auto;
+	height: ${rem(160)};
+	margin: 0 auto ${rem(24)};
 	width: auto;
 
 	${media.phoneLandscape(`
