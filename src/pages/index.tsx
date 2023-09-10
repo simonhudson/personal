@@ -92,8 +92,8 @@ const Home = ({
 		<>
 			<Hero />
 			<Portfolio data={portfolioItems} />
-			<AboutMe aboutData={aboutData} lastFmData={lastFmData} />
-			<Footer />
+			<AboutMe aboutData={aboutData} />
+			<Footer lastFmData={lastFmData} />
 		</>
 	);
 };

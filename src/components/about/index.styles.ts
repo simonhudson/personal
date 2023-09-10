@@ -6,12 +6,12 @@ import { BoxShadow } from '@/src/theme/layout';
 import { spacingRem } from '@/src/theme/spacing';
 
 const Wrap = styled.div`
-	gap: ${rem(40)};
+	gap: ${rem(20)};
 	display: flex;
 	flex-direction: column;
 
-	${media.tabletLandscape(`
-		flex-direction: row;
+	${media.tabletPortrait(`
+		flex-direction: row-reverse;
 	`)};
 `;
 
@@ -37,13 +37,11 @@ const Image = styled.img`
 	box-shadow: ${BoxShadow};
 	display: block;
 	height: ${rem(160)};
-	margin: 0 auto ${rem(24)};
+	margin: 0 auto;
 	width: auto;
 
 	${media.phoneLandscape(`
-	float: right;
 		height: ${rem(200)};
-		margin: ${rem(10)} 0 ${rem(28)} ${rem(32)};
 	`)};
 `;
 

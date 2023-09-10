@@ -36,7 +36,8 @@ const LastFm = ({ data }: LastFmProps) => {
 							<Link href={data.url}>{data.name}</Link>{' '}
 						</span>
 						<span>
-							by <Link href={data.url}> {data.artist?.['#text']}</Link>
+							<em>by</em>
+							<Link href={data.url}> {data.artist?.['#text']}</Link>
 						</span>
 						<span> {data.relativeTime}</span>
 						{data.isCurrentlyPlaying && (

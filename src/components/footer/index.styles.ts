@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { rem } from 'polished';
 import { SmallerParagraph } from '@/src/theme/typography';
 import { Section } from '@/src/theme/layout';
 import { media } from '@/src/theme/media';
@@ -7,7 +8,13 @@ import { palette } from '@/src/theme/palette';
 
 const Wrapper = styled.div`
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
+	gap: ${rem(24)};
+
+	${media.tabletPortrait(`
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	`)}
 `;
 
 const StyledParagraph = styled(SmallerParagraph)`

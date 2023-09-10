@@ -6,16 +6,7 @@ import { spacingRem } from '@/src/theme/spacing';
 import { palette } from '@/src/theme/palette';
 import { media } from '@/src/theme/media';
 
-const Wrap = styled.div`
-	background: linear-gradient(transparent, ${palette.primary.lightGrey});
-	border: ${palette.primary.lightGrey};
-	border-radius: ${rem(15)};
-	padding: ${spacingRem.default};
-
-	${media.tabletLandscape(`
-		padding: ${spacingRem.md};
-	`)};
-`;
+const Wrap = styled.div``;
 
 const InnerWrap = styled.div`
 	display: flex;
@@ -37,7 +28,7 @@ const Heading = styled(H3)`
 `;
 
 const StyledParagraph = styled(Paragraph)`
-	margin: 0;
+	margin: ${rem(-5)} 0 0;
 
 	span {
 		display: block;
@@ -57,6 +48,7 @@ const StyledParagraph = styled(Paragraph)`
 		}
 
 		&:nth-of-type(3) {
+			display: block;
 			font-size: ${rem(13)};
 		}
 	}
