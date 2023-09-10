@@ -4,6 +4,31 @@ import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIc
 import Loading from '@/src/components/loading';
 import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
 
+const getLastFmData = async () => {
+	const response = await fetch(
+		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
+	);
+
+	if (response?.status === httpStatusCodes.OK) {
+		const data = await response?.json();
+		const recentTrack = data?.recenttracks?.track[0];
+		if (recentTrack) {
+			const displayData = { ...recentTrack };
+			displayData.relativeTime = recentTrack?.date ? dayjs(recentTrack.date['#text']).fromNow() : 'Now playing';
+			if (!recentTrack?.date) displayData.isCurrentlyPlaying = true;
+			return displayData;
+		}
+	}
+};
+
+export const getServerSideProps = async () => {
+	return {
+		props: {
+			data: await getLastFmData()
+		},
+	};
+};
+
 interface LastFmProps {
 	data?: LastFmDisplayData;
 }
