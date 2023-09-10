@@ -44,10 +44,11 @@ export const Img = styled.img`
 export const Content = styled.div`
 	display: flex;
 	flex-direction: column;
-	gap: ${spacingRem.lg};
+	gap: ${spacingRem.default};
 
 	${media[MEDIA_BREAK_DEVICE](`
 		flex-direction: row;
+  gap: ${spacingRem.lg};
 	`)}
 `;
 
