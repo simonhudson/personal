@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon } from './index.styles';
 import Loading from '@/src/components/loading';
-
 import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
 
 interface LastFmProps {
@@ -35,12 +34,12 @@ const LastFm = ({ data }: LastFmProps) => {
 					</Link>
 					<StyledParagraph>
 						<span>
-							<Link href={data.url}>&quot;{data.name}&quot;</Link>
+							<Link href={data.url}>{data.name}</Link>{' '}
 						</span>
 						<span>
-							<em>by</em> <Link href={data.url}>{data.artist?.['#text']}</Link>
+							by <Link href={data.url}> {data.artist?.['#text']}</Link>
 						</span>
-						<span>{data.relativeTime}</span>
+						<span> {data.relativeTime}</span>
 						{data.isCurrentlyPlaying && (
 							<SoundIcon alt="" aria-hidden="true" src="/images/icon-audio-wave.gif" />
 						)}

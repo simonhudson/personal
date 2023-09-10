@@ -7,7 +7,7 @@ import { palette } from '@/src/theme/palette';
 import { media } from '@/src/theme/media';
 
 const Wrap = styled.div`
-	background: linear-gradient(transparent, ${palette.primary.lightGrey};
+	background: linear-gradient(transparent, ${palette.primary.lightGrey});
 	border: ${palette.primary.lightGrey};
 	border-radius: ${rem(15)};
 	padding: ${spacingRem.default};
@@ -37,8 +37,11 @@ const Heading = styled(H3)`
 `;
 
 const StyledParagraph = styled(Paragraph)`
+	margin: 0;
+
 	span {
 		display: block;
+		font-size: ${rem(14)};
 
 		em {
 			font-size: ${rem(14)};
@@ -54,7 +57,7 @@ const StyledParagraph = styled(Paragraph)`
 		}
 
 		&:nth-of-type(3) {
-			font-size: ${rem(14)};
+			font-size: ${rem(13)};
 		}
 	}
 `;
@@ -63,7 +66,7 @@ const Image = styled.img`
 	border-radius: ${rem(15)};
 	height: auto;
 	margin: 0 ${spacingRem.default} 0 0;
-	width: ${rem(100)};
+	width: ${rem(75)};
 
 	${media.tabletLandscape(`
 		margin: 0 ${spacingRem.md} 0 0;

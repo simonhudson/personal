@@ -5,15 +5,13 @@ import { media } from '@/src/theme/media';
 import { spacingRem } from '@/src/theme/spacing';
 import { palette } from '@/src/theme/palette';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+	display: flex;
+	justify-content: space-between;
+`;
 
 const StyledParagraph = styled(SmallerParagraph)`
 	margin: 0;
-	text-align: center;
-
-	${media.tabletLandscape(`
-		text-align: left;
-	`)};
 `;
 
 const StyledSection = styled(Section)`

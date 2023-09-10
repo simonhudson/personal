@@ -11,7 +11,7 @@ const Wrap = styled.div`
 	flex-direction: column;
 
 	${media.tabletLandscape(`
-		flex-direction: row-reverse;
+		flex-direction: row;
 	`)};
 `;
 
@@ -40,8 +40,10 @@ const Image = styled.img`
 	margin: 0 auto;
 	width: auto;
 
-	${media.tabletPortrait(`
-		height: ${rem(300)}
+	${media.phoneLandscape(`
+	float: right;
+		height: ${rem(200)};
+		margin: ${rem(10)} 0 ${rem(28)} ${rem(32)};
 	`)};
 `;
 

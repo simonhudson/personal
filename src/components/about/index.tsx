@@ -4,19 +4,20 @@ import { Section, ButtonLinksList, ButtonLinksItem, ButtonLinksLink } from '@/sr
 import { Wrap, Content, Aside, StyledIcon, Image } from './index.styles';
 import Links from './links';
 import { slugify } from '@/src/utilities/slugify';
+import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
+import LastFm from '@/src/components/lastfm';
 interface AboutProps {
 	aboutData?: string;
+	lastFmData?: LastFmDisplayData;
 }
 
-const AboutMe = ({ aboutData }: AboutProps) => {
+const AboutMe = ({ aboutData, lastFmData }: AboutProps) => {
 	return (
 		<Section>
 			<H2>About me</H2>
 			<Wrap>
-				<Aside>
-					<Image alt="Simon Hudson sat at a table with a glass of beer" src="/images/self.png" />
-				</Aside>
 				<Content>
+					<Image alt="Simon Hudson sat at a table with a glass of beer" src="/images/self.png" />
 					{aboutData && <div dangerouslySetInnerHTML={{ __html: aboutData }}></div>}
 					{Links && (
 						<ButtonLinksList>
@@ -33,6 +34,9 @@ const AboutMe = ({ aboutData }: AboutProps) => {
 						</ButtonLinksList>
 					)}
 				</Content>
+				<Aside>
+					<LastFm data={lastFmData} />
+				</Aside>
 			</Wrap>
 		</Section>
 	);
