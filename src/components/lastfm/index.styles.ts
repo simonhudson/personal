@@ -1,19 +1,11 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import Typography from '@/src/theme/typography';
+import { H3, Paragraph } from '@/src/theme/typography';
 import Icon from '@/src/components/icon';
+import { spacingRem } from '@/src/theme/spacing';
+import { palette } from '@/src/theme/palette';
 
-const Wrap = styled.div`
-	background: ${({ theme }) => `linear-gradient(transparent, ${theme.palette.primary.lightGrey})`};
-	border: ${({ theme }) => `1px solid ${theme.palette.primary.lightGrey}`};
-	border-radius: ${rem(15)};
-	padding: ${({ theme }) => theme.spacing.default};
-
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			padding: ${theme.spacing.md};
-			`)};
-`;
+const Wrap = styled.div``;
 
 const InnerWrap = styled.div`
 	display: flex;
@@ -29,14 +21,17 @@ const HeadingWrap = styled.div`
 	margin: 0 0 ${rem(24)};
 `;
 
-const Heading = styled(Typography.H3)`
+const Heading = styled(H3)`
 	margin: 0;
 	padding: 0;
 `;
 
-const StyledParagraph = styled(Typography.Paragraph)`
+const StyledParagraph = styled(Paragraph)`
+	margin: ${rem(-5)} 0 0;
+
 	span {
 		display: block;
+		font-size: ${rem(14)};
 
 		em {
 			font-size: ${rem(14)};
@@ -52,7 +47,8 @@ const StyledParagraph = styled(Typography.Paragraph)`
 		}
 
 		&:nth-of-type(3) {
-			font-size: ${rem(14)};
+			display: block;
+			font-size: ${rem(13)};
 		}
 	}
 `;
@@ -60,19 +56,14 @@ const StyledParagraph = styled(Typography.Paragraph)`
 const Image = styled.img`
 	border-radius: ${rem(15)};
 	height: auto;
-	margin: 0 ${({ theme }) => theme.spacing.default} 0 0;
-	width: ${rem(100)};
-
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			margin: 0 ${({ theme }) => theme.spacing.md} 0 0;
-			`)};
+	margin: 0 ${spacingRem.default} 0 0;
+	width: ${rem(75)};
 `;
 
 const StyledIcon = styled(Icon)`
-	color: ${({ theme }) => theme.palette.brands.lastFm};
+	color: ${palette.brands.lastFm};
 	font-size: ${rem(32)};
-	margin-right: ${({ theme }) => theme.spacing.sm};
+	margin-right: ${spacingRem.sm};
 `;
 
 const SoundIcon = styled.img`

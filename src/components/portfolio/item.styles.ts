@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
-import theme from '@/src/theme';
-import { BASE_SIZE } from '@/src/theme/spacing';
+import { BASE_SIZE, spacingRem } from '@/src/theme/spacing';
+import { palette } from '@/src/theme/palette';
+import { media } from '@/src/theme/media';
+import { BoxShadow } from '@/src/theme/layout';
+import { font } from '@/src/theme/font';
+import { H3 } from '@/src/theme/typography';
 
 const Wrap = styled.div`
-	background: ${({ theme }) => `linear-gradient(${theme.palette.primary.white}, transparent)`};
+	background: ${palette.primary.white};
 	border-radius: ${rem(BASE_SIZE)};
+	box-shadow: ${BoxShadow};
 	display: flex;
 	flex-direction: column;
 	margin: 0;
@@ -15,11 +20,10 @@ const Wrap = styled.div`
 		margin: 0;
 	}
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			margin: 0 0 ${theme.spacing.sm};
-            width: 40.6%;
-		`)};
+	${media.tabletLandscape(`
+		margin: 0 0 ${spacingRem.sm};
+		width: 40.6%;
+	`)};
 `;
 
 const TitleWrap = styled.div`
@@ -30,7 +34,7 @@ const TitleWrap = styled.div`
 const Img = styled.img`
 	display: block;
 	height: auto;
-	margin: 0 0 ${({ theme }) => theme.spacing.default};
+	margin: 0 0 ${spacingRem.default};
 	width: 100%;
 `;
 
@@ -38,19 +42,19 @@ const Content = styled.div``;
 
 const Text = styled.div``;
 
-const Title = styled(theme.typography.H3)`
+const Title = styled(H3)`
 	&::after {
 		content: '';
 		display: block;
-		border-bottom: 2px solid ${({ theme }) => theme.palette.primary.brand};
-		margin: ${({ theme }) => theme.spacing.sm} 0;
+		border-bottom: 2px solid ${palette.primary.brand};
+		margin: ${spacingRem.sm} 0;
 		width: 5%;
 	}
 `;
 
 const Client = styled.span`
-	color: ${({ theme }) => theme.palette.primary.grey};
-	font-size: ${({ theme }) => rem(theme.font.size * 0.9)};
+	color: ${palette.primary.grey};
+	font-size: ${rem(font.size * 0.9)};
 	font-weight: 400;
 	letter-spacing: ${rem(1)};
 	margin-bottom: ${rem(5)};
@@ -58,17 +62,17 @@ const Client = styled.span`
 `;
 
 const MetadataList = styled.ul`
-	color: ${({ theme }) => theme.palette.primary.bodyText};
-	margin: 0 0 ${({ theme }) => theme.spacing.default};
+	color: ${palette.primary.bodyText};
+	margin: 0 0 ${spacingRem.default};
 
 	&:last-of-type {
-		margin: 0 0 ${({ theme }) => theme.spacing.md};
+		margin: 0 0 ${spacingRem.md};
 	}
 `;
 
 const MetadataTitle = styled.h4`
 	font-weight: 500;
-	margin: 0 0 ${({ theme }) => theme.spacing.sm};
+	margin: 0 0 ${spacingRem.sm};
 
 	&::after {
 		content: ': ';
@@ -77,7 +81,7 @@ const MetadataTitle = styled.h4`
 
 const MetadataItem = styled.li`
 	display: inline;
-	line-height: ${({ theme }) => rem(theme.font.size * 1.6)};
+	line-height: ${rem(font.size * 1.6)};
 	margin: 0;
 
 	&:not(:last-of-type) {

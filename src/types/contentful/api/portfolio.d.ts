@@ -1,6 +1,6 @@
 import { ContentTypes } from '../content-types';
 
-type ApiResponseItem = {
+interface ApiResponseItem {
 	metadata: {
 		tags: string;
 	};
@@ -46,9 +46,9 @@ type ApiResponseItem = {
 		omit?: boolean;
 		position?: number;
 	};
-};
+}
 
-export type PortfolioApiResponse = {
+export interface PortfolioApiResponse {
 	sys: {
 		type: string;
 	};
@@ -56,4 +56,4 @@ export type PortfolioApiResponse = {
 	skip: number;
 	limit: number;
 	items: ApiResponseItem[];
-};
+}

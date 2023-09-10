@@ -1,4 +1,5 @@
-import font from './font';
+import { font } from './font';
+
 describe('theme/font', () => {
 	it('should return expected values', () => {
 		expect(font).toEqual({

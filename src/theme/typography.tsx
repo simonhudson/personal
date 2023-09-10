@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
+import { palette } from './palette';
+import { font } from './font';
+import { spacingRem } from './spacing';
+import { media } from './media';
 
-const H1 = styled.h1`
-	color: ${({ theme }) => theme.palette.primary.bodyText};
-	font-family: ${({ theme }) => theme.font.serif};
+export const H1 = styled.h1`
+	color: ${palette.primary.bodyText};
+	font-family: ${font.serif};
 	font-size: ${rem(30)};
 	font-weight: 400;
 	line-height: ${rem(50)};
@@ -12,81 +16,76 @@ const H1 = styled.h1`
 	&::after {
 		content: '';
 		display: block;
-		border-bottom: 5px solid ${({ theme }) => theme.palette.primary.brand};
-		margin: ${({ theme }) => theme.spacing.md} 0;
+		border-bottom: 5px solid ${palette.primary.brand};
+		margin: ${spacingRem.md} 0;
 		width: 15%;
 	}
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			font-size: ${rem(40)};
-		`)};
+	${media.tabletLandscape(`
+		font-size: ${rem(40)};
+	`)};
 `;
 
-const H2 = styled.h2`
-	color: ${({ theme }) => theme.palette.primary.bodyText};
-	font-family: ${({ theme }) => theme.font.sansSerif};
+export const H2 = styled.h2`
+	color: ${palette.primary.bodyText};
+	font-family: ${font.sansSerif};
 	font-size: ${rem(24)};
 	font-weight: 700;
 	line-height: ${rem(16)};
-	margin: 0 0 ${({ theme }) => theme.spacing.md};
+	margin: 0 0 ${spacingRem.default};
 	text-transform: uppercase;
 
 	&::after {
 		content: '';
 		display: block;
-		border-bottom: 3px solid ${({ theme }) => theme.palette.primary.brand};
-		margin: ${({ theme }) => theme.spacing.default} 0;
+		border-bottom: 3px solid ${palette.primary.brand};
+		margin: ${spacingRem.default} 0;
 		width: 5%;
 	}
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			line-height: ${rem(36)};
-			`)};
+	${media.tabletLandscape(`
+		line-height: ${rem(36)};
+	`)};
 `;
 
-const H3 = styled.h3`
-	color: ${({ theme }) => theme.palette.primary.bodyText};
-	font-family: ${({ theme }) => theme.font.sansSerif};
-	font-size: ${({ theme }) => rem(theme.font.size * 1.15)};
+export const H3 = styled.h3`
+	color: ${palette.primary.bodyText};
+	font-family: ${font.sansSerif};
+	font-size: ${rem(font.size * 1.15)};
 	font-weight: 700;
 	line-height: ${rem(30)};
-	margin: 0 0 ${({ theme }) => theme.spacing.sm};
-	padding: 0 0 ${({ theme }) => theme.spacing.sm} 0;
+	margin: 0 0 ${spacingRem.sm};
+	padding: 0 0 ${spacingRem.sm} 0;
 	text-transform: uppercase;
 
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			font-size: ${rem(18)};
-			line-height: ${rem(30)};
-			`)};
+	${media.tabletLandscape(`
+		font-size: ${rem(18)};
+		line-height: ${rem(30)};
+	`)};
 `;
 
-const Paragraph = styled.p`
-	color: ${({ theme }) => theme.palette.primary.bodyText};
-	font-family: ${({ theme }) => theme.font.sansSerif};
-	font-size: ${({ theme }) => rem(theme.font.size)};
-	font-weight: ${({ theme }) => theme.font.weight};
-	line-height: ${({ theme }) => theme.font.lineHeight};
+export const Paragraph = styled.p`
+	color: ${palette.primary.bodyText};
+	font-family: ${font.sansSerif};
+	font-size: ${rem(font.size)};
+	font-weight: ${font.weight};
+	line-height: ${font.lineHeight};
 	margin: 0 0 ${rem(24)};
 `;
 
-const SmallerParagraph = styled(Paragraph)`
-	font-size: ${({ theme }) => rem(theme.font.size * 0.9)};
+export const SmallerParagraph = styled(Paragraph)`
+	font-size: ${rem(font.size * 0.9)};
 `;
 
-const Strong = styled.strong`
+export const Strong = styled.strong`
 	color: inherit;
 	font-weight: 700;
 `;
 
-const Small = styled.small`
-	font-size: ${({ theme }) => rem(theme.font.size * 0.85)};
+export const Small = styled.small`
+	font-size: ${rem(font.size * 0.85)};
 `;
 
-const ListItem = styled.li`
-	color: ${({ theme }) => theme.palette.primary.bodyText};
+export const ListItem = styled.li`
+	color: ${palette.primary.bodyText};
 `;
-
-export default { H1, H2, H3, Paragraph, SmallerParagraph, Strong, Small, ListItem };

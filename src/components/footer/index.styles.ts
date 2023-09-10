@@ -1,22 +1,29 @@
 import styled from 'styled-components';
-import Typography from '@/src/theme/typography';
-import Layout from '@/src/theme/layout';
+import { rem } from 'polished';
+import { SmallerParagraph } from '@/src/theme/typography';
+import { Section } from '@/src/theme/layout';
+import { media } from '@/src/theme/media';
+import { spacingRem } from '@/src/theme/spacing';
+import { palette } from '@/src/theme/palette';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: ${rem(24)};
 
-const StyledParagraph = styled(Typography.SmallerParagraph)`
-	margin: 0;
-	text-align: center;
-
-	${({ theme }) =>
-		theme.media.tabletLandscape(`
-			text-align: left;
-			`)};
+	${media.tabletPortrait(`
+		flex-direction: row-reverse;
+		justify-content: space-between;
+	`)}
 `;
 
-const StyledSection = styled(Layout.Section)`
-	border-top: ${({ theme }) => `1px solid ${theme.palette.primary.brand}`};
-	padding: ${({ theme }) => theme.spacing.md} 0;
+const StyledParagraph = styled(SmallerParagraph)`
+	margin: 0;
+`;
+
+const StyledSection = styled(Section)`
+	border-top: 1px solid ${palette.primary.brand};
+	padding: ${spacingRem.md} 0;
 `;
 
 export { Wrapper, StyledParagraph, StyledSection };

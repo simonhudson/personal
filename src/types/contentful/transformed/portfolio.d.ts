@@ -1,4 +1,4 @@
-export type PortfolioItem = {
+export interface PortfolioItem {
 	builtWith?: string[];
 	client: string;
 	copy?: string;
@@ -12,4 +12,4 @@ export type PortfolioItem = {
 	testedWith?: string[];
 	title: string;
 	url?: string;
-};
+}
