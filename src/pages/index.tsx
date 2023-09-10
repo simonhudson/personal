@@ -70,7 +70,7 @@ const getLastFmData = async () => {
 	return displayData;
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 	let returnObj = {
 		props: {
 			aboutData: await getAboutData(),
