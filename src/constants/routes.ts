@@ -1,5 +1,5 @@
-import httpStatusCodes from '@/src/constants/httpStatusCodes';
-import type Route from './route';
+import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
+import type { Route } from '@/src/types/route';
 
 export const HOME = 'Home';
 

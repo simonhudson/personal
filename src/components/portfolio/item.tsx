@@ -12,7 +12,7 @@ import {
 	MetadataItem,
 } from './item.styles';
 import Layout from '@/src/theme/layout';
-import type { PortfolioItem } from '@/src/types/portfolio-item';
+import type { PortfolioItem } from '@/src/types/contentful/transformed/portfolio.d';
 
 const Item = ({
 	builtWith,
@@ -76,13 +76,16 @@ const Item = ({
 						{url && (
 							<Layout.ButtonLinksItem>
 								<Layout.ButtonLinksLink href={url}>
-									View {title} site{isArchived ? ' (archived)' : null}
+									View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden>site
+									{isArchived ? ' (archived)' : null}
 								</Layout.ButtonLinksLink>
 							</Layout.ButtonLinksItem>
 						)}
 						{githubUrl && (
 							<Layout.ButtonLinksItem>
-								<Layout.ButtonLinksLink href={githubUrl}>View {title} on Github</Layout.ButtonLinksLink>
+								<Layout.ButtonLinksLink href={githubUrl}>
+									View <Layout.VisuallyHidden>{title} </Layout.VisuallyHidden> on Github
+								</Layout.ButtonLinksLink>
 							</Layout.ButtonLinksItem>
 						)}
 					</Layout.ButtonLinksList>

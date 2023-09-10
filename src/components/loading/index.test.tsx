@@ -12,15 +12,15 @@ describe('Loading', () => {
 		expect(screen.getByRole('img')).toBeInTheDocument();
 		expect(screen.getByRole('img')).toHaveAttribute('aria-label', 'Loading');
 	});
-	[null, {}, { isLoading: false }].forEach((props) => {
-		it(`should render nothing when props are ${JSON.stringify(props)}`, () => {
+	[null, undefined, false].forEach((value) => {
+		it(`should render nothing when isLoading prop is ${JSON.stringify(value)}`, () => {
 			// When
-			initialise(props);
+			initialise({ isLoading: value });
 
 			// Then
 			expect(screen.queryByRole('img')).not.toBeInTheDocument();
 		});
 	});
 
-	const initialise = (props?) => render(<Loading {...props} />);
+	const initialise = (props?) => render(<Loading isLoading={props.isLoading} />);
 });
