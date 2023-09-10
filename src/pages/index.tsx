@@ -52,7 +52,7 @@ const getAboutData = async () => {
 	return documentToHtmlString(rawCopy);
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 	return {
 		props: {
 			aboutData: await getAboutData(),
