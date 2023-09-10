@@ -3,7 +3,10 @@ import Link from 'next/link';
 import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon } from './index.styles';
 import Loading from '@/src/components/loading';
 import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
+dayjs.extend(relativeTime);
 
 const getLastFmData = async () => {
 	const response = await fetch(
