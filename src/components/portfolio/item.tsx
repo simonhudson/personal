@@ -2,6 +2,7 @@ import React from 'react';
 import {
 	Wrap,
 	TitleWrap,
+	ImgWrap,
 	Img,
 	Content,
 	Text,
@@ -33,13 +34,15 @@ const Item = ({
 	return (
 		<Wrap>
 			<Content>
+				<ImgWrap>
+					<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
+				</ImgWrap>
 				<Text>
 					<TitleWrap>
 						<Title>{title}</Title>
 						<Client>
 							{client} / {date}
 						</Client>
-						<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
 					</TitleWrap>
 					{madeWith && (
 						<>
@@ -71,7 +74,6 @@ const Item = ({
 							</MetadataList>
 						</>
 					)}
-
 					<ButtonLinksList>
 						{url && (
 							<ButtonLinksItem>
