@@ -99,6 +99,7 @@ export const ButtonLinksList = styled.ul`
 	flex-direction: column;
 	gap: ${spacingRem.default};
 	list-style: none;
+	margin: 0;
 	padding: ${spacingRem.default} 0;
 
 	${media.phoneLandscape(`
