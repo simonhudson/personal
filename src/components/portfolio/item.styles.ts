@@ -7,7 +7,9 @@ import { BoxShadow } from '@/src/theme/layout';
 import { font } from '@/src/theme/font';
 import { H3 } from '@/src/theme/typography';
 
-const Wrap = styled.div`
+const MEDIA_BREAK_DEVICE = 'tabletLandscape';
+
+export const Wrap = styled.div`
 	background: ${palette.primary.white};
 	border-radius: ${rem(BASE_SIZE)};
 	box-shadow: ${BoxShadow};
@@ -19,30 +21,44 @@ const Wrap = styled.div`
 	&:last-of-type {
 		margin: 0;
 	}
-
-	${media.tabletLandscape(`
-		margin: 0 0 ${spacingRem.sm};
-		width: 40.6%;
-	`)};
 `;
 
-const TitleWrap = styled.div`
+export const TitleWrap = styled.div`
 	display: flex;
 	flex-direction: column-reverse;
 `;
 
-const Img = styled.img`
+export const ImgWrap = styled.div`
+	${media[MEDIA_BREAK_DEVICE](`
+		width: 35%;
+	`)}
+`;
+
+export const Img = styled.img`
 	display: block;
 	height: auto;
 	margin: 0 0 ${spacingRem.default};
 	width: 100%;
 `;
 
-const Content = styled.div``;
+export const Content = styled.div`
+	display: flex;
+	flex-direction: column;
+	gap: ${spacingRem.default};
 
-const Text = styled.div``;
+	${media[MEDIA_BREAK_DEVICE](`
+		flex-direction: row;
+  gap: ${spacingRem.lg};
+	`)}
+`;
 
-const Title = styled(H3)`
+export const Text = styled.div`
+	${media[MEDIA_BREAK_DEVICE](`
+		width: 65%;
+	`)}
+`;
+
+export const Title = styled(H3)`
 	&::after {
 		content: '';
 		display: block;
@@ -52,7 +68,7 @@ const Title = styled(H3)`
 	}
 `;
 
-const Client = styled.span`
+export const Client = styled.span`
 	color: ${palette.primary.grey};
 	font-size: ${rem(font.size * 0.9)};
 	font-weight: 400;
@@ -61,7 +77,7 @@ const Client = styled.span`
 	text-transform: uppercase;
 `;
 
-const MetadataList = styled.ul`
+export const MetadataList = styled.ul`
 	color: ${palette.primary.bodyText};
 	margin: 0 0 ${spacingRem.default};
 
@@ -70,7 +86,7 @@ const MetadataList = styled.ul`
 	}
 `;
 
-const MetadataTitle = styled.h4`
+export const MetadataTitle = styled.h4`
 	font-weight: 500;
 	margin: 0 0 ${spacingRem.sm};
 
@@ -79,7 +95,7 @@ const MetadataTitle = styled.h4`
 	}
 `;
 
-const MetadataItem = styled.li`
+export const MetadataItem = styled.li`
 	display: inline;
 	line-height: ${rem(font.size * 1.6)};
 	margin: 0;
@@ -90,5 +106,3 @@ const MetadataItem = styled.li`
 		}
 	}
 `;
-
-export { Wrap, TitleWrap, Img, Content, Text, Title, Client, MetadataList, MetadataTitle, MetadataItem };
