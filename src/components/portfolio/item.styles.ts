@@ -21,6 +21,10 @@ export const Wrap = styled.div`
 	&:last-of-type {
 		margin: 0;
 	}
+
+	${media[MEDIA_BREAK_DEVICE](`
+		width: 42%;
+	`)}
 `;
 
 export const TitleWrap = styled.div`
@@ -28,11 +32,7 @@ export const TitleWrap = styled.div`
 	flex-direction: column-reverse;
 `;
 
-export const ImgWrap = styled.div`
-	${media[MEDIA_BREAK_DEVICE](`
-		width: 35%;
-	`)}
-`;
+export const ImgWrap = styled.div``;
 
 export const Img = styled.img`
 	display: block;
@@ -45,18 +45,9 @@ export const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: ${spacingRem.default};
-
-	${media[MEDIA_BREAK_DEVICE](`
-		flex-direction: row;
-  gap: ${spacingRem.lg};
-	`)}
 `;
 
-export const Text = styled.div`
-	${media[MEDIA_BREAK_DEVICE](`
-		width: 65%;
-	`)}
-`;
+export const Text = styled.div``;
 
 export const Title = styled(H3)`
 	&::after {

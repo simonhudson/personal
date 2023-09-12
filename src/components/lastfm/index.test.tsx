@@ -14,14 +14,8 @@ describe('LastFm', () => {
 
 	const assertCommonDataRendered = () => {
 		const links = screen.getAllByRole('link');
-		const imageLink = links.at(0);
-		const image = screen.getByRole('img');
-		const titleLink = links.at(1);
-		const artistLink = links.at(2);
-
-		expect(imageLink).toHaveAttribute('href', 'track-url');
-		expect(image).toHaveAttribute('alt', `Now playing "Track Name" by Artist on Last.fm`);
-		expect(image).toHaveAttribute('src', `large.jpg`);
+		const titleLink = links.at(0);
+		const artistLink = links.at(1);
 
 		expect(titleLink).toHaveAttribute('href', 'track-url');
 		expect(titleLink).toHaveTextContent(`"Track Name"`);
@@ -61,7 +55,7 @@ describe('LastFm', () => {
 		expect(screen.getByText('2 hours ago')).toBeInTheDocument();
 	});
 
-	it(`should render data when currently playing`, async () => {
+	it(`should render icon when currently playing`, async () => {
 		// Given
 		const props = cloneDeep(LastFmMockData);
 		props.isCurrentlyPlaying = true;

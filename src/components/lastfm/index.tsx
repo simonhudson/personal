@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon } from './index.styles';
+import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, StyledIcon, SoundIcon } from './index.styles';
 import Loading from '@/src/components/loading';
+import { VisuallyHidden } from '@/src/theme/layout';
 import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
 interface LastFmProps {
 	data?: LastFmDisplayData;
@@ -18,19 +19,16 @@ const LastFm = ({ data }: LastFmProps) => {
 
 	return (
 		<Wrap>
-			<HeadingWrap>
-				<StyledIcon type="brand" name="lastfm-square" />
-				<Heading>Last.fm</Heading>
-			</HeadingWrap>
+			<VisuallyHidden>
+				<HeadingWrap>
+					<StyledIcon type="brand" name="lastfm-square" />
+					<Heading>Last.fm</Heading>
+				</HeadingWrap>
+			</VisuallyHidden>
 			<Loading isLoading={isLoading} />
 			{!errorMsg && !isLoading && data && (
 				<InnerWrap>
-					<Link href={data.url}>
-						<Image
-							alt={`Now playing "${data.name}" by ${data.artist?.['#text']} on Last.fm`}
-							src={data?.image?.[2]?.['#text']}
-						/>
-					</Link>
+					<StyledIcon type="solid" name="music" />
 					<StyledParagraph>
 						<span>
 							<Link href={data.url}>&quot;{data.name}&quot;</Link>{' '}
@@ -39,10 +37,12 @@ const LastFm = ({ data }: LastFmProps) => {
 							<em>by</em>
 							<Link href={data.url}> {data.artist?.['#text']}</Link>
 						</span>
-						<span> {data.relativeTime}</span>
-						{data.isCurrentlyPlaying && (
-							<SoundIcon alt="" aria-hidden="true" src="/images/icon-audio-wave.gif" />
-						)}
+						<span>
+							{data.relativeTime}
+							{data.isCurrentlyPlaying && (
+								<SoundIcon alt="" aria-hidden="true" src="/images/icon-audio-wave.gif" />
+							)}
+						</span>
 					</StyledParagraph>
 				</InnerWrap>
 			)}

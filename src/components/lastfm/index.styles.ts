@@ -3,11 +3,11 @@ import { rem } from 'polished';
 import { H3, Paragraph } from '@/src/theme/typography';
 import Icon from '@/src/components/icon';
 import { spacingRem } from '@/src/theme/spacing';
-import { palette } from '@/src/theme/palette';
 
-const Wrap = styled.div``;
+export const Wrap = styled.div``;
 
-const InnerWrap = styled.div`
+export const InnerWrap = styled.div`
+	align-items: flex-start;
 	display: flex;
 
 	a {
@@ -15,30 +15,31 @@ const InnerWrap = styled.div`
 	}
 `;
 
-const HeadingWrap = styled.div`
+export const HeadingWrap = styled.div`
 	align-items: center;
 	display: flex;
 	margin: 0 0 ${rem(24)};
 `;
 
-const Heading = styled(H3)`
+export const Heading = styled(H3)`
 	margin: 0;
 	padding: 0;
 `;
 
-const StyledParagraph = styled(Paragraph)`
+export const StyledParagraph = styled(Paragraph)`
 	margin: ${rem(-5)} 0 0;
 
 	span {
-		display: block;
 		font-size: ${rem(14)};
 
 		em {
 			font-size: ${rem(14)};
 			font-weight: 400;
+			opacity: 0.85;
 		}
 
 		&:first-of-type {
+			display: block;
 			font-weight: 700;
 		}
 
@@ -47,27 +48,26 @@ const StyledParagraph = styled(Paragraph)`
 		}
 
 		&:nth-of-type(3) {
-			display: block;
+			align-items: center;
+			display: flex;
 			font-size: ${rem(13)};
+			gap: ${spacingRem.sm};
 		}
 	}
 `;
 
-const Image = styled.img`
+export const Image = styled.img`
 	border-radius: ${rem(15)};
 	height: auto;
-	margin: 0 ${spacingRem.default} 0 0;
-	width: ${rem(75)};
+	margin: 0 ${spacingRem.sm} 0 0;
+	width: ${rem(50)};
 `;
 
-const StyledIcon = styled(Icon)`
-	color: ${palette.brands.lastFm};
-	font-size: ${rem(32)};
-	margin-right: ${spacingRem.sm};
+export const StyledIcon = styled(Icon)`
+	font-size: ${rem(24)};
+	margin: ${rem(5)} ${spacingRem.sm} 0 0;
 `;
 
-const SoundIcon = styled.img`
+export const SoundIcon = styled.img`
 	height: ${rem(32)};
 `;
-
-export { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, Image, StyledIcon, SoundIcon };

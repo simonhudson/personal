@@ -6,7 +6,7 @@ import { media } from '@/src/theme/media';
 import { spacingRem } from '@/src/theme/spacing';
 import { palette } from '@/src/theme/palette';
 
-const Wrapper = styled.div`
+export const Wrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: ${rem(24)};
@@ -17,13 +17,11 @@ const Wrapper = styled.div`
 	`)}
 `;
 
-const StyledParagraph = styled(SmallerParagraph)`
+export const StyledParagraph = styled(SmallerParagraph)`
 	margin: 0;
 `;
 
-const StyledSection = styled(Section)`
+export const StyledSection = styled(Section)`
 	border-top: 1px solid ${palette.primary.brand};
 	padding: ${spacingRem.md} 0;
 `;
-
-export { Wrapper, StyledParagraph, StyledSection };
