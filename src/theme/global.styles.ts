@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import { font } from './font';
 import { palette } from './palette';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
 
     html,
     body,
@@ -61,5 +61,3 @@ const GlobalStyles = createGlobalStyle`
     }
     
 `;
-
-export { GlobalStyles };

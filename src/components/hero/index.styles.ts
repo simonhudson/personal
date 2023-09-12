@@ -4,7 +4,7 @@ import { Paragraph, Strong } from '@/src/theme/typography';
 import { media } from '@/src/theme/media';
 import { font } from '@/src/theme/font';
 
-const StyledParagraph = styled(Paragraph)`
+export const StyledParagraph = styled(Paragraph)`
 	font-family: ${font.serif};
 	font-size: ${rem(20)};
 	margin: 0;
@@ -15,7 +15,7 @@ const StyledParagraph = styled(Paragraph)`
 	`)};
 `;
 
-const Span = styled(Strong)`
+export const Span = styled(Strong)`
 	display: block;
 	font-size: ${rem(40)};
 
@@ -23,5 +23,3 @@ const Span = styled(Strong)`
 		display: inline;
 	`)};
 `;
-
-export { StyledParagraph, Span };
