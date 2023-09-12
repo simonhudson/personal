@@ -4,22 +4,20 @@ import Icon from '@/src/components/icon';
 import { media } from '@/src/theme/media';
 import { BoxShadow } from '@/src/theme/layout';
 import { spacingRem } from '@/src/theme/spacing';
+import { palette } from '@/src/theme/palette';
 
 const Wrap = styled.div`
-	gap: ${rem(20)};
+	gap: ${spacingRem.default};
 	display: flex;
 	flex-direction: column;
 
 	${media.tabletPortrait(`
 		flex-direction: row-reverse;
+		gap: ${spacingRem.lg};
 	`)};
 `;
 
-const Content = styled.div`
-	${media.tabletLandscape(`
-		width: 65%;
-	`)};
-`;
+const Content = styled.div``;
 
 const Aside = styled.aside`
 	${media.tabletLandscape(`
@@ -33,6 +31,7 @@ const StyledIcon = styled(Icon)`
 `;
 
 const Image = styled.img`
+	border: ${rem(5)} solid ${palette.primary.white};
 	border-radius: 100%;
 	box-shadow: ${BoxShadow};
 	display: block;
@@ -41,7 +40,8 @@ const Image = styled.img`
 	width: auto;
 
 	${media.phoneLandscape(`
-		height: ${rem(200)};
+		height: auto;
+		width: 100%;
 	`)};
 `;
 
