@@ -35,9 +35,11 @@ export const StyledParagraph = styled(Paragraph)`
 		em {
 			font-size: ${rem(14)};
 			font-weight: 400;
+			opacity: 0.85;
 		}
 
 		&:first-of-type {
+			display: block;
 			font-weight: 700;
 		}
 
