@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Wrap, InnerWrap, StyledParagraph, StyledIcon } from './index.styles';
+import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, StyledIcon, SoundIcon } from './index.styles';
 import Loading from '@/src/components/loading';
+import { VisuallyHidden } from '@/src/theme/layout';
 import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
 interface LastFmProps {
 	data?: LastFmDisplayData;
@@ -18,6 +19,12 @@ const LastFm = ({ data }: LastFmProps) => {
 
 	return (
 		<Wrap>
+			<VisuallyHidden>
+				<HeadingWrap>
+					<StyledIcon type="brand" name="lastfm-square" />
+					<Heading>Last.fm</Heading>
+				</HeadingWrap>
+			</VisuallyHidden>
 			<Loading isLoading={isLoading} />
 			{!errorMsg && !isLoading && data && (
 				<InnerWrap>
@@ -30,7 +37,12 @@ const LastFm = ({ data }: LastFmProps) => {
 							<em>by</em>
 							<Link href={data.url}> {data.artist?.['#text']}</Link>
 						</span>
-						<span>{data.relativeTime}</span>
+						<span>
+							{data.relativeTime}
+							{data.isCurrentlyPlaying && (
+								<SoundIcon alt="" aria-hidden="true" src="/images/icon-audio-wave.gif" />
+							)}
+						</span>
 					</StyledParagraph>
 				</InnerWrap>
 			)}
