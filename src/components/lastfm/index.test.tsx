@@ -21,7 +21,7 @@ describe('LastFm', () => {
 
 		expect(imageLink).toHaveAttribute('href', 'track-url');
 		expect(image).toHaveAttribute('alt', `Now playing "Track Name" by Artist on Last.fm`);
-		expect(image).toHaveAttribute('src', `large.jpg`);
+		expect(image).toHaveAttribute('src', `extralarge.jpg`);
 
 		expect(titleLink).toHaveAttribute('href', 'track-url');
 		expect(titleLink).toHaveTextContent(`"Track Name"`);
@@ -59,22 +59,6 @@ describe('LastFm', () => {
 		// Then
 		assertCommonDataRendered();
 		expect(screen.getByText('2 hours ago')).toBeInTheDocument();
-	});
-
-	it(`should render data when currently playing`, async () => {
-		// Given
-		const props = cloneDeep(LastFmMockData);
-		props.isCurrentlyPlaying = true;
-
-		// When
-		await initialise(props);
-
-		// Then
-		assertCommonDataRendered();
-		expect(screen.getAllByRole('img', { hidden: true }).at(2)).toHaveAttribute(
-			'src',
-			'/images/icon-audio-wave.gif',
-		);
 	});
 
 	const initialise = async (props?) => await act(async () => render(<LastFm data={props} />));

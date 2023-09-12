@@ -3,11 +3,11 @@ import { rem } from 'polished';
 import { H3, Paragraph } from '@/src/theme/typography';
 import Icon from '@/src/components/icon';
 import { spacingRem } from '@/src/theme/spacing';
-import { palette } from '@/src/theme/palette';
 
 const Wrap = styled.div``;
 
 const InnerWrap = styled.div`
+	align-items: flex-start;
 	display: flex;
 
 	a {
@@ -30,7 +30,6 @@ const StyledParagraph = styled(Paragraph)`
 	margin: ${rem(-5)} 0 0;
 
 	span {
-		display: block;
 		font-size: ${rem(14)};
 
 		em {
@@ -56,14 +55,13 @@ const StyledParagraph = styled(Paragraph)`
 const Image = styled.img`
 	border-radius: ${rem(15)};
 	height: auto;
-	margin: 0 ${spacingRem.default} 0 0;
-	width: ${rem(75)};
+	margin: 0 ${spacingRem.sm} 0 0;
+	width: ${rem(50)};
 `;
 
 const StyledIcon = styled(Icon)`
-	color: ${palette.brands.lastFm};
-	font-size: ${rem(32)};
-	margin-right: ${spacingRem.sm};
+	font-size: ${rem(24)};
+	margin: ${rem(5)} ${spacingRem.sm} 0 0;
 `;
 
 const SoundIcon = styled.img`
