@@ -17,5 +17,10 @@ describe('theme/media', () => {
 		it('for Desktop', () => {
 			expect(media.desktop('color: red;')).toEqual(`@media (min-width: 1200px) { color: red; }`);
 		});
+		it('for Reduced Motion', () => {
+			expect(media.prefersReducedMotion('color: red')).toEqual(
+				'@media (prefers-reduced-motion: reduce) { color: red; }',
+			);
+		});
 	});
 });

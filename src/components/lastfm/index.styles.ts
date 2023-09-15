@@ -3,6 +3,7 @@ import { rem } from 'polished';
 import { H3, Paragraph } from '@/src/theme/typography';
 import Icon from '@/src/components/icon';
 import { spacingRem } from '@/src/theme/spacing';
+import { media } from '@/src/theme/media';
 
 export const Wrap = styled.div``;
 
@@ -70,4 +71,8 @@ export const StyledIcon = styled(Icon)`
 
 export const SoundIcon = styled.img`
 	height: ${rem(32)};
+
+	${media.prefersReducedMotion(`
+		display: none;
+	`)}
 `;
