@@ -3,7 +3,10 @@ import { rem } from 'polished';
 import { H3, Paragraph } from '@/src/theme/typography';
 import Icon from '@/src/components/icon';
 import { spacingRem } from '@/src/theme/spacing';
+<<<<<<< HEAD
 import { media } from '@/src/theme/media';
+=======
+>>>>>>> main
 
 export const Wrap = styled.div``;
 
