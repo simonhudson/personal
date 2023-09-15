@@ -63,7 +63,6 @@ const getLastFmData = async () => {
 		if (recentTrack) {
 			const displayData = { ...recentTrack };
 			displayData.relativeTime = recentTrack?.date ? dayjs(recentTrack.date['#text']).fromNow() : 'Now playing';
-			if (!recentTrack?.date) displayData.isCurrentlyPlaying = true;
 			return displayData;
 		}
 	}

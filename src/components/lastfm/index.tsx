@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, StyledIcon, SoundIcon } from './index.styles';
+import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, StyledIcon, SoundIcon, Image } from './index.styles';
 import Loading from '@/src/components/loading';
 import { VisuallyHidden } from '@/src/theme/layout';
 import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
@@ -28,7 +28,10 @@ const LastFm = ({ data }: LastFmProps) => {
 			<Loading isLoading={isLoading} />
 			{!errorMsg && !isLoading && data && (
 				<InnerWrap>
-					<StyledIcon type="solid" name="music" />
+					<Image
+						alt={`Now playing "${data.name}" by ${data.artist?.['#text']} on LastFM`}
+						src={data.image[3]['#text']}
+					/>
 					<StyledParagraph>
 						<span>
 							<Link href={data.url}>&quot;{data.name}&quot;</Link>{' '}
@@ -39,9 +42,7 @@ const LastFm = ({ data }: LastFmProps) => {
 						</span>
 						<span>
 							{data.relativeTime}
-							{data.isCurrentlyPlaying && (
-								<SoundIcon alt="" aria-hidden="true" src="/images/icon-audio-wave.gif" />
-							)}
+							<SoundIcon alt="" aria-hidden="true" src="/images/icon-audio-wave.gif" />
 						</span>
 					</StyledParagraph>
 				</InnerWrap>

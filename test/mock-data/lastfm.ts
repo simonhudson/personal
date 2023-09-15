@@ -33,5 +33,4 @@ export const LastFmMockData = {
 		'#text': dayjs().subtract(2, 'hour'),
 	},
 	relativeTime: '2 hours ago',
-	isCurrentlyPlaying: false,
 };
