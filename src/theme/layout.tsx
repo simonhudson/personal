@@ -115,3 +115,23 @@ export const ButtonLinksLink = styled(ButtonLink)`
 	display: block;
 	text-align: center;
 `;
+
+export const IconLinksList = styled.ul`
+	display: flex;
+	flex-direction: row;
+	gap: ${spacingRem.lg};
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: ${spacingRem.md} 0 0;
+`;
+
+export const IconLinksItem = styled.li``;
+
+export const IconLinksLink = styled.a`
+	background: ${palette.primary.brand};
+	border-radius: 100%;
+	display: flex;
+	padding: ${spacingRem.default};
+	text-decoration: none;
+`;
