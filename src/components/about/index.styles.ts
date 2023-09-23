@@ -9,10 +9,10 @@ import { palette } from '@/src/theme/palette';
 export const Wrap = styled.div`
 	gap: ${spacingRem.default};
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 
 	${media.tabletPortrait(`
-		flex-direction: row-reverse;
+		flex-direction: row;
 		gap: ${spacingRem.lg};
 	`)};
 `;
@@ -26,8 +26,8 @@ export const Aside = styled.aside`
 `;
 
 export const StyledIcon = styled(Icon)`
-	font-size: ${rem(16)};
-	margin-left: ${spacingRem.sm};
+	color: ${palette.primary.white};
+	font-size: ${rem(24)};
 `;
 
 export const Image = styled.img`

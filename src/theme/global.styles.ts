@@ -16,7 +16,7 @@ export const GlobalStyles = createGlobalStyle`
         text-rendering: optimizeLegibility;
     }
     html, body {
-        border-top: 3px solid ${palette.primary.brand};
+        border-top: 5px solid ${palette.primary.brand};
         background: #fff;
         height: 100%;
     }
@@ -57,7 +57,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     a {
-        color: ${palette.primary.bodyText};
+        border-bottom: 1px solid ${palette.primary.brand};
+        color: inherit;
+        text-decoration: none;
     }
     
 `;

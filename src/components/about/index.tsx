@@ -1,6 +1,6 @@
 import React from 'react';
 import { H2 } from '@/src/theme/typography';
-import { Section, ButtonLinksList, ButtonLinksItem, ButtonLinksLink } from '@/src/theme/layout';
+import { Section, IconLinksList, IconLinksItem, IconLinksLink, VisuallyHidden } from '@/src/theme/layout';
 import { Wrap, Content, Aside, StyledIcon, Image } from './index.styles';
 import Links from './links';
 import { slugify } from '@/src/utilities/slugify';
@@ -14,25 +14,25 @@ const AboutMe = ({ aboutData }: AboutProps) => {
 		<Section>
 			<H2>About me</H2>
 			<Wrap>
+				<Content>{aboutData && <div dangerouslySetInnerHTML={{ __html: aboutData }}></div>}</Content>
 				<Aside>
 					<Image alt="Simon Hudson sat at a table with a glass of beer" src="/images/self.png" />
+					{Links && (
+						<IconLinksList>
+							{Links.map((item, index: number) => {
+								return (
+									<IconLinksItem key={`link-${slugify(item.text)}-${index}`}>
+										<IconLinksLink href={item.link} target="_blank" rel="noopener noreferer">
+											<VisuallyHidden>{item.text}&nbsp;(opens in a new tab)</VisuallyHidden>
+											<StyledIcon type={item.icon.type} name={item.icon.name} />
+										</IconLinksLink>
+									</IconLinksItem>
+								);
+							})}
+						</IconLinksList>
+					)}
 				</Aside>
-				<Content>{aboutData && <div dangerouslySetInnerHTML={{ __html: aboutData }}></div>}</Content>
 			</Wrap>
-			{Links && (
-				<ButtonLinksList>
-					{Links.map((item, index: number) => {
-						return (
-							<ButtonLinksItem key={`link-${slugify(item.text)}-${index}`}>
-								<ButtonLinksLink href={item.link}>
-									{item.text}
-									<StyledIcon type={item.icon.type} name={item.icon.name} />
-								</ButtonLinksLink>
-							</ButtonLinksItem>
-						);
-					})}
-				</ButtonLinksList>
-			)}
 		</Section>
 	);
 };

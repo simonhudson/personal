@@ -25,7 +25,7 @@ interface Palette {
 export const palette: Palette = {
 	primary: {
 		bodyBackground: '#fef9f5',
-		brand: '#FFDE59',
+		brand: '#FA7900',
 		bodyText: '#5d5d5d',
 		black: '#333',
 		white: '#fff',
