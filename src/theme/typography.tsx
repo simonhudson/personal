@@ -38,7 +38,7 @@ export const H2 = styled.h2`
 	&::after {
 		content: '';
 		display: block;
-		border-bottom: 3px solid ${palette.primary.brand};
+		border-bottom: 2px solid ${palette.primary.brand};
 		margin: ${spacingRem.default} 0;
 		width: 5%;
 	}

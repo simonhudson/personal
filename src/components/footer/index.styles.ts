@@ -22,6 +22,6 @@ export const StyledParagraph = styled(SmallerParagraph)`
 `;
 
 export const StyledSection = styled(Section)`
-	border-top: 1px solid ${palette.primary.brand};
+	background: ${palette.primary.lightGrey};
 	padding: ${spacingRem.md} 0;
 `;
