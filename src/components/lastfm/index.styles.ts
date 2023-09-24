@@ -12,7 +12,8 @@ export const InnerWrap = styled.div`
 	display: flex;
 
 	a {
-		text-decoration: none;
+		border: 0;
+  text-decoration: none;
 	}
 `;
 
