@@ -51,9 +51,9 @@ export const Text = styled.div``;
 
 export const Title = styled(H3)`
 	&::after {
+		border-bottom: 1px solid ${palette.primary.brand};
 		content: '';
 		display: block;
-		border-bottom: 2px solid ${palette.primary.brand};
 		margin: ${spacingRem.sm} 0;
 		width: 5%;
 	}

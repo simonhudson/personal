@@ -16,7 +16,6 @@ export const GlobalStyles = createGlobalStyle`
         text-rendering: optimizeLegibility;
     }
     html, body {
-        border-top: 5px solid ${palette.primary.brand};
         background: #fff;
         height: 100%;
     }

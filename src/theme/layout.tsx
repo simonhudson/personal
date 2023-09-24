@@ -129,9 +129,15 @@ export const IconLinksList = styled.ul`
 export const IconLinksItem = styled.li``;
 
 export const IconLinksLink = styled.a`
-	background: ${palette.primary.brand};
+	background: ${palette.primary.black};
+	border: 0;
 	border-radius: 100%;
 	display: flex;
 	padding: ${spacingRem.default};
 	text-decoration: none;
+
+	&:hover,
+	&:focus-visible {
+		background-color: ${palette.primary.grey};
+	}
 `;
