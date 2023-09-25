@@ -13,7 +13,7 @@ export const InnerWrap = styled.div`
 
 	a {
 		border: 0;
-  text-decoration: none;
+		text-decoration: none;
 	}
 `;
 
