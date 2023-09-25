@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 	gap: ${rem(24)};
 
 	${media.tabletPortrait(`
-		flex-direction: row-reverse;
+		flex-direction: row;
 		justify-content: space-between;
 	`)}
 `;
