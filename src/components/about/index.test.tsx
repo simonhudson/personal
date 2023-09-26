@@ -3,12 +3,10 @@ import About from './index';
 import { render } from '@/test/utils';
 import { screen } from '@testing-library/react';
 import { act } from 'react-test-renderer';
-import { LastFmMockData } from '@/test/mock-data/lastfm';
 import { cloneDeep } from 'lodash';
 
 const baseProps = {
 	aboutData: '<p>Foo</p>',
-	lastFmData: LastFmMockData,
 };
 
 describe('About', () => {
@@ -27,8 +25,10 @@ describe('About', () => {
 				text: 'LinkedIn profile',
 				href: 'https://www.linkedin.com/in/hellosimonhudson/',
 			},
-		].forEach((item) => {
-			expect(screen.getByText(item.text)).toHaveAttribute('href', item.href);
+		].forEach((item, index) => {
+			const link = screen.getAllByRole('link')[index];
+			expect(link).toHaveAttribute('href', item.href);
+			expect(link).toHaveTextContent(item.text);
 		});
 		expect(screen.getByAltText('Simon Hudson sat at a table with a glass of beer')).toBeInTheDocument();
 	};
@@ -58,6 +58,5 @@ describe('About', () => {
 		expect(screen.queryByText('Foo')).not.toBeInTheDocument();
 	});
 
-	const initialise = async (props) =>
-		await act(async () => render(<About aboutData={props.aboutData} lastFmData={props.lastFmData} />));
+	const initialise = async (props) => await act(async () => render(<About aboutData={props.aboutData} />));
 });
