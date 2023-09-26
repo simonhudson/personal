@@ -9,9 +9,9 @@
 		"start": "next start -p $PORT",
 		"lint": "eslint ./**/**.js",
 		"lint:fix": "eslint ./**/**.js --fix",
-		"test": "./node_modules/.bin/jest",
-		"test:coverage": "./node_modules/.bin/jest --coverage",
-		"tsc": "node_modules/.bin/tsc --watch"
+		"test": "jest",
+		"test:coverage": "jest --coverage",
+		"tsc": "tsc --watch"
 	},
 	"repository": {
 		"type": "git",
