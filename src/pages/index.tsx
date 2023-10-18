@@ -1,7 +1,8 @@
 import React from 'react';
 import Hero from '@/src/components/hero';
 import Portfolio from '@/src/components/portfolio';
-import AboutMe from '@/src/components/about';
+import type { PortfolioItem, PortfolioApiResponse } from '@/src/components/portfolio/portfolio.d';
+import About from '@/src/components/about';
 import Footer from '@/src/components/footer';
 import { slugify } from '../utilities/slugify';
 import getContent from '@/src/utilities/getContent';
@@ -9,12 +10,8 @@ import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
+import type { HomeProps } from './index.d';
 dayjs.extend(relativeTime);
-
-import type { PortfolioApiResponse } from '@/src/types/contentful/api/portfolio.d';
-import type { PortfolioItem } from '@/src/types/contentful/transformed/portfolio.d';
-import type { About } from '@/src/types/contentful/transformed/about.d';
-import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm.d';
 
 const getPortfolioData = async () => {
 	let portfolioData: PortfolioApiResponse, portfolioItems: PortfolioItem[];
@@ -78,20 +75,12 @@ export const getServerSideProps = async () => {
 	};
 };
 
-const Home = ({
-	aboutData,
-	portfolioItems,
-	lastFmData,
-}: {
-	aboutData: About;
-	portfolioItems: PortfolioItem[];
-	lastFmData: LastFmDisplayData;
-}) => {
+const Home = ({ aboutData, portfolioItems, lastFmData }: HomeProps) => {
 	return (
 		<>
 			<Hero />
 			<Portfolio data={portfolioItems} />
-			<AboutMe aboutData={aboutData} />
+			<About aboutData={aboutData} />
 			<Footer lastFmData={lastFmData} />
 		</>
 	);

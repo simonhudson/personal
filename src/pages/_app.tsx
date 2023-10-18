@@ -4,8 +4,9 @@ import Script from 'next/script';
 import { ThemeProvider } from 'styled-components';
 import Theme from '@/src/theme';
 import { GlobalStyles } from '@/src/theme/global.styles';
+import type { AppProps } from './_app.d';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
 	pageProps.holdingMode = process?.env?.HOLDING_MODE?.toLowerCase() === 'true';
 
 	return (

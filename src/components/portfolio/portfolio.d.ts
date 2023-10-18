@@ -1,4 +1,4 @@
-import { ContentTypes } from '../content-types';
+import type { ContentTypes } from '@/src/types/contentful/content-types';
 
 interface ApiResponseItem {
 	metadata: {
@@ -56,4 +56,24 @@ export interface PortfolioApiResponse {
 	skip: number;
 	limit: number;
 	items: ApiResponseItem[];
+}
+
+export interface PortfolioItem {
+	builtWith?: string[];
+	client: string;
+	copy?: string;
+	date: string;
+	githubUrl?: string;
+	isArchived?: boolean;
+	madeWith?: string[];
+	omit?: boolean;
+	position?: number;
+	slug: string;
+	testedWith?: string[];
+	title: string;
+	url?: string;
+}
+
+export interface PortfolioProps {
+	data?: PortfolioItem[];
 }

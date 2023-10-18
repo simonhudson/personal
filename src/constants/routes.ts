@@ -1,12 +1,13 @@
 import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
-import type { Route } from '@/src/types/route';
+import type { Routes } from './routes.d';
 
-export const HOME = 'Home';
+export const HOME_LABEL = 'Home';
+export const HOME_PATH = '/';
 
-const routes: Array<Route> = [
+const routes: Routes = [
 	{
-		path: '/',
-		label: HOME,
+		path: HOME_PATH,
+		label: HOME_LABEL,
 	},
 	{
 		path: `/${httpStatusCodes.NOT_FOUND}`,

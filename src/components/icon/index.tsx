@@ -1,18 +1,13 @@
 import React from 'react';
 import { StyledIcon } from './index.styles';
-
-interface Props {
-	type: 'solid' | 'brand';
-	name: string;
-	className: string;
-}
+import type { IconProps } from './icon.d';
 
 const typeMapping = {
 	solid: 'fas',
 	brand: 'fab',
 };
 
-const Icon = ({ type, name, className }: Props) => {
+const Icon = ({ type, name, className }: IconProps) => {
 	return (
 		<StyledIcon
 			role="img"
