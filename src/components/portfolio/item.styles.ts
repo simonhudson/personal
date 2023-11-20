@@ -12,7 +12,8 @@ const MEDIA_BREAK_DEVICE = 'tabletLandscape';
 export const Wrap = styled.div`
 	background: ${palette.primary.white};
 	border-radius: ${rem(BASE_SIZE)};
-	box-shadow: ${BoxShadow};
+	border-bottom: 1px solid ${palette.primary.brand};
+        box-shadow: ${BoxShadow};
 	display: flex;
 	flex-direction: column;
 	margin: 0;
