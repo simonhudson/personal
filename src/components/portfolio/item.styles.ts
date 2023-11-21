@@ -7,11 +7,9 @@ import { BoxShadow } from '@/src/theme/layout';
 import { font } from '@/src/theme/font';
 import { H3 } from '@/src/theme/typography';
 
-const MEDIA_BREAK_DEVICE = 'tabletLandscape';
-
 export const Wrap = styled.div`
 	background: ${palette.primary.white};
-	border-bottom: 1px solid ${palette.primary.brand};
+	border-bottom: 3px solid ${palette.primary.brand};
 	border-radius: ${rem(BASE_SIZE)};
 	box-shadow: ${BoxShadow};
 	display: flex;
@@ -23,7 +21,7 @@ export const Wrap = styled.div`
 		margin: 0;
 	}
 
-	${media[MEDIA_BREAK_DEVICE](`
+	${media.tabletLandscape(`
 		width: 42%;
 	`)}
 `;
