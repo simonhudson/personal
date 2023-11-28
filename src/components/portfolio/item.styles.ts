@@ -15,15 +15,11 @@ export const Wrap = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	padding: ${rem(40)};
+	padding: ${spacingRem.md};
 
 	&:last-of-type {
 		margin: 0;
 	}
-
-	${media.tabletLandscape(`
-		width: 42%;
-	`)}
 `;
 
 export const TitleWrap = styled.div`
@@ -31,7 +27,11 @@ export const TitleWrap = styled.div`
 	flex-direction: column-reverse;
 `;
 
-export const ImgWrap = styled.div``;
+export const ImgWrap = styled.div`
+	${media.tabletLandscape(`
+		width: 42%;
+	`)}
+`;
 
 export const Img = styled.img`
 	display: block;
@@ -44,6 +44,11 @@ export const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: ${spacingRem.default};
+
+	${media.tabletLandscape(`
+		flex-direction: row;
+		gap: ${spacingRem.lg};
+	`)}
 `;
 
 export const Text = styled.div``;
@@ -69,6 +74,7 @@ export const Client = styled.span`
 
 export const MetadataList = styled.ul`
 	color: ${palette.primary.bodyText};
+	font-size: ${rem(14)};
 	margin: 0 0 ${spacingRem.default};
 
 	&:last-of-type {
@@ -77,6 +83,7 @@ export const MetadataList = styled.ul`
 `;
 
 export const MetadataTitle = styled.h4`
+	font-size: ${rem(14)};
 	font-weight: 500;
 	margin: 0 0 ${spacingRem.sm};
 

@@ -18,7 +18,7 @@ import type { PortfolioItem } from './portfolio.d';
 const Item = ({
 	builtWith,
 	client,
-	copy,
+	copyHtml,
 	date,
 	githubUrl,
 	isArchived,
@@ -29,6 +29,10 @@ const Item = ({
 	title,
 	url,
 }: PortfolioItem) => {
+	console.log('copyHtml----------------');
+	console.log(copyHtml);
+	console.log('/copyHtml----------------');
+
 	if (omit) return null;
 
 	return (
@@ -44,6 +48,7 @@ const Item = ({
 							{client} / {date}
 						</Client>
 					</TitleWrap>
+					{copyHtml && <p>{copyHtml}</p>}
 					{madeWith && (
 						<>
 							<MetadataTitle id={`${slug}-made-with`}>Made with</MetadataTitle>

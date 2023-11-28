@@ -21,9 +21,12 @@ const getPortfolioData = async () => {
 		portfolioItems = [];
 
 		portfolioData.items.forEach((item) => {
+			const copyHtml = item.fields.copy?.content[0]?.content[0]?.value ?? null;
+
 			portfolioItems.push({
 				...item.fields,
 				slug: '',
+				copyHtml,
 			});
 		});
 		portfolioItems.forEach((item) => (item.slug = slugify(item.title)));
