@@ -4,6 +4,7 @@ import { media } from './media';
 import { breakpoints } from './breakpoints';
 import { spacingRem } from './spacing';
 import { palette } from './palette';
+import { ReactNode } from 'react';
 
 export const Wrap = styled.div`
 	margin: 0 auto;
@@ -49,7 +50,7 @@ export const StyledSection = styled.section`
 `;
 
 type SectionProps = {
-	children: object;
+	children: ReactNode;
 	className?: string;
 };
 export const Section = ({ children, className }: SectionProps) => {
