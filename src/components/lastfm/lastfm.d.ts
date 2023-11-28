@@ -17,3 +17,11 @@ export interface LastFmApiResponse {
 		track: LastFmApiResponseTrack[];
 	};
 }
+
+export interface LastFmDisplayData extends LastFmApiResponseTrack {
+	relativeTime: string;
+}
+
+interface LastFmProps {
+	data?: LastFmDisplayData;
+}

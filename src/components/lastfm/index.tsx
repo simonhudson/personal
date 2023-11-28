@@ -3,10 +3,7 @@ import Link from 'next/link';
 import { Wrap, InnerWrap, HeadingWrap, Heading, StyledParagraph, StyledIcon, SoundIcon, Image } from './index.styles';
 import Loading from '@/src/components/loading';
 import { VisuallyHidden } from '@/src/theme/layout';
-import type { LastFmDisplayData } from '@/src/types/lastfm/transformed/lastfm';
-interface LastFmProps {
-	data?: LastFmDisplayData;
-}
+import type { LastFmProps } from './lastfm.d';
 
 const LastFm = ({ data }: LastFmProps) => {
 	const [isLoading, setIsLoading] = useState<boolean>(true);

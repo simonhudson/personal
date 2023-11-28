@@ -13,7 +13,7 @@ import {
 	MetadataItem,
 } from './item.styles';
 import { ButtonLinksList, ButtonLinksItem, ButtonLinksLink, VisuallyHidden } from '@/src/theme/layout';
-import type { PortfolioItem } from '@/src/types/contentful/transformed/portfolio.d';
+import type { PortfolioItem } from './portfolio.d';
 
 const Item = ({
 	builtWith,

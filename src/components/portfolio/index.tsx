@@ -3,9 +3,9 @@ import { H2 } from '@/src/theme/typography';
 import { Section } from '@/src/theme/layout';
 import { Wrap } from './index.styles';
 import Item from './item';
-import type { PortfolioItem } from '@/src/types/contentful/transformed/portfolio.d';
+import type { PortfolioProps } from './portfolio';
 
-const Portfolio = ({ data }: { data?: PortfolioItem[] }) => {
+const Portfolio = ({ data }: PortfolioProps) => {
 	return (
 		<Section>
 			<H2>My work</H2>

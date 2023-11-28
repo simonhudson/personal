@@ -4,12 +4,9 @@ import { Section, IconLinksList, IconLinksItem, IconLinksLink, VisuallyHidden } 
 import { Wrap, Content, Aside, StyledIcon, Image } from './index.styles';
 import Links from './links';
 import { slugify } from '@/src/utilities/slugify';
+import type { AboutProps } from './about.d';
 
-interface AboutProps {
-	aboutData?: string;
-}
-
-const AboutMe = ({ aboutData }: AboutProps) => {
+const About = ({ aboutData }: AboutProps) => {
 	return (
 		<Section>
 			<H2>About me</H2>
@@ -37,4 +34,4 @@ const AboutMe = ({ aboutData }: AboutProps) => {
 	);
 };
 
-export default AboutMe;
+export default About;

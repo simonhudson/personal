@@ -9,8 +9,7 @@ describe('Footer', () => {
 		initialise();
 
 		// Then
-		const footer = screen.getByRole('contentinfo');
-		expect(footer).toBeInTheDocument();
+		expect(screen.getByRole('contentinfo')).toBeInTheDocument();
 		expect(screen.getByText(/^© (\d){4} Simon Hudson$/i)).toBeInTheDocument();
 	});
 

@@ -1,12 +1,9 @@
 import React from 'react';
 import { StyledLoading } from './index.styles';
 import { palette } from '@/src/theme/palette';
+import type { LoadingProps } from './loading.d';
 
-interface Props {
-	isLoading?: boolean;
-}
-
-const Loading = ({ isLoading }: Props) => {
+const Loading = ({ isLoading }: LoadingProps) => {
 	if (!isLoading) return null;
 
 	return (

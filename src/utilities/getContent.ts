@@ -1,4 +1,4 @@
-import type { ContentTypes } from '@/src/types/contentful/content-types.d';
+import type { ContentTypes } from './getContent.d';
 import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
 
 const getContent = async (contentType: ContentTypes) => {
