@@ -3,7 +3,7 @@ import type { AboutProps } from '@/src/components/about/about.d';
 import type { LastFmDisplayData } from '@/src/components/lastfm/lastfm.d';
 
 export interface HomeProps {
-	aboutData: AboutProps;
+	aboutData: string | undefined;
 	portfolioItems: PortfolioItem[];
 	lastFmData: LastFmDisplayData;
 }

@@ -1,3 +1,5 @@
 export interface AboutProps {
-	aboutData?: string;
+	aboutData: string | undefined;
 }
+
+// export type AboutProps = string | undefined;

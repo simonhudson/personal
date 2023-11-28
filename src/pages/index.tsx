@@ -1,7 +1,6 @@
 import React from 'react';
 import Hero from '@/src/components/hero';
 import Portfolio from '@/src/components/portfolio';
-import type { PortfolioItem, PortfolioApiResponse } from '@/src/components/portfolio/portfolio.d';
 import About from '@/src/components/about';
 import Footer from '@/src/components/footer';
 import { slugify } from '../utilities/slugify';
@@ -11,6 +10,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
 import type { HomeProps } from './index.d';
+import type { PortfolioItem, PortfolioApiResponse } from '@/src/components/portfolio/portfolio.d';
 dayjs.extend(relativeTime);
 
 const getPortfolioData = async () => {
@@ -32,8 +32,8 @@ const getPortfolioData = async () => {
 			const keyA = a.position;
 			const keyB = b.position;
 			if (keyA && keyB) {
-				if (keyA < keyB) return -1;
-				if (keyA > keyB) return 1;
+				if (keyA > keyB) return -1;
+				if (keyA < keyB) return 1;
 			}
 			return 0;
 		});
@@ -42,11 +42,12 @@ const getPortfolioData = async () => {
 	}
 };
 
-const getAboutData = async () => {
+const getAboutData = async (): Promise<string | undefined> => {
 	const data = await getContent('aboutMe');
 	if (!data) return;
 	const rawCopy = data?.items[0]?.fields?.copy;
-	return documentToHtmlString(rawCopy);
+	const htmlValue: string = documentToHtmlString(rawCopy);
+	return htmlValue;
 };
 
 const getLastFmData = async () => {
