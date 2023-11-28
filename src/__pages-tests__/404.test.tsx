@@ -1,5 +1,5 @@
 import React from 'react';
-import Error404 from './404';
+import Error404 from '../pages/404';
 import { screen, render } from '@testing-library/react';
 
 describe('Error404', () => {
