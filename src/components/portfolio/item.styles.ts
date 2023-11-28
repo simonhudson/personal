@@ -29,6 +29,8 @@ export const TitleWrap = styled.div`
 
 export const ImgWrap = styled.div`
 	${media.tabletLandscape(`
+		max-width: 42%;
+		min-width: 42%;
 		width: 42%;
 	`)}
 `;
