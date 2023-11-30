@@ -11,8 +11,11 @@ import {
 	MetadataList,
 	MetadataTitle,
 	MetadataItem,
+	ButtonLinksList,
+	ButtonLinksItem,
+	ButtonLinksLink,
 } from './item.styles';
-import { ButtonLinksList, ButtonLinksItem, ButtonLinksLink, VisuallyHidden } from '@/src/theme/layout';
+import { VisuallyHidden } from '@/src/theme/layout';
 import type { PortfolioItem } from './portfolio.d';
 
 const Item = ({
@@ -29,10 +32,6 @@ const Item = ({
 	title,
 	url,
 }: PortfolioItem) => {
-	console.log('copyHtml----------------');
-	console.log(copyHtml);
-	console.log('/copyHtml----------------');
-
 	if (omit) return null;
 
 	return (
@@ -79,25 +78,25 @@ const Item = ({
 							</MetadataList>
 						</>
 					)}
-					<ButtonLinksList>
-						{url && (
-							<ButtonLinksItem>
-								<ButtonLinksLink href={url}>
-									View <VisuallyHidden>{title} </VisuallyHidden>site
-									{isArchived ? ' (archived)' : null}
-								</ButtonLinksLink>
-							</ButtonLinksItem>
-						)}
-						{githubUrl && (
-							<ButtonLinksItem>
-								<ButtonLinksLink href={githubUrl}>
-									View <VisuallyHidden>{title} </VisuallyHidden> on Github
-								</ButtonLinksLink>
-							</ButtonLinksItem>
-						)}
-					</ButtonLinksList>
 				</Text>
 			</Content>
+			<ButtonLinksList>
+				{url && (
+					<ButtonLinksItem>
+						<ButtonLinksLink href={url}>
+							View <VisuallyHidden>{title} </VisuallyHidden>site
+							{isArchived ? ' (archived)' : null}
+						</ButtonLinksLink>
+					</ButtonLinksItem>
+				)}
+				{githubUrl && (
+					<ButtonLinksItem>
+						<ButtonLinksLink href={githubUrl}>
+							View <VisuallyHidden>{title} </VisuallyHidden> on Github
+						</ButtonLinksLink>
+					</ButtonLinksItem>
+				)}
+			</ButtonLinksList>
 		</Wrap>
 	);
 };

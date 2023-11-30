@@ -13,8 +13,8 @@ const Hero = () => {
 			</H1>
 			<StyledParagraph>
 				I am an experienced <Strong>front&ndash;end developer</Strong> who uses <Strong>HTML</Strong>,{' '}
-				<Strong>CSS</Strong> and <Strong>JavaScript</Strong> to create <Strong>accessible</Strong> and{' '}
-				<Strong>usable</Strong> websites and applications.
+				<Strong>CSS</Strong>, <Strong>JavaScript</Strong> and <Strong>TypeScript</Strong> to create{' '}
+				<Strong>accessible</Strong> and <Strong>usable</Strong> websites and applications.
 			</StyledParagraph>
 		</Section>
 	);

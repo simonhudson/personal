@@ -3,19 +3,17 @@ import { rem } from 'polished';
 import { BASE_SIZE, spacingRem } from '@/src/theme/spacing';
 import { palette } from '@/src/theme/palette';
 import { media } from '@/src/theme/media';
-import { BoxShadow } from '@/src/theme/layout';
+import { BoxShadow, ButtonLink } from '@/src/theme/layout';
 import { font } from '@/src/theme/font';
 import { H3 } from '@/src/theme/typography';
 
 export const Wrap = styled.div`
 	background: ${palette.primary.white};
-	border-bottom: 3px solid ${palette.primary.brand};
 	border-radius: ${rem(BASE_SIZE)};
 	box-shadow: ${BoxShadow};
 	display: flex;
 	flex-direction: column;
 	margin: 0;
-	padding: ${spacingRem.md};
 
 	&:last-of-type {
 		margin: 0;
@@ -46,10 +44,12 @@ export const Content = styled.div`
 	display: flex;
 	flex-direction: column;
 	gap: ${spacingRem.default};
+	padding: ${spacingRem.md};
 
 	${media.tabletLandscape(`
 		flex-direction: row;
 		gap: ${spacingRem.lg};
+		padding: ${spacingRem.lg};
 	`)}
 `;
 
@@ -57,11 +57,11 @@ export const Text = styled.div``;
 
 export const Title = styled(H3)`
 	&::after {
-		border-bottom: 1px solid ${palette.primary.brand};
+		border-bottom: 2px solid ${palette.primary.brand};
 		content: '';
 		display: block;
 		margin: ${spacingRem.sm} 0;
-		width: 5%;
+		width: ${rem(20)};
 	}
 `;
 
@@ -80,7 +80,7 @@ export const MetadataList = styled.ul`
 	margin: 0 0 ${spacingRem.default};
 
 	&:last-of-type {
-		margin: 0 0 ${spacingRem.md};
+		margin: 0;
 	}
 `;
 
@@ -104,4 +104,30 @@ export const MetadataItem = styled.li`
 			content: ', ';
 		}
 	}
+`;
+
+export const ButtonLinksList = styled.ul`
+	background: ${palette.primary.lightGrey};
+	border-bottom-right-radius: ${rem(BASE_SIZE)};
+	border-bottom-left-radius: ${rem(BASE_SIZE)};
+	display: flex;
+	flex-direction: column;
+	gap: ${spacingRem.default};
+	list-style: none;
+	margin: 0;
+	padding: ${spacingRem.md};
+
+	${media.phoneLandscape(`
+		flex-direction: row;
+		justify-content: flex-end;
+	`)};
+`;
+
+export const ButtonLinksItem = styled.li`
+	text-align: center;
+`;
+
+export const ButtonLinksLink = styled(ButtonLink)`
+	display: block;
+	text-align: center;
 `;
