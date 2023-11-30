@@ -15,7 +15,7 @@ const Portfolio = ({ data }: PortfolioProps) => {
 						<Item
 							builtWith={item.builtWith}
 							client={item.client}
-							copy={item.copy}
+							copyHtml={item.copyHtml}
 							date={item.date}
 							githubUrl={item.githubUrl}
 							isArchived={item.isArchived}

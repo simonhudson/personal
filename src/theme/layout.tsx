@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { media } from './media';
-import { breakpoints } from './breakpoints';
-import { spacingRem } from './spacing';
+import { Breakpoints } from './breakpoints';
+import { spacingRem, spacingPx } from './spacing';
 import { palette } from './palette';
 import { ReactNode } from 'react';
 
@@ -15,11 +15,11 @@ export const Wrap = styled.div`
 	}
 
 	${media.tabletLandscape(`
-		width: ${rem(breakpoints['tablet-l'] + 'px')};
+		width: ${rem(Breakpoints.tabletLandscape - spacingPx.lg + 'px')};
 	`)};
 
 	${media.desktop(`
-		width: ${rem(breakpoints.desktop + 'px')};
+		width: ${rem(Breakpoints.desktop - spacingPx.lg + 'px')};
 	`)};
 `;
 
@@ -93,52 +93,4 @@ export const VisuallyHidden = styled.span`
 	padding: 0;
 	position: absolute;
 	width: 1px;
-`;
-
-export const ButtonLinksList = styled.ul`
-	display: flex;
-	flex-direction: column;
-	gap: ${spacingRem.default};
-	list-style: none;
-	margin: 0;
-	padding: ${spacingRem.default} 0;
-
-	${media.phoneLandscape(`
-		flex-direction: row;
-	`)};
-`;
-
-export const ButtonLinksItem = styled.li`
-	text-align: center;
-`;
-
-export const ButtonLinksLink = styled(ButtonLink)`
-	display: block;
-	text-align: center;
-`;
-
-export const IconLinksList = styled.ul`
-	display: flex;
-	flex-direction: row;
-	gap: ${spacingRem.lg};
-	justify-content: center;
-	list-style: none;
-	margin: 0;
-	padding: ${spacingRem.md} 0 0;
-`;
-
-export const IconLinksItem = styled.li``;
-
-export const IconLinksLink = styled.a`
-	background: ${palette.primary.black};
-	border: 0;
-	border-radius: 100%;
-	display: flex;
-	padding: ${spacingRem.default};
-	text-decoration: none;
-
-	&:hover,
-	&:focus-visible {
-		background-color: ${palette.primary.grey};
-	}
 `;

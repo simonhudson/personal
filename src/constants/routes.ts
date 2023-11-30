@@ -1,4 +1,4 @@
-import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
+import { HttpStatusCodes } from '@/src/constants/httpStatusCodes';
 import type { Routes } from './routes.d';
 
 export const HOME_LABEL = 'Home';
@@ -10,7 +10,7 @@ const routes: Routes = [
 		label: HOME_LABEL,
 	},
 	{
-		path: `/${httpStatusCodes.NOT_FOUND}`,
+		path: `/${HttpStatusCodes.NOT_FOUND}`,
 		label: 'Page not found',
 		omitFromNavigation: true,
 	},

@@ -1,5 +1,5 @@
 import { animation } from './animation';
-import { breakpoints } from './breakpoints';
+import { Breakpoints } from './breakpoints';
 import { font } from './font';
 import * as layout from './layout';
 import { media } from './media';
@@ -11,7 +11,7 @@ import { zIndex } from './z-index';
 
 const theme = {
 	animation,
-	breakpoints,
+	Breakpoints,
 	font,
 	layout,
 	media,

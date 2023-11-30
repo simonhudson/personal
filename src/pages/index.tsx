@@ -8,7 +8,7 @@ import getContent from '@/src/utilities/getContent';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { httpStatusCodes } from '@/src/constants/httpStatusCodes';
+import { HttpStatusCodes } from '@/src/constants/httpStatusCodes';
 import type { HomeProps } from './index.d';
 import type { PortfolioItem, PortfolioApiResponse } from '@/src/components/portfolio/portfolio.d';
 dayjs.extend(relativeTime);
@@ -21,9 +21,12 @@ const getPortfolioData = async () => {
 		portfolioItems = [];
 
 		portfolioData.items.forEach((item) => {
+			const copyHtml = item.fields.copy?.content[0]?.content[0]?.value ?? null;
+
 			portfolioItems.push({
 				...item.fields,
 				slug: '',
+				copyHtml,
 			});
 		});
 		portfolioItems.forEach((item) => (item.slug = slugify(item.title)));
@@ -55,7 +58,7 @@ const getLastFmData = async () => {
 		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.LASTFM_USERNAME}&api_key=${process.env.LASTFM_API_KEY}&format=json&limit=1`,
 	);
 
-	if (response?.status === httpStatusCodes.OK) {
+	if (response?.status === HttpStatusCodes.OK) {
 		const data = await response?.json();
 		const recentTrack = data?.recenttracks?.track[0];
 		if (recentTrack) {

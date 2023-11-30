@@ -1,7 +1,7 @@
 import React from 'react';
 import { H2 } from '@/src/theme/typography';
-import { Section, IconLinksList, IconLinksItem, IconLinksLink, VisuallyHidden } from '@/src/theme/layout';
-import { Wrap, Content, Aside, StyledIcon, Image } from './index.styles';
+import { Section, VisuallyHidden } from '@/src/theme/layout';
+import { Wrap, Content, Aside, StyledIcon, Image, IconLinksList, IconLinksItem, IconLinksLink } from './index.styles';
 import Links from './links';
 import { slugify } from '@/src/utilities/slugify';
 import type { AboutProps } from './about.d';

@@ -36,6 +36,24 @@ interface ApiResponseItem {
 	fields: {
 		title: string;
 		client: string;
+		copy?: {
+			nodeType: string;
+			data: any;
+			content: [
+				{
+					nodeType: string;
+					data: any;
+					content: [
+						{
+							nodeType: string;
+							value: string;
+							marks: any;
+							data: any;
+						},
+					];
+				},
+			];
+		};
 		url?: string;
 		githubUrl?: string;
 		copy?: string;
@@ -61,7 +79,7 @@ export interface PortfolioApiResponse {
 export interface PortfolioItem {
 	builtWith?: string[];
 	client: string;
-	copy?: string;
+	copyHtml?: string | null;
 	date: string;
 	githubUrl?: string;
 	isArchived?: boolean;

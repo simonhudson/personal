@@ -44,3 +44,29 @@ export const Image = styled.img`
 		width: 100%;
 	`)};
 `;
+
+export const IconLinksList = styled.ul`
+	display: flex;
+	flex-direction: row;
+	gap: ${spacingRem.lg};
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: ${spacingRem.md} 0 0;
+`;
+
+export const IconLinksItem = styled.li``;
+
+export const IconLinksLink = styled.a`
+	background: ${palette.primary.black};
+	border: 0;
+	border-radius: 100%;
+	display: flex;
+	padding: ${spacingRem.default};
+	text-decoration: none;
+
+	&:hover,
+	&:focus-visible {
+		background-color: ${palette.primary.grey};
+	}
+`;

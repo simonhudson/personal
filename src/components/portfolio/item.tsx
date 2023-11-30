@@ -11,14 +11,17 @@ import {
 	MetadataList,
 	MetadataTitle,
 	MetadataItem,
+	ButtonLinksList,
+	ButtonLinksItem,
+	ButtonLinksLink,
 } from './item.styles';
-import { ButtonLinksList, ButtonLinksItem, ButtonLinksLink, VisuallyHidden } from '@/src/theme/layout';
+import { VisuallyHidden } from '@/src/theme/layout';
 import type { PortfolioItem } from './portfolio.d';
 
 const Item = ({
 	builtWith,
 	client,
-	copy,
+	copyHtml,
 	date,
 	githubUrl,
 	isArchived,
@@ -35,7 +38,7 @@ const Item = ({
 		<Wrap>
 			<Content>
 				<ImgWrap>
-					<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
+					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
 				</ImgWrap>
 				<Text>
 					<TitleWrap>
@@ -44,6 +47,7 @@ const Item = ({
 							{client} / {date}
 						</Client>
 					</TitleWrap>
+					{copyHtml && <p>{copyHtml}</p>}
 					{madeWith && (
 						<>
 							<MetadataTitle id={`${slug}-made-with`}>Made with</MetadataTitle>
@@ -74,25 +78,25 @@ const Item = ({
 							</MetadataList>
 						</>
 					)}
-					<ButtonLinksList>
-						{url && (
-							<ButtonLinksItem>
-								<ButtonLinksLink href={url}>
-									View <VisuallyHidden>{title} </VisuallyHidden>site
-									{isArchived ? ' (archived)' : null}
-								</ButtonLinksLink>
-							</ButtonLinksItem>
-						)}
-						{githubUrl && (
-							<ButtonLinksItem>
-								<ButtonLinksLink href={githubUrl}>
-									View <VisuallyHidden>{title} </VisuallyHidden> on Github
-								</ButtonLinksLink>
-							</ButtonLinksItem>
-						)}
-					</ButtonLinksList>
 				</Text>
 			</Content>
+			<ButtonLinksList>
+				{url && (
+					<ButtonLinksItem>
+						<ButtonLinksLink href={url}>
+							View <VisuallyHidden>{title} </VisuallyHidden>site
+							{isArchived ? ' (archived)' : null}
+						</ButtonLinksLink>
+					</ButtonLinksItem>
+				)}
+				{githubUrl && (
+					<ButtonLinksItem>
+						<ButtonLinksLink href={githubUrl}>
+							View <VisuallyHidden>{title} </VisuallyHidden> on Github
+						</ButtonLinksLink>
+					</ButtonLinksItem>
+				)}
+			</ButtonLinksList>
 		</Wrap>
 	);
 };
