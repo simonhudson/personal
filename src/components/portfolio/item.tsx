@@ -38,7 +38,7 @@ const Item = ({
 		<Wrap>
 			<Content>
 				<ImgWrap>
-					<Img alt={`${title} screen shot`} src={`/images/${slug}.png`} />
+					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
 				</ImgWrap>
 				<Text>
 					<TitleWrap>

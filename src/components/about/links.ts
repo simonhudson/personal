@@ -6,7 +6,7 @@ const links: Links = [
 		link: '/files/Simon_Hudson_CV.pdf',
 		icon: {
 			type: 'solid',
-			name: 'file-pdf',
+			name: 'file-lines',
 		},
 	},
 	{

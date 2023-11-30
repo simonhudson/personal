@@ -15,8 +15,8 @@ export const Wrap = styled.div`
 	flex-direction: column;
 	margin: 0;
 
-	&:last-of-type {
-		margin: 0;
+	&:first-of-type {
+		margin-top: ${spacingRem.md};
 	}
 `;
 
@@ -38,6 +38,10 @@ export const Img = styled.img`
 	height: auto;
 	margin: 0 0 ${spacingRem.default};
 	width: 100%;
+
+	${media.tabletLandscape(`
+		margin: 0;
+	`)}
 `;
 
 export const Content = styled.div`

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { media } from './media';
-import { breakpoints } from './breakpoints';
-import { spacingRem } from './spacing';
+import { Breakpoints } from './breakpoints';
+import { spacingRem, spacingPx } from './spacing';
 import { palette } from './palette';
 import { ReactNode } from 'react';
 
@@ -15,11 +15,11 @@ export const Wrap = styled.div`
 	}
 
 	${media.tabletLandscape(`
-		width: ${rem(breakpoints['tablet-l'] + 'px')};
+		width: ${rem(Breakpoints.tabletLandscape - spacingPx.lg + 'px')};
 	`)};
 
 	${media.desktop(`
-		width: ${rem(breakpoints.desktop + 'px')};
+		width: ${rem(Breakpoints.desktop - spacingPx.lg + 'px')};
 	`)};
 `;
 
