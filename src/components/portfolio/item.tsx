@@ -8,14 +8,12 @@ import {
 	Text,
 	Title,
 	Client,
-	MetadataList,
-	MetadataTitle,
-	MetadataItem,
 	ButtonLinksList,
 	ButtonLinksItem,
 	ButtonLinksLink,
 } from './item.styles';
 import { VisuallyHidden } from '@/src/theme/layout';
+import { Metadata } from './metadata';
 import type { PortfolioItem } from './portfolio.d';
 
 const Item = ({
@@ -48,36 +46,14 @@ const Item = ({
 						</Client>
 					</TitleWrap>
 					{copyHtml && <p>{copyHtml}</p>}
-					{madeWith && (
-						<>
-							<MetadataTitle id={`${slug}-made-with`}>Made with</MetadataTitle>
-							<MetadataList aria-labelledby={`${slug}-made-with`}>
-								{madeWith.map((item, index) => {
-									return <MetadataItem key={index}>{item}</MetadataItem>;
-								})}
-							</MetadataList>
-						</>
-					)}
-					{testedWith && (
-						<>
-							<MetadataTitle id={`${slug}-tested-with`}>Tested with</MetadataTitle>
-							<MetadataList aria-labelledby={`${slug}-tested-with`}>
-								{testedWith.map((item, index) => {
-									return <MetadataItem key={index}>{item}</MetadataItem>;
-								})}
-							</MetadataList>
-						</>
-					)}
-					{builtWith && (
-						<>
-							<MetadataTitle id={`${slug}-built-with`}>Built with</MetadataTitle>
-							<MetadataList aria-labelledby={`${slug}-built-with`}>
-								{builtWith.map((item, index) => {
-									return <MetadataItem key={index}>{item}</MetadataItem>;
-								})}
-							</MetadataList>
-						</>
-					)}
+					<Metadata
+						categories={[
+							{ title: 'Made', items: madeWith },
+							{ title: 'Tested', items: testedWith },
+							{ title: 'Built', items: builtWith },
+						]}
+						slug={slug}
+					/>
 				</Text>
 			</Content>
 			<ButtonLinksList>
