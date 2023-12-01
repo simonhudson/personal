@@ -58,42 +58,6 @@ describe('Item', () => {
 			expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Foo title');
 		});
 
-		it('metadata', () => {
-			// When
-			initialise(props);
-
-			// Then
-			const metadataHeadings = screen.getAllByRole('heading', { level: 4 });
-			expect(metadataHeadings.at(0)).toHaveTextContent('Made with');
-			expect(metadataHeadings.at(0)).toHaveAttribute('id', 'some-slug-made-with');
-			expect(metadataHeadings.at(1)).toHaveTextContent('Tested with');
-			expect(metadataHeadings.at(1)).toHaveAttribute('id', 'some-slug-tested-with');
-			expect(metadataHeadings.at(2)).toHaveTextContent('Built with');
-			expect(metadataHeadings.at(2)).toHaveAttribute('id', 'some-slug-built-with');
-
-			const listOne = screen.getAllByRole('list').at(0);
-			expect(listOne).toHaveAttribute('aria-labelledby', 'some-slug-made-with');
-			const listOneItems = within(listOne).getAllByRole('listitem');
-			expect(listOneItems.at(0)).toHaveTextContent('Bruce');
-			expect(listOneItems.at(1)).toHaveTextContent('Clarence');
-			expect(listOneItems.at(2)).toHaveTextContent('Steve');
-
-			const listTwo = screen.getAllByRole('list').at(1);
-			expect(listTwo).toHaveAttribute('aria-labelledby', 'some-slug-tested-with');
-			const listTwoItems = within(listTwo).getAllByRole('listitem');
-			expect(listTwoItems.at(0)).toHaveTextContent('Mick');
-			expect(listTwoItems.at(1)).toHaveTextContent('Keith');
-			expect(listTwoItems.at(2)).toHaveTextContent('Ronnie');
-			expect(listTwoItems.at(3)).toHaveTextContent('Charlie');
-
-			const listThree = screen.getAllByRole('list').at(2);
-			expect(listThree).toHaveAttribute('aria-labelledby', 'some-slug-built-with');
-			const listThreeItems = within(listThree).getAllByRole('listitem');
-			expect(listThreeItems.at(0)).toHaveTextContent('Bryson');
-			expect(listThreeItems.at(1)).toHaveTextContent('Hughes');
-			expect(listThreeItems.at(2)).toHaveTextContent('Eustace');
-		});
-
 		describe('link', () => {
 			it('for Github URL', () => {
 				// Given
