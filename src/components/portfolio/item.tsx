@@ -11,6 +11,7 @@ import {
 	ButtonLinksList,
 	ButtonLinksItem,
 	ButtonLinksLink,
+	ItemFooter,
 } from './item.styles';
 import { VisuallyHidden } from '@/src/theme/layout';
 import { Metadata } from './metadata';
@@ -46,6 +47,10 @@ const Item = ({
 						</Client>
 					</TitleWrap>
 					{copyHtml && <p>{copyHtml}</p>}
+				</Text>
+			</Content>
+			<ItemFooter>
+				<ButtonLinksList>
 					<Metadata
 						categories={[
 							{ title: 'Made', items: madeWith },
@@ -54,25 +59,23 @@ const Item = ({
 						]}
 						slug={slug}
 					/>
-				</Text>
-			</Content>
-			<ButtonLinksList>
-				{url && (
-					<ButtonLinksItem>
-						<ButtonLinksLink href={url}>
-							View <VisuallyHidden>{title} </VisuallyHidden>site
-							{isArchived ? ' (archived)' : null}
-						</ButtonLinksLink>
-					</ButtonLinksItem>
-				)}
-				{githubUrl && (
-					<ButtonLinksItem>
-						<ButtonLinksLink href={githubUrl}>
-							View <VisuallyHidden>{title} </VisuallyHidden> on Github
-						</ButtonLinksLink>
-					</ButtonLinksItem>
-				)}
-			</ButtonLinksList>
+					{url && (
+						<ButtonLinksItem>
+							<ButtonLinksLink href={url}>
+								View <VisuallyHidden>{title} </VisuallyHidden>site
+								{isArchived ? ' (archived)' : null}
+							</ButtonLinksLink>
+						</ButtonLinksItem>
+					)}
+					{githubUrl && (
+						<ButtonLinksItem>
+							<ButtonLinksLink href={githubUrl}>
+								View <VisuallyHidden>{title} </VisuallyHidden> on Github
+							</ButtonLinksLink>
+						</ButtonLinksItem>
+					)}
+				</ButtonLinksList>
+			</ItemFooter>
 		</Wrap>
 	);
 };
