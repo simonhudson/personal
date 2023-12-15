@@ -21,7 +21,7 @@ const getPortfolioData = async () => {
 		portfolioItems = [];
 
 		portfolioData.items.forEach((item) => {
-			const copyHtml = item.fields.copy?.content[0]?.content[0]?.value ?? null;
+			const copyHtml = item.fields.copy ? documentToHtmlString(item.fields.copy) : null;
 
 			portfolioItems.push({
 				...item.fields,

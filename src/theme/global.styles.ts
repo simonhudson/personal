@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import { font } from './font';
 import { palette } from './palette';
+import { spacingRem } from './spacing';
 
 export const GlobalStyles = createGlobalStyle`
 
@@ -30,7 +31,7 @@ export const GlobalStyles = createGlobalStyle`
 
     p {
         line-height: 1.8rem;
-        margin-bottom: 2rem;
+        margin: 0 0 ${spacingRem.default};
     }
 
     span, strong, em {

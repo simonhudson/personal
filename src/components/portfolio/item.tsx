@@ -1,17 +1,17 @@
 import React from 'react';
 import {
-	Wrap,
-	TitleWrap,
-	ImgWrap,
-	Img,
-	Content,
-	Text,
-	Title,
-	Client,
-	ButtonLinksList,
 	ButtonLinksItem,
 	ButtonLinksLink,
-	ItemFooter,
+	ButtonLinksList,
+	Client,
+	Content,
+	Copy,
+	Img,
+	ImgWrap,
+	ItemHeader,
+	Text,
+	Title,
+	Wrap,
 } from './item.styles';
 import { VisuallyHidden } from '@/src/theme/layout';
 import { Metadata } from './metadata';
@@ -35,18 +35,17 @@ const Item = ({
 
 	return (
 		<Wrap>
+			<ItemHeader>
+				<Title>{title}</Title>
+				<Client>
+					{client} / {date}
+				</Client>
+			</ItemHeader>
 			<Content>
-				<ImgWrap>
-					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
-				</ImgWrap>
 				<Text>
-					<TitleWrap>
-						<Title>{title}</Title>
-						<Client>
-							{client} / {date}
-						</Client>
-					</TitleWrap>
-					{/* {copyHtml && <p>{copyHtml}</p>} */}
+					{process.env.APP_ENV !== 'production' && copyHtml && (
+						<Copy dangerouslySetInnerHTML={{ __html: copyHtml }} />
+					)}
 					<Metadata
 						categories={[
 							{ title: 'Made', items: madeWith },
@@ -55,27 +54,28 @@ const Item = ({
 						]}
 						slug={slug}
 					/>
+					<ButtonLinksList>
+						{url && (
+							<ButtonLinksItem>
+								<ButtonLinksLink href={url}>
+									View <VisuallyHidden>{title} </VisuallyHidden>site
+									{isArchived ? ' (archived)' : null}
+								</ButtonLinksLink>
+							</ButtonLinksItem>
+						)}
+						{githubUrl && (
+							<ButtonLinksItem>
+								<ButtonLinksLink href={githubUrl}>
+									View <VisuallyHidden>{title} </VisuallyHidden> on Github
+								</ButtonLinksLink>
+							</ButtonLinksItem>
+						)}
+					</ButtonLinksList>
 				</Text>
+				<ImgWrap>
+					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
+				</ImgWrap>
 			</Content>
-			<ItemFooter>
-				<ButtonLinksList>
-					{url && (
-						<ButtonLinksItem>
-							<ButtonLinksLink href={url}>
-								View <VisuallyHidden>{title} </VisuallyHidden>site
-								{isArchived ? ' (archived)' : null}
-							</ButtonLinksLink>
-						</ButtonLinksItem>
-					)}
-					{githubUrl && (
-						<ButtonLinksItem>
-							<ButtonLinksLink href={githubUrl}>
-								View <VisuallyHidden>{title} </VisuallyHidden> on Github
-							</ButtonLinksLink>
-						</ButtonLinksItem>
-					)}
-				</ButtonLinksList>
-			</ItemFooter>
 		</Wrap>
 	);
 };
