@@ -1,4 +1,5 @@
 import type { ContentTypes } from '@/src/types/contentful/content-types';
+import type BLOCKS from '@contentful/rich-text-types/dist/types/blocks.d.ts';
 
 interface ApiResponseItem {
 	metadata: {
@@ -36,27 +37,10 @@ interface ApiResponseItem {
 	fields: {
 		title: string;
 		client: string;
-		copy?: {
-			nodeType: string;
-			data: any;
-			content: [
-				{
-					nodeType: string;
-					data: any;
-					content: [
-						{
-							nodeType: string;
-							value: string;
-							marks: any;
-							data: any;
-						},
-					];
-				},
-			];
-		};
+		copy?: BLOCKS.DOCUMENT;
 		url?: string;
 		githubUrl?: string;
-		copy?: string;
+		copy?: BLOCKS.DOCUMENT;
 		madeWith?: string[];
 		builtWith?: string[];
 		date: string;
