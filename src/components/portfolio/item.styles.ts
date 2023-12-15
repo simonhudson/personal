@@ -52,7 +52,7 @@ export const Content = styled.div`
 	${media.tabletLandscape(`
 		flex-direction: row;
 		gap: ${spacingRem.lg};
-		padding: ${spacingRem.md} ${spacingRem.lg};
+		padding: ${spacingRem.lg};
 	`)}
 `;
 
@@ -78,26 +78,33 @@ export const Client = styled.span`
 	font-size: ${rem(font.size * 0.9)};
 	font-weight: 400;
 	letter-spacing: ${rem(1)};
+	margin-bottom: ${spacingRem.sm};
 	text-transform: uppercase;
 `;
 
 export const ItemHeader = styled.header`
+	display: flex;
+	flex-direction: column-reverse;
+	padding: 0 0 ${spacingRem.default};
+`;
+
+export const ItemFooter = styled.header`
 	background: ${palette.primary.lightGrey};
-	border-top-right-radius: ${rem(BASE_SIZE)};
-	border-top-left-radius: ${rem(BASE_SIZE)};
+	border-bottom-right-radius: ${rem(BASE_SIZE)};
+	border-bottom-left-radius: ${rem(BASE_SIZE)};
 	display: flex;
 	flex-direction: column;
 	gap: ${spacingRem.default};
-	padding: ${spacingRem.md};
+	padding: ${spacingRem.sm} ${spacingRem.md};
 
 	${media.phoneLandscape(`
 		align-items: center;
 		flex-direction: row;
-		justify-content: space-between;
+		justify-content: flex-end;
 	`)}
 
 	${media.tabletLandscape(`
-		padding: ${spacingRem.md} ${spacingRem.lg};
+		padding: ${spacingRem.default} ${spacingRem.lg};
 	`)}
 `;
 

@@ -9,6 +9,7 @@ import {
 	Img,
 	ImgWrap,
 	ItemHeader,
+	ItemFooter,
 	Text,
 	Title,
 	Wrap,
@@ -35,14 +36,14 @@ const Item = ({
 
 	return (
 		<Wrap>
-			<ItemHeader>
-				<Title>{title}</Title>
-				<Client>
-					{client} / {date}
-				</Client>
-			</ItemHeader>
 			<Content>
 				<Text>
+					<ItemHeader>
+						<Title>{title}</Title>
+						<Client>
+							{client} / {date}
+						</Client>
+					</ItemHeader>
 					{copyHtml && <Copy dangerouslySetInnerHTML={{ __html: copyHtml }} />}
 					<Metadata
 						categories={[
@@ -52,28 +53,30 @@ const Item = ({
 						]}
 						slug={slug}
 					/>
-					<ButtonLinksList>
-						{url && (
-							<ButtonLinksItem>
-								<ButtonLinksLink href={url}>
-									View <VisuallyHidden>{title} </VisuallyHidden>site
-									{isArchived ? ' (archived)' : null}
-								</ButtonLinksLink>
-							</ButtonLinksItem>
-						)}
-						{githubUrl && (
-							<ButtonLinksItem>
-								<ButtonLinksLink href={githubUrl}>
-									View <VisuallyHidden>{title} </VisuallyHidden> on Github
-								</ButtonLinksLink>
-							</ButtonLinksItem>
-						)}
-					</ButtonLinksList>
 				</Text>
 				<ImgWrap>
 					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
 				</ImgWrap>
 			</Content>
+			<ItemFooter>
+				<ButtonLinksList>
+					{url && (
+						<ButtonLinksItem>
+							<ButtonLinksLink href={url}>
+								View <VisuallyHidden>{title} </VisuallyHidden>site
+								{isArchived ? ' (archived)' : null}
+							</ButtonLinksLink>
+						</ButtonLinksItem>
+					)}
+					{githubUrl && (
+						<ButtonLinksItem>
+							<ButtonLinksLink href={githubUrl}>
+								View <VisuallyHidden>{title} </VisuallyHidden> on Github
+							</ButtonLinksLink>
+						</ButtonLinksItem>
+					)}
+				</ButtonLinksList>
+			</ItemFooter>
 		</Wrap>
 	);
 };
