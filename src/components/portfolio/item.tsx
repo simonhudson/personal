@@ -1,17 +1,18 @@
 import React from 'react';
 import {
-	Wrap,
-	TitleWrap,
-	ImgWrap,
-	Img,
-	Content,
-	Text,
-	Title,
-	Client,
-	ButtonLinksList,
 	ButtonLinksItem,
 	ButtonLinksLink,
+	ButtonLinksList,
+	Client,
+	Content,
+	Copy,
+	Img,
+	ImgWrap,
+	ItemHeader,
 	ItemFooter,
+	Text,
+	Title,
+	Wrap,
 } from './item.styles';
 import { VisuallyHidden } from '@/src/theme/layout';
 import { Metadata } from './metadata';
@@ -36,17 +37,14 @@ const Item = ({
 	return (
 		<Wrap>
 			<Content>
-				<ImgWrap>
-					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
-				</ImgWrap>
 				<Text>
-					<TitleWrap>
+					<ItemHeader>
 						<Title>{title}</Title>
 						<Client>
 							{client} / {date}
 						</Client>
-					</TitleWrap>
-					{/* {copyHtml && <p>{copyHtml}</p>} */}
+					</ItemHeader>
+					{copyHtml && <Copy dangerouslySetInnerHTML={{ __html: copyHtml }} />}
 					<Metadata
 						categories={[
 							{ title: 'Made', items: madeWith },
@@ -56,6 +54,9 @@ const Item = ({
 						slug={slug}
 					/>
 				</Text>
+				<ImgWrap>
+					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
+				</ImgWrap>
 			</Content>
 			<ItemFooter>
 				<ButtonLinksList>

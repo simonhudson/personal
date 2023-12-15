@@ -19,14 +19,9 @@ export const Wrap = styled.div`
 		margin-top: ${spacingRem.xsm};
 
 		${media.tabletLandscape(`
-		margin-top: ${spacingRem.md};
-	`)};
+			margin-top: ${spacingRem.md};
+		`)};
 	}
-`;
-
-export const TitleWrap = styled.div`
-	display: flex;
-	flex-direction: column-reverse;
 `;
 
 export const ImgWrap = styled.div`
@@ -50,7 +45,7 @@ export const Img = styled.img`
 
 export const Content = styled.div`
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	gap: ${spacingRem.default};
 	padding: ${spacingRem.md};
 
@@ -61,15 +56,20 @@ export const Content = styled.div`
 	`)}
 `;
 
-export const Text = styled.div``;
+export const Text = styled.div`
+	width: 100%;
+`;
 
 export const Title = styled(H3)`
+	margin: 0;
+	padding: 0;
+
 	&::after {
-		border-bottom: 2px solid ${palette.primary.brand};
 		content: '';
 		display: block;
-		margin: ${spacingRem.sm} 0;
-		width: ${rem(20)};
+		border-bottom: 2px solid ${palette.primary.brand};
+		margin: ${spacingRem.default} 0 0;
+		width: ${rem(25)};
 	}
 `;
 
@@ -78,17 +78,34 @@ export const Client = styled.span`
 	font-size: ${rem(font.size * 0.9)};
 	font-weight: 400;
 	letter-spacing: ${rem(1)};
-	margin-bottom: ${rem(5)};
+	margin-bottom: ${spacingRem.sm};
 	text-transform: uppercase;
 `;
 
-export const ItemFooter = styled.div`
+export const ItemHeader = styled.header`
+	display: flex;
+	flex-direction: column-reverse;
+	padding: 0 0 ${spacingRem.default};
+`;
+
+export const ItemFooter = styled.header`
 	background: ${palette.primary.lightGrey};
 	border-bottom-right-radius: ${rem(BASE_SIZE)};
 	border-bottom-left-radius: ${rem(BASE_SIZE)};
 	display: flex;
 	flex-direction: column;
 	gap: ${spacingRem.default};
+	padding: ${spacingRem.sm} ${spacingRem.md};
+
+	${media.phoneLandscape(`
+		align-items: center;
+		flex-direction: row;
+		justify-content: flex-end;
+	`)}
+
+	${media.tabletLandscape(`
+		padding: ${spacingRem.default} ${spacingRem.lg};
+	`)}
 `;
 
 export const ButtonLinksList = styled.ul`
@@ -97,11 +114,11 @@ export const ButtonLinksList = styled.ul`
 	gap: ${spacingRem.md};
 	list-style: none;
 	margin: 0;
-	padding: ${spacingRem.md};
+	padding: ${spacingRem.md} 0;
 
 	${media.phoneLandscape(`
 		flex-direction: row;
-		justify-content: flex-end;
+		justify-content: left;
 	`)};
 `;
 
@@ -112,4 +129,9 @@ export const ButtonLinksItem = styled.li`
 export const ButtonLinksLink = styled(ButtonLink)`
 	display: block;
 	text-align: center;
+`;
+
+export const Copy = styled.div`
+	margin: 0 0 ${spacingRem.default};
+	padding: 0 0 ${spacingRem.default};
 `;
