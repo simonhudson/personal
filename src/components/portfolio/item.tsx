@@ -43,9 +43,7 @@ const Item = ({
 			</ItemHeader>
 			<Content>
 				<Text>
-					{process.env.APP_ENV !== 'production' && copyHtml && (
-						<Copy dangerouslySetInnerHTML={{ __html: copyHtml }} />
-					)}
+					{copyHtml && <Copy dangerouslySetInnerHTML={{ __html: copyHtml }} />}
 					<Metadata
 						categories={[
 							{ title: 'Made', items: madeWith },
