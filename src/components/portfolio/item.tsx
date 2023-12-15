@@ -46,7 +46,7 @@ const Item = ({
 							{client} / {date}
 						</Client>
 					</TitleWrap>
-					{copyHtml && <p>{copyHtml}</p>}
+					{/* {copyHtml && <p>{copyHtml}</p>} */}
 					<Metadata
 						categories={[
 							{ title: 'Made', items: madeWith },
