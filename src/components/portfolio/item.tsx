@@ -47,10 +47,6 @@ const Item = ({
 						</Client>
 					</TitleWrap>
 					{copyHtml && <p>{copyHtml}</p>}
-				</Text>
-			</Content>
-			<ItemFooter>
-				<ButtonLinksList>
 					<Metadata
 						categories={[
 							{ title: 'Made', items: madeWith },
@@ -59,6 +55,10 @@ const Item = ({
 						]}
 						slug={slug}
 					/>
+				</Text>
+			</Content>
+			<ItemFooter>
+				<ButtonLinksList>
 					{url && (
 						<ButtonLinksItem>
 							<ButtonLinksLink href={url}>

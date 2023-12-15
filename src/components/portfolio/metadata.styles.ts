@@ -5,7 +5,7 @@ import { spacingRem } from '@/src/theme/spacing';
 import { font } from '@/src/theme/font';
 
 export const MetadataWrap = styled.div`
-	max-width: 50%;
+	margin: 0 0 ${spacingRem.default};
 `;
 
 export const MetadataList = styled.ul`
@@ -21,11 +21,7 @@ export const MetadataList = styled.ul`
 export const MetadataTitle = styled.h4`
 	font-size: ${rem(14)};
 	font-weight: 500;
-	margin: 0 0 ${spacingRem.sm};
-
-	&::after {
-		content: ': ';
-	}
+	margin: 0 0 ${spacingRem.xsm};
 `;
 
 export const MetadataItem = styled.li`

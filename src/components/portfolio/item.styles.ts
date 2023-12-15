@@ -16,7 +16,7 @@ export const Wrap = styled.div`
 	margin: 0;
 
 	&:first-of-type {
-		margin-top: ${spacingRem.md};
+		margin-top: ${spacingRem.xsm};
 	}
 `;
 
@@ -88,6 +88,9 @@ export const ItemFooter = styled.div`
 `;
 
 export const ButtonLinksList = styled.ul`
+	display: flex;
+	flex-direction: column;
+	gap: ${spacingRem.md};
 	list-style: none;
 	margin: 0;
 	padding: ${spacingRem.md};
