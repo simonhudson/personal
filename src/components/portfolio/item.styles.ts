@@ -50,7 +50,7 @@ export const Content = styled.div`
 	padding: ${spacingRem.md};
 
 	${media.tabletLandscape(`
-		flex-direction: row;
+		flex-direction: row-reverse;
 		gap: ${spacingRem.lg};
 		padding: ${spacingRem.lg};
 	`)}
