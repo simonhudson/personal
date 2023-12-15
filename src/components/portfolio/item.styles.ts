@@ -16,7 +16,11 @@ export const Wrap = styled.div`
 	margin: 0;
 
 	&:first-of-type {
+		margin-top: ${spacingRem.xsm};
+
+		${media.tabletLandscape(`
 		margin-top: ${spacingRem.md};
+	`)};
 	}
 `;
 
@@ -78,45 +82,19 @@ export const Client = styled.span`
 	text-transform: uppercase;
 `;
 
-export const MetadataList = styled.ul`
-	color: ${palette.primary.bodyText};
-	font-size: ${rem(14)};
-	margin: 0 0 ${spacingRem.default};
-
-	&:last-of-type {
-		margin: 0;
-	}
-`;
-
-export const MetadataTitle = styled.h4`
-	font-size: ${rem(14)};
-	font-weight: 500;
-	margin: 0 0 ${spacingRem.sm};
-
-	&::after {
-		content: ': ';
-	}
-`;
-
-export const MetadataItem = styled.li`
-	display: inline;
-	line-height: ${rem(font.size * 1.6)};
-	margin: 0;
-
-	&:not(:last-of-type) {
-		&::after {
-			content: ', ';
-		}
-	}
-`;
-
-export const ButtonLinksList = styled.ul`
+export const ItemFooter = styled.div`
 	background: ${palette.primary.lightGrey};
 	border-bottom-right-radius: ${rem(BASE_SIZE)};
 	border-bottom-left-radius: ${rem(BASE_SIZE)};
 	display: flex;
 	flex-direction: column;
 	gap: ${spacingRem.default};
+`;
+
+export const ButtonLinksList = styled.ul`
+	display: flex;
+	flex-direction: column;
+	gap: ${spacingRem.md};
 	list-style: none;
 	margin: 0;
 	padding: ${spacingRem.md};

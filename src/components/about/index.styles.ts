@@ -39,8 +39,12 @@ export const Image = styled.img`
 	margin: 0 auto;
 	width: auto;
 
-	${media.phoneLandscape(`
+	${media.tabletPortrait(`
 		height: auto;
+		width: 75%;
+	`)};
+
+	${media.desktop(`
 		width: 100%;
 	`)};
 `;
@@ -53,6 +57,14 @@ export const IconLinksList = styled.ul`
 	list-style: none;
 	margin: 0;
 	padding: ${spacingRem.md} 0 0;
+
+	${media.tabletPortrait(`
+		gap: ${spacingRem.default};
+	`)}
+
+	${media.desktop(`
+		gap: ${spacingRem.md};
+	`)}
 `;
 
 export const IconLinksItem = styled.li``;

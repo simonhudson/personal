@@ -37,14 +37,13 @@ export const StyledSection = styled.section`
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: ${spacingRem.lg} 0;
+	padding: ${spacingRem.md} 0;
 
 	&:nth-of-type(2n) {
 		background: ${palette.primary.lightGrey};
 	}
 
 	${media.tabletLandscape(`
-		height: auto;
 		padding: ${spacingRem.lg} 0;
 	`)};
 `;

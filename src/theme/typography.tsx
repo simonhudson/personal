@@ -32,7 +32,7 @@ export const H2 = styled.h2`
 	font-size: ${rem(24)};
 	font-weight: 700;
 	line-height: ${rem(16)};
-	margin: 0 0 ${spacingRem.default};
+	margin: 0 0 ${spacingRem.sm};
 	text-transform: uppercase;
 
 	&::after {
