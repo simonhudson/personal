@@ -44,7 +44,7 @@ export const StyledSection = styled.section`
 	}
 
 	${media.tabletLandscape(`
-		height: auto;
+		padding: ${spacingRem.lg} 0;
 	`)};
 `;
 

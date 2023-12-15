@@ -17,6 +17,10 @@ export const Wrap = styled.div`
 
 	&:first-of-type {
 		margin-top: ${spacingRem.xsm};
+
+		${media.tabletLandscape(`
+		margin-top: ${spacingRem.md};
+	`)};
 	}
 `;
 

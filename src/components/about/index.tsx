@@ -13,7 +13,7 @@ const About = ({ aboutData }: AboutProps) => {
 			<Wrap>
 				<Content>{aboutData && <div dangerouslySetInnerHTML={{ __html: aboutData }}></div>}</Content>
 				<Aside>
-					<Image alt="Simon Hudson sat at a table with a glass of beer" src="/images/self.png" />
+					<Image alt="Simon Hudson" src="/images/self.png" />
 					{Links && (
 						<IconLinksList>
 							{Links.map((item, index: number) => {
