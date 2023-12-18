@@ -17,12 +17,6 @@ export const MetadataOuterWrap = styled.div`
 	`)}
 `;
 
-export const MetadataOuterWrap = styled.div`
-	border-left: 1px dotted #ddd;
-	padding: 0 0 0 ${spacingRem.default};
-	width: 100%;
-`;
-
 export const MetadataWrap = styled.div`
 	margin: 0 0 ${spacingRem.default};
 
