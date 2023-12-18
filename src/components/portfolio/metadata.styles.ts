@@ -3,6 +3,19 @@ import { rem } from 'polished';
 import { palette } from '@/src/theme/palette';
 import { spacingRem } from '@/src/theme/spacing';
 import { font } from '@/src/theme/font';
+import { media } from '@/src/theme/media';
+
+export const MetadataOuterWrap = styled.div`
+	border-top: 1px dotted #ddd;
+	padding: ${spacingRem.md} 0 0;
+	width: 100%;
+
+	${media.tabletPortrait(`
+		display: flex;
+		gap: ${spacingRem.default};
+		justify-content: space-between;
+	`)}
+`;
 
 export const MetadataOuterWrap = styled.div`
 	border-left: 1px dotted #ddd;
@@ -12,6 +25,18 @@ export const MetadataOuterWrap = styled.div`
 
 export const MetadataWrap = styled.div`
 	margin: 0 0 ${spacingRem.default};
+
+	${media.tabletPortrait(`
+		flex-basis: 0;
+		flex-grow: 1;
+		margin: 0;
+	`)}
+`;
+
+export const MetadataTitle = styled.h4`
+	font-size: ${rem(14)};
+	font-weight: 500;
+	margin: 0 0 ${spacingRem.xsm};
 `;
 
 export const MetadataList = styled.ul`
@@ -22,12 +47,6 @@ export const MetadataList = styled.ul`
 	&:last-of-type {
 		margin: 0;
 	}
-`;
-
-export const MetadataTitle = styled.h4`
-	font-size: ${rem(14)};
-	font-weight: 500;
-	margin: 0 0 ${spacingRem.xsm};
 `;
 
 export const MetadataItem = styled.li`
@@ -41,4 +60,15 @@ export const MetadataItem = styled.li`
 			content: ', ';
 		}
 	}
+
+	${media.tabletPortrait(`
+		display: block;
+
+		&:not(:last-of-type) {
+			&::after {
+				content: '';
+			}
+		}
+
+	`)}
 `;
