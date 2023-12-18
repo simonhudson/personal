@@ -30,7 +30,7 @@ describe('About', () => {
 			expect(link).toHaveAttribute('href', item.href);
 			expect(link).toHaveTextContent(item.text);
 		});
-		expect(screen.getByAltText('Simon Hudson sat at a table with a glass of beer')).toBeInTheDocument();
+		expect(screen.getByAltText('Simon Hudson')).toBeInTheDocument();
 	};
 
 	it('should render as expected when CMS call successful', async () => {
