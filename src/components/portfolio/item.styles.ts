@@ -88,14 +88,14 @@ export const ItemHeader = styled.header`
 	padding: 0 0 ${spacingRem.default};
 `;
 
-export const ItemFooter = styled.header`
+export const ItemFooter = styled.footer`
 	background: ${palette.primary.lightGrey};
 	border-bottom-right-radius: ${rem(BASE_SIZE)};
 	border-bottom-left-radius: ${rem(BASE_SIZE)};
 	display: flex;
 	flex-direction: column;
 	gap: ${spacingRem.default};
-	padding: ${spacingRem.sm} ${spacingRem.md};
+	padding: 0 ${spacingRem.md};
 
 	${media.phoneLandscape(`
 		align-items: center;
@@ -119,6 +119,7 @@ export const ButtonLinksList = styled.ul`
 	${media.phoneLandscape(`
 		flex-direction: row;
 		justify-content: left;
+		padding: ${spacingRem.default} 0;
 	`)};
 `;
 
