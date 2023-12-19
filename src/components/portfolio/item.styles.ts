@@ -10,7 +10,6 @@ import { H3 } from '@/src/theme/typography';
 export const Wrap = styled.div`
 	background: ${palette.primary.white};
 	border-radius: ${rem(BASE_SIZE)};
-	border-top: ${rem(BASE_SIZE)} solid ${palette.primary.lightGrey};
 	box-shadow: ${BoxShadow};
 	display: flex;
 	flex-direction: column;
