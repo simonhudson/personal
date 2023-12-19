@@ -9,6 +9,7 @@ import { H3 } from '@/src/theme/typography';
 
 export const Wrap = styled.div`
 	background: ${palette.primary.white};
+	background: linear-gradient(#fff, ${palette.primary.lightGrey});
 	border-radius: ${rem(BASE_SIZE)};
 	box-shadow: ${BoxShadow};
 	display: flex;
@@ -89,7 +90,6 @@ export const ItemHeader = styled.header`
 `;
 
 export const ItemFooter = styled.footer`
-	background: ${palette.primary.lightGrey};
 	border-bottom-right-radius: ${rem(BASE_SIZE)};
 	border-bottom-left-radius: ${rem(BASE_SIZE)};
 	display: flex;

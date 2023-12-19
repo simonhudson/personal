@@ -3,9 +3,9 @@ import { font } from './font';
 export const BASE_SIZE = font.size;
 
 interface SpacingPx {
-	default: number;
 	xsm: number;
 	sm: number;
+	default: number;
 	md: number;
 	lg: number;
 	xlg: number;
@@ -14,9 +14,9 @@ interface SpacingPx {
 }
 
 export const spacingPx: SpacingPx = {
-	default: BASE_SIZE,
 	xsm: BASE_SIZE / 4,
 	sm: BASE_SIZE / 2,
+	default: BASE_SIZE,
 	md: BASE_SIZE * 2,
 	lg: BASE_SIZE * 4,
 	xlg: BASE_SIZE * 6,
@@ -25,9 +25,9 @@ export const spacingPx: SpacingPx = {
 };
 
 interface SpacingRem {
-	default: string;
 	xsm: string;
 	sm: string;
+	default: string;
 	md: string;
 	lg: string;
 	xlg: string;
@@ -36,9 +36,9 @@ interface SpacingRem {
 }
 
 export const spacingRem: SpacingRem = {
-	default: rem(spacingPx.default),
 	xsm: rem(spacingPx.xsm),
 	sm: rem(spacingPx.sm),
+	default: rem(spacingPx.default),
 	md: rem(spacingPx.md),
 	lg: rem(spacingPx.lg),
 	xlg: rem(spacingPx.xlg),
