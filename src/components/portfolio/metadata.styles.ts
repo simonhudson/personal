@@ -57,6 +57,7 @@ export const MetadataItem = styled.li`
 
 	&:not(:last-of-type) {
 		&::after {
+			color: ${palette.primary.bodyText};
 			content: ', ';
 		}
 	}
