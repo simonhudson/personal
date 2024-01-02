@@ -9,7 +9,7 @@ import { H3 } from '@/src/theme/typography';
 
 export const Wrap = styled.div`
 	background: ${palette.primary.white};
-	border-radius: ${rem(BASE_SIZE)};
+	border-radius: ${rem(BASE_SIZE / 2)};
 	box-shadow: ${BoxShadow};
 	display: flex;
 	flex-direction: column;
@@ -133,6 +133,5 @@ export const ButtonLinksLink = styled(ButtonLink)`
 `;
 
 export const Copy = styled.div`
-	margin: 0 0 ${spacingRem.default};
 	padding: 0 0 ${spacingRem.default};
 `;

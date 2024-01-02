@@ -35,18 +35,24 @@ export const MetadataTitle = styled.h4`
 
 export const MetadataList = styled.ul`
 	color: ${palette.primary.bodyText};
+
 	font-size: ${rem(14)};
 	margin: 0 0 ${spacingRem.default};
 
 	&:last-of-type {
 		margin: 0;
 	}
+
+	${media.tabletPortrait(`
+		padding-left: ${spacingRem.default};
+
+	`)}
 `;
 
 export const MetadataItem = styled.li`
+	color: ${palette.primary.brand};
 	display: inline;
 	line-height: ${rem(font.size * 1.6)};
-	list-style: none;
 	margin: 0;
 
 	&:not(:last-of-type) {
@@ -55,8 +61,14 @@ export const MetadataItem = styled.li`
 		}
 	}
 
+	span {
+		color: ${palette.primary.bodyText};
+	}
+
 	${media.tabletPortrait(`
-		display: block;
+		display: list-item;
+		list-style-position: outside;
+		list-style-type: square;
 
 		&:not(:last-of-type) {
 			&::after {

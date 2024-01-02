@@ -21,7 +21,9 @@ export const Metadata = ({ categories, slug }: MetadataProps) => {
 						<MetadataTitle id={`${slug}-${title}-with`}>{title} with</MetadataTitle>
 						<MetadataList aria-labelledby={`${slug}-${title}-with`}>
 							{items.map((item, index) => (
-								<MetadataItem key={index}>{item}</MetadataItem>
+								<MetadataItem key={index}>
+									<span>{item}</span>
+								</MetadataItem>
 							))}
 						</MetadataList>
 					</MetadataWrap>

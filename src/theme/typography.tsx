@@ -29,7 +29,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
 	color: ${palette.primary.bodyText};
 	font-family: ${font.sansSerif};
-	font-size: ${rem(24)};
+	font-size: ${rem(20)};
 	font-weight: 700;
 	line-height: ${rem(16)};
 	margin: 0 0 ${spacingRem.sm};
