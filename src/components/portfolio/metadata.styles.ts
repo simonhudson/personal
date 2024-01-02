@@ -7,7 +7,6 @@ import { media } from '@/src/theme/media';
 
 export const MetadataOuterWrap = styled.div`
 	border-top: 1px dotted #ddd;
-	font-family: ${font.serif};
 	padding: ${spacingRem.md} 0 0;
 	width: 100%;
 
