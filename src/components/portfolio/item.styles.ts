@@ -90,8 +90,8 @@ export const ItemHeader = styled.header`
 
 export const ItemFooter = styled.footer`
 	background: ${palette.primary.lightGrey};
-	border-bottom-right-radius: ${rem(BASE_SIZE)};
-	border-bottom-left-radius: ${rem(BASE_SIZE)};
+	border-bottom-right-radius: ${rem(BASE_SIZE / 2)};
+	border-bottom-left-radius: ${rem(BASE_SIZE / 2)};
 	display: flex;
 	flex-direction: column;
 	gap: ${spacingRem.default};
