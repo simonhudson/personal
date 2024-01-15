@@ -13,7 +13,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 		<>
 			<Head>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<title>Simon Hudson | Front End Developer</title>
+				<title>Simon Hudson | Full Stack Developer</title>
 			</Head>
 			{process.env.APP_ENV === 'production' && (
 				<>
