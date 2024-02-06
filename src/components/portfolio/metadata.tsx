@@ -1,15 +1,15 @@
 import React from 'react';
 import { MetadataOuterWrap, MetadataWrap, MetadataList, MetadataTitle, MetadataItem } from './metadata.styles';
 
-interface Category {
+type Category = {
 	items?: string[];
 	title?: 'Made' | 'Tested' | 'Built';
-}
+};
 
-export interface MetadataProps {
+export type MetadataProps = {
 	categories: Category[];
 	slug: string;
-}
+};
 
 export const Metadata = ({ categories, slug }: MetadataProps) => {
 	return (

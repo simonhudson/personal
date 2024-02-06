@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react';
 
-export interface AppProps {
+export type AppProps = {
 	Component: FunctionComponent;
 	pageProps: { [key: string]: any };
-}
+};

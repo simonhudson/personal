@@ -1,4 +1,13 @@
-import type { Links } from './links.d';
+type Link = {
+	text: string;
+	link: string;
+	icon: {
+		type: 'solid' | 'brand';
+		name: string;
+	};
+};
+
+type Links = Link[];
 
 const links: Links = [
 	{

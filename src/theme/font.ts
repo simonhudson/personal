@@ -1,4 +1,4 @@
-interface Font {
+type Font = {
 	size: number;
 	heading: string;
 	sansSerif: string;
@@ -8,7 +8,7 @@ interface Font {
 	code: string;
 	weight: number;
 	lineHeight: number;
-}
+};
 
 export const font: Font = {
 	size: 16,

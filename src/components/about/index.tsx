@@ -4,7 +4,10 @@ import { Section, VisuallyHidden } from '@/src/theme/layout';
 import { Wrap, Content, Aside, StyledIcon, Image, IconLinksList, IconLinksItem, IconLinksLink } from './index.styles';
 import Links from './links';
 import { slugify } from '@/src/utilities/slugify';
-import type { AboutProps } from './about.d';
+
+type AboutProps = {
+	aboutData: string | undefined;
+};
 
 const About = ({ aboutData }: AboutProps) => {
 	return (

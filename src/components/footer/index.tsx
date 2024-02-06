@@ -3,7 +3,12 @@ import { StyledParagraph } from './index.styles';
 import { Wrapper, StyledSection } from './index.styles';
 import dayjs from 'dayjs';
 import LastFm from '@/src/components/lastfm';
-import type { FooterProps } from './footer.d';
+import type { LastFmDisplayData } from '@/src/components/lastfm/lastfm.d';
+
+type FooterProps = {
+	aboutData?: string;
+	lastFmData?: LastFmDisplayData;
+};
 
 const Footer = ({ lastFmData }: FooterProps) => {
 	return (

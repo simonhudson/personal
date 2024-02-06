@@ -3,7 +3,11 @@ import { H2 } from '@/src/theme/typography';
 import { Section } from '@/src/theme/layout';
 import { Wrap } from './index.styles';
 import Item from './item';
-import type { PortfolioProps } from './portfolio';
+import type { PortfolioItem } from './portfolio.d';
+
+type PortfolioProps = {
+	data?: PortfolioItem[];
+};
 
 const Portfolio = ({ data }: PortfolioProps) => {
 	return (

@@ -5,14 +5,14 @@ const applyStyles = (viewportWidth: number, styles: string): string =>
 
 const applyReducedMotionStyles = (styles: string): string => `@media (prefers-reduced-motion: reduce) { ${styles} }`;
 
-interface Media {
+type Media = {
 	phonePortrait: (string: string) => string;
 	phoneLandscape: (string: string) => string;
 	tabletPortrait: (string: string) => string;
 	tabletLandscape: (string: string) => string;
 	desktop: (string: string) => string;
 	prefersReducedMotion: (string: string) => string;
-}
+};
 
 export const media: Media = {
 	phonePortrait: (styles: string) => applyStyles(Breakpoints.phonePortrait, styles),
