@@ -1,7 +1,7 @@
 import type { ContentTypes } from '@/src/types/contentful/content-types';
 import type BLOCKS from '@contentful/rich-text-types/dist/types/blocks.d.ts';
 
-interface ApiResponseItem {
+type ApiResponseItem = {
 	metadata: {
 		tags: string;
 	};
@@ -48,9 +48,9 @@ interface ApiResponseItem {
 		omit?: boolean;
 		position?: number;
 	};
-}
+};
 
-export interface PortfolioApiResponse {
+export type PortfolioApiResponse = {
 	sys: {
 		type: string;
 	};
@@ -58,9 +58,9 @@ export interface PortfolioApiResponse {
 	skip: number;
 	limit: number;
 	items: ApiResponseItem[];
-}
+};
 
-export interface PortfolioItem {
+export type PortfolioItem = {
 	builtWith?: string[];
 	client: string;
 	copyHtml?: string | null;
@@ -74,8 +74,4 @@ export interface PortfolioItem {
 	testedWith?: string[];
 	title: string;
 	url?: string;
-}
-
-export interface PortfolioProps {
-	data?: PortfolioItem[];
-}
+};

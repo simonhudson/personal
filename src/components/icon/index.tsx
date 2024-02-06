@@ -1,6 +1,11 @@
 import React from 'react';
 import { StyledIcon } from './index.styles';
-import type { IconProps } from './icon.d';
+
+type IconProps = {
+	type: 'solid' | 'brand';
+	name: string;
+	className?: string;
+};
 
 const typeMapping = {
 	solid: 'fas',

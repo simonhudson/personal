@@ -27,11 +27,11 @@ const slideOutToLeft = `
     }
 `;
 
-interface Animation {
+type Animation = {
 	defaults: string;
 	slideInFromLeft: string;
 	slideOutToLeft: string;
-}
+};
 
 export const animation: Animation = {
 	defaults,

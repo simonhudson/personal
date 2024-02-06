@@ -1,4 +1,4 @@
-interface Palette {
+type Palette = {
 	primary: {
 		bodyBackground: string;
 		brand: string;
@@ -20,7 +20,7 @@ interface Palette {
 		stackOverflow: string;
 		lastFm: string;
 	};
-}
+};
 
 export const palette: Palette = {
 	primary: {

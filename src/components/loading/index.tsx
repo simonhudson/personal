@@ -1,7 +1,10 @@
 import React from 'react';
 import { StyledLoading } from './index.styles';
 import { palette } from '@/src/theme/palette';
-import type { LoadingProps } from './loading.d';
+
+type LoadingProps = {
+	isLoading?: boolean;
+};
 
 const Loading = ({ isLoading }: LoadingProps) => {
 	if (!isLoading) return null;

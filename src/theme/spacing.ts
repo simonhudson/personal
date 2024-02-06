@@ -2,7 +2,7 @@ import { rem } from 'polished';
 import { font } from './font';
 export const BASE_SIZE = font.size;
 
-interface SpacingPx {
+type SpacingPx = {
 	xsm: number;
 	sm: number;
 	default: number;
@@ -11,7 +11,7 @@ interface SpacingPx {
 	xlg: number;
 	xxlg: number;
 	xxxlg: number;
-}
+};
 
 export const spacingPx: SpacingPx = {
 	xsm: BASE_SIZE / 4,
@@ -24,7 +24,7 @@ export const spacingPx: SpacingPx = {
 	xxxlg: BASE_SIZE * 12,
 };
 
-interface SpacingRem {
+type SpacingRem = {
 	xsm: string;
 	sm: string;
 	default: string;
@@ -33,7 +33,7 @@ interface SpacingRem {
 	xlg: string;
 	xxlg: string;
 	xxxlg: string;
-}
+};
 
 export const spacingRem: SpacingRem = {
 	xsm: rem(spacingPx.xsm),
