@@ -21,6 +21,10 @@ export const GlobalStyles = createGlobalStyle`
         height: 100%;
     }
 
+    body {
+        border-top: 10px solid ${palette.primary.brand};
+    }
+
     ul, ol, dl {
         padding: 0;
     }
