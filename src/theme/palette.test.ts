@@ -5,12 +5,12 @@ describe('theme/palette', () => {
 		expect(palette).toEqual({
 			primary: {
 				bodyBackground: '#fef9f5',
-				brand: '#FA7900',
+				brand: '#31dbb6',
 				bodyText: '#5d5d5d',
 				black: '#333',
 				white: '#fff',
 				grey: '#707070',
-				lightGrey: '#f9f9f9',
+				lightGrey: '#f7f7f7',
 			},
 			status: {
 				error: '#fbebe6',
