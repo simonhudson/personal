@@ -34,13 +34,14 @@ export const Inner = styled.div`
 
 export const StyledSection = styled.section`
 	align-items: center;
+	background: ${palette.primary.sectionBackgroundDark};
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	padding: ${spacingRem.md} 0;
 
-	&:nth-of-type(2n) {
-		background: ${palette.primary.lightGrey};
+	&:nth-of-type(3n) {
+		background: ${palette.primary.sectionBackgroundLight};
 	}
 
 	${media.tabletLandscape(`
