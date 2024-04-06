@@ -34,7 +34,7 @@ export const Inner = styled.div`
 
 export const StyledSection = styled.section`
 	align-items: center;
-	background: ${palette.primary.sectionBackgroundDark};
+	background: ${palette.primary.sectionBackgroundLight};
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;

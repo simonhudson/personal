@@ -28,7 +28,7 @@ export const palette: Palette = {
 	primary: {
 		bodyBackground: '#fef9f5',
 		brand: '#dc643f', //'#31dbb6',
-		bodyText: '#f9f7eb', //'#5d5d5d',
+		bodyText: '#5d5d5d',
 		black: '#333',
 		white: '#fff',
 		grey: '#707070',

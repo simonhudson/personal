@@ -8,10 +8,9 @@ import { font } from '@/src/theme/font';
 import { H3 } from '@/src/theme/typography';
 
 export const Wrap = styled.div`
-	background: ${palette.primary.sectionBackgroundDark};
-	background: linear-gradient(#5d5d5d, ${palette.primary.sectionBackgroundDark});
+	background: ${palette.primary.white};
 	border-radius: ${rem(BASE_SIZE / 2)};
-	// box-shadow: ${BoxShadow};
+	box-shadow: ${BoxShadow};
 	color: ${palette.primary.bodyText};
 	display: flex;
 	flex-direction: column;
@@ -91,7 +90,7 @@ export const ItemHeader = styled.header`
 `;
 
 export const ItemFooter = styled.footer`
-	background: #5d5d5d;
+	background: ${palette.primary.sectionBackgroundLight};
 	border-bottom-right-radius: ${rem(BASE_SIZE / 2)};
 	border-bottom-left-radius: ${rem(BASE_SIZE / 2)};
 	display: flex;
