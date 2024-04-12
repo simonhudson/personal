@@ -77,10 +77,8 @@ export const Title = styled(H3)`
 export const Client = styled.span`
 	color: ${palette.primary.grey};
 	font-size: ${rem(font.size * 0.9)};
-	font-weight: 400;
-	letter-spacing: ${rem(1)};
+	font-weight: 300;
 	margin-bottom: ${spacingRem.sm};
-	text-transform: uppercase;
 `;
 
 export const ItemHeader = styled.header`

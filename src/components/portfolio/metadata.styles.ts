@@ -29,7 +29,7 @@ export const MetadataWrap = styled.div`
 
 export const MetadataTitle = styled.h4`
 	font-size: ${rem(14)};
-	font-weight: 500;
+	font-weight: 700;
 	margin: 0 0 ${spacingRem.xsm};
 `;
 

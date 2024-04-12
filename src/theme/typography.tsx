@@ -11,15 +11,15 @@ export const H1 = styled.h1`
 	font-size: ${rem(30)};
 	font-weight: 400;
 	line-height: ${rem(50)};
-	margin: 0;
+	margin: ${spacingRem.md} 0 ${spacingRem.md};
 
-	&::after {
-		content: '';
-		display: block;
-		border-bottom: 5px solid ${palette.primary.brand};
-		margin: ${spacingRem.md} 0;
-		width: 15%;
-	}
+	// &::after {
+	// 	content: '';
+	// 	display: block;
+	// 	border-bottom: 5px solid ${palette.primary.brand};
+	// 	margin: ${spacingRem.md} 0;
+	// 	width: 15%;
+	// }
 
 	${media.tabletLandscape(`
 		font-size: ${rem(40)};
@@ -28,19 +28,24 @@ export const H1 = styled.h1`
 
 export const H2 = styled.h2`
 	color: ${palette.primary.bodyText};
-	font-family: ${font.sansSerif};
-	font-size: ${rem(20)};
-	font-weight: 700;
+	font-family: ${font.serif};
+	font-size: ${rem(28)};
+	font-weight: 300;
 	line-height: ${rem(16)};
-	margin: 0 0 ${spacingRem.sm};
-	text-transform: uppercase;
+	margin: 0 0 ${spacingRem.md};
+
+	// &::after {
+	// 	content: '';
+	// 	display: block;
+	// 	border-bottom: 2px solid ${palette.primary.brand};
+	// 	margin: ${spacingRem.default} 0;
+	// 	width: 5%;
+	// }
 
 	&::after {
-		content: '';
-		display: block;
-		border-bottom: 2px solid ${palette.primary.brand};
-		margin: ${spacingRem.default} 0;
-		width: 5%;
+		color: ${palette.primary.brand};
+		content: '.';
+		margin-left: ${spacingRem.xsm};
 	}
 
 	${media.tabletLandscape(`
@@ -50,7 +55,7 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
 	color: ${palette.primary.bodyText};
-	font-family: ${font.serif};
+	font-family: ${font.sansSerif};
 	font-size: ${rem(font.size * 1.15)};
 	font-weight: 700;
 	line-height: ${rem(30)};
@@ -66,7 +71,7 @@ export const H3 = styled.h3`
 
 export const Paragraph = styled.p`
 	color: ${palette.primary.bodyText};
-	font-family: ${font.sansSerif};
+	font-family: ${font.serif};
 	font-size: ${rem(font.size)};
 	font-weight: ${font.weight};
 	line-height: ${font.lineHeight};
