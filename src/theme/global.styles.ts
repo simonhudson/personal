@@ -9,7 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     body,
     fieldset {
         box-sizing: border-box;
-        font-family: ${font.sansSerif};
+        font-family: ${font.serif};
         font-size: ${font.size}px;
         font-weight: ${font.weight};
         margin: 0;

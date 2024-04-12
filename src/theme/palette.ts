@@ -26,8 +26,8 @@ type Palette = {
 
 export const palette: Palette = {
 	primary: {
-		bodyBackground: '#fef9f5',
-		brand: '#dc643f', //'#31dbb6',
+		bodyBackground: '#f5f1ee',
+		brand: '#94d66a', //'#31dbb6',
 		bodyText: '#5d5d5d',
 		black: '#333',
 		white: '#fff',

@@ -34,15 +34,10 @@ export const Inner = styled.div`
 
 export const StyledSection = styled.section`
 	align-items: center;
-	background: ${palette.primary.sectionBackgroundLight};
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	padding: ${spacingRem.md} 0;
-
-	&:nth-of-type(3n) {
-		background: ${palette.primary.sectionBackgroundLight};
-	}
 
 	${media.tabletLandscape(`
 		padding: ${spacingRem.lg} 0;

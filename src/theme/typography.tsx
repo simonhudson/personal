@@ -50,7 +50,7 @@ export const H2 = styled.h2`
 
 export const H3 = styled.h3`
 	color: ${palette.primary.bodyText};
-	font-family: ${font.sansSerif};
+	font-family: ${font.serif};
 	font-size: ${rem(font.size * 1.15)};
 	font-weight: 700;
 	line-height: ${rem(30)};
