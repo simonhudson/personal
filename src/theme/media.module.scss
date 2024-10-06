@@ -1,0 +1,43 @@
+@import './variables/breakpoints.scss';
+
+@mixin mediaPhonePortrait {
+    @media only screen and (min-width: map-get($breakpoints, phonePortrait)) {
+        @content;
+    }
+}
+
+@mixin mediaPhoneLandscape {
+    @media only screen and (min-width: map-get($breakpoints, phoneLandscape)) {
+        @content;
+    }
+}
+
+@mixin mediaTabletPortrait {
+    @media only screen and (min-width: map-get($breakpoints, tabletPortrait)) {
+        @content;
+    }
+}
+
+@mixin mediaTabletLandscape {
+    @media only screen and (min-width: map-get($breakpoints, tabletLandscape)) {
+        @content;
+    }
+}
+
+@mixin mediaDesktop {
+    @media only screen and (min-width: map-get($breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin mediaPrefersReducedMotion {
+    @media only screen and (prefers-reduced-motion: reduce) {
+        @content;
+    }
+}
+
+@mixin media($breakpoint) {
+    @media only screen and (min-width: $breakpoint) {
+        @content;
+    }
+}

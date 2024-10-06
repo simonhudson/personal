@@ -1,0 +1,6 @@
+@import './strip-unit.scss';
+@import '../variables/base-font-size.scss';
+
+@function toRem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($base-font-size)}rem;
+}

@@ -1,0 +1,13 @@
+@import './base-font-size.scss';
+@import '../functions/to-rem.scss';
+
+$font-size: toRem($base-font-size);
+$font-heading: 'Poppins, arial, helvetica, sans-serif';
+$font-sans-serif: 'Open Sans, arial, helvetica, sans-serif';
+$font-serif: 'Lora, times new roman, serif';
+$font-semi-bold: 'opensans_semibold';
+$font-bold: 'opensans_bold';
+$font-code: 'Courier New, Courier, monospace';
+$font-weight: 400;
+$font-weight-bold: 700;
+$font-line-height: 1.8;
