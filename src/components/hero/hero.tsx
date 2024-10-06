@@ -1,9 +1,10 @@
+import styles from './hero.module.scss';
+
 export const Hero = async () => {
 	return (
 		<section>
-			<h1>
-				Simon Hudson
-				<span>Full Stack Developer</span>
+			<h1 className={styles.heading}>
+				Hello, my name&apos;s <strong>Simon Hudson</strong>
 			</h1>
 			<p>
 				I am an experienced <strong>Full Stack Developer</strong> who uses <strong>HTML</strong>,{' '}

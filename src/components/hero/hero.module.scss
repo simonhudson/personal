@@ -1,0 +1,7 @@
+@use 'sass:map';
+@import '../../theme/functions/to-rem.scss';
+@import '../../theme/variables/palette.scss';
+
+.heading {
+     font-size: toRem(48);
+}

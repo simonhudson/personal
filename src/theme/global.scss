@@ -14,7 +14,7 @@ fieldset {
 }
 html, body {
     background: #fff;
-    font-family: var(--font-lora);
+    font-family: var(--font-serif);
 }
 
 body {
@@ -60,4 +60,12 @@ details summary::marker {
 a {
     color: inherit;
     text-decoration: underline;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+strong {
+    font-size: 700;
 }

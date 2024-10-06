@@ -6,8 +6,8 @@
 }
 
 .sound-icon {
-    height: to-rem(32);
-    width: to-rem(32);
+    height: toRem(32);
+    width: toRem(32);
 
     @include mediaPrefersReducedMotion {
         display: none;

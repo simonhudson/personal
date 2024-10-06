@@ -9,13 +9,13 @@ import { Footer } from '@/components/footer/footer';
 const openSans = Open_Sans({
 	subsets: ['latin'],
 	display: 'swap',
-	variable: '--font-open-sans',
+	variable: '--font-sans-serif',
 });
 
 const lora = Lora({
 	subsets: ['latin'],
 	display: 'swap',
-	variable: '--font-lora',
+	variable: '--font-serif',
 });
 
 export const metadata: Metadata = {
