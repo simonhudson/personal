@@ -1,23 +1,8 @@
 import Image from 'next/image';
 import { Metadata } from './metadata';
+import { type PortfolioItem } from '@/components/portfolio/portfolio.types';
 
-type PortfolioItemProps = {
-	builtWith?: string[];
-	client: string;
-	copyHtml?: string | null;
-	date: string;
-	githubUrl?: string;
-	isArchived?: boolean;
-	madeWith?: string[];
-	omit?: boolean;
-	position?: number;
-	slug: string;
-	testedWith?: string[];
-	title: string;
-	url?: string;
-};
-
-export const PortfolioItem = ({
+export const Item = ({
 	builtWith,
 	client,
 	copyHtml,
@@ -30,7 +15,7 @@ export const PortfolioItem = ({
 	testedWith,
 	title,
 	url,
-}: PortfolioItemProps) => {
+}: PortfolioItem) => {
 	if (omit) return null;
 	return (
 		<div>
@@ -53,7 +38,13 @@ export const PortfolioItem = ({
 					/>
 				</div>
 				<div>
-					<Image alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
+					<Image
+						alt={`${title} screen shot`}
+						height={200}
+						loading="lazy"
+						src={`/images/${slug}.png`}
+						width={200}
+					/>
 				</div>
 			</div>
 			<footer>

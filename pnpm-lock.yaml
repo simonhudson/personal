@@ -11,6 +11,9 @@ importers:
       '@contentful/rich-text-html-renderer':
         specifier: ^16.6.10
         version: 16.6.10
+      '@contentful/rich-text-types':
+        specifier: ^16.8.5
+        version: 16.8.5
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13

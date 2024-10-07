@@ -1,7 +1,21 @@
 @use 'sass:map';
 @import '../../theme/functions/to-rem.scss';
 @import '../../theme/variables/palette.scss';
+@import '../../theme/media.module.scss';
 
 .heading {
-     font-size: toRem(48);
+	font-size: toRem(48);
+}
+
+.hero-copy {
+	font-family: var(--font-serif);
+	font-size: toRem(20);
+	line-height: toRem(30);
+	margin: 0;
+
+	@include mediaTabletLandscape {
+		font-size: toRem(24);
+		line-height: toRem(40);
+		width: 70%;
+	}
 }
