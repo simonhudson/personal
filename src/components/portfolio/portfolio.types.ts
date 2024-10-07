@@ -1,5 +1,5 @@
 import { type ContentType } from '@/utilities/get-content';
-import type BLOCKS from '@contentful/rich-text-types/dist/types/blocks.d.ts';
+import { type BLOCKS } from '@contentful/rich-text-types/dist/types/blocks.d';
 
 export interface PortfolioItem {
 	builtWith?: string[];
@@ -55,7 +55,7 @@ export interface ApiResponseItem {
 		client: string;
 		url?: string;
 		githubUrl?: string;
-		copy?: BLOCKS.DOCUMENT;
+		copy?: string;
 		madeWith?: string[];
 		builtWith?: string[];
 		date: string;
