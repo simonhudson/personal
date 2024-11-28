@@ -1,0 +1,19 @@
+:root {
+	--spacing-base: 16px;
+	--spacing-default: 16px;
+	--spacing-xsm: 4px;
+	--spacing-sm: 8px;
+	--spacing-md: 32px;
+	--spacing-lg: 64px;
+	--spacing-xlg: 96px;
+	--spacing-2xlg: 128px;
+	--spacing-3xlg: 192px;
+	--spacing-default-rem: 1rem;
+	--spacing-xsm-rem: 0.25rem;
+	--spacing-sm-rem: 0.5rem;
+	--spacing-md-rem: 2rem;
+	--spacing-lg-rem: 4rem;
+	--spacing-xlg-rem: 6rem;
+	--spacing-2xlg-rem: 8rem;
+	--spacing-3xlg-rem: 12rem;
+}

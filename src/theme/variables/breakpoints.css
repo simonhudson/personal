@@ -1,0 +1,7 @@
+:root {
+	--breakpoint-phonePortrait: 420px;
+	--breakpoint-phoneLandscape: 650px;
+	--breakpoint-tabletPortrait: 768px;
+	--breakpoint-tabletLandscape: 1024px;
+	--breakpoint-desktop: 1200px;
+}

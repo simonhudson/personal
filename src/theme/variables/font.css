@@ -1,0 +1,11 @@
+:root {
+	--base-font-size: 62.5%;
+	--font-size: 1.8rem;
+	--font-heading: 'Poppins, arial, helvetica, sans-serif';
+	--font-semi-bold: 'opensans_semibold';
+	--font-bold: 'opensans_bold';
+	--font-code: 'Courier New, Courier, monospace';
+	--font-weight: 400;
+	--font-weight-bold: 700;
+	--font-line-height: 3rem;
+}

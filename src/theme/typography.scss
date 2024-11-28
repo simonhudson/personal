@@ -7,8 +7,7 @@
 
 p {
 	color: map.get($palette, 'primary', 'bodyText');
-	font-family: var(--font-sans-serif);
-	font-size: $font-size;
+	font-family: $font-serif;
 	font-weight: $font-weight;
 	line-height: toRem($font-line-height);
 	margin: 0 0 $spacing-default-rem;

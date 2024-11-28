@@ -1,0 +1,52 @@
+@import './variables/font.css';
+@import './variables/palette.css';
+@import './headings.css';
+
+html,
+body,
+fieldset {
+	box-sizing: border-box;
+	background: var(--palette-primary-body-background);
+	color: var(--palette-primary-body-text);
+	font-family: var(--font-serif);
+	font-size: var(--base-font-size);
+	font-weight: var(--font-weight);
+	line-height: var(--font-line-height);
+	margin: 0;
+	padding: 0;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	border-top: 10px solid var(--palette-primary-brand);
+	font-size: var(--font-size);
+	position: relative;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.no-js-alert {
+	display: block;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+details summary::marker {
+	display: none;
+}
+
+a {
+	color: var(--palette-primary-brand);
+	text-decoration: underline;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}

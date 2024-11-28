@@ -3,12 +3,15 @@
 @import '../../theme/variables/palette.scss';
 @import '../../theme/media.module.scss';
 
+.wrap {
+	background: #5d5d5d;
+}
+
 .heading {
 	font-size: toRem(48);
 }
 
 .hero-copy {
-	font-family: var(--font-serif);
 	font-size: toRem(20);
 	line-height: toRem(30);
 	margin: 0;

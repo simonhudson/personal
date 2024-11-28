@@ -1,12 +1,14 @@
+import { ReactNode } from 'react';
+import { Inter, Lora } from 'next/font/google';
 import type { Metadata } from 'next';
-import { Open_Sans, Lora } from 'next/font/google';
-import '@/theme/global.scss';
-import { Header } from '@/components/header/header';
-import { Hero } from '@/components/hero/hero';
-import { Portfolio } from '@/components/portfolio/portfolio';
-import { Footer } from '@/components/footer/footer';
+import '@/theme/global.css';
 
-const openSans = Open_Sans({
+export const metadata: Metadata = {
+	title: 'Simon Hudson | Full Stack Developer',
+	description: 'Simon Hudson is a Full Stack Developer based in Derby, UK.',
+};
+
+const inter = Inter({
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-sans-serif',
@@ -18,21 +20,11 @@ const lora = Lora({
 	variable: '--font-serif',
 });
 
-export const metadata: Metadata = {
-	title: 'Simon Hudson | Full Stack Developer',
-	description: 'Simon Hudson is a Full Stack Developer based in Derby, UK.',
-};
-
-const RootLayout = async () => {
+const Layout = async ({ children }: { children: ReactNode }) => {
 	return (
-		<html lang="en">
-			<body className={`${openSans.variable} ${lora.variable}`}>
-				<Header />
-				<Hero />
-				<Portfolio />
-				<Footer />
-			</body>
+		<html lang="en" className={`${inter.variable} ${lora.variable}`}>
+			<body>{children}</body>
 		</html>
 	);
 };
-export default RootLayout;
+export default Layout;
