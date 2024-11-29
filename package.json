@@ -1,37 +1,41 @@
 {
-  "name": "personal",
-  "description": "Personal website of Simon Hudson, a Full Stack Developer based in Derby, UK.",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "npm run build && next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@contentful/rich-text-html-renderer": "^17.0.0",
-    "contentful": "^11.2.5",
-    "dayjs": "^1.11.13",
-    "dotenv": "^16.4.5",
-    "next": "15.0.3",
-    "next-secure-headers": "^2.2.0",
-    "react": "19.0.0-rc-66855b96-20241106",
-    "react-dom": "19.0.0-rc-66855b96-20241106",
-    "sass": "^1.79.4"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-    "cf-content-types-generator": "^2.15.5",
-    "eslint": "^8",
-    "eslint-config-next": "15.0.3",
-    "ts-jest": "^29.2.5",
-    "typescript": "^5"
-  },
-  "overrides": {
-    "@types/react": "npm:types-react@19.0.0-rc.1",
-    "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
-  }
+	"name": "personal",
+	"description": "Personal website of Simon Hudson, a Full Stack Developer based in Derby, UK.",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "npm run generate-content-types && next dev --turbopack",
+		"build": "npm run generate-content-types && next build",
+		"start": "npm run build && next start",
+		"lint": "next lint",
+		"generate-content-types": "rimraf ./src/types/contentful.d.ts && contentful-typescript-codegen --output ./src/types/contentful.d.ts && eslint --fix ./src/types/contentful.d.ts"
+	},
+	"dependencies": {
+		"@contentful/rich-text-html-renderer": "^17.0.0",
+		"contentful": "^11.2.5",
+		"dayjs": "^1.11.13",
+		"dotenv": "^16.4.5",
+		"next": "15.0.3",
+		"next-secure-headers": "^2.2.0",
+		"react": "19.0.0-rc-66855b96-20241106",
+		"react-dom": "19.0.0-rc-66855b96-20241106",
+		"sass": "^1.79.4"
+	},
+	"devDependencies": {
+		"@types/node": "^20",
+		"@types/react": "npm:types-react@19.0.0-rc.1",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+		"contentful-management": "^11.40.0",
+		"contentful-typescript-codegen": "^3.4.0",
+		"eslint": "^8",
+		"eslint-config-next": "15.0.3",
+		"rimraf": "^6.0.1",
+		"ts-jest": "^29.2.5",
+		"ts-node": "^10.9.2",
+		"typescript": "^5"
+	},
+	"overrides": {
+		"@types/react": "npm:types-react@19.0.0-rc.1",
+		"@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+	}
 }
