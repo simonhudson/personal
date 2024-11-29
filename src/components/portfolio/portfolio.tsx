@@ -1,6 +1,5 @@
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { slugify } from '@/utilities/slugify';
-import { Item } from '@/components/portfolio/item';
+import { type IPortfolioItem } from '@/types/contentful';
+import { Item } from './item';
 // import { type PortfolioItem, type ApiResponseItem } from '@/components/portfolio/portfolio.types';
 // import { type TypePortfolioItem } from '@/contentful/types/TypePortfolioItem';
 
@@ -28,13 +27,13 @@ import { Item } from '@/components/portfolio/item';
 // 	return [];
 // };
 
-export const Portfolio = ({ items }) => {
+export const Portfolio = ({ items }: { items: IPortfolioItem[] }) => {
 	items.sort((a, b) => {
-		const keyA = a.position;
-		const keyB = b.position;
-		if (keyA && keyB) {
-			if (keyA > keyB) return -1;
-			if (keyA < keyB) return 1;
+		const positionA = a.fields.position;
+		const positionB = b.fields.position;
+		if (positionA && positionB) {
+			if (positionA > positionB) return -1;
+			if (positionA < positionB) return 1;
 		}
 		return 0;
 	});
@@ -42,26 +41,9 @@ export const Portfolio = ({ items }) => {
 	return (
 		<section>
 			<ul>
-				{items.map((item) => {
-					return item ? (
-						<Item
-							key={item.sys.id}
-							builtWith={item.fields.builtWith}
-							client={item.fields.client}
-							copyHtml={item.fields.copy ? documentToHtmlString(item.fields.copy) : null}
-							date={item.fields.date}
-							githubUrl={item.fields.githubUrl}
-							isArchived={item.fields.isArchived}
-							madeWith={item.fields.madeWith}
-							omit={item.fields.omit}
-							position={item.fields.position}
-							slug={slugify(item.fields.title)}
-							testedWith={item.fields.testedWith}
-							title={item.fields.title}
-							url={item.fields.url}
-						/>
-					) : null;
-				})}
+				{items.map((item: IPortfolioItem) => (
+					<Item key={item.sys.id} item={item} />
+				))}
 			</ul>
 		</section>
 	);

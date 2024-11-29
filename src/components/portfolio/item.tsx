@@ -1,45 +1,38 @@
 import Image from 'next/image';
 import { Metadata } from './metadata';
-import { type PortfolioItem } from '@/components/portfolio/portfolio.types';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { slugify } from '@/utilities/slugify';
+import { type IPortfolioItem } from '@/types/contentful';
 
-export const Item = ({
-	builtWith,
-	client,
-	copyHtml,
-	date,
-	githubUrl,
-	isArchived,
-	madeWith,
-	omit,
-	slug,
-	testedWith,
-	title,
-	url,
-}: PortfolioItem) => {
-	if (omit) return null;
+export const Item = ({ item }: { item: IPortfolioItem }) => {
+	if (item.fields.omit) return null;
+
+	const copyHtml = documentToHtmlString(item.fields.copy);
+	const slug = slugify(item.fields.title);
+
 	return (
 		<div>
 			<div>
 				<div>
 					<header>
-						<h3>{title}</h3>
+						<h3>{item.fields.title}</h3>
 						<span>
-							{client} / {date}
+							{item.fields.client} / {item.fields.date}
 						</span>
 					</header>
 					{copyHtml && <div dangerouslySetInnerHTML={{ __html: copyHtml }}></div>}
 					<Metadata
 						categories={[
-							{ title: 'Made', items: madeWith },
-							{ title: 'Tested', items: testedWith },
-							{ title: 'Built', items: builtWith },
+							{ title: 'Made', items: item.fields.madeWith },
+							{ title: 'Tested', items: item.fields.testedWith },
+							{ title: 'Built', items: item.fields.builtWith },
 						]}
 						slug={slug}
 					/>
 				</div>
 				<div>
 					<Image
-						alt={`${title} screen shot`}
+						alt={`${item.fields.title} screen shot`}
 						height={200}
 						loading="lazy"
 						src={`/images/${slug}.png`}
@@ -49,18 +42,18 @@ export const Item = ({
 			</div>
 			<footer>
 				<ul>
-					{url && (
+					{item.fields.url && (
 						<li>
-							<a href={url}>
-								View <span>{title} </span>site
-								{isArchived ? ' (archived)' : null}
+							<a href={item.fields.url}>
+								View <span>{item.fields.title} </span>site
+								{item.fields.isArchived ? ' (archived)' : null}
 							</a>
 						</li>
 					)}
-					{githubUrl && (
+					{item.fields.githubUrl && (
 						<li>
-							<a href={githubUrl}>
-								View <span>{title} </span> on Github
+							<a href={item.fields.githubUrl}>
+								View <span>{item.fields.title} </span> on Github
 							</a>
 						</li>
 					)}
