@@ -1,14 +1,16 @@
 import { type IPortfolioItem } from '@/types/contentful';
 import { Item } from './item';
 
-export const Portfolio = ({ items }: { items: IPortfolioItem[] }) => {
+interface PortfolioProps {
+	items: IPortfolioItem[];
+}
+
+export const Portfolio = ({ items }: PortfolioProps) => {
 	items.sort((a, b) => {
-		const positionA = a.fields.position;
-		const positionB = b.fields.position;
-		if (positionA && positionB) {
-			if (positionA > positionB) return -1;
-			if (positionA < positionB) return 1;
-		}
+		const positionA = (a.fields as { position: number }).position ?? 0;
+		const positionB = (b.fields as { position: number }).position ?? 0;
+		if (positionA > positionB) return -1;
+		if (positionA < positionB) return 1;
 		return 0;
 	});
 
