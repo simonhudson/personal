@@ -1,6 +1,6 @@
 import * as contentful from 'contentful';
-// import { Header } from '@/components/header/header';
-// import { Hero } from '@/components/hero/hero';
+import { Header } from '@/components/header/header';
+import { Hero } from '@/components/hero/hero';
 import { Portfolio } from '@/components/portfolio/portfolio';
 import { type IPortfolioItem } from '@/types/contentful';
 // import { Footer } from '@/components/footer/footer';
@@ -23,8 +23,8 @@ const Home = async () => {
 
 	return (
 		<>
-			{/* <Header />
-			<Hero /> */}
+			<Header />
+			<Hero />
 			<Portfolio items={portfolioItems} />
 			{/* <Footer /> */}
 		</>

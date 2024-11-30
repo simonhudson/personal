@@ -1,10 +1,9 @@
-import styles from './hero.module.scss';
-import layout from '../../theme/layout.module.scss';
+import styles from './hero.module.css';
 
 export const Hero = async () => {
 	return (
-		<section className={styles.wrap}>
-			<div className={layout.wrap}>
+		<section>
+			<div>
 				<h1 className={styles.heading}>
 					Hello, my name&apos;s <strong>Simon Hudson</strong>
 				</h1>

@@ -1,3 +1,5 @@
+@import './variables/breakpoints.css';
+@import './variables/spacing.css';
 @import './variables/font.css';
 @import './variables/palette.css';
 @import './headings.css';
@@ -17,10 +19,20 @@ fieldset {
 	text-rendering: optimizeLegibility;
 }
 
-body {
+html {
 	border-top: 10px solid var(--palette-primary-brand);
+}
+
+body {
 	font-size: var(--font-size);
+	margin: 0 auto;
 	position: relative;
+	width: 90%;
+
+	@media (min-width: 1024px) {
+		padding: 0 var(--spacing-default);
+		width: var(--breakpoint-tablet-landscape);
+	}
 }
 
 .no-scroll {
@@ -49,4 +61,8 @@ ul,
 li {
 	margin: 0;
 	padding: 0;
+}
+
+#palette-brand {
+	background-color: var(--palette-primary-brand);
 }
