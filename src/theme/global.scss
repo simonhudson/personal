@@ -1,0 +1,61 @@
+@import './variables/breakpoints.scss';
+@import './variables/spacing.scss';
+@import './variables/font.scss';
+@import './variables/palette.scss';
+@import './headings.scss';
+@import './layout.scss';
+
+html,
+body,
+fieldset {
+	box-sizing: border-box;
+	background: map-get($palette, primary, body-background);
+	color: map-get($palette, primary, body-text);
+	font-family: map-get($font, serif);
+	font-size: 62.5%;
+	font-weight: map-get($font, weight);
+	line-height: map-get($font, line-height);
+	margin: 0;
+	padding: 0;
+	text-rendering: optimizeLegibility;
+}
+
+html {
+	border-top: 10px solid map-get($palette, primary, brand);
+}
+
+body {
+	font-size: map-get($font, size);
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.no-js-alert {
+	display: block;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+details summary::marker {
+	display: none;
+}
+
+a {
+	color: map-get($palette, primary, brand);
+	text-decoration: underline;
+}
+
+ul,
+li {
+	margin: 0;
+	padding: 0;
+}
+
+#palette-brand {
+	background-color: map-get($palette, primary, brand);
+}

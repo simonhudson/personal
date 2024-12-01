@@ -18,8 +18,7 @@
 		"next": "15.0.3",
 		"next-secure-headers": "^2.2.0",
 		"react": "19.0.0-rc-66855b96-20241106",
-		"react-dom": "19.0.0-rc-66855b96-20241106",
-		"sass": "^1.79.4"
+		"react-dom": "19.0.0-rc-66855b96-20241106"
 	},
 	"devDependencies": {
 		"@types/node": "^20",
@@ -30,6 +29,7 @@
 		"eslint": "^8",
 		"eslint-config-next": "15.0.3",
 		"rimraf": "^6.0.1",
+		"sass": "^1.81.0",
 		"ts-jest": "^29.2.5",
 		"ts-node": "^10.9.2",
 		"typescript": "^5"

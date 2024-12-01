@@ -1,5 +1,0 @@
-@import '../../theme/variables/spacing.css';
-
-.header {
-	padding: var(--spacing-default-rem) 0;
-}

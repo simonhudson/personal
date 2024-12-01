@@ -16,12 +16,14 @@ export const Portfolio = ({ items }: PortfolioProps) => {
 
 	return (
 		<section>
-			<h2>My work</h2>
-			<ul>
-				{items.map((item: IPortfolioItem) => (
-					<Item key={item.sys.id} item={item} />
-				))}
-			</ul>
+			<div className="inner-wrap">
+				<h2>My work</h2>
+				<ul>
+					{items.map((item: IPortfolioItem) => (
+						<Item key={item.sys.id} item={item} />
+					))}
+				</ul>
+			</div>{' '}
 		</section>
 	);
 };

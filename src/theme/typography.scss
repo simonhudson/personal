@@ -2,7 +2,6 @@
 @import './functions/to-rem.scss';
 @import './variables/palette.scss';
 @import './variables/spacing.scss';
-@import './variables/base-font-size.scss';
 @import './variables/font.scss';
 
 p {
@@ -10,7 +9,7 @@ p {
 	font-family: $font-serif;
 	font-weight: $font-weight;
 	line-height: toRem($font-line-height);
-	margin: 0 0 $spacing-default-rem;
+	margin: 0 0 map-get($spacing, rem, default);
 }
 
 span,

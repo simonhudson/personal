@@ -1,0 +1,27 @@
+@use 'sass:map';
+@import '../variables/font.scss';
+
+$spacing: (
+	px: (
+		base: 16px,
+		default: 16px,
+		xs: 4px,
+		sm: 8px,
+		md: 32px,
+		lg: 64px,
+		xl: 96px,
+		2xl: 128px,
+		3xl: 192px,
+	),
+	rem: (
+		base: to-rem(16px),
+		default: to-rem(16px),
+		xs: to-rem(4px),
+		sm: to-rem(8px),
+		md: to-rem(32px),
+		lg: to-rem(64px),
+		xl: to-rem(96px),
+		2xl: to-rem(128px),
+		3xl: to-rem(192px),
+	),
+);

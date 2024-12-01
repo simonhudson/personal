@@ -1,10 +1,12 @@
 import { Logo } from '@/components/logo/logo';
-import styles from './header.module.css';
+import styles from './header.module.scss';
 
 export const Header = () => {
 	return (
 		<header className={styles.header}>
-			<Logo />
+			<div className="inner-wrap">
+				<Logo />
+			</div>
 		</header>
 	);
 };
