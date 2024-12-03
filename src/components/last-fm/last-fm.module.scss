@@ -2,14 +2,13 @@
 @import '../../theme/functions/to-rem.scss';
 
 .last-fm {
-    
 }
 
 .sound-icon {
-    height: toRem(32);
-    width: toRem(32);
+	height: toRem(32);
+	width: toRem(32);
 
-    @include mediaPrefersReducedMotion {
-        display: none;
-    }
+	@include prefersReducedMotion {
+		display: none;
+	}
 }

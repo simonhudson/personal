@@ -16,9 +16,11 @@ export const About = ({ aboutMeData }: AboutProps) => {
 	};
 
 	return (
-		<>
-			<h2> About me</h2>
-			<div dangerouslySetInnerHTML={{ __html: parseContent() }}></div>
-		</>
+		<section>
+			<div className="inner-wrap">
+				<h2> About me</h2>
+				<div dangerouslySetInnerHTML={{ __html: parseContent() }}></div>
+			</div>
+		</section>
 	);
 };

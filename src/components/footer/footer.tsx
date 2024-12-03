@@ -2,11 +2,11 @@
 
 export const Footer = () => {
 	return (
-		<>
-			<footer>
-				<p>Footer</p>
+		<footer>
+			<div className="inner-wrap">
+				<p>Copyright &copy; Simon Hudson {new Date().getFullYear()}</p>
 				{/* <LastFm /> */}
-			</footer>
-		</>
+			</div>
+		</footer>
 	);
 };

@@ -1,17 +1,17 @@
 @import '../../theme/media.scss';
 
 .heading {
-	font-size: 4rem;
+	font-size: 3.6rem;
 }
 
 .hero-copy {
 	font-size: 2rem;
-	line-height: 3rem;
+	line-height: 3.2rem;
 	margin: 0;
 
-	@include mediaTabletLandscape {
+	@include tabletLandscape {
 		font-size: 2.4rem;
 		line-height: 4rem;
-		width: 70%;
+		width: 75%;
 	}
 }

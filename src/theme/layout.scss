@@ -1,7 +1,29 @@
 @use 'sass:map';
 @use 'media.scss';
-@use "variables/breakpoints";
+@use 'variables/breakpoints.scss';
+@use 'variables/palette.scss';
+@use 'variables/spacing.scss';
 
+section {
+	background: transparent;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	padding: map.get(spacing.$spacing, rem, md) 0;
+
+	&:first-of-type {
+		padding-top: map.get(spacing.$spacing, rem, default);
+	}
+
+	&:nth-of-type(2n) {
+		background: map.get(palette.$palette, primary, 'white');
+	}
+
+	@include media.tabletLandscape {
+		padding: map.get(spacing.$spacing, rem, lg) 0;
+	}
+}
 
 .inner-wrap {
 	margin: 0 auto;
@@ -11,12 +33,12 @@
 		height: 100%;
 	}
 
-	@include media.mediaTabletLandscape {
+	@include media.tabletLandscape {
 		padding: 0;
 		width: map.get(breakpoints.$breakpoints, 'tablet-landscape');
 	}
 
-	@include media.mediaDesktop {
+	@include media.desktop {
 		width: map.get(breakpoints.$breakpoints, 'desktop');
 	}
 }

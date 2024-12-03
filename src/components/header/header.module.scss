@@ -2,5 +2,5 @@
 @import '../../theme/variables/spacing.scss';
 
 .header {
-	padding: map-get($spacing, rem, default) 0;
+	padding: map-get($spacing, rem, default) 0 0;
 }
