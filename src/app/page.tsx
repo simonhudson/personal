@@ -2,8 +2,9 @@ import * as contentful from 'contentful';
 import { Header } from '@/components/header/header';
 import { Hero } from '@/components/hero/hero';
 import { Portfolio } from '@/components/portfolio/portfolio';
-import { type IPortfolioItem } from '@/types/contentful';
-// import { Footer } from '@/components/footer/footer';
+import { About } from '@/components/about/about';
+import { Footer } from '@/components/footer/footer';
+import { type IPortfolioItem, IAboutMe } from '@/types/contentful';
 
 const getCmsData = async () => {
 	const contentfulClient = contentful.createClient({
@@ -21,12 +22,15 @@ const Home = async () => {
 		(item) => item.sys.contentType.sys.id === 'portfolioItem',
 	) as IPortfolioItem[];
 
+	const aboutMeData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'aboutMe') as IAboutMe;
+
 	return (
 		<>
 			<Header />
 			<Hero />
 			<Portfolio items={portfolioItems} />
-			{/* <Footer /> */}
+			<About aboutMeData={aboutMeData} />
+			<Footer />
 		</>
 	);
 };

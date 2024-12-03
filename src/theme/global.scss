@@ -5,6 +5,10 @@
 @import './headings.scss';
 @import './layout.scss';
 
+html {
+	font-size: 62.5%;
+}
+
 html,
 body,
 fieldset {
@@ -12,7 +16,6 @@ fieldset {
 	background: map-get($palette, primary, body-background);
 	color: map-get($palette, primary, body-text);
 	font-family: map-get($font, serif);
-	font-size: 62.5%;
 	font-weight: map-get($font, weight);
 	line-height: map-get($font, line-height);
 	margin: 0;
