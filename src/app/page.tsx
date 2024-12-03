@@ -22,14 +22,14 @@ const Home = async () => {
 		(item) => item.sys.contentType.sys.id === 'portfolioItem',
 	) as IPortfolioItem[];
 
-	const aboutMeData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'aboutMe') as IAboutMe;
+	const aboutData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'aboutMe') as IAboutMe;
 
 	return (
 		<>
 			<Header />
 			<Hero />
 			<Portfolio items={portfolioItems} />
-			<About aboutMeData={aboutMeData} />
+			<About aboutData={aboutData} />
 			<Footer />
 		</>
 	);

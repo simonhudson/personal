@@ -1,0 +1,23 @@
+@use 'sass:map';
+@use '../../theme/variables/spacing.scss';
+@use '../../theme/variables/palette.scss';
+@use '../../theme/media.scss';
+
+.image {
+	border: 5px solid map.get(palette.$palette, primary, white);
+	border-radius: 100%;
+	box-shadow: 0 0 10px #ddd;
+	display: block;
+	height: 150px;
+	margin: 0 auto;
+	width: auto;
+
+	@include media.tabletPortrait {
+		height: auto;
+		width: 75%;
+	}
+
+	@include media.desktop {
+		width: 100%;
+	}
+}

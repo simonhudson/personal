@@ -17,7 +17,7 @@ section {
 	}
 
 	&:nth-of-type(2n) {
-		background: map.get(palette.$palette, primary, 'white');
+		background: map.get(palette.$palette, primary, light-grey);
 	}
 
 	@include media.tabletLandscape {
