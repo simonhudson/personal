@@ -1,5 +1,7 @@
 @use 'sass:map';
-@import './media.scss';
+@use 'media.scss';
+@use "variables/breakpoints";
+
 
 .inner-wrap {
 	margin: 0 auto;
@@ -9,12 +11,12 @@
 		height: 100%;
 	}
 
-	@include mediaTabletLandscape {
+	@include media.mediaTabletLandscape {
 		padding: 0;
-		width: map-get($breakpoints, 'tablet-landscape');
+		width: map.get(breakpoints.$breakpoints, 'tablet-landscape');
 	}
 
-	@include mediaDesktop {
-		width: map-get($breakpoints, 'desktop');
+	@include media.mediaDesktop {
+		width: map.get(breakpoints.$breakpoints, 'desktop');
 	}
 }

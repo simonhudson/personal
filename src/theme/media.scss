@@ -1,31 +1,32 @@
-@import './variables/breakpoints.scss';
+@use "sass:map";
+@use 'variables/breakpoints.scss';
 
 @mixin mediaPhonePortrait {
-	@media only screen and (min-width: map-get($breakpoints, phonePortrait)) {
+	@media only screen and (min-width: map.get(breakpoints.$breakpoints, phonePortrait)) {
 		@content;
 	}
 }
 
 @mixin mediaPhoneLandscape {
-	@media only screen and (min-width: map-get($breakpoints, phoneLandscape)) {
+	@media only screen and (min-width: map.get(breakpoints.$breakpoints, phoneLandscape)) {
 		@content;
 	}
 }
 
 @mixin mediaTabletPortrait {
-	@media only screen and (min-width: map-get($breakpoints, tabletPortrait)) {
+	@media only screen and (min-width: map.get(breakpoints.$breakpoints, tabletPortrait)) {
 		@content;
 	}
 }
 
 @mixin mediaTabletLandscape {
-	@media only screen and (min-width: map-get($breakpoints, tabletLandscape)) {
+	@media only screen and (min-width: map.get(breakpoints.$breakpoints, tabletLandscape)) {
 		@content;
 	}
 }
 
 @mixin mediaDesktop {
-	@media only screen and (min-width: map-get($breakpoints, desktop)) {
+	@media only screen and (min-width: map.get(breakpoints.$breakpoints, desktop)) {
 		@content;
 	}
 }

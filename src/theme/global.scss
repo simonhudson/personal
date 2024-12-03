@@ -1,9 +1,10 @@
-@import './variables/breakpoints.scss';
-@import './variables/spacing.scss';
-@import './variables/font.scss';
-@import './variables/palette.scss';
-@import './headings.scss';
-@import './layout.scss';
+@use "sass:map";
+@use 'variables/breakpoints.scss';
+@use 'variables/spacing.scss';
+@use 'variables/font.scss';
+@use 'variables/palette.scss';
+@use 'headings.scss';
+@use 'layout.scss';
 
 html {
 	font-size: 62.5%;
@@ -13,22 +14,23 @@ html,
 body,
 fieldset {
 	box-sizing: border-box;
-	background: map-get($palette, primary, body-background);
-	color: map-get($palette, primary, body-text);
-	font-family: map-get($font, serif);
-	font-weight: map-get($font, weight);
-	line-height: map-get($font, line-height);
+	background: map.get(palette.$palette, primary, body-background);
+	color: map.get(palette.$palette, primary, body-text);
+	font-family: map.get(font.$font, serif);
+	font-weight: map.get(font.$font, weight);
+	line-height: map.get(font.$font, line-height);
 	margin: 0;
 	padding: 0;
 	text-rendering: optimizeLegibility;
 }
 
 html {
-	border-top: 10px solid map-get($palette, primary, brand);
+	border-top: 10px solid map.get(palette.$palette, primary, brand);
+	font-size: font.$base-font-size;
 }
 
 body {
-	font-size: map-get($font, size);
+	font-size: map.get(font.$font, size);
 }
 
 .no-scroll {
@@ -49,7 +51,7 @@ details summary::marker {
 }
 
 a {
-	color: map-get($palette, primary, brand);
+	color: map.get(palette.$palette, primary, brand);
 	text-decoration: underline;
 }
 
@@ -60,5 +62,5 @@ li {
 }
 
 #palette-brand {
-	background-color: map-get($palette, primary, brand);
+	background-color: map.get(palette.$palette, primary, brand);
 }
