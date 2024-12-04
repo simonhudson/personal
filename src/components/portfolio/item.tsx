@@ -53,7 +53,7 @@ export const Item = ({ item }: ItemProps) => {
 					{itemFields.url && (
 						<li className={styles['cta-item']}>
 							<a className={styles['cta-link']} href={itemFields.url}>
-								View <span>{itemFields.title} </span>site
+								View <span className="sr-only">{itemFields.title} </span>site
 								{itemFields.isArchived ? ' (archived)' : null}
 							</a>
 						</li>
@@ -61,7 +61,7 @@ export const Item = ({ item }: ItemProps) => {
 					{itemFields.githubUrl && (
 						<li className={styles['cta-item']}>
 							<a className={styles['cta-link']} href={itemFields.githubUrl}>
-								View <span>{itemFields.title} </span> on Github
+								View <span className="sr-only">{itemFields.title} </span> on Github
 							</a>
 						</li>
 					)}

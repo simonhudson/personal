@@ -1,11 +1,12 @@
 @use 'sass:map';
+@use 'sass:math';
 @use '../variables/font.scss';
 
 $spacing: (
 	rem: (
 		default: map.get(font.$font, size),
-		xs: map.get(font.$font, size) / 4,
-		sm: map.get(font.$font, size) / 2,
+		xs: math.div(map.get(font.$font, size), 4),
+		sm: math.div(map.get(font.$font, size), 2),
 		md: map.get(font.$font, size) * 2,
 		lg: map.get(font.$font, size) * 4,
 		xl: map.get(font.$font, size) * 6,

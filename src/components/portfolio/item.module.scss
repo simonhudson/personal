@@ -9,7 +9,7 @@
 	box-shadow: 0 0 10px #ddd;
 	display: flex;
 	flex-direction: column;
-	margin: 0;
+	margin: 0 0 map.get(spacing.$spacing, rem, md);
 
 	&:first-of-type {
 		margin-top: map.get(spacing.$spacing, rem, xsm);
@@ -26,9 +26,12 @@
 }
 
 .image-wrap {
+	padding-top: map.get(spacing.$spacing, rem, default);
+
 	@include media.tabletLandscape {
 		max-width: 42%;
 		min-width: 42%;
+		padding: 0;
 		width: 42%;
 	}
 }
@@ -88,7 +91,7 @@
 }
 
 .footer {
-	background: map.get(palette.$palette, primary, light-grey);
+	background: map.get(palette.$palette, primary, white);
 	border-bottom-right-radius: 1rem;
 	border-bottom-left-radius: 1rem;
 	display: flex;
