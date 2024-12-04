@@ -6,7 +6,7 @@
 
 .wrap {
 	border-top: 1px dotted #ddd;
-	padding: map.get(spacing.$spacing, rem, md) 0 0;
+	padding: map.get(spacing.$spacing, rem, default) 0 0;
 	width: 100%;
 
 	@include media.tabletPortrait {
@@ -27,8 +27,8 @@
 }
 
 .title {
-	font-size: map.get(font.$font, rem, default);
-	font-weight: 500;
+	font-size: 1.4rem;
+	font-weight: map.get(font.$font, weight-bold);
 	margin: 0 0 map.get(spacing.$spacing, rem, xsm);
 }
 
@@ -39,10 +39,6 @@
 
 	&:last-of-type {
 		margin: 0;
-	}
-
-	@include media.tabletPortrait {
-		padding-left: map.get(spacing.$spacing, rem, default);
 	}
 }
 
@@ -65,8 +61,6 @@
 
 	@include media.tabletPortrait {
 		display: list-item;
-		list-style-position: outside;
-		list-style-type: square;
 
 		&:not(:last-of-type) {
 			&::after {

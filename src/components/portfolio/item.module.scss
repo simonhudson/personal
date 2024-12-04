@@ -66,7 +66,7 @@
 }
 
 .copy {
-	padding: 0 0 map.get(spacing.$spacing, rem, default);
+	padding: 0 0 map.get(spacing.$spacing, rem, sm);
 }
 
 .title {
@@ -113,14 +113,14 @@
 
 .cta-list {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	gap: map.get(spacing.$spacing, rem, md);
+	justify-content: flex-end;
 	list-style: none;
 	margin: 0;
 	padding: map.get(spacing.$spacing, rem, default) 0;
 
 	@include media.phoneLandscape {
-		flex-direction: row;
 		justify-content: left;
 		padding: map.get(spacing.$spacing, rem, default) 0;
 	}
@@ -128,6 +128,11 @@
 
 .cta-item {
 	text-align: center;
+	width: 50%;
+
+	@include media.phoneLandscape {
+		width: auto;
+	}
 }
 
 .cta-link {
