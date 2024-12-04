@@ -142,7 +142,7 @@
 	display: block;
 	font-family: var(--font-sans-serif);
 	font-weight: map.get(font.$font, weight-bold);
-	padding: map.get(spacing.$spacing, rem, xs) map.get(spacing.$spacing, rem, sm);
+	padding: map.get(spacing.$spacing, rem, xs) map.get(spacing.$spacing, rem, default);
 	text-align: center;
 	text-decoration: none;
 }
