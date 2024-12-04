@@ -3,6 +3,7 @@ import { Metadata } from './metadata';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { slugify } from '@/utilities/slugify';
 import { IPortfolioItemFields, type IPortfolioItem } from '@/types/contentful';
+import styles from './item.module.scss';
 
 interface ItemProps {
 	item: IPortfolioItem;
@@ -17,16 +18,16 @@ export const Item = ({ item }: ItemProps) => {
 	const slug = slugify(itemFields.title);
 
 	return (
-		<div>
-			<div>
-				<div>
-					<header>
-						<h3>{itemFields.title}</h3>
-						<span>
+		<div className={styles.item}>
+			<div className={styles.content}>
+				<div className={styles.text}>
+					<header className={styles.header}>
+						<h3 className={styles.title}>{itemFields.title}</h3>
+						<span className={styles.client}>
 							{itemFields.client} / {itemFields.date}
 						</span>
 					</header>
-					{copyHtml && <div dangerouslySetInnerHTML={{ __html: copyHtml }}></div>}
+					{copyHtml && <div className={styles.copy} dangerouslySetInnerHTML={{ __html: copyHtml }}></div>}
 					<Metadata
 						categories={[
 							{ title: 'Made', items: itemFields.madeWith },
@@ -36,9 +37,10 @@ export const Item = ({ item }: ItemProps) => {
 						slug={slug}
 					/>
 				</div>
-				<div>
+				<div className={styles['image-wrap']}>
 					<Image
 						alt={`${itemFields.title} screen shot`}
+						className={styles.image}
 						height={200}
 						loading="lazy"
 						src={`/images/${slug}.png`}
@@ -46,19 +48,19 @@ export const Item = ({ item }: ItemProps) => {
 					/>
 				</div>
 			</div>
-			<footer>
-				<ul>
+			<footer className={styles.footer}>
+				<ul className={styles['cta-list']}>
 					{itemFields.url && (
-						<li>
-							<a href={itemFields.url}>
+						<li className={styles['cta-item']}>
+							<a className={styles['cta-link']} href={itemFields.url}>
 								View <span>{itemFields.title} </span>site
 								{itemFields.isArchived ? ' (archived)' : null}
 							</a>
 						</li>
 					)}
 					{itemFields.githubUrl && (
-						<li>
-							<a href={itemFields.githubUrl}>
+						<li className={styles['cta-item']}>
+							<a className={styles['cta-link']} href={itemFields.githubUrl}>
 								View <span>{itemFields.title} </span> on Github
 							</a>
 						</li>

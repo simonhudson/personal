@@ -1,0 +1,132 @@
+@use 'sass:map';
+@use '../../theme/variables/palette.scss';
+@use '../../theme/variables/spacing.scss';
+@use '../../theme/media.scss';
+
+.item {
+	background: map.get(palette.$palette, primary, white);
+	border-radius: 1rem;
+	box-shadow: 0 0 10px #ddd;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+
+	&:first-of-type {
+		margin-top: map.get(spacing.$spacing, rem, xsm);
+
+		@include media.tabletLandscape {
+			margin-top: map.get(spacing.$spacing, rem, md);
+		}
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+}
+
+.image-wrap {
+	@include media.tabletLandscape {
+		max-width: 42%;
+		min-width: 42%;
+		width: 42%;
+	}
+}
+
+.image {
+	display: block;
+	height: auto;
+	margin: 0 0 map.get(spacing.$spacing, rem, default);
+	width: 100%;
+
+	@include media.tabletLandscape {
+		margin: 0;
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: map.get(spacing.$spacing, rem, default);
+	padding: map.get(spacing.$spacing, rem, default);
+
+	@include media.tabletLandscape {
+		flex-direction: row-reverse;
+		gap: map.get(spacing.$spacing, rem, lg);
+		padding: map.get(spacing.$spacing, rem, md);
+	}
+}
+
+.text {
+	width: 100%;
+}
+
+.copy {
+	padding: 0 0 map.get(spacing.$spacing, rem, default);
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+}
+
+.client {
+	color: map.get(palette.$palette, primary, grey);
+	font-family: var(--font-sans-serif);
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+
+	&::after {
+		content: '';
+		display: block;
+		border-bottom: 2px solid map.get(palette.$palette, primary, brand);
+		margin: map.get(spacing.$spacing, rem, sm) 0 0;
+		width: map.get(spacing.$spacing, rem, default);
+	}
+}
+
+.footer {
+	background: map.get(palette.$palette, primary, light-grey);
+	border-bottom-right-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: map.get(spacing.$spacing, rem, default);
+	padding: 0 map.get(spacing.$spacing, rem, md);
+
+	@include media.phoneLandscape {
+		align-items: center;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+
+	@include media.tabletLandscape {
+		padding: map.get(spacing.$spacing, rem, default) map.get(spacing.$spacing, rem, lg);
+	}
+}
+
+.cta-list {
+	display: flex;
+	flex-direction: column;
+	gap: map.get(spacing.$spacing, rem, md);
+	list-style: none;
+	margin: 0;
+	padding: map.get(spacing.$spacing, rem, default) 0;
+
+	@include media.phoneLandscape {
+		flex-direction: row;
+		justify-content: left;
+		padding: map.get(spacing.$spacing, rem, default) 0;
+	}
+}
+
+.cta-item {
+	text-align: center;
+}
+
+.cta-link {
+	display: block;
+	text-align: center;
+}
