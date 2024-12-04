@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '../../theme/variables/palette.scss';
 @use '../../theme/variables/spacing.scss';
+@use '../../theme/variables/font.scss';
 @use '../../theme/media.scss';
 
 .item {
@@ -91,7 +92,7 @@
 }
 
 .footer {
-	background: map.get(palette.$palette, primary, white);
+	background: map.get(palette.$palette, primary, light-grey);
 	border-bottom-right-radius: 1rem;
 	border-bottom-left-radius: 1rem;
 	display: flex;
@@ -130,6 +131,13 @@
 }
 
 .cta-link {
+	background: map.get(palette.$palette, primary, brand);
+	border-radius: 0.5rem;
+	color: map.get(palette.$palette, primary, white);
 	display: block;
+	font-family: var(--font-sans-serif);
+	font-weight: map.get(font.$font, weight-bold);
+	padding: map.get(spacing.$spacing, rem, xs) map.get(spacing.$spacing, rem, sm);
 	text-align: center;
+	text-decoration: none;
 }
