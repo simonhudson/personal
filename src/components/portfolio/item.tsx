@@ -42,10 +42,10 @@ export const Item = ({ item, index }: ItemProps) => {
 					<Image
 						alt={`${itemFields.title} screen shot`}
 						className={styles.image}
-						height={200}
+						height={338}
 						loading={index < 3 ? 'eager' : 'lazy'}
 						src={`/images/${slug}.png`}
-						width={200}
+						width={600}
 					/>
 				</div>
 			</div>
