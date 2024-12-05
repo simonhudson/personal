@@ -19,8 +19,8 @@ export const Portfolio = ({ items }: PortfolioProps) => {
 			<div className="inner-wrap">
 				<h2>My work</h2>
 				<ul>
-					{items.map((item: IPortfolioItem) => (
-						<Item key={item.sys.id} item={item} />
+					{items.map((item: IPortfolioItem, index: number) => (
+						<Item key={item.sys.id} item={item} index={index} />
 					))}
 				</ul>
 			</div>{' '}

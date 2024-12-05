@@ -75,7 +75,7 @@
 }
 
 .client {
-	color: map.get(palette.$palette, primary, grey);
+	color: map.get(palette.$palette, primary, body-text);
 	font-family: var(--font-sans-serif);
 	font-size: 1.2rem;
 	font-weight: 400;
@@ -107,7 +107,7 @@
 	}
 
 	@include media.tabletLandscape {
-		padding: map.get(spacing.$spacing, rem, default) map.get(spacing.$spacing, rem, lg);
+		padding: map.get(spacing.$spacing, rem, default) map.get(spacing.$spacing, rem, md);
 	}
 }
 

@@ -7,9 +7,10 @@ import styles from './item.module.scss';
 
 interface ItemProps {
 	item: IPortfolioItem;
+	index: number;
 }
 
-export const Item = ({ item }: ItemProps) => {
+export const Item = ({ item, index }: ItemProps) => {
 	const itemFields = item.fields as IPortfolioItemFields;
 
 	if (itemFields.omit) return null;
@@ -42,7 +43,7 @@ export const Item = ({ item }: ItemProps) => {
 						alt={`${itemFields.title} screen shot`}
 						className={styles.image}
 						height={200}
-						loading="lazy"
+						loading={index < 3 ? 'eager' : 'lazy'}
 						src={`/images/${slug}.png`}
 						width={200}
 					/>
