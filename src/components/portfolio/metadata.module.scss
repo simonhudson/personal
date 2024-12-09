@@ -6,18 +6,18 @@
 
 .wrap {
 	border-top: 1px dotted #ddd;
-	padding: map.get(spacing.$spacing, rem, default) 0 0;
+	padding: map.get(spacing.$spacing, default) 0 0;
 	width: 100%;
 
 	@include media.tabletPortrait {
 		display: flex;
-		gap: map.get(spacing.$spacing, rem, default);
+		gap: map.get(spacing.$spacing, default);
 		justify-content: space-between;
 	}
 }
 
 .inner {
-	margin: 0 0 map.get(spacing.$spacing, rem, default);
+	margin: 0 0 map.get(spacing.$spacing, default);
 
 	@include media.tabletPortrait {
 		flex-basis: 0;
@@ -29,13 +29,13 @@
 .title {
 	font-size: 1.4rem;
 	font-weight: map.get(font.$font, weight-bold);
-	margin: 0 0 map.get(spacing.$spacing, rem, xsm);
+	margin: 0 0 map.get(spacing.$spacing, xsm);
 }
 
 .metadata-list {
 	color: map.get(palette.$palette, bodyText);
 	font-size: 1.4rem;
-	margin: 0 0 map.get(spacing.$spacing, rem, default);
+	margin: 0 0 map.get(spacing.$spacing, default);
 
 	&:last-of-type {
 		margin: 0;
@@ -43,7 +43,6 @@
 }
 
 .metadata-item {
-	color: map.get(palette.$palette, brand);
 	display: inline;
 	line-height: 1.8rem;
 	margin: 0 0 0.8rem;

@@ -3,8 +3,25 @@
 @use '../../theme/variables/palette.scss';
 @use '../../theme/media.scss';
 
+.wrap {
+	gap: map.get(spacing.$spacing, default);
+	display: flex;
+	flex-direction: column-reverse;
+
+	@include media.tabletPortrait {
+		flex-direction: row-reverse;
+		gap: map.get(spacing.$spacing, lg);
+	}
+}
+
+.aside {
+	@include media.tabletPortrait {
+		width: 25%;
+	}
+}
+
 .image {
-	border: 5px solid map.get(palette.$palette, primary, white);
+	border: 5px solid map.get(palette.$palette, white);
 	border-radius: 100%;
 	box-shadow: 0 0 10px #ddd;
 	display: block;
@@ -19,5 +36,37 @@
 
 	@include media.desktop {
 		width: 100%;
+	}
+}
+
+.link-list {
+	display: flex;
+	flex-direction: row;
+	gap: map.get(spacing.$spacing, lg);
+	justify-content: center;
+	list-style: none;
+	margin: 0;
+	padding: map.get(spacing.$spacing, md) 0 0;
+
+	@include media.tabletPortrait {
+		gap: map.get(spacing.$spacing, default);
+	}
+
+	@include media.desktop {
+		gap: map.get(spacing.$spacing, md);
+	}
+}
+
+.link-list-link {
+	background: map.get(palette.$palette, black);
+	border: 0;
+	border-radius: 100%;
+	display: flex;
+	padding: map.get(spacing.$spacing, default);
+	text-decoration: none;
+
+	&:hover,
+	&:focus-visible {
+		background-color: map.get(palette.$palette, grey);
 	}
 }

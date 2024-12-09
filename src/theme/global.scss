@@ -14,8 +14,8 @@ html,
 body,
 fieldset {
 	box-sizing: border-box;
-	background: map.get(palette.$palette, primary, body-background);
-	color: map.get(palette.$palette, primary, body-text);
+	background: map.get(palette.$palette, body-background);
+	color: map.get(palette.$palette, body-text);
 	font-family: map.get(font.$font, serif);
 	font-weight: map.get(font.$font, weight);
 	line-height: map.get(font.$font, line-height);
@@ -25,7 +25,7 @@ fieldset {
 }
 
 html {
-	border-top: 10px solid map.get(palette.$palette, primary, brand);
+	border-top: 10px solid map.get(palette.$palette, brand);
 	font-size: font.$base-font-size;
 }
 
@@ -51,7 +51,7 @@ details summary::marker {
 }
 
 a {
-	color: map.get(palette.$palette, primary, brand);
+	color: map.get(palette.$palette, brand);
 	text-decoration: underline;
 }
 
@@ -65,7 +65,7 @@ li {
 .sr-only {
 	border: 0;
 	clip: rect(0 0 0 0);
-	color: map.get(palette.$palette, primary, white);
+	color: map.get(palette.$palette, white);
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;

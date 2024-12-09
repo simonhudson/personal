@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { Inter, Lora } from 'next/font/google';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import '@/theme/global.scss';
 
 export const metadata: Metadata = {
@@ -23,7 +24,12 @@ const lora = Lora({
 const Layout = async ({ children }: { children: ReactNode }) => {
 	return (
 		<html lang="en" className={`${inter.variable} ${lora.variable}`}>
-			<body>{children}</body>
+			<body>
+				<>
+					{children}
+					<Script src="https://kit.fontawesome.com/6331124e0b.js" crossOrigin="anonymous" />
+				</>
+			</body>
 		</html>
 	);
 };

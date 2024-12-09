@@ -9,7 +9,7 @@ p {
 	font-family: $font-serif;
 	font-weight: $font-weight;
 	line-height: toRem($font-line-height);
-	margin: 0 0 map-get($spacing, rem, default);
+	margin: 0 0 map-get($spacing, default);
 }
 
 span,

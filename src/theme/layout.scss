@@ -10,18 +10,18 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: map.get(spacing.$spacing, rem, md) 0;
+	padding: map.get(spacing.$spacing, md) 0;
 
 	&:first-of-type {
-		padding-top: map.get(spacing.$spacing, rem, default);
+		padding-top: map.get(spacing.$spacing, default);
 	}
 
 	&:nth-of-type(2n) {
-		background: map.get(palette.$palette, primary, light-grey);
+		background: map.get(palette.$palette, light-grey);
 	}
 
 	@include media.tabletLandscape {
-		padding: map.get(spacing.$spacing, rem, lg) 0;
+		padding: map.get(spacing.$spacing, lg) 0;
 	}
 }
 

@@ -1,0 +1,8 @@
+@use 'sass:map';
+@use '../../theme/variables/palette.scss';
+
+.icon {
+	color: map.get(palette.$palette, body-text);
+	display: inline-block;
+	font-size: inherit;
+}

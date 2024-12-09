@@ -5,18 +5,18 @@
 @use '../../theme/media.scss';
 
 .item {
-	background: map.get(palette.$palette, primary, white);
+	background: map.get(palette.$palette, white);
 	border-radius: 1rem;
 	box-shadow: 0 0 10px #ddd;
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 map.get(spacing.$spacing, rem, md);
+	margin: 0 0 map.get(spacing.$spacing, lg);
 
 	&:first-of-type {
-		margin-top: map.get(spacing.$spacing, rem, xsm);
+		margin-top: map.get(spacing.$spacing, default);
 
 		@include media.tabletLandscape {
-			margin-top: map.get(spacing.$spacing, rem, md);
+			margin-top: map.get(spacing.$spacing, lg);
 		}
 	}
 }
@@ -27,7 +27,7 @@
 }
 
 .image-wrap {
-	padding-top: map.get(spacing.$spacing, rem, default);
+	padding-top: map.get(spacing.$spacing, default);
 
 	@include media.tabletLandscape {
 		max-width: 42%;
@@ -40,7 +40,7 @@
 .image {
 	display: block;
 	height: auto;
-	margin: 0 0 map.get(spacing.$spacing, rem, default);
+	margin: 0 0 map.get(spacing.$spacing, default);
 	width: 100%;
 
 	@include media.tabletLandscape {
@@ -51,13 +51,13 @@
 .content {
 	display: flex;
 	flex-direction: column-reverse;
-	gap: map.get(spacing.$spacing, rem, default);
-	padding: map.get(spacing.$spacing, rem, default);
+	gap: map.get(spacing.$spacing, default);
+	padding: map.get(spacing.$spacing, default);
 
 	@include media.tabletLandscape {
 		flex-direction: row-reverse;
-		gap: map.get(spacing.$spacing, rem, lg);
-		padding: map.get(spacing.$spacing, rem, md);
+		gap: map.get(spacing.$spacing, lg);
+		padding: map.get(spacing.$spacing, md);
 	}
 }
 
@@ -66,7 +66,7 @@
 }
 
 .copy {
-	padding: 0 0 map.get(spacing.$spacing, rem, sm);
+	padding: 0 0 map.get(spacing.$spacing, sm);
 }
 
 .title {
@@ -75,8 +75,8 @@
 }
 
 .client {
-	color: map.get(palette.$palette, primary, body-text);
-	font-family: var(--font-sans-serif);
+	color: map.get(palette.$palette, body-text);
+	font-family: map.get(font.$font, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 400;
 	letter-spacing: 0.1rem;
@@ -85,20 +85,20 @@
 	&::after {
 		content: '';
 		display: block;
-		border-bottom: 2px solid map.get(palette.$palette, primary, brand);
-		margin: map.get(spacing.$spacing, rem, sm) 0 0;
-		width: map.get(spacing.$spacing, rem, default);
+		border-bottom: 2px solid map.get(palette.$palette, brand);
+		margin: map.get(spacing.$spacing, sm) 0 0;
+		width: map.get(spacing.$spacing, default);
 	}
 }
 
 .footer {
-	background: map.get(palette.$palette, primary, light-grey);
+	background: map.get(palette.$palette, light-grey);
 	border-bottom-right-radius: 1rem;
 	border-bottom-left-radius: 1rem;
 	display: flex;
 	flex-direction: column;
-	gap: map.get(spacing.$spacing, rem, default);
-	padding: 0 map.get(spacing.$spacing, rem, default);
+	gap: map.get(spacing.$spacing, default);
+	padding: 0 map.get(spacing.$spacing, default);
 
 	@include media.phoneLandscape {
 		align-items: center;
@@ -107,22 +107,22 @@
 	}
 
 	@include media.tabletLandscape {
-		padding: map.get(spacing.$spacing, rem, default) map.get(spacing.$spacing, rem, md);
+		padding: map.get(spacing.$spacing, default) map.get(spacing.$spacing, md);
 	}
 }
 
 .cta-list {
 	display: flex;
 	flex-direction: row;
-	gap: map.get(spacing.$spacing, rem, md);
+	gap: map.get(spacing.$spacing, md);
 	justify-content: flex-end;
 	list-style: none;
 	margin: 0;
-	padding: map.get(spacing.$spacing, rem, default) 0;
+	padding: map.get(spacing.$spacing, default) 0;
 
 	@include media.phoneLandscape {
 		justify-content: left;
-		padding: map.get(spacing.$spacing, rem, default) 0;
+		padding: map.get(spacing.$spacing, default) 0;
 	}
 }
 
@@ -136,13 +136,14 @@
 }
 
 .cta-link {
-	background: map.get(palette.$palette, primary, brand);
+	background: map.get(palette.$palette, brand);
 	border-radius: 0.5rem;
-	color: map.get(palette.$palette, primary, white);
+	color: map.get(palette.$palette, white);
 	display: block;
 	font-family: var(--font-sans-serif);
+	font-size: 1.4rem;
 	font-weight: map.get(font.$font, weight-bold);
-	padding: map.get(spacing.$spacing, rem, xs) map.get(spacing.$spacing, rem, default);
+	padding: map.get(spacing.$spacing, xs) map.get(spacing.$spacing, default);
 	text-align: center;
 	text-decoration: none;
 }

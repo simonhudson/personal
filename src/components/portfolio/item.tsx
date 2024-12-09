@@ -44,6 +44,7 @@ export const Item = ({ item, index }: ItemProps) => {
 						className={styles.image}
 						height={338}
 						loading={index < 3 ? 'eager' : 'lazy'}
+						priority={index < 3}
 						src={`/images/${slug}.png`}
 						width={600}
 					/>
