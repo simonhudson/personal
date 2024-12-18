@@ -136,14 +136,25 @@
 }
 
 .cta-link {
-	background: map.get(palette.$palette, brand);
+	background: map.get(palette.$palette, body-text);
 	border-radius: 0.5rem;
 	color: map.get(palette.$palette, white);
 	display: block;
 	font-family: var(--font-sans-serif);
 	font-size: 1.4rem;
 	font-weight: map.get(font.$font, weight-bold);
+	outline: 5px solid transparent;
 	padding: map.get(spacing.$spacing, xs) map.get(spacing.$spacing, default);
 	text-align: center;
 	text-decoration: none;
+	transition: all 0.5s ease;
+
+	&:hover,
+	&:focus-visible {
+		outline: 5px solid map.get(palette.$palette, brand);
+	}
+
+	&:focus-visible {
+		text-decoration: underline;
+	}
 }

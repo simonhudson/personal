@@ -11,4 +11,6 @@ $spacing: (
 	xl: map.get(font.$font, size) * 6,
 	2xl: map.get(font.$font, size) * 8,
 	3xl: map.get(font.$font, size) * 10,
+	4xl: map.get(font.$font, size) * 14,
+	5xl: map.get(font.$font, size) * 20,
 );

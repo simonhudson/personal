@@ -11,19 +11,13 @@
 
 	@include media.tabletPortrait {
 		display: flex;
-		gap: map.get(spacing.$spacing, default);
-		justify-content: space-between;
+		gap: map.get(spacing.$spacing, xl);
+		justify-content: flex-start;
 	}
 }
 
 .inner {
 	margin: 0 0 map.get(spacing.$spacing, default);
-
-	@include media.tabletPortrait {
-		flex-basis: 0;
-		flex-grow: 1;
-		margin: 0;
-	}
 }
 
 .title {
