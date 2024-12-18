@@ -137,6 +137,7 @@
 
 .cta-link {
 	background: map.get(palette.$palette, body-text);
+	border: 0;
 	border-radius: 0.5rem;
 	color: map.get(palette.$palette, white);
 	display: block;

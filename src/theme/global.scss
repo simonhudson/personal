@@ -51,8 +51,9 @@ details summary::marker {
 }
 
 a {
-	color: map.get(palette.$palette, brand);
-	text-decoration: underline;
+	border-bottom: 2px solid map.get(palette.$palette, brand);
+	color: map.get(palette.$palette, body-text);
+	text-decoration: none;
 }
 
 ul,
