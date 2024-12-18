@@ -7,7 +7,6 @@
 .footer {
 	background: map.get(palette.$palette, body-text);
 	color: map.get(palette.$palette, white);
-	// font-family: map.get(font.$font, sans-serif);
 	padding: map.get(spacing.$spacing, sm) 0;
 	font-size: 1.4rem;
 	text-align: center;
