@@ -1,0 +1,14 @@
+@import '../../theme/media.module.scss';
+@import '../../theme/functions/to-rem.scss';
+
+.last-fm {
+}
+
+.sound-icon {
+	height: toRem(32);
+	width: toRem(32);
+
+	@include prefersReducedMotion {
+		display: none;
+	}
+}

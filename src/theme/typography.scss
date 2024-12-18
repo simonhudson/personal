@@ -1,0 +1,29 @@
+@use 'sass:map';
+@import './functions/to-rem.scss';
+@import './variables/palette.scss';
+@import './variables/spacing.scss';
+@import './variables/font.scss';
+
+p {
+	color: map.get($palette, 'primary', 'bodyText');
+	font-family: $font-serif;
+	font-weight: $font-weight;
+	line-height: toRem($font-line-height);
+	margin: 0 0 map-get($spacing, default);
+}
+
+span,
+strong,
+em {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+strong {
+	font-weight: $font-weight-bold;
+}
+
+small {
+	font-size: toRem($base-font-size * 0.85);
+}

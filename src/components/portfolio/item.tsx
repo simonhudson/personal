@@ -1,84 +1,74 @@
-import React from 'react';
-import {
-	ButtonLinksItem,
-	ButtonLinksLink,
-	ButtonLinksList,
-	Client,
-	Content,
-	Copy,
-	Img,
-	ImgWrap,
-	ItemHeader,
-	ItemFooter,
-	Text,
-	Title,
-	Wrap,
-} from './item.styles';
-import { VisuallyHidden } from '@/src/theme/layout';
+import Image from 'next/image';
 import { Metadata } from './metadata';
-import type { PortfolioItem } from './portfolio.d';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { slugify } from '@/utilities/slugify';
+import { IPortfolioItemFields, type IPortfolioItem } from '@/types/contentful';
+import styles from './item.module.scss';
 
-const Item = ({
-	builtWith,
-	client,
-	copyHtml,
-	date,
-	githubUrl,
-	isArchived,
-	madeWith,
-	omit,
-	slug,
-	testedWith,
-	title,
-	url,
-}: PortfolioItem) => {
-	if (omit) return null;
+interface ItemProps {
+	item: IPortfolioItem;
+	index: number;
+}
+
+export const Item = ({ item, index }: ItemProps) => {
+	const itemFields = item.fields as IPortfolioItemFields;
+
+	if (itemFields.omit) return null;
+
+	const copyHtml = itemFields.copy ? documentToHtmlString(itemFields.copy) : '';
+	const slug = slugify(itemFields.title);
 
 	return (
-		<Wrap>
-			<Content>
-				<Text>
-					<ItemHeader>
-						<Title>{title}</Title>
-						<Client>
-							{client} / {date}
-						</Client>
-					</ItemHeader>
-					{copyHtml && <Copy dangerouslySetInnerHTML={{ __html: copyHtml }} />}
+		<div className={styles.item}>
+			<div className={styles.content}>
+				<div className={styles.text}>
+					<header className={styles.header}>
+						<h3 className={styles.title}>{itemFields.title}</h3>
+						<span className={styles.client}>
+							{itemFields.client} / {itemFields.date}
+						</span>
+					</header>
+					{copyHtml && <div className={styles.copy} dangerouslySetInnerHTML={{ __html: copyHtml }}></div>}
 					<Metadata
 						categories={[
-							{ title: 'Made', items: madeWith },
-							{ title: 'Tested', items: testedWith },
-							{ title: 'Built', items: builtWith },
+							{ title: 'Made', items: itemFields.madeWith },
+							{ title: 'Tested', items: itemFields.testedWith },
+							{ title: 'Built', items: itemFields.builtWith },
 						]}
 						slug={slug}
 					/>
-				</Text>
-				<ImgWrap>
-					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
-				</ImgWrap>
-			</Content>
-			<ItemFooter>
-				<ButtonLinksList>
-					{url && (
-						<ButtonLinksItem>
-							<ButtonLinksLink href={url}>
-								View <VisuallyHidden>{title} </VisuallyHidden>site
-								{isArchived ? ' (archived)' : null}
-							</ButtonLinksLink>
-						</ButtonLinksItem>
+				</div>
+				<div className={styles['image-wrap']}>
+					<Image
+						alt={`${itemFields.title} screen shot`}
+						className={styles.image}
+						height={338}
+						loading={index < 3 ? 'eager' : 'lazy'}
+						priority={index < 3}
+						src={`/images/${slug}.png`}
+						width={600}
+					/>
+				</div>
+			</div>
+			<footer className={styles.footer}>
+				<ul className={styles['cta-list']}>
+					{itemFields.url && (
+						<li className={styles['cta-item']}>
+							<a className={styles['cta-link']} href={itemFields.url}>
+								View <span className="sr-only">{itemFields.title} </span>site
+								{itemFields.isArchived ? ' (archived)' : null}
+							</a>
+						</li>
 					)}
-					{githubUrl && (
-						<ButtonLinksItem>
-							<ButtonLinksLink href={githubUrl}>
-								View <VisuallyHidden>{title} </VisuallyHidden> on Github
-							</ButtonLinksLink>
-						</ButtonLinksItem>
+					{itemFields.githubUrl && (
+						<li className={styles['cta-item']}>
+							<a className={styles['cta-link']} href={itemFields.githubUrl}>
+								View <span className="sr-only">{itemFields.title} </span> on Github
+							</a>
+						</li>
 					)}
-				</ButtonLinksList>
-			</ItemFooter>
-		</Wrap>
+				</ul>
+			</footer>
+		</div>
 	);
 };
-
-export default Item;

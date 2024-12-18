@@ -1,0 +1,17 @@
+@use 'sass:map';
+@use '../../theme/media.scss';
+@use '../../theme/variables/font.scss';
+@use '../../theme/variables/palette.scss';
+@use '../../theme/variables/spacing.scss';
+
+.footer {
+	background: map.get(palette.$palette, body-text);
+	color: map.get(palette.$palette, white);
+	padding: map.get(spacing.$spacing, sm) 0;
+	font-size: 1.4rem;
+	text-align: center;
+
+	@include media.tabletLandscape {
+		text-align: right;
+	}
+}

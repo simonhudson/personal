@@ -1,0 +1,11 @@
+@use 'sass:map';
+@use '../../theme/media.scss';
+@import '../../theme/variables/spacing.scss';
+
+.header {
+	padding: map-get($spacing, md) 0 0;
+
+	@include media.tabletPortrait {
+		padding: map-get($spacing, lg) 0 0;
+	}
+}
