@@ -9,7 +9,7 @@ import styles from './last-fm.module.scss';
 const getLastFmData = async () => {
 	'use server';
 	const response = await fetch(
-		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.NEXT_PUBLIC_LASTFM_USERNAME}&api_key=${process.env.NEXT_PUBLIC_LASTFM_API_KEY}&format=json&limit=1`
+		`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${process.env.NEXT_PUBLIC_LASTFM_USERNAME}&api_key=${process.env.NEXT_PUBLIC_LASTFM_API_KEY}&format=json&limit=1`,
 	);
 
 	if (response?.status === HttpStatusCodes.OK) {
@@ -26,15 +26,16 @@ const getLastFmData = async () => {
 export const LastFm = async () => {
 	const data = await getLastFmData();
 	return data ? (
-		<div>
-			<h3>Last.fm</h3>
+		<div className={styles.wrap}>
+			<h3 className="sr-only">Last.fm</h3>
 			<Image
 				alt={`Now playing "${data.name}" by ${data.artist?.['#text']} on LastFM`}
+				className={styles.image}
 				height={300}
 				src={data.image[3]['#text']}
 				width={300}
 			/>
-			<p>
+			<p className={styles.text}>
 				<span>
 					<Link href={data.url}>&quot;{data.name}&quot;</Link>{' '}
 				</span>
@@ -44,15 +45,15 @@ export const LastFm = async () => {
 				</span>
 				<span>
 					{data.relativeTime}
-					<Image
+					{/* <Image
 						alt=""
 						aria-hidden="true"
 						className={styles['sound-icon']}
-						height={32}
+						height={64}
 						src="/images/icon-audio-wave.gif"
 						unoptimized={true}
-						width={32}
-					/>
+						width={64}
+					/> */}
 				</span>
 			</p>
 		</div>

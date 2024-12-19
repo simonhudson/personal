@@ -7,9 +7,19 @@
 .footer {
 	background: map.get(palette.$palette, body-text);
 	color: map.get(palette.$palette, white);
+
 	padding: map.get(spacing.$spacing, sm) 0;
 	font-size: 1.4rem;
-	text-align: center;
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@include media.tabletPortrait {
+			flex-direction: row;
+		}
+	}
 
 	@include media.tabletLandscape {
 		text-align: right;
