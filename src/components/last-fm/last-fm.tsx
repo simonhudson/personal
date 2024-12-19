@@ -44,7 +44,7 @@ export const LastFm = async () => {
 					<Link href={data.url}> {data.artist?.['#text']}</Link>
 				</span>
 				<span>
-					{data.relativeTime}
+					{/* {data.relativeTime} */}
 					{/* <Image
 						alt=""
 						aria-hidden="true"

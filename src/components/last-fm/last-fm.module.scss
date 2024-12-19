@@ -5,13 +5,13 @@
 @use 'sass:map';
 
 .wrap {
-	align-items: center;
 	display: flex;
 }
 
 .text {
 	font-weight: map.get(font.$font, weight-bold);
 	line-height: 2.4rem;
+	margin: 0;
 	text-align: left;
 
 	span {
@@ -22,6 +22,10 @@
 
 		em {
 			font-size: 1.4rem;
+		}
+
+		&:nth-of-type(2) {
+			display: block;
 		}
 
 		&:nth-of-type(3) {
