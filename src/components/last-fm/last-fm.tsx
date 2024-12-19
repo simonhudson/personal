@@ -43,9 +43,9 @@ export const LastFm = async () => {
 					<em>by</em>
 					<Link href={data.url}> {data.artist?.['#text']}</Link>
 				</span>
-				<span>
-					{/* {data.relativeTime} */}
-					{/* <Image
+				{/* <span>
+					{data.relativeTime}
+					<Image
 						alt=""
 						aria-hidden="true"
 						className={styles['sound-icon']}
@@ -53,8 +53,8 @@ export const LastFm = async () => {
 						src="/images/icon-audio-wave.gif"
 						unoptimized={true}
 						width={64}
-					/> */}
-				</span>
+					/> 
+				</span>*/}
 			</p>
 		</div>
 	) : (
