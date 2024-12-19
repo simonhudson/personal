@@ -6,7 +6,7 @@ export const Footer = () => {
 		<footer className={styles.footer}>
 			<div className="inner-wrap">
 				<LastFm />
-				<p>Copyright &copy; Simon Hudson {new Date().getFullYear()}</p>
+				{/* <p>Copyright &copy; Simon Hudson {new Date().getFullYear()}</p> */}
 			</div>
 		</footer>
 	);
