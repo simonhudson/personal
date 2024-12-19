@@ -1,4 +1,4 @@
-// import { LastFm } from '@/components/last-fm/last-fm';
+import { LastFm } from '@/components/last-fm/last-fm';
 import styles from './footer.module.scss';
 
 export const Footer = () => {
@@ -6,7 +6,7 @@ export const Footer = () => {
 		<footer className={styles.footer}>
 			<div className="inner-wrap">
 				<p>Copyright &copy; Simon Hudson {new Date().getFullYear()}</p>
-				{/* <LastFm /> */}
+				<LastFm />
 			</div>
 		</footer>
 	);
