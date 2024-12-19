@@ -1,29 +1,32 @@
 @use '../../theme/media.scss';
 @use '../../theme/variables/palette.scss';
 @use '../../theme/variables/spacing.scss';
+@use '../../theme/variables/font.scss';
 @use 'sass:map';
 
 .wrap {
+	align-items: center;
 	display: flex;
 }
 
 .text {
+	font-weight: map.get(font.$font, weight-bold);
+	line-height: 2.4rem;
+	text-align: left;
+
 	span {
+		em,
+		&:nth-of-type(3) {
+			font-weight: map.get(font.$font, weight);
+		}
+
 		em {
 			font-size: 1.4rem;
 		}
 
-		// &:first-of-type {
-		// 	font-weight: 700;
-		// }
-
-		// &:nth-of-type(2) {
-		// 	font-weight: 500;
-		// }
-
 		&:nth-of-type(3) {
 			display: block;
-			font-size: 1.4rem;
+			font-size: 1.2rem;
 		}
 	}
 
@@ -40,7 +43,7 @@
 	width: 6.4rem;
 
 	@include media.tabletLandscape {
-		margin: 0 map.get(spacing.$spacing, md) 0 0;
+		margin: 0 map.get(spacing.$spacing, default) 0 0;
 	}
 }
 

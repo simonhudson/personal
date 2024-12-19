@@ -45,7 +45,7 @@ export const LastFm = async () => {
 				</span>
 				<span>
 					{data.relativeTime}
-					<Image
+					{/* <Image
 						alt=""
 						aria-hidden="true"
 						className={styles['sound-icon']}
@@ -53,7 +53,7 @@ export const LastFm = async () => {
 						src="/images/icon-audio-wave.gif"
 						unoptimized={true}
 						width={64}
-					/>
+					/> */}
 				</span>
 			</p>
 		</div>
