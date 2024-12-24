@@ -6,6 +6,22 @@
 
 .wrap {
 	display: flex;
+	flex-direction: column;
+	text-align: left;
+}
+
+.inner {
+	display: flex;
+	flex-direction: row;
+}
+
+.heading {
+	color: map.get(palette.$palette, white);
+	font-family: map.get(font.$font, sans-serif);
+	font-size: 1.4rem;
+	font-weight: 400;
+	padding: 0;
+	text-transform: uppercase;
 }
 
 .text {
