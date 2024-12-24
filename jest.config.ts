@@ -4,6 +4,7 @@ const jestConfig: JestConfigWithTsJest = {
 	moduleNameMapper: {
 		'^@/src/(.*)$': '<rootDir>/src/$1',
 		'^@/test/(.*)$': '<rootDir>/test/$1',
+		'\\.(css|scss)$': '<rootDir>/test/mocks/style.mock.ts',
 	},
 	testEnvironment: 'jsdom',
 	setupFilesAfterEnv: ['<rootDir>/test/jestsetup.ts'],
