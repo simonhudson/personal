@@ -15,6 +15,8 @@ const getCmsData = async () => {
 	return entries;
 };
 
+export const dynamic = 'force-dynamic';
+
 const Home = async () => {
 	const cmsData = await getCmsData();
 
