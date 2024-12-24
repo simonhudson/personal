@@ -3,11 +3,9 @@ import Image from 'next/image';
 import styles from './music.module.scss';
 
 export const Music = async () => {
-	let data;
-	const response = await fetch('http://localhost:3000/api/music');
-	if (response) {
-		data = await response.json();
-	}
+	const response = await fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/api/music`);
+	const data = await response.json();
+
 	return data ? (
 		<div className={styles.wrap}>
 			<h3 className={styles.heading}>Now playing</h3>
