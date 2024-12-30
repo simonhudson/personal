@@ -2,45 +2,43 @@ import Image from 'next/image';
 import { Metadata } from './metadata';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { slugify } from '@/utilities/slugify';
-import { IPortfolioItemFields, type IPortfolioItem } from '@/types/contentful';
+import { type IPortfolioItemFields } from '@/types/contentful';
 import styles from './item.module.scss';
 
 interface ItemProps {
-	item: IPortfolioItem;
+	item: IPortfolioItemFields;
 	index: number;
 }
 
 export const Item = ({ item, index }: ItemProps) => {
-	const itemFields = item.fields as IPortfolioItemFields;
+	if (item.omit) return null;
 
-	if (itemFields.omit) return null;
-
-	const copyHtml = itemFields.copy ? documentToHtmlString(itemFields.copy) : '';
-	const slug = slugify(itemFields.title);
+	const copyHtml = item.copy ? documentToHtmlString(item.copy) : '';
+	const slug = slugify(item.title);
 
 	return (
 		<div className={styles.item}>
 			<div className={styles.content}>
 				<div className={styles.text}>
 					<header className={styles.header}>
-						<h3 className={styles.title}>{itemFields.title}</h3>
+						<h3 className={styles.title}>{item.title}</h3>
 						<span className={styles.client}>
-							{itemFields.client} / {itemFields.date}
+							{item.client} / {item.date}
 						</span>
 					</header>
 					{copyHtml && <div className={styles.copy} dangerouslySetInnerHTML={{ __html: copyHtml }}></div>}
 					<Metadata
 						categories={[
-							{ title: 'Made', items: itemFields.madeWith },
-							{ title: 'Tested', items: itemFields.testedWith },
-							{ title: 'Built', items: itemFields.builtWith },
+							{ title: 'Made', items: item.madeWith },
+							{ title: 'Tested', items: item.testedWith },
+							{ title: 'Built', items: item.builtWith },
 						]}
 						slug={slug}
 					/>
 				</div>
 				<div className={styles['image-wrap']}>
 					<Image
-						alt={`${itemFields.title} screen shot`}
+						alt={`${item.title} screen shot`}
 						className={styles.image}
 						height={338}
 						loading={index < 3 ? 'eager' : 'lazy'}
@@ -52,18 +50,18 @@ export const Item = ({ item, index }: ItemProps) => {
 			</div>
 			<footer className={styles.footer}>
 				<ul className={styles['cta-list']}>
-					{itemFields.url && (
+					{item.url && (
 						<li className={styles['cta-item']}>
-							<a className={styles['cta-link']} href={itemFields.url}>
-								View <span className="sr-only">{itemFields.title} </span>site
-								{itemFields.isArchived ? ' (archived)' : null}
+							<a className={styles['cta-link']} href={item.url}>
+								View <span className="sr-only">{item.title} </span>site
+								{item.isArchived ? ' (archived)' : null}
 							</a>
 						</li>
 					)}
-					{itemFields.githubUrl && (
+					{item.githubUrl && (
 						<li className={styles['cta-item']}>
-							<a className={styles['cta-link']} href={itemFields.githubUrl}>
-								View <span className="sr-only">{itemFields.title} </span> on Github
+							<a className={styles['cta-link']} href={item.githubUrl}>
+								View <span className="sr-only">{item.title} </span> on Github
 							</a>
 						</li>
 					)}
