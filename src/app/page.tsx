@@ -1,10 +1,10 @@
 import * as contentful from 'contentful';
-import { Header } from '@/components/header/header';
-import { Hero } from '@/components/hero/hero';
-import { Portfolio } from '@/components/portfolio/portfolio';
-import { About } from '@/components/about/about';
-import { Footer } from '@/components/footer/footer';
-import { IHeroFields, IAboutMeFields, IPortfolioItemFields } from '@/types/contentful';
+import { Header } from '@/src/components/header/header';
+import { Hero } from '@/src/components/hero/hero';
+import { Portfolio } from '@/src/components/portfolio/portfolio';
+import { About } from '@/src/components/about/about';
+import { Footer } from '@/src/components/footer/footer';
+import { IHeroFields, IAboutMeFields, IPortfolioItemFields } from '@/src/types/contentful';
 
 const getCmsData = async () => {
 	const contentfulClient = contentful.createClient({

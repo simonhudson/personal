@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { Inter, Lora } from 'next/font/google';
 import type { Metadata } from 'next';
 import Script from 'next/script';
-import '@/theme/global.scss';
+import '@/src/theme/global.scss';
 
 export const metadata: Metadata = {
 	title: 'Simon Hudson | Full Stack Developer',

@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { Metadata } from './metadata';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { slugify } from '@/utilities/slugify';
-import { type IPortfolioItemFields } from '@/types/contentful';
+import { slugify } from '@/src/utilities/slugify';
+import { type IPortfolioItemFields } from '@/src/types/contentful';
 import styles from './item.module.scss';
 
 interface ItemProps {

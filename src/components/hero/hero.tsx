@@ -1,6 +1,6 @@
 import styles from './hero.module.scss';
-import { parseToHtml } from '@/utilities/parse-to-html';
-import { type IHeroFields } from '@/types/contentful';
+import { parseToHtml } from '@/src/utilities/parse-to-html';
+import { type IHeroFields } from '@/src/types/contentful';
 
 interface HeroProps {
 	data?: IHeroFields;

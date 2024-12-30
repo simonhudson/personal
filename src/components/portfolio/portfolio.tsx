@@ -1,4 +1,4 @@
-import { type IPortfolioItemFields } from '@/types/contentful';
+import { type IPortfolioItemFields } from '@/src/types/contentful';
 import { Item } from './item';
 
 interface PortfolioProps {

@@ -31,6 +31,8 @@
 		"@types/node": "^20",
 		"@types/react": "^19.0.0",
 		"@types/react-dom": "^19.0.0",
+		"babel-jest": "^29.7.0",
+		"babel-loader": "^9.2.1",
 		"contentful-management": "^11.40.0",
 		"contentful-typescript-codegen": "^3.4.0",
 		"eslint": "^8",

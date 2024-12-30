@@ -1,9 +1,7 @@
 import React from 'react';
 import { About } from './about';
-import { MusicMock } from '../../../test/mocks/music.mock';
 import { screen, render } from '@testing-library/react';
-import { within } from '@testing-library/dom';
-import { AboutMock } from '../../../test/mocks/cms/about.mock';
+import { AboutMock } from '@/test/mocks/cms/about.mock';
 
 const ORIGINAL_FETCH = global.fetch;
 
@@ -11,7 +9,7 @@ describe('About', () => {
 	beforeEach(() => {
 		global.fetch = jest.fn(() =>
 			Promise.resolve({
-				json: () => Promise.resolve(MusicMock),
+				json: () => Promise.resolve(AboutMock),
 			}),
 		) as jest.Mock;
 	});
@@ -21,9 +19,12 @@ describe('About', () => {
 		global.fetch = ORIGINAL_FETCH;
 	});
 
-	it('should render as expected', async () => {
+	it('should render as expected', () => {
 		// When
-		await render(<About aboutData={{ fields: AboutMock }} />);
+		render(<About data={AboutMock} />);
+
+		// Then
+		expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('About me');
 	});
 
 	// it(`should render expected heading`, async () => {

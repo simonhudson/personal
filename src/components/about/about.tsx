@@ -2,9 +2,9 @@ import Links from './links';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './about.module.scss';
-import { Icon } from '@/components/icon/icon';
-import { parseToHtml } from '@/utilities/parse-to-html';
-import { type IAboutMeFields } from '@/types/contentful';
+import { Icon } from '@/src/components/icon/icon';
+import { parseToHtml } from '@/src/utilities/parse-to-html';
+import { type IAboutMeFields } from '@/src/types/contentful';
 interface AboutProps {
 	data?: IAboutMeFields;
 }

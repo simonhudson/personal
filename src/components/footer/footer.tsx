@@ -1,4 +1,4 @@
-import { Music } from '@/components/music/music';
+import { Music } from '@/src/components/music/music';
 import styles from './footer.module.scss';
 
 export const Footer = () => {
