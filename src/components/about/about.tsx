@@ -32,7 +32,7 @@ export const About = ({ data }: AboutProps) => {
 													{item.text}
 													&nbsp;(opens in a new tab)
 												</span>
-												<Icon name={item.icon.name} />
+												<Icon type={item.icon.type} name={item.icon.name} />
 											</Link>
 										</li>
 									);

@@ -1,4 +1,8 @@
-export type IconNames = 'cv' | 'github' | 'linkedin';
+const ICON_FILE_LINES = 'file-lines';
+const ICON_GITHUB = 'github';
+const ICON_LINKEDIN = 'linkedin';
+
+export type IconNames = typeof ICON_FILE_LINES | typeof ICON_GITHUB | typeof ICON_LINKEDIN;
 
 type Link = {
 	text: string;
@@ -17,7 +21,7 @@ const links: Links = [
 		link: '/files/Simon_Hudson_CV.pdf',
 		icon: {
 			type: 'solid',
-			name: 'cv',
+			name: ICON_FILE_LINES,
 		},
 	},
 	{
@@ -25,7 +29,7 @@ const links: Links = [
 		link: 'https://github.com/simonhudson',
 		icon: {
 			type: 'brand',
-			name: 'github',
+			name: ICON_GITHUB,
 		},
 	},
 	{
@@ -33,7 +37,7 @@ const links: Links = [
 		link: 'https://www.linkedin.com/in/hellosimonhudson/',
 		icon: {
 			type: 'brand',
-			name: 'linkedin',
+			name: ICON_LINKEDIN,
 		},
 	},
 ];
