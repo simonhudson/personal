@@ -25,10 +25,7 @@ const Layout = async ({ children }: { children: ReactNode }) => {
 	return (
 		<html lang="en" className={`${inter.variable} ${lora.variable}`}>
 			<body>
-				<>
-					{children}
-					<Script src="https://kit.fontawesome.com/6331124e0b.js" crossOrigin="anonymous" />
-				</>
+				<>{children}</>
 			</body>
 		</html>
 	);

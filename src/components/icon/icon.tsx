@@ -1,22 +1,27 @@
-import styles from './icon.module.scss';
+import { FileUser, Github, Linkedin } from 'lucide-react';
+import { type IconNames } from '@/src/components/about/links';
 
 type IconProps = {
-	type: 'solid' | 'brand';
-	name: string;
-	className?: string;
+	name: IconNames;
 };
 
-const typeMapping = {
-	solid: 'fas',
-	brand: 'fab',
-};
+export const Icon = ({ name }: IconProps) => {
+	let icon;
+	const color = '#fff';
+	const strokeWidth = 1.5;
 
-export const Icon = ({ type, name, className }: IconProps) => {
-	return (
-		<span
-			className={`${styles.icon} ${typeMapping[type]} fa-${name} ${className}`}
-			role="img"
-			aria-hidden="true"
-		></span>
-	);
+	switch (name) {
+		case 'cv':
+			icon = <FileUser aria-hidden={true} color={color} strokeWidth={strokeWidth} />;
+			break;
+		case 'github':
+			icon = <Github aria-hidden={true} color={color} strokeWidth={strokeWidth} />;
+			break;
+		case 'linkedin':
+			icon = <Linkedin aria-hidden={true} color={color} strokeWidth={strokeWidth} />;
+			break;
+		default:
+			break;
+	}
+	return icon;
 };

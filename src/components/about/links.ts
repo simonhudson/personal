@@ -1,9 +1,11 @@
+export type IconNames = 'cv' | 'github' | 'linkedin';
+
 type Link = {
 	text: string;
 	link: string;
 	icon: {
 		type: 'solid' | 'brand';
-		name: string;
+		name: IconNames;
 	};
 };
 
@@ -15,7 +17,7 @@ const links: Links = [
 		link: '/files/Simon_Hudson_CV.pdf',
 		icon: {
 			type: 'solid',
-			name: 'file-lines',
+			name: 'cv',
 		},
 	},
 	{
