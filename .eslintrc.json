@@ -14,6 +14,5 @@
 		"no-prototype-builtins": "off",
 		"react/display-name": "off",
 		"no-console": "error"
-	},
-	"ignorePatterns": ["./src/types/contentful.d.ts"]
+	}
 }
