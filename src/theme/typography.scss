@@ -1,15 +1,15 @@
 @use 'sass:map';
-@import './functions/to-rem.scss';
-@import './variables/palette.scss';
-@import './variables/spacing.scss';
-@import './variables/font.scss';
+@use './functions/to-rem.scss';
+@use './variables/palette.scss';
+@use './variables/spacing.scss';
+@use './variables/font.scss';
 
 p {
-	color: map.get($palette, 'primary', 'bodyText');
+	color: map.get(palette.$palette, 'primary', 'bodyText');
 	font-family: $font-serif;
 	font-weight: $font-weight;
 	line-height: toRem($font-line-height);
-	margin: 0 0 map-get($spacing, default);
+	margin: 0 0 map.get(spacing.$spacing, default);
 }
 
 span,

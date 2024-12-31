@@ -1,4 +1,4 @@
-@import '../../theme/media.scss';
+@use '../../theme/media.scss';
 
 .hero {
 	h1 {
@@ -10,7 +10,7 @@
 		line-height: 3.6rem;
 		margin: 0;
 
-		@include tabletLandscape {
+		@include media.tabletLandscape {
 			font-size: 2.4rem;
 			line-height: 4rem;
 			width: 70%;
