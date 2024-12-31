@@ -1,13 +1,13 @@
 import { type IAboutMeFields } from '@/src/types/contentful';
-import { BLOCKS } from '@contentful/rich-text-types/dist/blocks';
+import { type BLOCKS } from '@contentful/rich-text-types/dist/types/blocks';
 
 export const AboutMock: IAboutMeFields = {
 	copy: {
-		nodeType: BLOCKS.DOCUMENT,
+		nodeType: 'document' as BLOCKS.DOCUMENT,
 		data: {},
 		content: [
 			{
-				nodeType: BLOCKS.PARAGRAPH,
+				nodeType: 'paragraph' as BLOCKS.PARAGRAPH,
 				data: {},
 				content: [
 					{
@@ -17,7 +17,7 @@ export const AboutMock: IAboutMeFields = {
 						data: {},
 					},
 					{
-						nodeType: BLOCKS.EMBEDDED_ASSET,
+						nodeType: 'embedded-asset-block' as BLOCKS.EMBEDDED_ASSET,
 						data: {
 							uri: 'https://foo.com',
 						},
@@ -33,7 +33,7 @@ export const AboutMock: IAboutMeFields = {
 				],
 			},
 			{
-				nodeType: BLOCKS.PARAGRAPH,
+				nodeType: 'paragraph' as BLOCKS.PARAGRAPH,
 				data: {},
 				content: [
 					{
@@ -45,7 +45,7 @@ export const AboutMock: IAboutMeFields = {
 				],
 			},
 			{
-				nodeType: BLOCKS.PARAGRAPH,
+				nodeType: 'paragraph' as BLOCKS.PARAGRAPH,
 				data: {},
 				content: [
 					{

@@ -22,7 +22,6 @@
 		},
 		"target": "ES2017"
 	},
-	"files": ["global.d.ts"],
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
 	"exclude": ["node_modules", "getContentfulEnvironment.js"]
 }
