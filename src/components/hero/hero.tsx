@@ -6,7 +6,7 @@ interface HeroProps {
 	data?: IHeroFields;
 }
 
-export const Hero = async ({ data }: HeroProps) => {
+export const Hero = ({ data }: HeroProps) => {
 	return data ? (
 		<section className={styles.hero}>
 			<div className="inner-wrap">

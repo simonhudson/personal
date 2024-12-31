@@ -1,28 +1,41 @@
-import { SysMock } from './sys.mock';
+import { IHeroFields } from '@/src/types/contentful';
+import { type BLOCKS } from '@contentful/rich-text-types/dist/types/blocks';
 
-export const HeroMock = {
-	sys: {
-		...SysMock,
-		contentType: {
-			sys: {
-				id: 'hero',
-				linkType: 'ContentType',
-				type: 'Link',
-			},
-		},
-	},
+export const HeroMock: IHeroFields = {
 	heading: {
-		nodeType: 'document',
 		data: {},
 		content: [
-			{ nodeType: 'paragraph', data: {}, content: [{ nodeType: 'text', value: 'Hero Heading', marks: [] }] },
+			{
+				data: {},
+				content: [
+					{
+						data: {},
+						marks: [],
+						value: "Hello, my name's Simon Hudson",
+						nodeType: 'text',
+					},
+				],
+				nodeType: 'heading-1' as BLOCKS.HEADING_1,
+			},
 		],
+		nodeType: 'document' as BLOCKS.DOCUMENT,
 	},
-	subheading: {
-		nodeType: 'document',
+	subHeading: {
+		nodeType: 'document' as BLOCKS.DOCUMENT,
 		data: {},
 		content: [
-			{ nodeType: 'paragraph', data: {}, content: [{ nodeType: 'text', value: 'Hero Subheading', marks: [] }] },
+			{
+				nodeType: 'paragraph' as BLOCKS.PARAGRAPH,
+				data: {},
+				content: [
+					{
+						nodeType: 'text',
+						value: 'I am an experienced Full Stack Developer who use HTML, CSS and TypeScript to create accessible and usable websites and applications.',
+						marks: [],
+						data: {},
+					},
+				],
+			},
 		],
 	},
 };
