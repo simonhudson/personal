@@ -1,10 +1,10 @@
 import * as contentful from 'contentful';
-import { Header } from '@/components/header/header';
-import { Hero } from '@/components/hero/hero';
-import { Portfolio } from '@/components/portfolio/portfolio';
-import { About } from '@/components/about/about';
-import { Footer } from '@/components/footer/footer';
-import { type IPortfolioItem, IAboutMe } from '@/types/contentful';
+import { Header } from '@/src/components/header/header';
+import { Hero } from '@/src/components/hero/hero';
+import { Portfolio } from '@/src/components/portfolio/portfolio';
+import { About } from '@/src/components/about/about';
+import { Footer } from '@/src/components/footer/footer';
+import { IHeroFields, IAboutMeFields, IPortfolioItemFields } from '@/src/types/contentful';
 
 const getCmsData = async () => {
 	const contentfulClient = contentful.createClient({
@@ -15,21 +15,29 @@ const getCmsData = async () => {
 	return entries;
 };
 
+export const dynamic = 'force-dynamic';
+
 const Home = async () => {
 	const cmsData = await getCmsData();
 
-	const portfolioItems = cmsData.items.filter(
-		(item) => item.sys.contentType.sys.id === 'portfolioItem',
-	) as IPortfolioItem[];
+	const portfolioData = cmsData.items
+		.filter((item) => item.sys.contentType.sys.id === 'portfolioItem')
+		.map((item) => item.fields) as IPortfolioItemFields[] | [];
 
-	const aboutData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'aboutMe') as IAboutMe;
+	const aboutData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'aboutMe')?.fields as
+		| IAboutMeFields
+		| undefined;
+
+	const heroData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'hero')?.fields as
+		| IHeroFields
+		| undefined;
 
 	return (
 		<>
 			<Header />
-			<Hero />
-			<Portfolio items={portfolioItems} />
-			<About aboutData={aboutData} />
+			{heroData && <Hero data={heroData} />}
+			{portfolioData && <Portfolio items={portfolioData} />}
+			{aboutData && <About data={aboutData} />}
 			<Footer />
 		</>
 	);

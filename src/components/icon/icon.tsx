@@ -1,8 +1,9 @@
+import { type IconNames } from '@/src/components/about/links';
 import styles from './icon.module.scss';
 
 type IconProps = {
 	type: 'solid' | 'brand';
-	name: string;
+	name: IconNames;
 	className?: string;
 };
 

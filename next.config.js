@@ -19,21 +19,21 @@ const setEnvVars = () => {
 
 module.exports = {
 	env: setEnvVars(),
-	webpack(config) {
-		config.module.rules.push({
-			test: /\.(jpe?g|png|gif|svg)$/i,
-			use: ['url-loader?limit=10000', 'img-loader'],
-		});
-		config.resolve.fallback = { fs: false };
-		return config;
-	},
+	// webpack(config) {
+	// 	config.module.rules.push({
+	// 		test: /\.(jpe?g|png|gif|svg)$/i,
+	// 		use: ['url-loader?limit=10000', 'img-loader'],
+	// 	});
+	// 	config.resolve.fallback = { fs: false };
+	// 	return config;
+	// },
 	poweredByHeader: false,
 	async headers() {
 		return [
 			{
 				source: '/(.*)',
 				headers: createSecureHeaders({
-					// forceHTTPSRedirect: [true, { maxAge: 60 * 60 * 24 * 4, includeSubDomains: true }],
+					forceHTTPSRedirect: [true, { maxAge: 60 * 60 * 24 * 4, includeSubDomains: true }],
 					referrerPolicy: 'same-origin',
 					frameGuard: 'deny',
 					xssProtection: 'sanitize',
@@ -51,4 +51,12 @@ module.exports = {
 			},
 		],
 	},
+	// experimental: {
+	// 	turbo: {
+	// 		rules: {
+	// 			test: /\.(jpe?g|png|gif|svg)$/i,
+	// 			use: ['url-loader?limit=10000', 'img-loader'],
+	// 		},
+	// 	},
+	// },
 };

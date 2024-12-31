@@ -1,18 +1,18 @@
 import styles from './hero.module.scss';
+import { parseToHtml } from '@/src/utilities/parse-to-html';
+import { type IHeroFields } from '@/src/types/contentful';
 
-export const Hero = async () => {
-	return (
-		<section>
+interface HeroProps {
+	data?: IHeroFields;
+}
+
+export const Hero = ({ data }: HeroProps) => {
+	return data ? (
+		<section className={styles.hero}>
 			<div className="inner-wrap">
-				<h1 className={styles.title}>
-					Hello, my name&apos;s <strong>Simon Hudson</strong>
-				</h1>
-				<p className={styles['hero-copy']}>
-					I am an experienced <strong>Full Stack Developer</strong> who uses <strong>HTML</strong>,{' '}
-					<strong>CSS</strong>, <strong>JavaScript</strong> and <strong>TypeScript</strong> to create{' '}
-					<strong>accessible</strong> and <strong>usable</strong> websites and applications.
-				</p>
+				<div dangerouslySetInnerHTML={{ __html: parseToHtml(data.heading) }}></div>
+				<div dangerouslySetInnerHTML={{ __html: parseToHtml(data.subHeading) }}></div>
 			</div>
 		</section>
-	);
+	) : null;
 };

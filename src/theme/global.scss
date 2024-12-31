@@ -51,9 +51,15 @@ details summary::marker {
 }
 
 a {
-	border-bottom: 2px solid map.get(palette.$palette, brand);
+	border-bottom: 1px solid map.get(palette.$palette, grey);
 	color: map.get(palette.$palette, body-text);
 	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: map.get(palette.$palette, brand);
+	}
 }
 
 ul,

@@ -1,31 +1,22 @@
-import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-import { IAboutMeFields, type IAboutMe } from '@/types/contentful';
 import Links from './links';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './about.module.scss';
-import { Icon } from '@/components/icon/icon';
+import { Icon } from '@/src/components/icon/icon';
+import { parseToHtml } from '@/src/utilities/parse-to-html';
+import { type IAboutMeFields } from '@/src/types/contentful';
 interface AboutProps {
-	aboutData: IAboutMe;
+	data?: IAboutMeFields;
 }
 
-export const About = ({ aboutData }: AboutProps) => {
-	const parseContent = (): string => {
-		let copy = '';
-		if ((aboutData.fields as IAboutMeFields).copy) {
-			copy = documentToHtmlString((aboutData.fields as IAboutMeFields).copy);
-		}
-
-		return copy;
-	};
-
-	return (
+export const About = ({ data }: AboutProps) => {
+	return data ? (
 		<section>
 			<div className="inner-wrap">
 				<div className={styles.wrap}>
 					<div>
-						<h2> About me</h2>
-						<div dangerouslySetInnerHTML={{ __html: parseContent() }}></div>
+						<h2>About me</h2>
+						<div dangerouslySetInnerHTML={{ __html: parseToHtml(data.copy) }}></div>
 						{Links && (
 							<ul className={styles['link-list']}>
 								{Links.map((item, index: number) => {
@@ -61,5 +52,5 @@ export const About = ({ aboutData }: AboutProps) => {
 				</div>
 			</div>
 		</section>
-	);
+	) : null;
 };
