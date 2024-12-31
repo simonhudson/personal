@@ -7,16 +7,12 @@ interface HeroProps {
 }
 
 export const Hero = async ({ data }: HeroProps) => {
-	if (!data) return null;
-	const headingHtml = parseToHtml(data.heading);
-	const subHeadingHtml = parseToHtml(data.subHeading);
-
-	return (
+	return data ? (
 		<section className={styles.hero}>
 			<div className="inner-wrap">
-				<div dangerouslySetInnerHTML={{ __html: headingHtml }}></div>
-				<div dangerouslySetInnerHTML={{ __html: subHeadingHtml }}></div>
+				<div dangerouslySetInnerHTML={{ __html: parseToHtml(data.heading) }}></div>
+				<div dangerouslySetInnerHTML={{ __html: parseToHtml(data.subHeading) }}></div>
 			</div>
 		</section>
-	);
+	) : null;
 };

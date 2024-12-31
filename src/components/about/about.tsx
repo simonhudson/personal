@@ -10,8 +10,7 @@ interface AboutProps {
 }
 
 export const About = ({ data }: AboutProps) => {
-	if (!data) return null;
-	return (
+	return data ? (
 		<section>
 			<div className="inner-wrap">
 				<div className={styles.wrap}>
@@ -53,5 +52,5 @@ export const About = ({ data }: AboutProps) => {
 				</div>
 			</div>
 		</section>
-	);
+	) : null;
 };

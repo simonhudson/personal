@@ -12,19 +12,19 @@ export const AboutMock: IAboutMeFields = {
 				content: [
 					{
 						nodeType: 'text',
-						value: 'Foo bar',
+						value: 'Foo bar ',
 						marks: [],
 						data: {},
 					},
 					{
-						nodeType: 'embedded-asset-block' as BLOCKS.EMBEDDED_ASSET,
+						nodeType: 'hyperlink' as BLOCKS.EMBEDDED_ASSET,
 						data: {
 							uri: 'https://foo.com',
 						},
 						content: [
 							{
 								nodeType: 'text',
-								value: 'some link',
+								value: 'some link text',
 								marks: [],
 								data: {},
 							},
@@ -38,24 +38,8 @@ export const AboutMock: IAboutMeFields = {
 				content: [
 					{
 						nodeType: 'text',
-						value: 'Some extra copy',
+						value: 'Some extra copy in a second paragraph',
 						marks: [],
-						data: {},
-					},
-				],
-			},
-			{
-				nodeType: 'paragraph' as BLOCKS.PARAGRAPH,
-				data: {},
-				content: [
-					{
-						nodeType: 'text',
-						value: 'some strong text',
-						marks: [
-							{
-								type: 'strong',
-							},
-						],
 						data: {},
 					},
 				],
