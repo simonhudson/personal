@@ -3,22 +3,7 @@ import { About } from './about';
 import { screen, render } from '@testing-library/react';
 import { AboutMock } from '@/test/mocks/cms/about.mock';
 
-const ORIGINAL_FETCH = global.fetch;
-
 describe('About', () => {
-	beforeEach(() => {
-		global.fetch = jest.fn(() =>
-			Promise.resolve({
-				json: () => Promise.resolve(AboutMock),
-			}),
-		) as jest.Mock;
-	});
-
-	afterEach(() => {
-		jest.clearAllMocks();
-		global.fetch = ORIGINAL_FETCH;
-	});
-
 	it('should render as expected', () => {
 		// When
 		render(<About data={AboutMock} />);

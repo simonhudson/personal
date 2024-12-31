@@ -1,5 +1,5 @@
 import { type IAboutMeFields } from '@/src/types/contentful';
-import { BLOCKS } from '@contentful/rich-text-types/dist/types/blocks';
+import { BLOCKS } from '@contentful/rich-text-types/dist/blocks';
 
 export const AboutMock: IAboutMeFields = {
 	copy: {
