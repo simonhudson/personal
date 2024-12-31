@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { Inter, Lora } from 'next/font/google';
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import '@/src/theme/global.scss';
 
 export const metadata: Metadata = {

@@ -6,19 +6,25 @@ type IconProps = {
 };
 
 export const Icon = ({ name }: IconProps) => {
+	const props = {
+		'aria-hidden': true,
+		color: '#fff',
+		'data-testid': 'icon',
+		role: 'img',
+		strokeWidth: 1.5,
+	};
+
 	let icon;
-	const color = '#fff';
-	const strokeWidth = 1.5;
 
 	switch (name) {
 		case 'cv':
-			icon = <FileUser aria-hidden={true} color={color} strokeWidth={strokeWidth} />;
+			icon = <FileUser {...props} />;
 			break;
 		case 'github':
-			icon = <Github aria-hidden={true} color={color} strokeWidth={strokeWidth} />;
+			icon = <Github {...props} />;
 			break;
 		case 'linkedin':
-			icon = <Linkedin aria-hidden={true} color={color} strokeWidth={strokeWidth} />;
+			icon = <Linkedin {...props} />;
 			break;
 		default:
 			break;
