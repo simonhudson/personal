@@ -5,19 +5,17 @@ import { slugify } from '@/src/utilities/slugify';
 import { type IPortfolioItemFields } from '@/src/types/contentful';
 import styles from './item.module.scss';
 
-interface ItemProps {
+export interface ItemProps {
 	item: IPortfolioItemFields;
 	index: number;
 }
 
 export const Item = ({ item, index }: ItemProps) => {
-	if (item.omit) return null;
-
 	const copyHtml = item.copy ? documentToHtmlString(item.copy) : '';
 	const slug = slugify(item.title);
 
-	return (
-		<div className={styles.item}>
+	return !item.omit ? (
+		<article className={styles.item}>
 			<div className={styles.content}>
 				<div className={styles.text}>
 					<header className={styles.header}>
@@ -67,6 +65,6 @@ export const Item = ({ item, index }: ItemProps) => {
 					)}
 				</ul>
 			</footer>
-		</div>
-	);
+		</article>
+	) : null;
 };
