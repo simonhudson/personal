@@ -10,7 +10,7 @@ describe('Icon', () => {
 		// Then
 		const icon = screen.getByRole('img', { hidden: true });
 		expect(icon).toBeInTheDocument();
-		expect(icon).toHaveClass('fas fa-foo bar');
+		expect(icon).toHaveClass('icon fas fa-github bar');
 		expect(icon).toHaveAttribute('aria-hidden', 'true');
 	});
 });
