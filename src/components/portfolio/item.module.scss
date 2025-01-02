@@ -137,7 +137,7 @@
 }
 
 .cta-link {
-	background: map.get(palette.$palette, body-text);
+	background: map.get(palette.$palette, brand);
 	border: 0;
 	border-radius: 0.5rem;
 	color: map.get(palette.$palette, white);
