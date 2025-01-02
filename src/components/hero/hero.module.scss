@@ -1,3 +1,5 @@
+@use 'sass:map';
+@use '../../theme/variables/palette.scss';
 @use '../../theme/media.scss';
 
 .hero {
@@ -9,6 +11,10 @@
 		font-size: 2rem;
 		line-height: 3.6rem;
 		margin: 0;
+
+  b {
+    color: map.get(palette.$palette, brand);
+  }
 
 		@include media.tabletLandscape {
 			font-size: 2.4rem;
