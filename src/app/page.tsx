@@ -4,7 +4,7 @@ import { Hero } from '@/src/components/hero/hero';
 import { Portfolio } from '@/src/components/portfolio/portfolio';
 import { About } from '@/src/components/about/about';
 import { Footer } from '@/src/components/footer/footer';
-import { IHeroFields, IAboutMeFields, IPortfolioItemFields } from '@/src/types/contentful';
+import { IAboutMeFields, IPortfolioItemFields } from '@/src/types/contentful';
 
 const getCmsData = async () => {
 	const contentfulClient = contentful.createClient({
@@ -28,14 +28,14 @@ const Home = async () => {
 		| IAboutMeFields
 		| undefined;
 
-	const heroData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'hero')?.fields as
-		| IHeroFields
-		| undefined;
+	// const heroData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'hero')?.fields as
+	// 	| IHeroFields
+	// 	| undefined;
 
 	return (
 		<>
 			<Header />
-			{heroData && <Hero data={heroData} />}
+			<Hero />
 			{portfolioData && <Portfolio items={portfolioData} />}
 			{aboutData && <About data={aboutData} />}
 			<Footer />

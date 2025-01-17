@@ -22,7 +22,6 @@ export const Music = async () => {
 						<Link href={data.url}>&quot;{data.name}&quot;</Link>{' '}
 					</span>
 					<span>
-						<em>by</em>
 						<Link href={data.url}> {data.artist?.['#text']}</Link>
 					</span>
 					{/*<span>

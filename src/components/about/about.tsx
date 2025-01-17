@@ -5,6 +5,7 @@ import styles from './about.module.scss';
 import { Icon } from '@/src/components/icon/icon';
 import { parseToHtml } from '@/src/utilities/parse-to-html';
 import { type IAboutMeFields } from '@/src/types/contentful';
+import { Music } from '@/src/components/music/music';
 interface AboutProps {
 	data?: IAboutMeFields;
 }
@@ -14,9 +15,20 @@ export const About = ({ data }: AboutProps) => {
 		<section>
 			<div className="inner-wrap">
 				<div className={styles.wrap}>
-					<div>
-						<h2>About me</h2>
-						<div dangerouslySetInnerHTML={{ __html: parseToHtml(data.copy) }}></div>
+					<div className={styles.content}>
+						<Image
+							className={styles.image}
+							alt="Simon Hudson"
+							src="/images/self.png"
+							width="200"
+							height="200"
+						/>
+						<div>
+							<h2>About me</h2>
+							<div dangerouslySetInnerHTML={{ __html: parseToHtml(data.copy) }}></div>
+						</div>
+					</div>
+					<aside className={styles.aside}>
 						{Links && (
 							<ul className={styles['link-list']}>
 								{Links.map((item, index: number) => {
@@ -39,15 +51,7 @@ export const About = ({ data }: AboutProps) => {
 								})}
 							</ul>
 						)}
-					</div>
-					<aside className={styles.aside}>
-						<Image
-							className={styles.image}
-							alt="Simon Hudson"
-							src="/images/self.png"
-							width="200"
-							height="200"
-						/>
+						<Music />
 					</aside>
 				</div>
 			</div>
