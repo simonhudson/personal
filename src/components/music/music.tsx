@@ -26,7 +26,11 @@ export const Music = async () => {
 					</span>
 					{/*<span>
 						{data.relativeTime}
-						<Image
+						
+					</span>*/}
+				</p>
+			</div>
+   <Image
 							alt=""
 							aria-hidden="true"
 							className={styles['sound-icon']}
@@ -35,9 +39,6 @@ export const Music = async () => {
 							unoptimized={true}
 							width={64}
 						/> 
-					</span>*/}
-				</p>
-			</div>
 		</div>
 	) : (
 		<p>Sorry, we could not load data from Last.fm</p>
