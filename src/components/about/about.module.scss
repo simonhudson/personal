@@ -6,20 +6,37 @@
 .wrap {
 	gap: map.get(spacing.$spacing, default);
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: column;
 
-	@include media.tabletPortrait {
-		flex-direction: row-reverse;
+	@include media.tabletLandscape {
+		flex-direction: row;
+		gap: map.get(spacing.$spacing, lg);
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+
+	@include media.tabletLandscape {
+		flex-direction: row;
 		gap: map.get(spacing.$spacing, lg);
 	}
 }
 
 .aside {
+	display: flex;
+	flex-direction: column;
+
 	@include media.tabletPortrait {
-		width: 50%;
+		align-items: center;
+		flex-direction: row;
+		justify-content: space-between;
 	}
 
 	@include media.tabletLandscape {
+		flex-direction: column;
+		justify-content: flex-start;
 		width: map.get(spacing.$spacing, 5xl);
 	}
 }
@@ -29,18 +46,9 @@
 	border-radius: 100%;
 	box-shadow: 0 0 10px #ddd;
 	display: block;
-	height: 150px;
-	margin: 0 auto;
+	height: 200px;
+	margin: 0 auto map.get(spacing.$spacing, md);
 	width: auto;
-
-	@include media.tabletPortrait {
-		height: auto;
-		width: 100%;
-	}
-
-	@include media.desktop {
-		width: 100%;
-	}
 }
 
 .link-list {
@@ -50,11 +58,16 @@
 	justify-content: center;
 	list-style: none;
 	margin: 0;
-	padding: map.get(spacing.$spacing, md) 0 0;
+	padding: 0 0 map.get(spacing.$spacing, md);
 
 	@include media.tabletPortrait {
+		padding: 0;
+	}
+
+	@include media.tabletLandscape {
 		gap: map.get(spacing.$spacing, md);
 		justify-content: flex-start;
+		padding: 0 0 map.get(spacing.$spacing, md);
 	}
 }
 

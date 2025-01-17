@@ -5,8 +5,11 @@
 @use 'sass:map';
 
 .wrap {
+	background: map.get(palette.$palette, light-grey);
+	border-radius: 1rem;
 	display: flex;
 	flex-direction: column;
+	padding: map.get(spacing.$spacing, default);
 	text-align: left;
 }
 
@@ -16,16 +19,26 @@
 }
 
 .heading {
-	color: map.get(palette.$palette, white);
+	color: map.get(palette.$palette, body-text);
 	font-family: map.get(font.$font, sans-serif);
-	font-size: 1.4rem;
-	font-weight: map.get(font.$font, weight-bold);
-	padding: 0;
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.1rem;
+	margin: 0;
 	text-transform: uppercase;
+
+	// &::after {
+	// 	content: '';
+	// 	display: block;
+	// 	border-bottom: 2px solid map.get(palette.$palette, brand);
+	// 	margin: map.get(spacing.$spacing, xs) 0 0;
+	// 	width: map.get(spacing.$spacing, default);
+	// }
 }
 
 .text {
-	font-weight: map.get(font.$font, weight);
+	font-size: 1.4rem;
+	font-weight: map.get(font.$font, weight-bold);
 	line-height: 2.4rem;
 	margin: 0;
 	text-align: left;
@@ -42,6 +55,7 @@
 
 		&:nth-of-type(2) {
 			display: block;
+			font-weight: map.get(font.$font, weight);
 		}
 
 		&:nth-of-type(3) {
@@ -52,7 +66,7 @@
 
 	a {
 		border: 0;
-		color: map.get(palette.$palette, white);
+		color: map.get(palette.$palette, body-text);
 	}
 }
 
