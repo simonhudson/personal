@@ -7,9 +7,11 @@
 .wrap {
 	background: map.get(palette.$palette, light-grey);
 	border-radius: 1rem;
+	box-shadow: 0 0 10px #ddd;
 	display: flex;
 	flex-direction: column;
 	padding: map.get(spacing.$spacing, default);
+	position: relative;
 	text-align: left;
 }
 
@@ -72,6 +74,7 @@
 
 .image {
 	border-radius: 1rem;
+	border: 0.5rem solid #fff;
 	height: 6.4rem;
 	margin: 0 map.get(spacing.$spacing, default) 0 0;
 	width: 6.4rem;
@@ -83,6 +86,9 @@
 
 .sound-icon {
 	height: 3.2rem;
+	position: absolute;
+	right: map.get(spacing.$spacing, default);
+	top: map.get(spacing.$spacing, default);
 	width: 3.2rem;
 
 	@include media.prefersReducedMotion {
