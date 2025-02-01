@@ -39,7 +39,7 @@
 
 .metadata-item {
 	display: inline;
- font-family: map.get(font.$font, serif);
+ font-family: map.get(font.$font, sans-serif);
 	line-height: 1.8rem;
 	margin: 0 0 0.8rem;
 
