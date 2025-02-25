@@ -7,11 +7,11 @@ import { parseToHtml } from '@/src/utilities/parse-to-html';
 import { type IAboutMeFields } from '@/src/types/contentful';
 import { Music } from '@/src/components/music/music';
 interface AboutProps {
-	data?: IAboutMeFields;
+	data: IAboutMeFields;
 }
 
 export const About = ({ data }: AboutProps) => {
-	return data ? (
+	return (
 		<section>
 			<div className="inner-wrap">
 				<div className={styles.wrap}>
@@ -56,5 +56,5 @@ export const About = ({ data }: AboutProps) => {
 				</div>
 			</div>
 		</section>
-	) : null;
+	);
 };
