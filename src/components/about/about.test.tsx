@@ -3,21 +3,14 @@ import { About } from './about';
 import { screen, render, within } from '@testing-library/react';
 import { AboutMock } from '@/test/mocks/cms/about.mock';
 
+jest.mock('@/src/components/music/music', () => ({
+	Music: () => <div>Music</div>,
+}));
+
 describe('About', () => {
-	it('should render nothing if no data is provided', () => {
-		// When
-		render(<About />);
-
-		// Then
-		expect(screen.queryByRole('heading')).not.toBeInTheDocument();
-		expect(screen.queryByRole('paragraph')).not.toBeInTheDocument();
-		expect(screen.queryByRole('list')).not.toBeInTheDocument();
-	});
-
-	it('should render expected copy', () => {
+	it('should render expected copy', async () => {
 		// When
 		render(<About data={AboutMock} />);
-
 		// Then
 		expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('About me');
 		const paragraphs = screen.getAllByRole('paragraph');

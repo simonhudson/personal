@@ -30,15 +30,15 @@ export const Music = async () => {
 					</span>*/}
 				</p>
 			</div>
-   <Image
-							alt=""
-							aria-hidden="true"
-							className={styles['sound-icon']}
-							height={64}
-							src="/images/icon-audio-wave.gif"
-							unoptimized={true}
-							width={64}
-						/> 
+			<Image
+				alt=""
+				aria-hidden="true"
+				className={styles['sound-icon']}
+				height={64}
+				src="/images/icon-audio-wave.gif"
+				unoptimized={true}
+				width={64}
+			/>
 		</div>
 	) : (
 		<p>Sorry, we could not load data from Last.fm</p>
