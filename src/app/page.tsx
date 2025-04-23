@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import * as contentful from 'contentful';
 import { Header } from '@/src/components/header/header';
 import { Hero } from '@/src/components/hero/hero';
@@ -14,8 +15,6 @@ const getCmsData = async () => {
 	const entries = await contentfulClient.getEntries();
 	return entries;
 };
-
-export const dynamic = 'force-dynamic';
 
 const Home = async () => {
 	const cmsData = await getCmsData();

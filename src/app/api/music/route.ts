@@ -3,6 +3,7 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 import { NextResponse } from 'next/server';
+import { type MusicResponse } from '@/src/types/music';
 
 export const GET = async (): Promise<NextResponse> => {
 	const response = await fetch(
@@ -13,8 +14,13 @@ export const GET = async (): Promise<NextResponse> => {
 		const data = await response?.json();
 		const recentTrack = data?.recenttracks?.track[0];
 		if (recentTrack) {
-			const displayData = { ...recentTrack };
-			displayData.relativeTime = recentTrack?.date ? dayjs(recentTrack.date['#text']).fromNow() : 'Now playing';
+			const displayData: MusicResponse = {
+				artist: recentTrack.artist?.['#text'],
+				image: recentTrack.image[3]['#text'],
+				name: recentTrack.name,
+				relativeTime: recentTrack?.date ? dayjs(recentTrack.date['#text']).fromNow() : 'Now playing',
+				url: recentTrack.url,
+			};
 			return NextResponse.json(displayData);
 		}
 	}

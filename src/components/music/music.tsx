@@ -1,20 +1,30 @@
+'use client';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './music.module.scss';
+import { type MusicResponse } from '@/src/types/music';
 
-export const Music = async () => {
-	const response = await fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/api/music`);
-	const data = await response.json();
+export const Music = () => {
+	const [data, setData] = useState<MusicResponse | null>(null);
+
+	useEffect(() => {
+		(async () => {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/api/music`);
+			const responseData: MusicResponse = await response.json();
+			setData(responseData);
+		})();
+	}, []);
 
 	return data ? (
 		<div className={styles.wrap}>
 			<h3 className={styles.heading}>Now playing</h3>
 			<div className={styles.inner}>
 				<Image
-					alt={`Now playing "${data.name}" by ${data.artist?.['#text']}`}
+					alt={`Now playing "${data.name}" by ${data.artist}`}
 					className={styles.image}
 					height={300}
-					src={data.image[3]['#text']}
+					src={data.image}
 					width={300}
 				/>
 				<p className={styles.text}>
@@ -22,12 +32,9 @@ export const Music = async () => {
 						<Link href={data.url}>&quot;{data.name}&quot;</Link>{' '}
 					</span>
 					<span>
-						<Link href={data.url}> {data.artist?.['#text']}</Link>
+						<Link href={data.url}> {data.artist}</Link>
 					</span>
-					{/*<span>
-						{data.relativeTime}
-						
-					</span>*/}
+					<span>{data.relativeTime}</span>
 				</p>
 			</div>
 			<Image
