@@ -5,14 +5,16 @@
 @use 'sass:map';
 
 .wrap {
-	background: map.get(palette.$palette, light-grey);
-	border-radius: 1rem;
-	box-shadow: 0 0 10px #ddd;
 	display: flex;
 	flex-direction: column;
-	padding: map.get(spacing.$spacing, default);
+	padding: map.get(spacing.$spacing, default) 0;
 	position: relative;
 	text-align: left;
+
+	@include media.tabletLandscape {
+		max-width: 50%;
+		padding: 0;
+	}
 }
 
 .inner {
@@ -21,21 +23,13 @@
 }
 
 .heading {
-	color: map.get(palette.$palette, body-text);
+	color: map.get(palette.$palette, white);
 	font-family: map.get(font.$font, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 400;
 	letter-spacing: 0.1rem;
 	margin: 0;
 	text-transform: uppercase;
-
-	// &::after {
-	// 	content: '';
-	// 	display: block;
-	// 	border-bottom: 2px solid map.get(palette.$palette, brand);
-	// 	margin: map.get(spacing.$spacing, xs) 0 0;
-	// 	width: map.get(spacing.$spacing, default);
-	// }
 }
 
 .text {
@@ -68,13 +62,13 @@
 
 	a {
 		border: 0;
-		color: map.get(palette.$palette, body-text);
+		color: map.get(palette.$palette, white);
 	}
 }
 
 .image {
-	border-radius: 1rem;
-	border: 0.5rem solid #fff;
+	border-radius: 0.75rem;
+	border: 3px solid #fff;
 	height: 6.4rem;
 	margin: 0 map.get(spacing.$spacing, default) 0 0;
 	width: 6.4rem;

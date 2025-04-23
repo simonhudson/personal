@@ -7,6 +7,8 @@
 .footer {
 	background: map.get(palette.$palette, body-text);
 	color: map.get(palette.$palette, white);
+	display: flex;
+	flex-direction: column;
 	padding: map.get(spacing.$spacing, default) 0;
 	font-size: 1.4rem;
 

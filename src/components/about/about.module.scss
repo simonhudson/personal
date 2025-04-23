@@ -53,37 +53,26 @@
 
 .link-list {
 	display: flex;
-	flex-direction: row;
-	gap: map.get(spacing.$spacing, lg);
+	flex-direction: column;
+	gap: map.get(spacing.$spacing, default);
 	justify-content: center;
 	list-style: none;
 	margin: 0;
 	padding: 0 0 map.get(spacing.$spacing, md);
 
 	@include media.tabletPortrait {
-		padding: 0;
+		flex-direction: row;
+		gap: map.get(spacing.$spacing, lg);
+		justify-content: left;
+		padding: map.get(spacing.$spacing, md) 0 0;
 	}
 
 	@include media.tabletLandscape {
 		gap: map.get(spacing.$spacing, md);
 		justify-content: flex-start;
-		padding: 0 0 map.get(spacing.$spacing, md);
 	}
-}
 
-.link-list-link {
-	background: map.get(palette.$palette, cta-background);
-	border-radius: 100%;
-	border: 0;
-	display: flex;
-	font-size: 2.4rem;
-	outline: 5px solid transparent;
-	padding: map.get(spacing.$spacing, default);
-	text-decoration: none;
-	transition: all 0.5s ease;
-
-	&:hover,
-	&:focus-visible {
-		outline: 5px solid map.get(palette.$palette, brand);
+	span:first-of-type {
+		margin-right: 1rem;
 	}
 }

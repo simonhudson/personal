@@ -20,7 +20,6 @@ export const Music = () => {
 
 	return (
 		<div className={styles.wrap}>
-			<h3 className={styles.heading}>Now playing</h3>
 			<div className={styles.inner}>
 				{isLoading && <p>Loading&hellip;</p>}
 				{!isLoading && !data && <p>Sorry, we could not load data from Last.fm</p>}
@@ -45,15 +44,6 @@ export const Music = () => {
 					</>
 				)}
 			</div>
-			<Image
-				alt=""
-				aria-hidden="true"
-				className={styles['sound-icon']}
-				height={64}
-				src="/images/icon-audio-wave.gif"
-				unoptimized={true}
-				width={64}
-			/>
 		</div>
 	);
 };

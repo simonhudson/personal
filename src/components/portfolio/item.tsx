@@ -50,7 +50,7 @@ export const Item = ({ item, index }: ItemProps) => {
 				<ul className={styles['cta-list']}>
 					{item.url && (
 						<li className={styles['cta-item']}>
-							<a className={styles['cta-link']} href={item.url}>
+							<a className="cta-link" href={item.url}>
 								View <span className="sr-only">{item.title} </span>site
 								{item.isArchived ? ' (archived)' : null}
 							</a>
@@ -58,7 +58,7 @@ export const Item = ({ item, index }: ItemProps) => {
 					)}
 					{item.githubUrl && (
 						<li className={styles['cta-item']}>
-							<a className={styles['cta-link']} href={item.githubUrl}>
+							<a className="cta-link" href={item.githubUrl}>
 								View <span className="sr-only">{item.title} </span> on Github
 							</a>
 						</li>
