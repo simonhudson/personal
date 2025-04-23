@@ -8,7 +8,7 @@ describe('Icon', () => {
 		render(<Icon type="solid" name="github" className="bar" />);
 
 		// Then
-		const icon = screen.getByRole('img', { hidden: true });
+		const icon = screen.getByRole('presentation', { hidden: true });
 		expect(icon).toBeInTheDocument();
 		expect(icon).toHaveClass('icon fas fa-github bar');
 		expect(icon).toHaveAttribute('aria-hidden', 'true');
