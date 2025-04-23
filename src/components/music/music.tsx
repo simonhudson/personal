@@ -55,7 +55,5 @@ export const Music = () => {
 				width={64}
 			/>
 		</div>
-		// ): (
-		// <p>Sorry, we could not load data from Last.fm</p>
 	);
 };
