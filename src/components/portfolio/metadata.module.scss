@@ -21,10 +21,12 @@
 }
 
 .title {
- font-family: map.get(font.$font, sans-serif);
-	font-size: 1.4rem;
+	color: map.get(palette.$palette, body-text);
+	font-family: map.get(font.$font, sans-serif);
+	font-size: 1.2rem;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
 	font-weight: map.get(font.$font, weight-bold);
-	margin: 0 0 map.get(spacing.$spacing, xsm);
 }
 
 .metadata-list {
@@ -39,7 +41,6 @@
 
 .metadata-item {
 	display: inline;
- font-family: map.get(font.$font, sans-serif);
 	line-height: 1.8rem;
 	margin: 0 0 0.8rem;
 
