@@ -5,7 +5,7 @@ export const Header = () => {
 	return (
 		<header className={styles.header}>
 			<div>
-				<Logo />
+				<Logo fillColour="#f05930" />
 				<h1 className={styles.heading}>Simon Hudson</h1>
 			</div>
 			<p className={styles.copy}>
