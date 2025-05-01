@@ -34,7 +34,7 @@ const Home = async () => {
 	return (
 		<>
 			<Header />
-			<Hero />
+			{/* <Hero /> */}
 			{portfolioData && <Portfolio items={portfolioData} />}
 			{aboutData && <About data={aboutData} />}
 			<Footer />

@@ -27,18 +27,18 @@ section {
 
 .inner-wrap {
 	margin: 0 auto;
-	width: 90%;
+	width: 100%;
 
-	&:first-of-type {
-		height: 100%;
-	}
+	// &:first-of-type {
+	// 	height: 100%;
+	// }
 
-	@include media.tabletLandscape {
-		padding: 0;
-		width: map.get(breakpoints.$breakpoints, 'tablet-landscape');
-	}
+	// @include media.tabletLandscape {
+	// 	padding: 0;
+	// 	width: map.get(breakpoints.$breakpoints, 'tablet-landscape');
+	// }
 
-	@include media.desktop {
-		width: map.get(breakpoints.$breakpoints, 'desktop');
-	}
+	// @include media.desktop {
+	// 	width: map.get(breakpoints.$breakpoints, 'desktop');
+	// }
 }

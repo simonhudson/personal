@@ -14,26 +14,12 @@ h4 {
 	margin: 0;
 }
 
-h1,
-h2 {
-	&::after {
-		content: '';
-		display: block;
-		border-bottom: 3px solid map.get(palette.$palette, brand);
-	}
-}
-
 h1 {
 	font-family: map.get(font.$font, serif);
 	font-size: 3rem;
 	font-weight: map.get(font.$font, weight);
-	line-height: 5rem;
+	// line-height: 5rem;
 	margin: 0;
-
-	&::after {
-		margin: map.get(spacing.$spacing, default) 0;
-		width: map.get(spacing.$spacing, lg);
-	}
 }
 
 h2 {

@@ -1,11 +1,37 @@
 @use 'sass:map';
 @use '../../theme/media.scss';
 @use '../../theme/variables/spacing.scss';
+@use '../../theme/variables/font.scss';
+@use '../../theme/variables/palette.scss';
+@use '../../theme/functions/to-rem.scss';
 
 .header {
+	border-top: 10px solid map.get(palette.$palette, brand);
 	padding: map.get(spacing.$spacing, md) 0 0;
 
-	@include media.tabletPortrait {
-		padding: map.get(spacing.$spacing, lg) 0 0;
+	div {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		gap: map.get(spacing.$spacing, default);
+	}
+}
+
+.heading {
+	font-family: map.get(font.$font, sans-serif);
+	font-size: 2.2rem;
+	font-weight: map.get(font.$font, weight-bold);
+	text-transform: uppercase;
+}
+
+.copy {
+	font-size: 2rem;
+	line-height: 3.6rem;
+	margin: 0;
+
+	@include media.tabletLandscape {
+		font-size: 2.2rem;
+		line-height: 4rem;
+		padding-left: 7.2rem;
 	}
 }
