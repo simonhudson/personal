@@ -2,7 +2,7 @@ import { Header } from '@/src/components/header/header';
 import { Footer } from '@/src/components/footer/footer';
 import Link from 'next/link';
 
-function NotFoundPage() {
+const NotFoundPage = () => {
 	return (
 		<>
 			<Header />
@@ -18,6 +18,6 @@ function NotFoundPage() {
 			<Footer />
 		</>
 	);
-}
+};
 
 export default NotFoundPage;
