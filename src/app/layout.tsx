@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 	description: 'Simon Hudson is a Full Stack Developer based in Derby, UK.',
 };
 
-export const inter = Inter({
+const inter = Inter({
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-sans-serif',
 });
 
-export const lora = Lora({
+const lora = Lora({
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-serif',
