@@ -1,9 +1,4 @@
 import styles from './hero.module.scss';
-// import { type IHeroFields } from '@/src/types/contentful';
-
-// interface HeroProps {
-// 	data?: IHeroFields;
-// }
 
 export const Hero = () => {
 	return (
