@@ -11,19 +11,21 @@ type Link = {
 		type: 'solid' | 'brand';
 		name: IconNames;
 	};
+omit?: boolean;
 };
 
 type Links = Link[];
 
 const links: Links = [
-/*	{
+{
 		text: 'Download my CV',
 		link: '/files/Simon_Hudson_CV.pdf',
 		icon: {
 			type: 'solid',
 			name: ICON_FILE_LINES,
 		},
-	},*/
+omit: true,
+	}
 	{
 		text: 'Github profile',
 		link: 'https://github.com/simonhudson',
