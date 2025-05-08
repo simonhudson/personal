@@ -40,10 +40,6 @@
 	text-align: left;
 
 	span {
-		em,
-		&:nth-of-type(3) {
-			font-weight: map.get(font.$font, weight);
-		}
 
 		em {
 			font-size: 1.4rem;
@@ -51,12 +47,12 @@
 
 		&:nth-of-type(2) {
 			display: block;
-			font-weight: map.get(font.$font, weight);
 		}
 
 		&:nth-of-type(3) {
 			display: block;
 			font-size: 1.2rem;
+font-weight: map.get(font.$font, weight);
 		}
 	}
 
