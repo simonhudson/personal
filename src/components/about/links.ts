@@ -11,7 +11,7 @@ type Link = {
 		type: 'solid' | 'brand';
 		name: IconNames;
 	};
-omit?: boolean;
+ omit?: boolean;
 };
 
 type Links = Link[];
@@ -24,8 +24,8 @@ const links: Links = [
 			type: 'solid',
 			name: ICON_FILE_LINES,
 		},
-omit: true,
-	}
+  omit: true
+	},
 	{
 		text: 'Github profile',
 		link: 'https://github.com/simonhudson',
