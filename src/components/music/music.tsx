@@ -25,7 +25,6 @@ export const Music = () => {
 				{!isLoading && !data && <p>Sorry, we could not load data from Last.fm</p>}
 				{!isLoading && data && (
 					<>
-<p className={styles.heading}>{data.relativeTime}</p>
 						<Image
 							alt={`Now playing "${data.name}" by ${data.artist}`}
 							className={styles.image}
@@ -34,6 +33,7 @@ export const Music = () => {
 							width={300}
 						/>
 						<p className={styles.text}>
+<span className={styles.heading}>{data.relativeTime}</span>
 							<span>
 								<Link href={data.url}>&quot;{data.name}&quot;</Link>{' '}
 							</span>
