@@ -19,7 +19,7 @@ h2 {
 	&::after {
 		content: '';
 		display: block;
-		border-bottom: 3px solid map.get(palette.$palette, brand);
+		border-bottom: 2px solid map.get(palette.$palette, brand);
 	}
 }
 
@@ -27,7 +27,7 @@ h1 {
 	font-family: map.get(font.$font, serif);
 	font-size: 3rem;
 	font-weight: map.get(font.$font, weight);
-	line-height: 5rem;
+	line-height: 4.4rem;
 	margin: 0;
 
 	&::after {
