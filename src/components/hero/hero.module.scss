@@ -8,16 +8,16 @@
 	}
 
 	h1 {
-		font-size: 3.6rem;
+		font-size: 3.2rem;
 	}
 
 	p {
-		font-size: 2.2rem;
+		font-size: 2rem;
 		line-height: 3.6rem;
 		margin: 0;
 
 		@include media.tabletLandscape {
-			font-size: 2.4rem;
+			font-size: 2.2rem;
 			line-height: 4rem;
 			width: 70%;
 		}

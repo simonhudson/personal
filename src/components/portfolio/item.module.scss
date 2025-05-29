@@ -6,8 +6,6 @@
 
 .item {
 	background: map.get(palette.$palette, white);
-	border-radius: 1rem;
-	box-shadow: 0 0 10px #ddd;
 	display: flex;
 	flex-direction: column;
 	margin: 0 0 map.get(spacing.$spacing, lg);
@@ -52,7 +50,6 @@
 	display: flex;
 	flex-direction: column-reverse;
 	gap: map.get(spacing.$spacing, default);
-	padding: map.get(spacing.$spacing, default);
 
 	@include media.tabletLandscape {
 		flex-direction: row-reverse;
@@ -92,11 +89,8 @@
 }
 
 .footer {
-	background: map.get(palette.$palette, light-grey);
 	border-bottom-right-radius: 1rem;
 	border-bottom-left-radius: 1rem;
-
-	padding: 0 map.get(spacing.$spacing, default);
 
 	@include media.tabletLandscape {
 		padding: map.get(spacing.$spacing, default) map.get(spacing.$spacing, md);

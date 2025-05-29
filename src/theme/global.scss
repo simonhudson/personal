@@ -25,12 +25,13 @@ fieldset {
 }
 
 html {
-	border-top: 10px solid map.get(palette.$palette, brand);
+	// border-top: 10px solid map.get(palette.$palette, brand);
 	font-size: font.$base-font-size;
 }
 
 body {
 	font-size: map.get(font.$font, size);
+	padding: 0 map.get(spacing.$spacing, md);
 }
 
 .no-scroll {

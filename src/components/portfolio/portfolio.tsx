@@ -18,7 +18,7 @@ export const Portfolio = ({ items }: PortfolioProps) => {
 	return (
 		<section>
 			<div className="inner-wrap">
-				<h2>My work</h2>
+				<h2 className="sr-only">My work</h2>
 				{items.map((item: IPortfolioItemFields, index: number) => (
 					<Item key={`portfolio-item-${index}`} item={item} index={index} />
 				))}
