@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Inter, Lora } from 'next/font/google';
+import { Lora, Open_Sans } from 'next/font/google';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import '@/src/theme/global.scss';
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 	description: 'Simon Hudson is a Full Stack Developer based in Derby, UK.',
 };
 
-const inter = Inter({
+const openSans = Open_Sans({
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-sans-serif',
@@ -23,7 +23,7 @@ const lora = Lora({
 
 const Layout = async ({ children }: { children: ReactNode }) => {
 	return (
-		<html lang="en" className={`${inter.variable} ${lora.variable}`}>
+		<html lang="en" className={`${openSans.variable} ${lora.variable}`}>
 			<body>
 				<>
 					{children}
