@@ -32,10 +32,6 @@ describe('About', () => {
 		const links = within(screen.getByRole('list')).getAllByRole('link');
 		[
 			{
-				text: 'Download my CV',
-				href: '/files/Simon_Hudson_CV.pdf',
-			},
-			{
 				text: 'Github profile',
 				href: 'https://github.com/simonhudson',
 			},
