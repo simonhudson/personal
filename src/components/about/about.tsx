@@ -28,7 +28,7 @@ export const About = ({ data }: AboutProps) => {
 							{Links && (
 								<ul className={styles['link-list']}>
 									{Links.map((item, index: number) => {
-										return (
+										return item.omit ? null : (
 											<li key={`link-${index}`}>
 												<Link
 													className="cta-link"

@@ -33,13 +33,13 @@ export const Music = () => {
 							width={300}
 						/>
 						<p className={styles.text}>
+<span className={styles.heading}>{data.relativeTime}</span>
 							<span>
 								<Link href={data.url}>&quot;{data.name}&quot;</Link>{' '}
 							</span>
 							<span>
 								<Link href={data.url}> {data.artist}</Link>
 							</span>
-							<span>{data.relativeTime}</span>
 						</p>
 					</>
 				)}
