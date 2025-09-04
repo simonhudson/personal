@@ -1,8 +1,4 @@
-@use 'sass:map';
 @use 'media.scss';
-@use 'variables/breakpoints.scss';
-@use 'variables/palette.scss';
-@use 'variables/spacing.scss';
 
 section {
 	background: transparent;
@@ -35,10 +31,10 @@ section {
 
 	@include media.tabletLandscape {
 		padding: 0;
-		width: map.get(breakpoints.$breakpoints, 'tablet-landscape');
+		width: var(--breakpoint-tablet-landscape);
 	}
 
 	@include media.desktop {
-		width: map.get(breakpoints.$breakpoints, 'desktop');
+		width: var(--breakpoint-desktop);
 	}
 }

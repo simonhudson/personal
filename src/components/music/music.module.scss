@@ -1,5 +1,4 @@
 @use '../../theme/media.scss';
-@use '../../theme/variables/font.scss';
 @use 'sass:map';
 
 .wrap {
@@ -22,7 +21,7 @@
 
 .heading {
 	color: var(--palette-white);
-	font-family: map.get(font.$font, sans-serif);
+	font-family: var(--font-sans-serif);
 	font-size: 1.2rem;
 	font-weight: 400;
 	letter-spacing: 0.1rem;
@@ -32,7 +31,7 @@
 
 .text {
 	font-size: 1.4rem;
-	font-weight: map.get(font.$font, weight-bold);
+	font-weight: var(--font-weight-bold);
 	line-height: 2.4rem;
 	margin: 0;
 	text-align: left;
@@ -49,7 +48,7 @@
 		&:nth-of-type(3) {
 			display: block;
 			font-size: 1.2rem;
-			font-weight: map.get(font.$font, weight);
+			font-weight: var(--font-weight);
 		}
 	}
 

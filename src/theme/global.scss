@@ -1,7 +1,3 @@
-@use 'sass:map';
-@use 'sass:math';
-@use 'variables/breakpoints.scss';
-@use 'variables/font.scss';
 @use 'headings.scss';
 @use 'layout.scss';
 @use './functions/to-rem.scss';
@@ -29,6 +25,23 @@
 	--spacing-3xl: calc(var(--spacing-base) * 10);
 	--spacing-4xl: calc(var(--spacing-base) * 14);
 	--spacing-5xl: calc(var(--spacing-base) * 20);
+
+	// Font
+	--font-sans-serif: 'Poppins', arial, helvetica, sans-serif;
+	--font-serif: 'Merriweather', georgia, serif;
+
+	// Typography
+	--font-size: var(--spacing-base);
+	--font-weight: 400;
+	--font-weight-bold: 700;
+	--line-height: 2.8rem;
+
+	// Breakpoints
+	--breakpoint-phone-portrait: 420px;
+	--breakpoint-phone-landscape: 650px;
+	--breakpoint-tablet-portrait: 768px;
+	--breakpoint-tablet-landscape: 1024px;
+	--breakpoint-desktop: 1200px;
 }
 
 html {
@@ -41,9 +54,9 @@ fieldset {
 	box-sizing: border-box;
 	background: var(--palette-body-background);
 	color: var(--palette-body-text);
-	font-family: map.get(font.$font, serif);
-	font-weight: map.get(font.$font, weight);
-	line-height: map.get(font.$font, line-height);
+	font-family: var(--font-serif);
+	font-weight: var(--font-weight);
+	line-height: var(--font-line-height);
 	margin: 0;
 	padding: 0;
 	text-rendering: optimizeLegibility;
@@ -51,11 +64,7 @@ fieldset {
 
 html {
 	border-top: 10px solid var(--palette-brand);
-	font-size: font.$base-font-size;
-}
-
-body {
-	font-size: map.get(font.$font, size);
+	font-size: var(--font-size);
 }
 
 .no-scroll {
@@ -114,7 +123,7 @@ li {
 	display: block;
 	font-family: var(--font-sans-serif);
 	font-size: 1.4rem;
-	font-weight: map.get(font.$font, weight-bold);
+	font-weight: var(--font-weight-bold);
 	outline: 5px solid transparent;
 	padding: var(--spacing-xs) var(--spacing-default);
 	text-align: center;

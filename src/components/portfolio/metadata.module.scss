@@ -1,5 +1,4 @@
 @use 'sass:map';
-@use '../../theme/variables/font.scss';
 @use '../../theme/media.scss';
 
 .wrap {
@@ -20,11 +19,11 @@
 
 .title {
 	color: var(--palette-body-text);
-	font-family: map.get(font.$font, sans-serif);
+	font-family: var(--font-sans-serif);
 	font-size: 1.2rem;
 	letter-spacing: 0.1rem;
 	text-transform: uppercase;
-	font-weight: map.get(font.$font, weight-bold);
+	font-weight: var(--font-weight-bold);
 }
 
 .metadata-list {

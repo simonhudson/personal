@@ -2,10 +2,9 @@
 @use './functions/to-rem.scss';
 @use './variables/palette.scss';
 @use './variables/spacing.scss';
-@use './variables/font.scss';
 
 p {
-	color: var(--palette- 'primary', 'bodyText');
+	color: var(--palette-body-text);
 	font-family: $font-serif;
 	font-weight: $font-weight;
 	line-height: toRem($font-line-height);
