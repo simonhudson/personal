@@ -5,11 +5,11 @@
 @use './variables/font.scss';
 
 p {
-	color: map.get(palette.$palette, 'primary', 'bodyText');
+	color: var(--palette- 'primary', 'bodyText');
 	font-family: $font-serif;
 	font-weight: $font-weight;
 	line-height: toRem($font-line-height);
-	margin: 0 0 map.get(spacing.$spacing, default);
+	margin: 0 0 var(--spacing-default);
 }
 
 span,
@@ -21,7 +21,7 @@ em {
 }
 
 strong {
-	font-weight: $font-weight-bold;
+	font-weight: 700;
 }
 
 small {

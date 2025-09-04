@@ -1,16 +1,13 @@
-@use 'sass:map';
-@use '../../theme/variables/spacing.scss';
-@use '../../theme/variables/palette.scss';
 @use '../../theme/media.scss';
 
 .wrap {
-	gap: map.get(spacing.$spacing, default);
+	gap: var(--spacing-default);
 	display: flex;
 	flex-direction: column;
 
 	@include media.tabletLandscape {
 		flex-direction: row;
-		gap: map.get(spacing.$spacing, lg);
+		gap: var(--spacing-lg);
 	}
 }
 
@@ -20,7 +17,7 @@
 
 	@include media.tabletLandscape {
 		flex-direction: row;
-		gap: map.get(spacing.$spacing, lg);
+		gap: var(--spacing-lg);
 	}
 }
 
@@ -37,38 +34,38 @@
 	@include media.tabletLandscape {
 		flex-direction: column;
 		justify-content: flex-start;
-		width: map.get(spacing.$spacing, 5xl);
+		width: var(--spacing-5xl);
 	}
 }
 
 .image {
-	border: 5px solid map.get(palette.$palette, white);
+	border: 5px solid var(--palette-white);
 	border-radius: 100%;
 	box-shadow: 0 0 10px #ddd;
 	display: block;
 	height: 200px;
-	margin: 0 auto map.get(spacing.$spacing, md);
+	margin: 0 auto var(--spacing-md);
 	width: auto;
 }
 
 .link-list {
 	display: flex;
 	flex-direction: column;
-	gap: map.get(spacing.$spacing, default);
+	gap: var(--spacing-default);
 	justify-content: center;
 	list-style: none;
 	margin: 0;
-	padding: 0 0 map.get(spacing.$spacing, md);
+	padding: 0 0 var(--spacing-md);
 
 	@include media.tabletPortrait {
 		flex-direction: row;
-		gap: map.get(spacing.$spacing, lg);
+		gap: var(--spacing-lg);
 		justify-content: left;
-		padding: map.get(spacing.$spacing, md) 0 0;
+		padding: var(--spacing-md) 0 0;
 	}
 
 	@include media.tabletLandscape {
-		gap: map.get(spacing.$spacing, md);
+		gap: var(--spacing-md);
 		justify-content: flex-start;
 	}
 

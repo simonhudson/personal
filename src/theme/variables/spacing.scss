@@ -14,3 +14,14 @@ $spacing: (
 	4xl: map.get(font.$font, size) * 14,
 	5xl: map.get(font.$font, size) * 20,
 );
+
+:root {
+	--spacing-default: 1.6rem;
+	--spacing-xs: math.div(var(--spacing-default), 4) px;
+	--spacing-sm: math.div(var(--spacing-default), 2) px;
+	--spacing-md: math.div(var(--spacing-default), 1) px;
+	--spacing-lg: math.div(var(--spacing-default), 0.5) px;
+	--spacing-xl: math.div(var(--spacing-default), 0.33) px;
+	--spacing-2xl: math.div(var(--spacing-default), 0.25) px;
+	--spacing-3xl: math.div(var(--spacing-default), 0.2) px;
+}

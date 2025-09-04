@@ -7,7 +7,7 @@ h1,
 h2,
 h3,
 h4 {
-	color: map.get(palette.$palette, body-text);
+	color: var(--palette-body-text);
 	font-family: map.get(font.$font, serif);
 	font-size: map.get(font.$font, size);
 	font-weight: map.get(font.$font, weight-bold);
@@ -19,7 +19,7 @@ h2 {
 	&::after {
 		content: '';
 		display: block;
-		border-bottom: 3px solid map.get(palette.$palette, brand);
+		border-bottom: 3px solid var(--palette-brand);
 	}
 }
 
@@ -31,8 +31,8 @@ h1 {
 	margin: 0;
 
 	&::after {
-		margin: map.get(spacing.$spacing, default) 0;
-		width: map.get(spacing.$spacing, lg);
+		margin: var(--spacing-default) 0;
+		width: var(--spacing-lg);
 	}
 }
 
@@ -40,11 +40,11 @@ h2 {
 	font-size: 2.4rem;
 	font-weight: map.get(font.$font, weight-bold);
 	line-height: 1.6rem;
-	margin: 0 0 map.get(spacing.$spacing, default);
+	margin: 0 0 var(--spacing-default);
 
 	&::after {
-		margin: map.get(spacing.$spacing, default) 0;
-		width: map.get(spacing.$spacing, md);
+		margin: var(--spacing-default) 0;
+		width: var(--spacing-md);
 	}
 }
 
@@ -52,8 +52,8 @@ h3 {
 	font-size: 2.2rem;
 	font-weight: map.get(font.$font, weight-bold);
 	line-height: 3rem;
-	margin: 0 0 map.get(spacing.$spacing, sm);
-	padding: 0 0 map.get(spacing.$spacing, sm) 0;
+	margin: 0 0 var(--spacing-sm);
+	padding: 0 0 var(--spacing-sm) 0;
 
 	/* @include tabletLandscape {
 		font-size: toRem(18);

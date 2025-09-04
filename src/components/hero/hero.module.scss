@@ -1,5 +1,4 @@
 @use 'sass:map';
-@use '../../theme/variables/palette.scss';
 @use '../../theme/media.scss';
 
 .hero {
@@ -13,6 +12,7 @@
 
 	p {
 		font-size: 2.2rem;
+		font-weight: 300;
 		line-height: 3.6rem;
 		margin: 0;
 
@@ -20,6 +20,11 @@
 			font-size: 2.4rem;
 			line-height: 4rem;
 			width: 70%;
+		}
+
+		strong {
+			color: var(--color-primary);
+			font-weight: 700;
 		}
 	}
 }

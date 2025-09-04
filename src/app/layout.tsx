@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Inter, Lora } from 'next/font/google';
+import { Merriweather } from 'next/font/google';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import '@/src/theme/global.scss';
@@ -9,21 +9,28 @@ export const metadata: Metadata = {
 	description: 'Simon Hudson is a Full Stack Developer based in Derby, UK.',
 };
 
-const inter = Inter({
-	subsets: ['latin'],
-	display: 'swap',
-	variable: '--font-sans-serif',
-});
+// const inter = Inter({
+// 	subsets: ['latin'],
+// 	display: 'swap',
+// 	variable: '--font-sans-serif',
+// });
 
-const lora = Lora({
+// const lora = Lora({
+// 	subsets: ['latin'],
+// 	display: 'swap',
+// 	variable: '--font-serif',
+// });
+
+const merriweather = Merriweather({
 	subsets: ['latin'],
 	display: 'swap',
 	variable: '--font-serif',
+	weight: ['300', '400', '700'],
 });
 
 const Layout = async ({ children }: { children: ReactNode }) => {
 	return (
-		<html lang="en" className={`${inter.variable} ${lora.variable}`}>
+		<html lang="en" className={`${merriweather.variable}`}>
 			<body>
 				<>
 					{children}

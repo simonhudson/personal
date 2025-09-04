@@ -1,15 +1,12 @@
 @use 'sass:map';
 @use '../../theme/media.scss';
-@use '../../theme/variables/font.scss';
-@use '../../theme/variables/palette.scss';
-@use '../../theme/variables/spacing.scss';
 
 .footer {
-	background: map.get(palette.$palette, body-text);
-	color: map.get(palette.$palette, white);
+	background: var(--palette-body-text);
+	color: var(--palette-white);
 	display: flex;
 	flex-direction: column;
-	padding: map.get(spacing.$spacing, default) 0;
+	padding: var(--spacing-default) 0;
 	font-size: 1.4rem;
 
 	& > div {

@@ -1,13 +1,11 @@
 @use '../../theme/media.scss';
-@use '../../theme/variables/palette.scss';
-@use '../../theme/variables/spacing.scss';
 @use '../../theme/variables/font.scss';
 @use 'sass:map';
 
 .wrap {
 	display: flex;
 	flex-direction: column;
-	padding: map.get(spacing.$spacing, default) 0;
+	padding: var(--spacing-default) 0;
 	position: relative;
 	text-align: left;
 
@@ -23,7 +21,7 @@
 }
 
 .heading {
-	color: map.get(palette.$palette, white);
+	color: var(--palette-white);
 	font-family: map.get(font.$font, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 400;
@@ -40,7 +38,6 @@
 	text-align: left;
 
 	span {
-
 		em {
 			font-size: 1.4rem;
 		}
@@ -52,13 +49,13 @@
 		&:nth-of-type(3) {
 			display: block;
 			font-size: 1.2rem;
-font-weight: map.get(font.$font, weight);
+			font-weight: map.get(font.$font, weight);
 		}
 	}
 
 	a {
 		border: 0;
-		color: map.get(palette.$palette, white);
+		color: var(--palette-white);
 	}
 }
 
@@ -66,19 +63,19 @@ font-weight: map.get(font.$font, weight);
 	border-radius: 0.75rem;
 	border: 3px solid #fff;
 	height: 6.4rem;
-	margin: 0 map.get(spacing.$spacing, default) 0 0;
+	margin: 0 var(--spacing-default) 0 0;
 	width: 6.4rem;
 
 	@include media.tabletLandscape {
-		margin: 0 map.get(spacing.$spacing, default) 0 0;
+		margin: 0 var(--spacing-default) 0 0;
 	}
 }
 
 .sound-icon {
 	height: 3.2rem;
 	position: absolute;
-	right: map.get(spacing.$spacing, default);
-	top: map.get(spacing.$spacing, default);
+	right: var(--spacing-default);
+	top: var(--spacing-default);
 	width: 3.2rem;
 
 	@include media.prefersReducedMotion {

@@ -1,10 +1,35 @@
 @use 'sass:map';
+@use 'sass:math';
 @use 'variables/breakpoints.scss';
-@use 'variables/spacing.scss';
 @use 'variables/font.scss';
-@use 'variables/palette.scss';
 @use 'headings.scss';
 @use 'layout.scss';
+@use './functions/to-rem.scss';
+
+:root {
+	// Palette
+	--palette-body-background: #fff;
+	--palette-brand: #f05930;
+	--palette-body-text: #454545;
+	--palette-black: #211c15;
+	--palette-cta-background: #31495a;
+	--palette-white: #fff;
+	--palette-grey: #bbb;
+	--palette-light-grey: #f9f9f9;
+
+	// Spacing
+	--spacing-base: 16px;
+	--spacing-default: calc(var(--spacing-base) * 1);
+	--spacing-xs: calc(var(--spacing-base) * 0.25);
+	--spacing-sm: calc(var(--spacing-base) * 0.5);
+	--spacing-md: calc(var(--spacing-base) * 2);
+	--spacing-lg: calc(var(--spacing-base) * 4);
+	--spacing-xl: calc(var(--spacing-base) * 6);
+	--spacing-2xl: calc(var(--spacing-base) * 8);
+	--spacing-3xl: calc(var(--spacing-base) * 10);
+	--spacing-4xl: calc(var(--spacing-base) * 14);
+	--spacing-5xl: calc(var(--spacing-base) * 20);
+}
 
 html {
 	font-size: 62.5%;
@@ -14,8 +39,8 @@ html,
 body,
 fieldset {
 	box-sizing: border-box;
-	background: map.get(palette.$palette, body-background);
-	color: map.get(palette.$palette, body-text);
+	background: var(--palette-body-background);
+	color: var(--palette-body-text);
 	font-family: map.get(font.$font, serif);
 	font-weight: map.get(font.$font, weight);
 	line-height: map.get(font.$font, line-height);
@@ -25,7 +50,7 @@ fieldset {
 }
 
 html {
-	border-top: 10px solid map.get(palette.$palette, brand);
+	border-top: 10px solid var(--palette-brand);
 	font-size: font.$base-font-size;
 }
 
@@ -51,14 +76,14 @@ details summary::marker {
 }
 
 a {
-	border-bottom: 1px solid map.get(palette.$palette, grey);
-	color: map.get(palette.$palette, body-text);
+	border-bottom: 1px solid var(--palette-grey);
+	color: var(--palette-body-text);
 	text-decoration: none;
 	transition: all 0.3s ease-in-out;
 
 	&:hover,
 	&:focus {
-		border-bottom-color: map.get(palette.$palette, brand);
+		border-bottom-color: var(--palette-brand);
 	}
 }
 
@@ -72,7 +97,7 @@ li {
 .sr-only {
 	border: 0;
 	clip: rect(0 0 0 0);
-	color: map.get(palette.$palette, white);
+	color: var(--palette-white);
 	height: 1px;
 	margin: -1px;
 	overflow: hidden;
@@ -82,23 +107,23 @@ li {
 }
 
 .cta-link {
-	background: map.get(palette.$palette, cta-background);
+	background: var(--palette-cta-background);
 	border: 0;
 	border-radius: 0.5rem;
-	color: map.get(palette.$palette, white);
+	color: var(--palette-white);
 	display: block;
 	font-family: var(--font-sans-serif);
 	font-size: 1.4rem;
 	font-weight: map.get(font.$font, weight-bold);
 	outline: 5px solid transparent;
-	padding: map.get(spacing.$spacing, xs) map.get(spacing.$spacing, default);
+	padding: var(--spacing-xs) var(--spacing-default);
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.5s ease;
 
 	&:hover,
 	&:focus-visible {
-		outline: 5px solid map.get(palette.$palette, brand);
+		outline: 5px solid var(--palette-brand);
 	}
 
 	&:focus-visible {

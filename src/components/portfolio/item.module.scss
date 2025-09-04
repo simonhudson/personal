@@ -1,22 +1,20 @@
 @use 'sass:map';
-@use '../../theme/variables/palette.scss';
-@use '../../theme/variables/spacing.scss';
 @use '../../theme/variables/font.scss';
 @use '../../theme/media.scss';
 
 .item {
-	background: map.get(palette.$palette, white);
+	background: var(--palette-white);
 	border-radius: 1rem;
 	box-shadow: 0 0 10px #ddd;
 	display: flex;
 	flex-direction: column;
-	margin: 0 0 map.get(spacing.$spacing, lg);
+	margin: 0 0 var(--spacing-lg);
 
 	&:first-of-type {
-		margin-top: map.get(spacing.$spacing, default);
+		margin-top: var(--spacing-default);
 
 		@include media.tabletLandscape {
-			margin-top: map.get(spacing.$spacing, lg);
+			margin-top: var(--spacing-lg);
 		}
 	}
 }
@@ -27,7 +25,7 @@
 }
 
 .image-wrap {
-	padding-top: map.get(spacing.$spacing, default);
+	padding-top: var(--spacing-default);
 
 	@include media.tabletLandscape {
 		max-width: 42%;
@@ -40,7 +38,7 @@
 .image {
 	display: block;
 	height: auto;
-	margin: 0 0 map.get(spacing.$spacing, default);
+	margin: 0 0 var(--spacing-default);
 	width: 100%;
 
 	@include media.tabletLandscape {
@@ -51,13 +49,13 @@
 .content {
 	display: flex;
 	flex-direction: column-reverse;
-	gap: map.get(spacing.$spacing, default);
-	padding: map.get(spacing.$spacing, default);
+	gap: var(--spacing-default);
+	padding: var(--spacing-default);
 
 	@include media.tabletLandscape {
 		flex-direction: row-reverse;
-		gap: map.get(spacing.$spacing, lg);
-		padding: map.get(spacing.$spacing, md);
+		gap: var(--spacing-lg);
+		padding: var(--spacing-md);
 	}
 }
 
@@ -66,7 +64,7 @@
 }
 
 .copy {
-	padding: 0 0 map.get(spacing.$spacing, sm);
+	padding: 0 0 var(--spacing-sm);
 }
 
 .title {
@@ -75,7 +73,7 @@
 }
 
 .client {
-	color: map.get(palette.$palette, body-text);
+	color: var(--palette-body-text);
 	font-family: map.get(font.$font, sans-serif);
 	font-size: 1.2rem;
 	font-weight: 400;
@@ -85,32 +83,32 @@
 	&::after {
 		content: '';
 		display: block;
-		border-bottom: 2px solid map.get(palette.$palette, brand);
-		margin: map.get(spacing.$spacing, sm) 0 0;
-		width: map.get(spacing.$spacing, default);
+		border-bottom: 2px solid var(--palette-brand);
+		margin: var(--spacing-sm) 0 0;
+		width: var(--spacing-default);
 	}
 }
 
 .footer {
-	background: map.get(palette.$palette, light-grey);
+	background: var(--palette-light-grey);
 	border-bottom-right-radius: 1rem;
 	border-bottom-left-radius: 1rem;
 
-	padding: 0 map.get(spacing.$spacing, default);
+	padding: 0 var(--spacing-default);
 
 	@include media.tabletLandscape {
-		padding: map.get(spacing.$spacing, default) map.get(spacing.$spacing, md);
+		padding: var(--spacing-default) var(--spacing-md);
 	}
 }
 
 .cta-list {
 	display: flex;
 	flex-direction: column;
-	gap: map.get(spacing.$spacing, default);
+	gap: var(--spacing-default);
 	justify-content: flex-end;
 	list-style: none;
 	margin: 0;
-	padding: map.get(spacing.$spacing, default) 0;
+	padding: var(--spacing-default) 0;
 
 	@include media.phoneLandscape {
 		align-items: center;
