@@ -1,0 +1,40 @@
+import { defineConfig } from 'eslint/config';
+import nextVitals from 'eslint-config-next/core-web-vitals';
+import nextTs from 'eslint-config-next/typescript';
+
+export default defineConfig([
+	...nextVitals,
+	...nextTs,
+	{
+		rules: {
+			indent: 'off',
+
+			quotes: [
+				'error',
+				'single',
+				{
+					avoidEscape: true,
+					allowTemplateLiterals: true,
+				},
+			],
+
+			semi: ['error', 'always'],
+			'no-cond-assign': ['error', 'always'],
+			'no-extra-boolean-cast': 'off',
+
+			'no-unused-vars': [
+				'error',
+				{
+					args: 'none',
+				},
+			],
+			'no-mixed-spaces-and-tabs': 'off',
+			'react/prop-types': 'off',
+			'no-useless-escape': 'off',
+			'no-var': 'error',
+			'no-prototype-builtins': 'off',
+			'react/display-name': 'off',
+			'no-console': 'error',
+		},
+	},
+]);
