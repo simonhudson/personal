@@ -1,29 +1,37 @@
+const ICON_FILE_LINES = 'file-lines';
+const ICON_GITHUB = 'github';
+const ICON_LINKEDIN = 'linkedin';
+
+export type IconNames = typeof ICON_FILE_LINES | typeof ICON_GITHUB | typeof ICON_LINKEDIN;
+
 type Link = {
 	text: string;
 	link: string;
 	icon: {
 		type: 'solid' | 'brand';
-		name: string;
+		name: IconNames;
 	};
+ omit?: boolean;
 };
 
 type Links = Link[];
 
 const links: Links = [
-	{
+{
 		text: 'Download my CV',
 		link: '/files/Simon_Hudson_CV.pdf',
 		icon: {
 			type: 'solid',
-			name: 'file-lines',
+			name: ICON_FILE_LINES,
 		},
+  omit: true
 	},
 	{
 		text: 'Github profile',
 		link: 'https://github.com/simonhudson',
 		icon: {
 			type: 'brand',
-			name: 'github',
+			name: ICON_GITHUB,
 		},
 	},
 	{
@@ -31,7 +39,7 @@ const links: Links = [
 		link: 'https://www.linkedin.com/in/hellosimonhudson/',
 		icon: {
 			type: 'brand',
-			name: 'linkedin',
+			name: ICON_LINKEDIN,
 		},
 	},
 ];

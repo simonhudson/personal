@@ -1,12 +1,19 @@
-import type { JestConfigWithTsJest } from 'ts-jest';
+import type { Config } from 'jest';
+import nextJest from 'next/jest.js';
 
-const jestConfig: JestConfigWithTsJest = {
-	moduleNameMapper: {
-		'^@/src/(.*)$': '<rootDir>/src/$1',
-		'^@/test/(.*)$': '<rootDir>/test/$1',
-	},
+const createJestConfig = nextJest({
+	dir: './',
+});
+
+// Add any custom config to be passed to Jest
+const config: Config = {
+	coverageProvider: 'v8',
 	testEnvironment: 'jsdom',
 	setupFilesAfterEnv: ['<rootDir>/test/jestsetup.ts'],
+	moduleNameMapper: {
+		'^@/(.*)$': '<rootDir>/$1',
+	},
 };
 
-export default jestConfig;
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+export default createJestConfig(config);

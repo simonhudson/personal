@@ -1,0 +1,14 @@
+$base-font-size: 62.5%;
+
+$font: (
+	bold: 'opensans_bold',
+	code: 'Courier New, Courier, monospace',
+	heading: 'Poppins, arial, helvetica, sans-serif',
+	line-height: 2.8rem,
+	sans-serif: var(--font-sans-serif),
+	serif: var(--font-serif),
+	semi-bold: 'opensans_semibold',
+	size: 1.6rem,
+	weight-bold: 700,
+	weight: 400,
+);

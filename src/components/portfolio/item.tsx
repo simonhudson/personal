@@ -1,84 +1,70 @@
-import React from 'react';
-import {
-	ButtonLinksItem,
-	ButtonLinksLink,
-	ButtonLinksList,
-	Client,
-	Content,
-	Copy,
-	Img,
-	ImgWrap,
-	ItemHeader,
-	ItemFooter,
-	Text,
-	Title,
-	Wrap,
-} from './item.styles';
-import { VisuallyHidden } from '@/src/theme/layout';
+import Image from 'next/image';
 import { Metadata } from './metadata';
-import type { PortfolioItem } from './portfolio.d';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { slugify } from '@/src/utilities/slugify';
+import { type IPortfolioItemFields } from '@/src/types/contentful';
+import styles from './item.module.scss';
 
-const Item = ({
-	builtWith,
-	client,
-	copyHtml,
-	date,
-	githubUrl,
-	isArchived,
-	madeWith,
-	omit,
-	slug,
-	testedWith,
-	title,
-	url,
-}: PortfolioItem) => {
-	if (omit) return null;
+export interface ItemProps {
+	item: IPortfolioItemFields;
+	index: number;
+}
 
-	return (
-		<Wrap>
-			<Content>
-				<Text>
-					<ItemHeader>
-						<Title>{title}</Title>
-						<Client>
-							{client} / {date}
-						</Client>
-					</ItemHeader>
-					{copyHtml && <Copy dangerouslySetInnerHTML={{ __html: copyHtml }} />}
+export const Item = ({ item, index }: ItemProps) => {
+	const copyHtml = item.copy ? documentToHtmlString(item.copy) : '';
+	const slug = slugify(item.title);
+
+	return !item.omit ? (
+		<article className={styles.item}>
+			<div className={styles.content}>
+				<div className={styles.text}>
+					<header className={styles.header}>
+						<h3 className={styles.title}>{item.title}</h3>
+						<span className={styles.client}>
+							{item.client} / {item.date}
+						</span>
+					</header>
+					{copyHtml && <div className={styles.copy} dangerouslySetInnerHTML={{ __html: copyHtml }}></div>}
 					<Metadata
 						categories={[
-							{ title: 'Made', items: madeWith },
-							{ title: 'Tested', items: testedWith },
-							{ title: 'Built', items: builtWith },
+							{ title: 'Made', items: item.madeWith },
+							{ title: 'Tested', items: item.testedWith },
+							{ title: 'Built', items: item.builtWith },
 						]}
 						slug={slug}
 					/>
-				</Text>
-				<ImgWrap>
-					<Img alt={`${title} screen shot`} loading="lazy" src={`/images/${slug}.png`} />
-				</ImgWrap>
-			</Content>
-			<ItemFooter>
-				<ButtonLinksList>
-					{url && (
-						<ButtonLinksItem>
-							<ButtonLinksLink href={url}>
-								View <VisuallyHidden>{title} </VisuallyHidden>site
-								{isArchived ? ' (archived)' : null}
-							</ButtonLinksLink>
-						</ButtonLinksItem>
+				</div>
+				<div className={styles['image-wrap']}>
+					<Image
+						alt={`${item.title} screen shot`}
+						className={styles.image}
+						height={338}
+						loading={index < 3 ? 'eager' : 'lazy'}
+						priority={index < 3}
+						src={`/images/${slug}.png`}
+						width={600}
+					/>
+				</div>
+			</div>
+			<footer className={styles.footer}>
+				<ul className={styles['cta-list']}>
+					{item.url && (
+						<li className={styles['cta-item']}>
+							<a className="cta-link" href={item.url}>
+								View <span className="sr-only">{item.title} </span>site
+								{item.isArchived ? ' (archived)' : null}
+							</a>
+						</li>
 					)}
-					{githubUrl && (
-						<ButtonLinksItem>
-							<ButtonLinksLink href={githubUrl}>
-								View <VisuallyHidden>{title} </VisuallyHidden> on Github
-							</ButtonLinksLink>
-						</ButtonLinksItem>
+					{item.githubUrl && (
+						<li className={styles['cta-item']}>
+							<a className="cta-link" href={item.githubUrl}>
+								View <span className="sr-only">{item.title} </span> on Github
+							</a>
+						</li>
 					)}
-				</ButtonLinksList>
-			</ItemFooter>
-		</Wrap>
-	);
+				</ul>
+			</footer>
+		</article>
+	) : null;
 };
-
-export default Item;

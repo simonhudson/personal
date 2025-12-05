@@ -1,2 +1,5 @@
 # Simon Hudson
-[www.hellosimonhudson.com](https://www.hellosimonhudson.com)
+
+http://www.hellosimonhudson.com
+
+![Build](https://github.com/simonhudson/personal/actions/workflows/build.yml/badge.svg) ![Test](https://github.com/simonhudson/personal/actions/workflows/test.yml/badge.svg)

@@ -1,0 +1,25 @@
+@use 'sass:map';
+@use '../../theme/variables/palette.scss';
+@use '../../theme/media.scss';
+
+.hero {
+	.inner-wrap div {
+		width: 100%;
+	}
+
+	h1 {
+		font-size: 3.6rem;
+	}
+
+	p {
+		font-size: 2.2rem;
+		line-height: 3.6rem;
+		margin: 0;
+
+		@include media.tabletLandscape {
+			font-size: 2.4rem;
+			line-height: 4rem;
+			width: 70%;
+		}
+	}
+}

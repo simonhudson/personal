@@ -1,36 +1,18 @@
 import React from 'react';
-import Item from './item';
-import { render } from '@/test/utils';
-import { screen } from '@testing-library/react';
+import { Item } from './item';
+import { screen, render } from '@testing-library/react';
 import { within } from '@testing-library/dom';
-import cloneDeep from 'lodash/cloneDeep';
+import { PortfolioMock } from '@/test/mocks/cms/portfolio.mock';
+import { type IPortfolioItemFields } from '@/src/types/contentful';
 
-const baseProps = {
-	builtWith: ['Bryson', 'Hughes', 'Eustace'],
-	client: 'Some client',
-	date: '2023',
-	isArchived: false,
-	madeWith: ['Bruce', 'Clarence', 'Steve'],
-	omit: false,
-	position: 1,
-	slug: 'some-slug',
-	testedWith: ['Mick', 'Keith', 'Ronnie', 'Charlie'],
-	title: 'Foo title',
-	url: 'http://foo.com',
-};
 describe('Item', () => {
-	let props;
-
-	beforeEach(() => {
-		props = cloneDeep(baseProps);
-	});
-
 	it(`should not render when set to omit`, () => {
 		// Given
-		props.omit = true;
+		const item = { ...PortfolioMock[0] };
+		item.omit = true;
 
 		// When
-		initialise(props);
+		initialise(item);
 
 		// Then
 		expect(screen.queryByRole('heading', { level: 3 })).not.toBeInTheDocument();
@@ -38,67 +20,111 @@ describe('Item', () => {
 
 	describe(`should render with expected`, () => {
 		it('image', () => {
+			// Given
+			const item = { ...PortfolioMock[0] };
+
 			// When
-			initialise(props);
+			initialise(item);
 
 			// Then
 			expect(screen.getByRole('heading', { level: 3 })).toBeInTheDocument();
 
 			const image = screen.getByRole('img');
-			expect(image).toHaveAttribute('alt', 'Foo title screen shot');
-			expect(image).toHaveAttribute('src', '/images/some-slug.png');
+			expect(image).toHaveAttribute('alt', 'Portfolio Item Foo screen shot');
+			expect(image.getAttribute('src')).toContain('portfolio-item-foo.png');
 		});
 
 		it('heading', () => {
+			// Given
+			const item = { ...PortfolioMock[0] };
+
 			// When
-			initialise(props);
+			initialise(item);
 
 			// Then
-			expect(screen.getByText('Some client / 2023')).toBeInTheDocument();
-			expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Foo title');
+			expect(screen.getByText('Personal / 2016 - 2023')).toBeInTheDocument();
+			expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent('Portfolio Item Foo');
+		});
+
+		it('metadata', () => {
+			// Given
+			const item = { ...PortfolioMock[0] };
+
+			// When
+			initialise(item);
+
+			// Then
+			const metadataHeadings = screen.getAllByRole('heading', { level: 4 });
+			expect(metadataHeadings.at(0)).toHaveTextContent('Made with');
+			expect(metadataHeadings.at(0)).toHaveAttribute('id', 'portfolio-item-foo-Made-with');
+			expect(metadataHeadings.at(1)).toHaveTextContent('Tested with');
+			expect(metadataHeadings.at(1)).toHaveAttribute('id', 'portfolio-item-foo-Tested-with');
+			expect(metadataHeadings.at(2)).toHaveTextContent('Built with');
+			expect(metadataHeadings.at(2)).toHaveAttribute('id', 'portfolio-item-foo-Built-with');
+
+			const metadataLists = screen.getAllByRole('list');
+			const listOne = metadataLists[0];
+			expect(listOne).toHaveAttribute('aria-labelledby', 'portfolio-item-foo-Made-with');
+			const listOneItems = within(listOne).getAllByRole('listitem');
+			expect(listOneItems.at(0)).toHaveTextContent('React');
+			expect(listOneItems.at(1)).toHaveTextContent('TypeScript');
+			expect(listOneItems.at(2)).toHaveTextContent('Styled Components');
+
+			const listTwo = metadataLists[1];
+			expect(listTwo).toHaveAttribute('aria-labelledby', 'portfolio-item-foo-Tested-with');
+			const listTwoItems = within(listTwo).getAllByRole('listitem');
+			expect(listTwoItems.at(0)).toHaveTextContent('Jest');
+			expect(listTwoItems.at(1)).toHaveTextContent('React Testing Library');
+
+			const listThree = metadataLists[2];
+			expect(listThree).toHaveAttribute('aria-labelledby', 'portfolio-item-foo-Built-with');
+			const listThreeItems = within(listThree).getAllByRole('listitem');
+			expect(listThreeItems.at(0)).toHaveTextContent('Vercel');
 		});
 
 		describe('link', () => {
 			it('for Github URL', () => {
 				// Given
-				props.githubUrl = 'https://github.com/simonhudson/foo';
+				const item = { ...PortfolioMock[0] };
+				item.url = 'https://github.com/simonhudson/foo';
 
 				// When
-				initialise(props);
+				initialise(item);
 
 				// Then
-				const links = screen.getAllByRole('link');
-				expect(links.length).toEqual(2);
-				expect(links[1]).toHaveTextContent('View Foo title on Github');
-				expect(links[1]).toHaveAttribute('href', 'https://github.com/simonhudson/foo');
+				const link = screen.getAllByRole('link')[1];
+				expect(link).toHaveTextContent('View Portfolio Item Foo on Github');
+				expect(link).toHaveAttribute('href', 'http://www.github.com/item-foo');
 			});
 
 			it('for non-Github URL', () => {
+				// Given
+				const item = { ...PortfolioMock[0] };
+
 				// When
-				initialise(props);
+				initialise(item);
 
 				// Then
-				const links = screen.getAllByRole('link');
-				expect(links.length).toEqual(1);
-				expect(links[0]).toHaveTextContent('View Foo title site');
-				expect(links[0]).toHaveAttribute('href', 'http://foo.com');
+				const link = screen.getAllByRole('link')[0];
+				expect(link).toHaveTextContent('View Portfolio Item Foo site');
+				expect(link).toHaveAttribute('href', 'http://www.item-foo.com');
 			});
 
 			it('for archived URL', () => {
 				// Given
-				props.isArchived = true;
+				const item = { ...PortfolioMock[0] };
+				item.isArchived = true;
 
 				// When
-				initialise(props);
+				initialise(item);
 
 				// Then
-				const links = screen.getAllByRole('link');
-				expect(links.length).toEqual(1);
-				expect(links[0]).toHaveTextContent('View Foo title site (archived)');
-				expect(links[0]).toHaveAttribute('href', 'http://foo.com');
+				const link = screen.getAllByRole('link')[0];
+				expect(link).toHaveTextContent('View Portfolio Item Foo site (archived)');
+				expect(link).toHaveAttribute('href', 'http://www.item-foo.com');
 			});
 		});
 	});
 
-	const initialise = (props) => render(<Item {...props} />);
+	const initialise = (item: IPortfolioItemFields) => render(<Item item={item} index={0} />);
 });
