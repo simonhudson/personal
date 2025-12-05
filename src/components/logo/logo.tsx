@@ -1,6 +1,9 @@
+import styles from './logo.module.scss';
+
 export const Logo = () => {
 	return (
 		<svg
+			className={styles.logo}
 			aria-label="Simon Hudson logo"
 			role="img"
 			xmlns="http://www.w3.org/2000/svg"
@@ -9,7 +12,7 @@ export const Logo = () => {
 			viewBox="0 0 58 58"
 		>
 			<defs>
-				<style>{`.cls-1 { fill: #f05930; fill-rule: evenodd; }`}</style>
+				<style>{`.cls-1 { fill: #f96354; fill-rule: evenodd; }`}</style>
 			</defs>
 			<path className="cls-1" d="M2.716 27l7.07-7.07 17.68 17.677-7.072 7.07z" />
 			<path

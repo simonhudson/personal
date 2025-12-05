@@ -1,0 +1,11 @@
+@use '../../theme/media.scss';
+
+.logo {
+	height: 60px;
+	width: 60px;
+
+	@include media.tabletLandscape {
+		height: 80px;
+		width: 80px;
+	}
+}

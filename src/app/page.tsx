@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import * as contentful from 'contentful';
 import { Header } from '@/src/components/header/header';
 import { Hero } from '@/src/components/hero/hero';
@@ -33,11 +32,11 @@ const Home = async () => {
 
 	return (
 		<>
-			<Header />
+			{/* <Header /> */}
 			<Hero />
-			{portfolioData && <Portfolio items={portfolioData} />}
-			{aboutData && <About data={aboutData} />}
-			<Footer />
+			{/* {portfolioData && <Portfolio items={portfolioData} />}
+			{aboutData && <About data={aboutData} />} 
+			<Footer />*/}
 		</>
 	);
 };

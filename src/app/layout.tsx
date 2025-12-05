@@ -1,5 +1,5 @@
 import { ReactNode } from 'react';
-import { Inter, Lora } from 'next/font/google';
+import { Inter, Lora, Domine } from 'next/font/google';
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import '@/src/theme/global.scss';
@@ -18,12 +18,18 @@ const inter = Inter({
 const lora = Lora({
 	subsets: ['latin'],
 	display: 'swap',
+	variable: '--font-serifx',
+});
+
+const domine = Domine({
+	subsets: ['latin'],
+	display: 'swap',
 	variable: '--font-serif',
 });
 
 const Layout = async ({ children }: { children: ReactNode }) => {
 	return (
-		<html lang="en" className={`${inter.variable} ${lora.variable}`}>
+		<html lang="en" className={`${inter.variable} ${lora.variable} ${domine.variable}`}>
 			<body>
 				<>
 					{children}

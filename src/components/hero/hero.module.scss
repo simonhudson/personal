@@ -9,17 +9,31 @@
 
 	h1 {
 		font-size: 3.6rem;
+		line-height: 1.4em;
+
+		&:after {
+			content: '.';
+			color: map.get(palette.$palette, brand);
+		}
+
+		@include media.tabletLandscape {
+			font-size: 5rem;
+		}
 	}
 
 	p {
 		font-size: 2.2rem;
-		line-height: 3.6rem;
+		line-height: 1.8em;
 		margin: 0;
 
 		@include media.tabletLandscape {
 			font-size: 2.4rem;
 			line-height: 4rem;
 			width: 70%;
+		}
+
+		strong {
+			color: #000;
 		}
 	}
 }
