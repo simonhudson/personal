@@ -9,23 +9,26 @@ section {
 	// align-items: center;
 	// display: flex;
 	// flex-direction: column;
-	height: calc(100vh - (map.get(spacing.$spacing, lg) * 3));
+	height: calc(100vh - (map.get(spacing.$spacing, lg) * 1));
 	// justify-content: flex-start;
 	padding: map.get(spacing.$spacing, md) 0;
 
-	&:first-of-type {
-		// padding-top: map.get(spacing.$spacing, default);
+	@include media.tabletLandscape {
+		height: auto;
+	}
 
+	&:first-of-type {
 		.inner-wrap {
 			display: flex;
 			flex-direction: column;
 			height: 100%;
 			justify-content: center;
-		}
-	}
 
-	&:nth-of-type(2n) {
-		background: map.get(palette.$palette, light-grey);
+			@include media.tabletLandscape {
+				height: auto;
+				justify-content: flex-start;
+			}
+		}
 	}
 
 	@include media.tabletLandscape {

@@ -19,7 +19,7 @@
 	flex-direction: column;
 
 	@include media.tabletLandscape {
-		flex-direction: row;
+		flex-direction: row-reverse;
 		gap: map.get(spacing.$spacing, lg);
 	}
 }

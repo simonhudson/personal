@@ -1,5 +1,6 @@
 @use 'sass:map';
 @use '../../theme/variables/palette.scss';
+@use '../../theme/variables/spacing.scss';
 @use '../../theme/media.scss';
 
 .hero {
@@ -36,4 +37,14 @@
 			color: #000;
 		}
 	}
+}
+
+.image {
+	border: 5px solid map.get(palette.$palette, white);
+	border-radius: 100%;
+	box-shadow: 0 0 10px #ddd;
+	display: block;
+	height: 200px;
+	margin: 0 auto map.get(spacing.$spacing, md);
+	width: auto;
 }

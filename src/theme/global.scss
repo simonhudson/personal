@@ -82,23 +82,23 @@ li {
 }
 
 .cta-link {
-	background: map.get(palette.$palette, cta-background);
+	background: map.get(palette.$palette, brand);
 	border: 0;
-	border-radius: 0.5rem;
+	border-radius: 0.3rem;
 	color: map.get(palette.$palette, white);
 	display: block;
 	font-family: var(--font-sans-serif);
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	font-weight: map.get(font.$font, weight-bold);
 	outline: 5px solid transparent;
-	padding: map.get(spacing.$spacing, xs) map.get(spacing.$spacing, default);
+	padding: map.get(spacing.$spacing, sm) map.get(spacing.$spacing, md);
 	text-align: center;
 	text-decoration: none;
 	transition: all 0.5s ease;
 
 	&:hover,
 	&:focus-visible {
-		outline: 5px solid map.get(palette.$palette, brand);
+		outline: 5px solid map.get(palette.$palette, cta-background);
 	}
 
 	&:focus-visible {

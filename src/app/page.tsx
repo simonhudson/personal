@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable no-unused-vars */
 import * as contentful from 'contentful';
 import { Header } from '@/src/components/header/header';
 import { Hero } from '@/src/components/hero/hero';
@@ -18,9 +20,9 @@ const getCmsData = async () => {
 const Home = async () => {
 	const cmsData = await getCmsData();
 
-	const portfolioData = cmsData.items
-		.filter((item) => item.sys.contentType.sys.id === 'portfolioItem')
-		.map((item) => item.fields) as IPortfolioItemFields[] | [];
+	// const portfolioData = cmsData.items
+	// 	.filter((item) => item.sys.contentType.sys.id === 'portfolioItem')
+	// 	.map((item) => item.fields) as IPortfolioItemFields[] | [];
 
 	const aboutData = cmsData.items.find((item) => item.sys.contentType.sys.id === 'aboutMe')?.fields as
 		| IAboutMeFields
@@ -34,6 +36,7 @@ const Home = async () => {
 		<>
 			{/* <Header /> */}
 			<Hero />
+			{aboutData && <About data={aboutData} />}
 			{/* {portfolioData && <Portfolio items={portfolioData} />}
 			{aboutData && <About data={aboutData} />} 
 			<Footer />*/}
