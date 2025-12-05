@@ -37,4 +37,4 @@ yarn-error.log*
 next-env.d.ts
 
 # CMS types
-src/types/contentful.d.ts
+# src/types/contentful.d.ts

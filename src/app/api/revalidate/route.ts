@@ -10,7 +10,7 @@ export const POST = async (request: NextRequest) => {
 
 	if (!tag) return NextResponse.json({ message: 'Missing tag param' }, { status: 400 });
 
-	revalidateTag(tag);
+	revalidateTag(tag, 'max');
 
 	return NextResponse.json({ revalidated: true, now: Date.now() });
 };
