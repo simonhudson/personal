@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import * as contentful from 'contentful';
 import { Header } from '@/src/components/header/header';
 import { Hero } from '@/src/components/hero/hero';
