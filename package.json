@@ -17,7 +17,7 @@
 		"contentful": "^11.2.5",
 		"dayjs": "^1.11.13",
 		"dotenv": "^16.4.5",
-		"next": "16.0.7",
+		"next": "^16.0.10",
 		"next-secure-headers": "^2.2.0",
 		"react": "19.2.1",
 		"react-dom": "19.2.1"
@@ -39,7 +39,7 @@
 		"contentful-management": "^11.40.0",
 		"contentful-typescript-codegen": "^3.4.0",
 		"eslint": "^9.39.1",
-		"eslint-config-next": "^16.0.7",
+		"eslint-config-next": "^16.0.10",
 		"husky": "^9.1.7",
 		"jest": "^29.7.0",
 		"jest-environment-jsdom": "^29.7.0",
