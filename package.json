@@ -4,36 +4,32 @@
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
-		"dev": "next dev --turbopack",
-		"build": "next build",
-		"start": "npm run build && next start",
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"start": "npm run build && astro preview",
 		"lint": "next lint",
 		"test": "jest --colors",
 		"generate-content-types": "rimraf ./src/types/contentful.d.ts && contentful-typescript-codegen --output ./src/types/contentful.d.ts && eslint --fix ./src/types/contentful.d.ts",
 		"prepare": "husky"
 	},
 	"dependencies": {
-		"@contentful/rich-text-html-renderer": "^17.0.0",
-		"contentful": "^11.2.5",
+		"": "^17.0.0",
+		"astro": "^5.16.5",
+		"contentful": "^11.10.1",
 		"dayjs": "^1.11.13",
-		"dotenv": "^16.4.5",
-		"next": "^16.0.10",
-		"next-secure-headers": "^2.2.0",
-		"react": "19.2.1",
-		"react-dom": "19.2.1"
+		"dotenv": "^16.4.5"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.26.0",
-		"@babel/preset-react": "^7.26.3",
 		"@babel/preset-typescript": "^7.26.0",
 		"@testing-library/dom": "^10.4.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/react": "^16.1.0",
 		"@types/jest": "^29.5.14",
 		"@types/lodash": "^4.17.13",
-		"@types/node": "^20",
-		"@types/react": "19.2.7",
-		"@types/react-dom": "19.2.3",
+		"@types/node": "^20.19.27",
 		"babel-jest": "^29.7.0",
 		"babel-loader": "^9.2.1",
 		"contentful-management": "^11.40.0",
@@ -49,9 +45,5 @@
 		"ts-jest": "^29.2.5",
 		"ts-node": "^10.9.2",
 		"typescript": "^5.6.0"
-	},
-	"overrides": {
-		"@types/react": "19.2.7",
-		"@types/react-dom": "19.2.3"
 	}
 }

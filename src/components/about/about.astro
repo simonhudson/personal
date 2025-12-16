@@ -1,0 +1,47 @@
+---
+import { parseToHtml } from '@/src/utilities/parse-to-html';
+import styles from './about.module.scss';
+import Links from './links';
+
+const data = Astro.props;
+
+---
+<section>
+			<div className="inner-wrap">
+				<div className={styles.wrap}>
+					<div className={styles.content}>
+						<img
+							className={styles.image}
+							alt="Simon Hudson"
+							src="/images/self.png"
+							width="200"
+							height="200"
+						/>
+						<div>
+							<h2>About me</h2>
+							<div dangerouslySetInnerHTML={{ __html: parseToHtml(data.copy) }}></div>
+							{Links && (
+								<ul className={styles['link-list']}>
+									{Links.map((item, index: number) => {
+										return item.omit ? null : (
+											<li key={`link-${index}`}>
+												<a
+													className="cta-link"
+													href={item.link}
+													target="_blank"
+													rel="noopener noreferer"
+												>
+													<span>{item.text}</span>
+													<span className="sr-only">&nbsp;(opens in a new tab)</span>
+													{/* <Icon type={item.icon.type} name={item.icon.name} /> */}
+												</a>
+											</li>
+										);
+									})}
+								</ul>
+							)}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
