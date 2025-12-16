@@ -8,42 +8,15 @@
 		"build": "astro build",
 		"preview": "astro preview",
 		"astro": "astro",
-		"start": "npm run build && astro preview",
 		"lint": "next lint",
 		"test": "jest --colors",
 		"generate-content-types": "rimraf ./src/types/contentful.d.ts && contentful-typescript-codegen --output ./src/types/contentful.d.ts && eslint --fix ./src/types/contentful.d.ts",
 		"prepare": "husky"
 	},
 	"dependencies": {
-		"": "^17.0.0",
 		"astro": "^5.16.5",
 		"contentful": "^11.10.1",
-		"dayjs": "^1.11.13",
-		"dotenv": "^16.4.5"
+		"dayjs": "^1.11.13"
 	},
-	"devDependencies": {
-		"@babel/preset-env": "^7.26.0",
-		"@babel/preset-typescript": "^7.26.0",
-		"@testing-library/dom": "^10.4.0",
-		"@testing-library/jest-dom": "^6.6.3",
-		"@testing-library/react": "^16.1.0",
-		"@types/jest": "^29.5.14",
-		"@types/lodash": "^4.17.13",
-		"@types/node": "^20.19.27",
-		"babel-jest": "^29.7.0",
-		"babel-loader": "^9.2.1",
-		"contentful-management": "^11.40.0",
-		"contentful-typescript-codegen": "^3.4.0",
-		"eslint": "^9.39.1",
-		"eslint-config-next": "^16.0.10",
-		"husky": "^9.1.7",
-		"jest": "^29.7.0",
-		"jest-environment-jsdom": "^29.7.0",
-		"jest-extended": "^4.0.2",
-		"rimraf": "^6.0.1",
-		"sass": "^1.81.0",
-		"ts-jest": "^29.2.5",
-		"ts-node": "^10.9.2",
-		"typescript": "^5.6.0"
-	}
+	"devDependencies": {}
 }

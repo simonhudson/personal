@@ -1,0 +1,25 @@
+---
+import styles from './metadata.module.scss';
+
+const { categories, slug } = Astro.props;
+---
+
+<div class={styles.wrap}>
+			{categories.map(({ items, title }, index) => {
+				if (!items || !items.length) return;
+				return (
+					<div class={styles.inner} key={`metadata-title-${index}`}>
+						<h4 class={styles.title} id={`${slug}-${title}-with`}>
+							{title} with
+						</h4>
+						<ul class={styles['metadata-list']} aria-labelledby={`${slug}-${title}-with`}>
+							{items.map((item, index) => (
+								<li class={styles['metadata-item']} key={index}>
+									<span>{item}</span>
+								</li>
+							))}
+						</ul>
+					</div>
+				);
+			})}
+		</div>
