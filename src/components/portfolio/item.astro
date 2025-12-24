@@ -1,0 +1,62 @@
+---
+import Metadata from './metadata.astro';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { slugify } from '@/src/utilities/slugify';
+import styles from './item.module.scss';
+
+const { item, index } = Astro.props;
+
+const copyHtml = item.copy ? documentToHtmlString(item.copy) : '';
+const slug = slugify(item.title);
+---
+
+<article class={styles.item}>
+			<div class={styles.content}>
+				<div class={styles.text}>
+					<header class={styles.header}>
+						<h3 class={styles.title}>{item.title}</h3>
+						<span class={styles.client}>
+							{item.client} / {item.date}
+						</span>
+					</header>
+					{copyHtml && <div class={styles.copy} set:html={copyHtml} />}
+					<Metadata
+						categories={[
+							{ title: 'Made', items: item.madeWith },
+							{ title: 'Tested', items: item.testedWith },
+							{ title: 'Built', items: item.builtWith },
+						]}
+						slug={slug}
+					/>
+				</div>
+				<div class={styles['image-wrap']}>
+					<img
+						alt={`${item.title} screen shot`}
+						class={styles.image}
+						height={338}
+						loading={index < 3 ? 'eager' : 'lazy'}
+						src={`/images/${slug}.png`}
+						width={600}
+					/>
+				</div>
+			</div>
+			<footer class={styles.footer}>
+				<ul class={styles['cta-list']}>
+					{item.url && (
+						<li class={styles['cta-item']}>
+							<a class="cta-link" href={item.url}>
+								View <span class="sr-only">{item.title} </span>site
+								{item.isArchived ? ' (archived)' : null}
+							</a>
+						</li>
+					)}
+					{item.githubUrl && (
+						<li class={styles['cta-item']}>
+							<a class="cta-link" href={item.githubUrl}>
+								View <span class="sr-only">{item.title} </span> on Github
+							</a>
+						</li>
+					)}
+				</ul>
+			</footer>
+		</article>

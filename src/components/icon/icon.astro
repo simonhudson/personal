@@ -1,0 +1,22 @@
+---
+import styles from './icon.module.scss';
+import { type IconNames } from '@/src/components/about/links';
+
+type IconProps = {
+	type: 'solid' | 'brand';
+	name: IconNames;
+	className?: string;
+};
+
+const typeMapping = {
+	solid: 'fas',
+	brand: 'fab',
+};
+const { type, name, className = '' } = Astro.props as IconProps;
+---
+
+<span
+    class={`${styles.icon} ${typeMapping[type]} fa-${name} ${className}`}
+    role="presentation"
+    aria-hidden="true"
+></span>
