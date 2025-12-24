@@ -1,11 +1,11 @@
 ---
 import styles from './footer.module.scss';
-import { Music } from '@/src/components/music/music';
+import Music from '@/src/components/music/music.astro';
 ---
 
-<footer className={styles.footer}>
-    <div className="inner-wrap">
+<footer class={styles.footer}>
+    <div class="inner-wrap">
         <p>Copyright &copy; Simon Hudson {new Date().getFullYear()}</p>
-        <!-- <Music /> -->
+        <Music server:defer />
     </div>
 </footer>

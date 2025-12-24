@@ -1,0 +1,29 @@
+---
+export const prerender = false
+import { type MusicResponse } from '@/src/types/music';
+import styles from './music.module.scss';
+import { GET } from '@/src/pages/api/music';
+
+let response = await GET(Astro)
+const data: MusicResponse = await response.json();
+---
+<div class={styles.wrap}>
+    <div class={styles.inner}>
+        <img
+            alt={`Now playing "${data.name}" by ${data.artist}`}
+            class={styles.image}
+            height={300}
+            src={data.image}
+            width={300}
+        />
+        <p class={styles.text}>
+            <span class={styles.heading}>
+                <a href={data.url}> {data.artist}</a>
+            </span>
+            <span>
+                <a href={data.url}>&quot;{data.name}&quot;</a>{' '}
+            </span>
+            <span>{data.relativeTime}</span>
+        </p>
+    </div>
+</div>

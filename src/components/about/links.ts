@@ -16,7 +16,7 @@ type Link = {
 
 type Links = Link[];
 
-const links: Links = [
+export const links: Links = [
 	{
 		text: 'Download my CV',
 		link: '/files/Simon_Hudson_CV.pdf',
@@ -43,5 +43,3 @@ const links: Links = [
 		},
 	},
 ];
-
-export default links;
