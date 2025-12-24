@@ -7,14 +7,7 @@ import  About from '@/src/components/about/about.astro';
 import Portfolio from '@/src/components/portfolio/portfolio.astro';
 import Footer from '@/src/components/footer/footer.astro';
 
-const getCmsData = async () => {
-
-	console.log('x----------------');
-	console.log('space', import.meta.env.CONTENTFUL_SPACE_ID, process.env.CONTENTFUL_SPACE_ID);
-	console.log('token', import.meta.env.CONTENTFUL_ACCESS_TOKEN, process.env.CONTENTFUL_ACCESS_TOKEN);
-	console.log('/x----------------');
-	
-
+const getCmsData = async () => {	
 	const contentfulClient = contentful.createClient({
       space: import.meta.env.CONTENTFUL_SPACE_ID ?? "",
       accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN ?? "",
