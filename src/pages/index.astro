@@ -9,8 +9,8 @@ import Footer from '@/src/components/footer/footer.astro';
 
 const getCmsData = async () => {
 	const contentfulClient = contentful.createClient({
-      space: process.env.CONTENTFUL_SPACE_ID ?? "",
-      accessToken: process.env.CONTENTFUL_ACCESS_TOKEN ?? "",
+      space: import.meta.env.CONTENTFUL_SPACE_ID ?? "",
+      accessToken: import.meta.env.CONTENTFUL_MANAGEMENT_TOKEN ?? "",
     });
 	const entries = await contentfulClient.getEntries();
 	return entries;
@@ -23,7 +23,6 @@ const portfolioData = cmsData.items
 		.map((item: any) => item.fields);
 
 const aboutData = cmsData.items.find((item: any) => item.sys.contentType.sys.id === 'aboutMe')?.fields;
-
 ---
 <Layout>
   <Header />
