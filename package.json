@@ -9,7 +9,7 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"lint": "next lint",
-		"test": "jest --colors",
+		"test": "vitest",
 		"generate-content-types": "rimraf ./src/types/contentful.d.ts && contentful-typescript-codegen --output ./src/types/contentful.d.ts && eslint --fix ./src/types/contentful.d.ts",
 		"prepare": "husky"
 	},
@@ -24,6 +24,7 @@
 	},
 	"devDependencies": {
 		"husky": "^9.1.7",
-		"prettier-plugin-astro": "^0.14.1"
+		"prettier-plugin-astro": "^0.14.1",
+		"vitest": "^4.0.16"
 	}
 }
