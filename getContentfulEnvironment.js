@@ -8,7 +8,7 @@ export default async function getContentfulEnvironment() {
 	});
 
 	const environment = await contentfulClient.environment.get({
-		spaceId: import.meta.env.NEXT_CONTENTFUL_SPACE_ID ?? '',
+		spaceId: import.meta.env.CONTENTFUL_SPACE_ID ?? '',
 		environmentId: import.meta.env.CONTENTFUL_ENVIRONMENT ?? '',
 	});
 
