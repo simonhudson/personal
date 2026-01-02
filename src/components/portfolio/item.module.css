@@ -80,7 +80,7 @@
 		content: '';
 		display: block;
 		border-bottom: 2px solid var(--palette-brand);
-		margin: var(--spacing-sm) 0 0;
+		margin: var(--spacing-sm) 0;
 		width: var(--spacing-default);
 	}
 }
