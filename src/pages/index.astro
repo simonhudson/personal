@@ -8,6 +8,12 @@ import Portfolio from '@/src/components/portfolio/portfolio.astro';
 import Footer from '@/src/components/footer/footer.astro';
 
 const getCmsData = async () => {	
+
+	console.log('----------------');
+	console.log(import.meta.env.CONTENTFUL_SPACE_ID, import.meta.env.CONTENTFUL_ACCESS_TOKEN);
+	console.log('/----------------');
+	
+
 	const contentfulClient = contentful.createClient({
       space: import.meta.env.CONTENTFUL_SPACE_ID ?? "",
       accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN ?? "",
