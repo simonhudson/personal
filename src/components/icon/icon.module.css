@@ -1,0 +1,5 @@
+.icon {
+	color: var(--palette-white);
+	display: inline-block;
+	font-size: inherit;
+}

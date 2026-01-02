@@ -1,0 +1,124 @@
+.item {
+	background: var(--palette-white);
+	border-radius: 1rem;
+	box-shadow: 0 0 10px #ddd;
+	display: flex;
+	flex-direction: column;
+	margin: 0 0 var(--spacing-lg);
+
+	&:first-of-type {
+		margin-top: var(--spacing-default);
+
+		@media only screen and (min-width: 1024px) {
+			margin-top: var(--spacing-lg);
+		}
+	}
+}
+
+.header {
+	display: flex;
+	flex-direction: column;
+}
+
+.image-wrap {
+	padding-top: var(--spacing-default);
+
+	@media only screen and (min-width: 1024px) {
+		max-width: 42%;
+		min-width: 42%;
+		padding: 0;
+		width: 42%;
+	}
+}
+
+.image {
+	display: block;
+	height: auto;
+	margin: 0 0 var(--spacing-default);
+	width: 100%;
+
+	@media only screen and (min-width: 1024px) {
+		margin: 0;
+	}
+}
+
+.content {
+	display: flex;
+	flex-direction: column-reverse;
+	gap: var(--spacing-default);
+	padding: var(--spacing-default);
+
+	@media only screen and (min-width: 1024px) {
+		flex-direction: row-reverse;
+		gap: var(--spacing-lg);
+		padding: var(--spacing-md);
+	}
+}
+
+.text {
+	width: 100%;
+}
+
+.copy {
+	padding: 0 0 var(--spacing-sm);
+}
+
+.title {
+	margin: 0;
+	padding: 0;
+}
+
+.client {
+	color: var(--palette-body-text);
+	font-family: var(--font-sans-serif);
+	font-size: 1.2rem;
+	font-weight: 400;
+	letter-spacing: 0.1rem;
+	text-transform: uppercase;
+
+	&::after {
+		content: '';
+		display: block;
+		border-bottom: 2px solid var(--palette-brand);
+		margin: var(--spacing-sm) 0 0;
+		width: var(--spacing-default);
+	}
+}
+
+.footer {
+	background: var(--palette-light-grey);
+	border-bottom-right-radius: 1rem;
+	border-bottom-left-radius: 1rem;
+
+	padding: 0 var(--spacing-default);
+	@media only screen and (min-width: 1024px) {
+		padding: var(--spacing-default) var(--spacing-md);
+	}
+}
+
+.cta-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-default);
+	justify-content: flex-end;
+	list-style: none;
+	margin: 0;
+	padding: var(--spacing-default) 0;
+
+	@media only screen and (min-width: 650px) {
+		align-items: center;
+		flex-direction: row;
+		justify-content: flex-end;
+	}
+}
+
+.cta-item {
+	flex-basis: 0;
+	flex-grow: 1;
+	text-align: center;
+
+	@media only screen and (min-width: 650px) {
+		flex-basis: unset;
+		flex-grow: unset;
+	}
+}

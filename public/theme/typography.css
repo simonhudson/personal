@@ -1,0 +1,23 @@
+p {
+	color: var(--palette-primary-bodyText);
+	font-family: var(--font-serif);
+	font-weight: var(--font-weight);
+	line-height: var(--font-line-height);
+	margin: 0 0 var(--spacing-default);
+}
+
+span,
+strong,
+em {
+	color: inherit;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+strong {
+	font-weight: var(--font-weight-bold);
+}
+
+small {
+	font-size: calc(var(--base-font-size) * 0.85);
+}

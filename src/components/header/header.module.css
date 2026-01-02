@@ -1,0 +1,7 @@
+.header {
+	padding: var(--spacing-md) 0 0;
+
+	@media only screen and (min-width: 768px) {
+		padding: var(--spacing-lg) 0 0;
+	}
+}

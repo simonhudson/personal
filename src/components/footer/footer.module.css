@@ -1,0 +1,23 @@
+.footer {
+	background: var(--palette-body-text);
+	color: var(--palette-white);
+	display: flex;
+	flex-direction: column;
+	padding: var(--spacing-default) 0;
+	font-size: 1.4rem;
+
+	& > div {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		@media only screen and (min-width: 768px) {
+			flex-direction: row;
+		}
+	}
+
+	@media only screen and (min-width: 1024px) {
+		text-align: right;
+	}
+}
