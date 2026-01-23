@@ -1,0 +1,15 @@
+.navigation {
+	display: flex;
+	align-items: center;
+
+	ul {
+		display: flex;
+		font-family: var(--font-sans-serif);
+		gap: var(--spacing-lg);
+		text-transform: uppercase;
+	}
+
+	a {
+		border-bottom: 0;
+	}
+}

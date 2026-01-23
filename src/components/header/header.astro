@@ -1,10 +1,12 @@
 ---
 import Logo from '@/src/components/logo/logo.astro';
+import Navigation from '@/src/components/navigation/navigation.astro';
 import styles from './header.module.css';
 ---
 
-<header class={styles.header}>
-    <div class="inner-wrap">
+<header class={styles.header} id="home">
+    <div class={`inner-wrap ${styles.inner_wrap}`}>
         <Logo />
+        <Navigation />
     </div>
 </header>

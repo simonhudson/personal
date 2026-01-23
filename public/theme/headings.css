@@ -9,26 +9,26 @@ h4 {
 	margin: 0;
 }
 
-h1,
+/* h1,
 h2 {
 	&::after {
 		content: '';
 		display: block;
 		border-bottom: 3px solid var(--palette-brand);
 	}
-}
+} */
 
 h1 {
 	font-family: var(--font-serif);
 	font-size: 3rem;
 	font-weight: var(--font-weight);
 	line-height: 5rem;
-	margin: 0;
+	margin: 0 0 var(--spacing-default);
 
-	&::after {
+	/* &::after {
 		margin: var(--spacing-default) 0;
 		width: var(--spacing-lg);
-	}
+	} */
 }
 
 h2 {

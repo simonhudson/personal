@@ -4,15 +4,11 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
-	padding: var(--spacing-md) 0;
+	padding: var(--spacing-lg) 0;
 
-	&:first-of-type {
-		padding-top: var(--spacing-default);
-	}
-
-	&:nth-of-type(2n) {
+	/* &:nth-of-type(2n) {
 		background: var(--palette-light-grey);
-	}
+	} */
 
 	@media only screen and (min-width: 1024px) {
 		padding: var(--spacing-lg) 0;

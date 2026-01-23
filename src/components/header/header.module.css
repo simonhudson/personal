@@ -1,7 +1,6 @@
-.header {
-	padding: var(--spacing-md) 0 0;
-
-	@media only screen and (min-width: 768px) {
-		padding: var(--spacing-lg) 0 0;
-	}
+.inner_wrap {
+	border-bottom: 2px solid var(--palette-body-text);
+	display: flex;
+	justify-content: space-between;
+	padding: var(--spacing-md) 0 var(--spacing-default) 0;
 }
