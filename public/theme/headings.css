@@ -3,10 +3,10 @@ h2,
 h3,
 h4 {
 	color: var(--palette-body-text);
-	font-family: var(--font-serif);
+	font-family: var(--font-sans-serif);
 	font-size: var(--font-size);
 	font-weight: var(--font-weight-bold);
-	margin: 0;
+	margin: 0 0 1em;
 }
 
 /* h1,
@@ -19,11 +19,15 @@ h2 {
 } */
 
 h1 {
-	font-family: var(--font-serif);
-	font-size: 3rem;
-	font-weight: var(--font-weight);
+	font-family: var(--font-sans-serif);
+	font-size: 4rem;
+	font-weight: 800;
 	line-height: 5rem;
-	margin: 0 0 var(--spacing-default);
+
+	&::after {
+		content: '.';
+		color: var(--palette-brand);
+	}
 
 	/* &::after {
 		margin: var(--spacing-default) 0;
@@ -35,7 +39,7 @@ h2 {
 	font-size: 2.4rem;
 	font-weight: var(--font-weight-bold);
 	line-height: 1.6rem;
-	margin: 0 0 var(--spacing-default);
+	margin: 0 0 2em;
 
 	&::after {
 		margin: var(--spacing-default) 0;

@@ -1,10 +1,15 @@
 .footer {
 	background: var(--palette-body-text);
+	border-top: 2px solid var(--palette-brand);
 	color: var(--palette-white);
 	display: flex;
 	flex-direction: column;
 	padding: var(--spacing-default) 0;
 	font-size: 1.4rem;
+
+	p {
+		margin: 0;
+	}
 
 	& > div {
 		align-items: center;

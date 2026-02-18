@@ -15,9 +15,9 @@
 	--font-weight-bold: 700;
 	--font-weight: 400;
 
-	--palette-body-background: #efd7ad;
+	--palette-body-background: #fff; /* #efd7ad */
 	--palette-brand: #ff9a00;
-	--palette-body-text: #29261f;
+	--palette-body-text: #252525;
 	--palette-black: #211c15;
 	--palette-cta-background: #31495a;
 	--palette-white: #fff;
@@ -52,7 +52,7 @@ fieldset {
 	box-sizing: border-box;
 	background: var(--palette-body-background);
 	color: var(--palette-body-text);
-	font-family: var(--font-serif);
+	font-family: var(--font-sans-serif);
 	font-weight: var(--font-weight);
 	line-height: var(--font-line-height);
 	margin: 0;
@@ -80,6 +80,7 @@ html {
 
 body {
 	font-size: var(--font-size);
+	height: 100vh;
 }
 
 .no-scroll {

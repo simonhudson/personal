@@ -1,6 +1,6 @@
 p {
 	color: var(--palette-primary-bodyText);
-	font-family: var(--font-serif);
+	font-family: var(--font-sans-serif);
 	font-weight: var(--font-weight);
 	line-height: var(--font-line-height);
 	margin: 0 0 var(--spacing-default);
