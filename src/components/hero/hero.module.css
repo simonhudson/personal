@@ -2,7 +2,7 @@
 	padding: 0;
 
 	.inner_wrap {
-		border-top: 1px solid rgb(from var(--palette-body-text) r g b / 0.35);
+		/* border-top: 1px solid rgb(from var(--palette-body-text) r g b / 0.35); */
 		/* border-bottom: 1px solid rgb(from var(--palette-brand) r g b / 0.5); */
 		padding: var(--spacing-md) 0;
 

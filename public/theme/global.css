@@ -16,8 +16,17 @@
 	--font-weight: 400;
 
 	--palette-body-background: #fff; /* #efd7ad */
+
 	--palette-brand: #ff9a00;
+	--palette-brand-75: rgb(from var(--palette-brand) r g b / 0.75);
+	--palette-brand-50: rgb(from var(--palette-brand) r g b / 0.5);
+	--palette-brand-25: rgb(from var(--palette-brand) r g b / 0.25);
+
 	--palette-body-text: #252525;
+	--palette-body-text-75: rgb(from var(--palette-body-text) r g b / 0.75);
+	--palette-body-text-50: rgb(from var(--palette-body-text) r g b / 0.5);
+	--palette-body-text-25: rgb(from var(--palette-body-text) r g b / 0.25);
+
 	--palette-black: #211c15;
 	--palette-cta-background: #fff; /*#31495a;*/
 	--palette-white: #fff;

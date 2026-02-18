@@ -1,5 +1,5 @@
 .inner_wrap {
-	border-bottom: 2px solid var(--palette-body-text);
+	border-bottom: 1px solid var(--palette-body-text-25);
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 2px;
