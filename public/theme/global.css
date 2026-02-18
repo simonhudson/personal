@@ -8,7 +8,7 @@
 	--font-code: 'Courier New, Courier, monospace';
 	--font-heading: 'Poppins, arial, helvetica, sans-serif';
 	--font-line-height: 2.8rem;
-	--font-sans-serif: 'Inter';
+	--font-sans-serif: 'Open Sans';
 	--font-serif: 'Lora';
 	--font-semi-bold: 'opensans_semibold';
 	--font-size: 1.6rem;
@@ -144,6 +144,7 @@ li {
 	background: var(--palette-cta-background);
 	border-radius: 0.5rem;
 	border: 0;
+	box-shadow: 0 2px 4px #ddd;
 	color: var(--palette-body-text);
 	display: block;
 	font-family: var(--font-sans-serif);
@@ -159,7 +160,7 @@ li {
 
 	&:hover,
 	&:focus-visible {
-		outline: 5px solid var(--palette-brand);
+		background: #eee;
 	}
 
 	&:focus-visible {
