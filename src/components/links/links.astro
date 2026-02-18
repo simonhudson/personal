@@ -1,0 +1,26 @@
+---
+import { links } from './links';
+import styles from './links.module.css';
+import Icon from '@/src/components/icon/icon.astro';
+---
+{links && (
+	<ul class={styles['link-list']}>
+		{links.map((item) => {
+			return item.omit ? null : (
+				<li>
+					<a
+						class={`cta-link ${styles.link}`}
+						href={item.link}
+						target="_blank"
+						rel="noopener noreferer"
+					>
+						<span class="sr-only">{item.text}</span>
+						<span class="sr-only">&nbsp;(opens in a new tab)</span>
+						<Icon type={item.icon.type} name={item.icon.name} />
+					</a>
+				</li>
+			);
+		})}
+	</ul>
+)}
+

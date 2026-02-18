@@ -1,0 +1,18 @@
+.link-list {
+	border-top: 1px solid rgb(from var(--palette-brand) r g b / 0.5);
+	display: flex;
+	flex-direction: row;
+	gap: var(--spacing-default);
+	justify-content: flex-start;
+	list-style: none;
+	margin: var(--spacing-md) 0 0;
+	padding: var(--spacing-md) 0 0;
+
+	@media only screen and (min-width: 768px) {
+		gap: var(--spacing-md);
+	}
+
+	span:first-of-type {
+		margin-right: 1rem;
+	}
+}

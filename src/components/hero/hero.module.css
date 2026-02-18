@@ -3,11 +3,19 @@
 
 	.inner_wrap {
 		border-top: 1px solid rgb(from var(--palette-body-text) r g b / 0.35);
-		border-bottom: 1px solid rgb(from var(--palette-brand) r g b / 0.5);
+		/* border-bottom: 1px solid rgb(from var(--palette-brand) r g b / 0.5); */
 		padding: var(--spacing-md) 0;
 
 		@media only screen and (min-width: 1024px) {
 			padding: var(--spacing-lg) 0;
+		}
+	}
+
+	h1 {
+		span {
+			display: block;
+			font-size: 0.5em;
+			font-weight: var(--font-weight);
 		}
 	}
 

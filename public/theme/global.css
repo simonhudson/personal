@@ -19,7 +19,7 @@
 	--palette-brand: #ff9a00;
 	--palette-body-text: #252525;
 	--palette-black: #211c15;
-	--palette-cta-background: #31495a;
+	--palette-cta-background: #fff; /*#31495a;*/
 	--palette-white: #fff;
 	--palette-grey: #bbb;
 	--palette-light-grey: #f9f9f9;
@@ -135,7 +135,7 @@ li {
 	background: var(--palette-cta-background);
 	border-radius: 0.5rem;
 	border: 0;
-	color: var(--palette-white);
+	color: var(--palette-body-text);
 	display: block;
 	font-family: var(--font-sans-serif);
 	font-size: 1.2rem;

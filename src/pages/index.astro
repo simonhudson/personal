@@ -8,6 +8,7 @@ import  Hero from '@/src/components/hero/hero.astro';
 import  About from '@/src/components/about/about.astro';
 import Portfolio from '@/src/components/portfolio/portfolio.astro';
 import Footer from '@/src/components/footer/footer.astro';
+import Links from '@/src/components/links/links.astro';
 
 const getCmsData = async () => {	
 	
@@ -30,7 +31,8 @@ const aboutData = cmsData.items.find((item: any) => item.sys.contentType.sys.id 
 <Layout>
   <Header />
   <Hero />
+  
     <!-- <About data={aboutData} />
-	<Portfolio items={portfolioData} />    -->
-	<Footer /> 
+	<Portfolio items={portfolioData} />   
+	<Footer />  -->
 </Layout>
