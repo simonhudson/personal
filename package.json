@@ -13,7 +13,7 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
-		"@astrojs/node": "^9.5.1",
+		"@astrojs/vercel": "^9.0.4",
 		"@contentful/rich-text-html-renderer": "^17.0.0",
 		"@fontsource/inter": "^5.2.8",
 		"@fontsource/lora": "^5.2.8",
