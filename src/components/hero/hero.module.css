@@ -19,23 +19,23 @@
 		span {
 			color: var(--palette-body-text-75);
 			display: block;
-			font-size: 0.5em;
+			font-size: 2rem;
 			font-weight: var(--font-weight);
 
 			@media only screen and (min-width: 1024px) {
-				font-size: 0.35em;
+				font-size: 2.8rem;
 			}
 		}
 	}
 
 	p {
 		font-family: var(--font-serif);
-		font-size: 2.4rem;
+		font-size: 2.2rem;
 		line-height: 1.8em;
 		margin: 0;
 
 		@media only screen and (min-width: 1024px) {
-			font-size: 3.2rem;
+			font-size: 2.8rem;
 			line-height: 1.8em;
 			width: 70%;
 		}
