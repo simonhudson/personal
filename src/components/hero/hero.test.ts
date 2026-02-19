@@ -17,15 +17,24 @@
 
 import { experimental_AstroContainer as AstroContainer } from 'astro/container';
 import { expect, test } from 'vitest';
-import Hero from './hero.astro';
+import { getByRole } from '@testing-library/dom';
 
-test('Hero', async () => {
+test('Hero renders heading', async () => {
 	const container = await AstroContainer.create();
-	const result = await container.renderToString(Hero, {
+	// Dynamically import the Astro component
+	const { default: Hero } = await import('./hero.astro');
+	const html = await container.renderToString(Hero, {
 		slots: {
 			default: 'Hero content',
 		},
 	});
 
-	expect(result).toContain('Simon Hudson');
+	// Create a DOM from the rendered HTML
+	const dom = document.createElement('div');
+	dom.innerHTML = html;
+
+	// Query the heading by role
+	const heading = getByRole(dom, 'heading', { level: 1, name: /Hello, my name is Simon Hudson/ });
+	expect(heading).toBeTruthy();
 });
+// import { expect, test } from 'vitest';

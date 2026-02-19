@@ -1,4 +1,13 @@
-/// <reference types="vitest" />
-import { getViteConfig } from 'astro/config';
+import { defineConfig } from 'vitest/config';
+import { playwright } from '@vitest/browser-playwright';
 
-export default getViteConfig({});
+export default defineConfig({
+	test: {
+		browser: {
+			provider: playwright(),
+			enabled: true,
+			headless: true,
+			instances: [{ browser: 'chromium' }],
+		},
+	},
+});

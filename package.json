@@ -22,8 +22,11 @@
 		"dayjs": "^1.11.13"
 	},
 	"devDependencies": {
+		"@testing-library/dom": "^10.4.1",
+		"@vitest/browser-playwright": "^4.0.18",
+		"@vitest/browser-preview": "^4.0.18",
 		"husky": "^9.1.7",
 		"prettier-plugin-astro": "^0.14.1",
-		"vitest": "^4.0.16"
+		"vitest": "^4.0.18"
 	}
 }

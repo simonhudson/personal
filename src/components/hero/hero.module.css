@@ -2,8 +2,8 @@
 	padding: 0;
 
 	.inner_wrap {
-		/* border-top: 1px solid rgb(from var(--palette-body-text) r g b / 0.35); */
-		/* border-bottom: 1px solid rgb(from var(--palette-brand) r g b / 0.5); */
+		/* border-top: 1px solid rgb(from var(--palette-body-text) r g b / 0.35);
+		border-bottom: 1px solid rgb(from var(--palette-brand) r g b / 0.5); */
 		padding: var(--spacing-md) 0;
 
 		@media only screen and (min-width: 1024px) {
@@ -12,22 +12,31 @@
 	}
 
 	h1 {
+		@media only screen and (min-width: 1024px) {
+			line-height: 1em;
+		}
+
 		span {
+			color: var(--palette-body-text-75);
 			display: block;
 			font-size: 0.5em;
 			font-weight: var(--font-weight);
+
+			@media only screen and (min-width: 1024px) {
+				font-size: 0.35em;
+			}
 		}
 	}
 
 	p {
 		font-family: var(--font-serif);
-		font-size: 1.8rem;
+		font-size: 2.4rem;
 		line-height: 1.8em;
 		margin: 0;
 
 		@media only screen and (min-width: 1024px) {
-			font-size: 2.4rem;
-			line-height: 4rem;
+			font-size: 3.2rem;
+			line-height: 1.8em;
 			width: 70%;
 		}
 	}
