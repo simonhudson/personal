@@ -1,3 +1,7 @@
+.about {
+	padding: 0;
+}
+
 .wrap {
 	gap: var(--spacing-default);
 	display: flex;
@@ -16,6 +20,16 @@
 	@media only screen and (min-width: 1024px) {
 		flex-direction: row-reverse;
 		gap: var(--spacing-lg);
+		width: 70%;
+	}
+
+	p {
+		font-size: 1.6rem;
+		line-height: 1.8em;
+
+		@media only screen and (min-width: 1024px) {
+			font-size: 2rem;
+		}
 	}
 }
 

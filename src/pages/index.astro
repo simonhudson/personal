@@ -29,10 +29,9 @@ const portfolioData = cmsData.items
 const aboutData = cmsData.items.find((item: any) => item.sys.contentType.sys.id === 'aboutMe')?.fields;
 ---
 <Layout>
-  <Header />
-  <Hero />
-  
-     <!-- <About data={aboutData} />
-	<Portfolio items={portfolioData} />   
+	<Header />
+	<Hero />
+	<About data={aboutData} />
+	<!-- <Portfolio items={portfolioData} />   
 	<Footer />   -->
 </Layout>

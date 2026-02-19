@@ -110,14 +110,14 @@ details summary::marker {
 }
 
 a {
-	border-bottom: 1px solid var(--palette-grey);
+	border-bottom: 1px solid var(--palette-brand);
 	color: var(--palette-body-text);
 	text-decoration: none;
 	transition: all 0.3s ease-in-out;
 
 	&:hover,
 	&:focus {
-		border-bottom-color: var(--palette-brand);
+		border-bottom-color: var(--palette-grey);
 	}
 }
 

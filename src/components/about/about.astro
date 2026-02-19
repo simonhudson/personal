@@ -4,19 +4,19 @@ import styles from './about.module.css';
 
 const { data } = Astro.props;
 ---
-<section id="about">
+<section id="about" class={styles.about}>
 	<div class="inner-wrap">
 		<div class={styles.wrap}>
 			<div class={styles.content}>
-				<img
+				<!-- <img
 					class={styles.image}
 					alt="Simon Hudson"
 					src="/images/self.png"
 					width="200"
 					height="200"
-				/>
+				/> -->
 				<div>
-					<h2>About me</h2>
+					<!-- <h2>About me</h2> -->
 					<div set:html={parseToHtml(data.copy)} />
 				</div>
 			</div>
