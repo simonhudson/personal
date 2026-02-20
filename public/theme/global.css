@@ -52,14 +52,15 @@
 }
 
 html {
-	font-size: 62.5%;
+	background: var(--palette-body-background);
+	border-top: 10px solid var(--palette-brand);
+	font-size: var(--base-font-size);
 }
 
 html,
 body,
 fieldset {
 	box-sizing: border-box;
-	background: var(--palette-body-background);
 	color: var(--palette-body-text);
 	font-family: var(--font-sans-serif);
 	font-weight: var(--font-weight);
@@ -74,11 +75,6 @@ fieldset {
 	html {
 		scroll-behavior: auto;
 	}
-}
-
-html {
-	/* border-top: 10px solid var(--palette-brand); */
-	font-size: var(--base-font-size);
 }
 
 @media (min-width: var(--breakpoint-phone-portrait)) {
