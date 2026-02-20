@@ -53,7 +53,7 @@
 
 html {
 	background: var(--palette-body-background);
-	border-top: 10px solid var(--palette-brand);
+	border-top: 5px solid var(--palette-brand);
 	font-size: var(--base-font-size);
 }
 
