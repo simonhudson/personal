@@ -10,12 +10,20 @@ const projectMapping = {
     image: 'https://picsum.photos/seed/british-red-cross/1200/800',
     link: 'https://www.redcross.org.uk/',
   },
+  'experian-your-offers': {
+    title: 'Your Offers',
+    description: 'A project for Experian Your Offers',
+    image: 'https://picsum.photos/seed/experian/1200/800',
+    link: 'https://offers.experian.co.uk',
+  },
 };
 
 ---
 <Layout>
+  <section class="hero">
+	<h1><span>{projectMapping[slug].title}</span></h1>
+</section>
   <img src={projectMapping[slug].image} alt={projectMapping[slug].title} style="width: 100%; height: auto; margin-bottom: 2rem;" />
-  <h2 class="serif-italic">{projectMapping[slug].title}</h2>
   <p>{projectMapping[slug].description}</p>
   <p>
     <a href={projectMapping[slug].link} class="case-study-btn" target="_blank" rel="noopener noreferrer">

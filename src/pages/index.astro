@@ -3,6 +3,8 @@ export const prerender = true
 
 // import * as contentful from 'contentful';
 import Layout from '@/src/layouts/Layout.astro';
+import Hero from '@/src/components/hero/hero.astro';
+
 // import Header from '@/src/components/header/header.astro';
 // import  Hero from '@/src/components/hero/hero.astro';
 // import  About from '@/src/components/about/about.astro';
@@ -29,6 +31,7 @@ import Layout from '@/src/layouts/Layout.astro';
 // const aboutData = cmsData.items.find((item: any) => item.sys.contentType.sys.id === 'aboutMe')?.fields;
 ---
 <Layout>
+	<Hero />
 	<section class="philosophy">
 		<div>
 			<span class="section-label">Expertise</span>
@@ -83,8 +86,8 @@ import Layout from '@/src/layouts/Layout.astro';
 				</div>
 				<div class="project-info">
 					<div class="project-details">
-						<span class="section-label">Sustainable Goods Co.</span>
-						<h3>Accessible E-commerce Platform</h3>
+						<span class="section-label">Experian</span>
+						<h3><a href="/experian-your-offers">Your Offers</a></h3>
 						<button class="case-study-btn">
 							View Case Study
 							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
