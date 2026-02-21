@@ -58,7 +58,15 @@ nav {
 	font-size: 0.75rem;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
-	opacity: 0.5;
+
+	a {
+		border: none;
+
+		svg {
+			height: 58px;
+			width: 58px;
+		}
+	}
 }
 
 .nav-link {
