@@ -1,0 +1,177 @@
+@import './layout.css';
+@import './headings.css';
+@import './typography.css';
+
+:root {
+	--base-font-size: 62.5%;
+	--font-line-height: 1.5;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+	--font-sans-serif: 'Inter', ui-sans-serif, system-ui, sans-serif;
+	--font-semi-bold: 'opensans_semibold';
+	--font-serif: 'Playfair Display', serif;
+	--font-size: 1.6rem;
+	--font-weight-bold: 700;
+	--font-weight: 400;
+
+	--palette-body-background: #fcfcfc; /* #efd7ad */
+	--palette-brand: #ff9a00;
+	--palette-brand-75: rgb(from var(--palette-brand) r g b / 0.75);
+	--palette-brand-50: rgb(from var(--palette-brand) r g b / 0.5);
+	--palette-brand-25: rgb(from var(--palette-brand) r g b / 0.25);
+
+	--palette-body-text: #1a1a1a;
+	--palette-body-text-75: rgb(from var(--palette-body-text) r g b / 0.75);
+	--palette-body-text-50: rgb(from var(--palette-body-text) r g b / 0.5);
+	--palette-body-text-25: rgb(from var(--palette-body-text) r g b / 0.25);
+
+	--palette-black: #211c15;
+	--palette-cta-background: #fff; /*#31495a;*/
+	--palette-white: #fff;
+	--palette-grey: #bbb;
+	--palette-light-grey: #f9f9f9;
+
+	--breakpoint-phone-portrait: 420px;
+	--breakpoint-phone-landscape: 650px;
+	--breakpoint-tablet-portrait: 768px;
+	--breakpoint-tablet-landscape: 1024px;
+	--breakpoint-desktop: 1200px;
+
+	--spacing-default: var(--font-size);
+	--spacing-xs: calc(var(--font-size) / 4);
+	--spacing-sm: calc(var(--font-size) / 2);
+	--spacing-md: calc(var(--font-size) * 2);
+	--spacing-lg: calc(var(--font-size) * 4);
+	--spacing-xl: calc(var(--font-size) * 6);
+	--spacing-2xl: calc(var(--font-size) * 8);
+	--spacing-3xl: calc(var(--font-size) * 10);
+	--spacing-4xl: calc(var(--font-size) * 14);
+	--spacing-5xl: calc(var(--font-size) * 20);
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	background: var(--palette-body-background);
+	border-top: 5px solid var(--palette-brand);
+	font-size: var(--base-font-size);
+}
+
+html,
+body,
+fieldset {
+	color: var(--palette-body-text);
+	font-family: var(--font-sans-serif);
+	font-weight: var(--font-weight);
+	line-height: var(--font-line-height);
+	scroll-behavior: smooth;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+
+@media (min-width: var(--breakpoint-phone-portrait)) {
+	html {
+		border-top: 20px solid blue;
+	}
+}
+
+body {
+	font-size: var(--font-size);
+	height: 100vh;
+}
+
+.no-scroll {
+	overflow: hidden;
+}
+
+.no-js-alert {
+	display: block;
+}
+
+fieldset {
+	border: 0;
+	padding: 0;
+}
+
+details summary::marker {
+	display: none;
+}
+
+a {
+	border-bottom: 1px solid var(--palette-brand);
+	color: var(--palette-body-text);
+	text-decoration: none;
+	transition: all 0.3s ease-in-out;
+
+	&:hover,
+	&:focus {
+		border-bottom-color: var(--palette-grey);
+	}
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sr-only {
+	border: 0;
+	clip: rect(0 0 0 0);
+	color: var(--palette-white);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.cta-link {
+	background: var(--palette-cta-background);
+	border-radius: 0.5rem;
+	border: 0;
+	box-shadow: 0 2px 4px #ddd;
+	color: var(--palette-body-text);
+	display: block;
+	font-family: var(--font-sans-serif);
+	font-size: 1.2rem;
+	font-weight: 700;
+	letter-spacing: 0.1rem;
+	outline: 5px solid transparent;
+	padding: var(--spacing-xs) var(--spacing-default);
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.5s ease;
+
+	&:hover,
+	&:focus-visible {
+		background: #eee;
+	}
+
+	&:focus-visible {
+		text-decoration: underline;
+	}
+}

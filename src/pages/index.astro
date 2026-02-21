@@ -1,39 +1,103 @@
 ---
 export const prerender = true
 
-import * as contentful from 'contentful';
+// import * as contentful from 'contentful';
 import Layout from '@/src/layouts/Layout.astro';
-import Header from '@/src/components/header/header.astro';
-import  Hero from '@/src/components/hero/hero.astro';
-import  About from '@/src/components/about/about.astro';
-import Portfolio from '@/src/components/portfolio/portfolio.astro';
-import Footer from '@/src/components/footer/footer.astro';
-import Links from '@/src/components/links/links.astro';
+// import Header from '@/src/components/header/header.astro';
+// import  Hero from '@/src/components/hero/hero.astro';
+// import  About from '@/src/components/about/about.astro';
+// import Portfolio from '@/src/components/portfolio/portfolio.astro';
+// import Footer from '@/src/components/footer/footer.astro';
+// import Links from '@/src/components/links/links.astro';
 
-const getCmsData = async () => {	
+// const getCmsData = async () => {	
 	
-	const contentfulClient = contentful.createClient({
-      space: import.meta.env.CONTENTFUL_SPACE_ID ?? "",
-      accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN ?? "",
-    });
-	const entries = await contentfulClient.getEntries();
-	return entries;
-};
+// 	const contentfulClient = contentful.createClient({
+//       space: import.meta.env.CONTENTFUL_SPACE_ID ?? "",
+//       accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN ?? "",
+//     });
+// 	const entries = await contentfulClient.getEntries();
+// 	return entries;
+// };
 
-const cmsData = await getCmsData();
+// const cmsData = await getCmsData();
 
-const portfolioData = cmsData.items
-		.filter((item: any) => item.sys.contentType.sys.id === 'portfolioItem')
-		.map((item: any) => item.fields);
+// const portfolioData = cmsData.items
+// 		.filter((item: any) => item.sys.contentType.sys.id === 'portfolioItem')
+// 		.map((item: any) => item.fields);
 
-const aboutData = cmsData.items.find((item: any) => item.sys.contentType.sys.id === 'aboutMe')?.fields;
+// const aboutData = cmsData.items.find((item: any) => item.sys.contentType.sys.id === 'aboutMe')?.fields;
 ---
 <Layout>
-	<!-- <Header /> -->
-	 <main>
-		<Hero />
-		<About data={aboutData} />
-	</main>
-	<!-- <Portfolio items={portfolioData} />   
-	<Footer />   -->
+	<section class="philosophy">
+		<div>
+			<span class="section-label">Expertise</span>
+			<h2 class="serif-italic">Who am I?</h2>
+			<p>I've been working in web development since 2004, back when all this was just fields and we had to use <a href="https://css-tricks.com/snippets/css/browser-specific-hacks/">a whole manner of nasty hacks to get our CSS working</a>. In that time I have worked on a wide range of projects, from small brochure-ware microsites through to enterprise-level single-page web apps serving millions of users.</p>
+		</div>
+		<div>
+			<span class="section-label">Values</span>
+			<h2 class="serif-italic">The Approach</h2>
+			<p>I am passionate about web accessibility and how to build for assistive technologies. I'm also a big fan of good testing, sensible code, and striving for simple solutions to complex problems.</p>
+		</div>
+	</section>
+
+	<section class="work-section">
+		<div class="work-header">
+			<div>
+				<span class="section-label">Portfolio</span>
+				<h2 class="serif-italic" style="font-size: 2.5rem; margin-bottom: 0;">Selected Work</h2>
+			</div>
+		</div>
+
+		<div class="work-grid">
+			<!-- Project 1 -->
+			<div class="project-card">
+				<div class="project-image-wrapper">
+					<img src="https://picsum.photos/seed/project1/1200/800" alt="Enterprise Design System">
+					<div class="project-image-overlay"></div>
+				</div>
+				<div class="project-info">
+					<div class="project-details">
+						<span class="section-label">British Red Cross</span>
+						<h3><a href="/british-red-cross">British Red Cross Web Platform</a></h3>
+						<button class="case-study-btn">
+							View Case Study
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+						</button>
+					</div>
+					<div class="project-tech">
+						<span class="tech-tag">React</span>
+						<span class="tech-tag">TypeScript</span>
+						<span class="tech-tag">Tailwind CSS</span>
+						<span class="tech-tag">Storybook</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Project 2 -->
+			<div class="project-card">
+				<div class="project-image-wrapper">
+					<img src="https://picsum.photos/seed/project2/1200/800" alt="Accessible E-commerce Platform">
+					<div class="project-image-overlay"></div>
+				</div>
+				<div class="project-info">
+					<div class="project-details">
+						<span class="section-label">Sustainable Goods Co.</span>
+						<h3>Accessible E-commerce Platform</h3>
+						<button class="case-study-btn">
+							View Case Study
+							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+						</button>
+					</div>
+					<div class="project-tech">
+						<span class="tech-tag">Next.js</span>
+						<span class="tech-tag">Node.js</span>
+						<span class="tech-tag">PostgreSQL</span>
+						<span class="tech-tag">Aria-Live</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 </Layout>

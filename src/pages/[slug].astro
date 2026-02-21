@@ -1,0 +1,26 @@
+---
+import Layout from '@/src/layouts/Layout.astro';
+
+const { slug } = Astro.params;
+
+const projectMapping = {
+  'british-red-cross': {
+    title: 'British Red Cross',
+    description: 'A project for the British Red Cross',
+    image: 'https://picsum.photos/seed/british-red-cross/1200/800',
+    link: 'https://www.redcross.org.uk/',
+  },
+};
+
+---
+<Layout>
+  <img src={projectMapping[slug].image} alt={projectMapping[slug].title} style="width: 100%; height: auto; margin-bottom: 2rem;" />
+  <h2 class="serif-italic">{projectMapping[slug].title}</h2>
+  <p>{projectMapping[slug].description}</p>
+  <p>
+    <a href={projectMapping[slug].link} class="case-study-btn" target="_blank" rel="noopener noreferrer">
+						View Project
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+    </a>
+  </p>
+</Layout>
