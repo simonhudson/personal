@@ -1,4 +1,4 @@
----
+<!-- ---
 import '@fontsource/open-sans/400.css';
 import '@fontsource/open-sans/600.css';
 import '@fontsource/open-sans/800.css';
@@ -8,13 +8,557 @@ import '@fontsource/lora/700.css';
 
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="/theme/global.css" />
+        
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Personal website of Simon Hudson, a Full Stack Developer based in Derby, UK." />
         <title>Simon Hudson | Full Stack Developer</title>
-    </head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/theme/global.css" />
+</head>
     <body>
-        <slot />
-        <!-- <script src="https://kit.fontawesome.com/6331124e0b.js" crossorigin="anonymous"></script> -->
+        <div class="container">
+            <slot />
+        </div>
+        <script src="https://kit.fontawesome.com/6331124e0b.js" crossorigin="anonymous"></script>
     </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Simon Hudson, a Full Stack Developer based in Derby, UK." />
+    <title>Simon Hudson | Full Stack Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+            --font-serif: "Playfair Display", serif;
+            --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+            --color-bg: #fcfcfc;
+            --color-ink: #1a1a1a;
+            --color-accent: #ff9a00;
+            --border: rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            border-top: 2px solid var(--color-accent);
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: var(--color-ink);
+            font-family: var(--font-sans);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+        }
+
+        .nav-link {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .nav-link svg {
+            transition: transform 0.2s ease;
+        }
+
+        .nav-link:hover svg {
+            transform: translate(2px, -2px);
+        }
+
+        /* Main Content */
+        main {
+            padding: 4rem 0;
+        }
+
+        .hero {
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            font-weight: inherit;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            text-wrap: balance;
+
+            &::after {
+                content: '.';
+                color: var(--color-accent);
+            }
+
+        }
+
+        h1 span.italic {
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .hero-intro {
+            max-width: 42rem;
+        }
+
+        .hero-intro p.lead {
+            font-size: 1.5rem;
+            line-height: 1.4;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            text-wrap: pretty;
+        }
+
+        .hero-intro p.sub {
+            font-size: 1.125rem;
+            opacity: 0.6;
+            text-wrap: pretty;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+            border-top: 1px solid var(--border);
+            padding-top: 4rem;
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.4;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        h2.serif-italic {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .philosophy p {
+            font-size: 1.125rem;
+            opacity: 0.7;
+            line-height: 1.6;
+        }
+
+        /* Selected Work */
+        .work-section {
+            border-top: 1px solid var(--border);
+            padding-top: 4rem;
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .work-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+        }
+
+        .work-grid {
+            display: grid;
+            gap: 6rem;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .project-image-wrapper {
+            position: relative;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+            border-radius: 1rem;
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .project-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-cover: cover;
+            filter: grayscale(100%);
+            transition: all 0.7s ease;
+        }
+
+        .project-card:hover .project-image-wrapper img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .project-image-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.1);
+            transition: background-color 0.5s ease;
+        }
+
+        .project-card:hover .project-image-overlay {
+            background-color: transparent;
+        }
+
+        .project-info {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .project-info {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .project-details h3 {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: flex-start;
+        }
+
+        @media (min-width: 768px) {
+            .project-tech {
+                justify-content: flex-end;
+            }
+        }
+
+        .tech-tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.6;
+        }
+
+        .case-study-btn {
+            background: none;
+            border: none;
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.5;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .case-study-btn:hover {
+            opacity: 1;
+        }
+
+        /* Social Links */
+        .social-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            border-top: 1px solid var(--border);
+            padding-top: 4rem;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        @media (min-width: 768px) {
+            .social-section {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .social-card {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .social-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .social-card:hover .social-icon {
+            background-color: var(--color-ink);
+            color: white;
+        }
+
+        .social-label-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .social-connect {
+            font-size: 0.875rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-card:hover .social-connect {
+            transform: translateX(4px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            footer {
+                flex-direction: row;
+            }
+        }
+
+        .footer-text {
+            font-family: var(--font-mono);
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            opacity: 0.3;
+        }
+
+        .footer-meta {
+            display: flex;
+            gap: 2rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="nav-logo">Simon Hudson / Portfolio</div>
+            <a href="mailto:hello@simonhudson.com" class="nav-link">
+                Contact
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </a>
+        </nav>
+
+        <main>
+            <section class="hero">
+                <h1>Hello, my name is <span class="italic">Simon Hudson</span></h1>
+                <div class="hero-intro">
+                    <p class="lead">I am an experienced Full Stack Developer who uses <strong>HTML</strong>, <strong>CSS</strong> and <strong>TypeScript</strong> to create accessible and usable websites and applications.</p>
+                    <!-- <p class="sub"></p> -->
+                </div>
+            </section>
+
+            <section class="philosophy">
+                <div>
+                    <span class="section-label">Expertise</span>
+                    <h2 class="serif-italic">Who am I?</h2>
+                    <p>I've been working in web development since 2004, back when all this was just fields and we had to use a whole manner of nasty hacks to get our CSS working. In that time I have worked on a wide range of projects, from small brochure-ware microsites through to enterprise-level single-page web apps serving millions of users.</p>
+                </div>
+                <div>
+                    <span class="section-label">Values</span>
+                    <h2 class="serif-italic">The Approach</h2>
+                    <p>I am passionate about web accessibility and how to build for assistive technologies. I'm also a big fan of good testing, sensible code, and striving for simple solutions to complex problems.</p>
+                </div>
+            </section>
+
+            <section class="work-section">
+                <div class="work-header">
+                    <div>
+                        <span class="section-label">Portfolio</span>
+                        <h2 class="serif-italic" style="font-size: 2.5rem; margin-bottom: 0;">Selected Work</h2>
+                    </div>
+                    <div class="footer-text" style="display: block;">01 — 03</div>
+                </div>
+
+                <div class="work-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="https://picsum.photos/seed/project1/1200/800" alt="Enterprise Design System">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-details">
+                                <span class="section-label">Global FinTech Corp</span>
+                                <h3>Enterprise Design System</h3>
+                                <button class="case-study-btn">
+                                    View Case Study
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </button>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">TypeScript</span>
+                                <span class="tech-tag">Tailwind CSS</span>
+                                <span class="tech-tag">Storybook</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-image-wrapper">
+                            <img src="https://picsum.photos/seed/project2/1200/800" alt="Accessible E-commerce Platform">
+                            <div class="project-image-overlay"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-details">
+                                <span class="section-label">Sustainable Goods Co.</span>
+                                <h3>Accessible E-commerce Platform</h3>
+                                <button class="case-study-btn">
+                                    View Case Study
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                                </button>
+                            </div>
+                            <div class="project-tech">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                                <span class="tech-tag">Aria-Live</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="social-section">
+                <a href="#" class="social-card">
+                    <div class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </div>
+                    <div class="social-label-group">
+                        <span class="section-label">GitHub</span>
+                        <span class="social-connect">Connect <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
+                    </div>
+                </a>
+                <a href="#" class="social-card">
+                    <div class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </div>
+                    <div class="social-label-group">
+                        <span class="section-label">LinkedIn</span>
+                        <span class="social-connect">Connect <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
+                    </div>
+                </a>
+                <a href="#" class="social-card">
+                    <div class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </div>
+                    <div class="social-label-group">
+                        <span class="section-label">Twitter</span>
+                        <span class="social-connect">Connect <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
+                    </div>
+                </a>
+                <a href="#" class="social-card">
+                    <div class="social-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <div class="social-label-group">
+                        <span class="section-label">Email</span>
+                        <span class="social-connect">Connect <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
+                    </div>
+                </a>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-text">© 2026 Simon Hudson</div>
+            <div class="footer-meta">
+                <span class="footer-text">Built with HTML & CSS</span>
+                <span class="footer-text">London, UK</span>
+            </div>
+        </footer>
+    </div>
+</body>
 </html>

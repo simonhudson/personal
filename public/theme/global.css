@@ -5,24 +5,23 @@
 :root {
 	--base-font-size: 62.5%;
 	--font-bold: 'opensans_bold';
-	--font-code: 'Courier New, Courier, monospace';
 	--font-heading: 'Poppins, arial, helvetica, sans-serif';
-	--font-line-height: 2.8rem;
-	--font-sans-serif: 'Open Sans';
-	--font-serif: 'Lora';
+	--font-line-height: 1.5;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+	--font-sans-serif: 'Inter', ui-sans-serif, system-ui, sans-serif;
 	--font-semi-bold: 'opensans_semibold';
+	--font-serif: 'Playfair Display', serif;
 	--font-size: 1.6rem;
 	--font-weight-bold: 700;
 	--font-weight: 400;
 
-	--palette-body-background: #fff; /* #efd7ad */
-
+	--palette-body-background: #fcfcfc; /* #efd7ad */
 	--palette-brand: #ff9a00;
 	--palette-brand-75: rgb(from var(--palette-brand) r g b / 0.75);
 	--palette-brand-50: rgb(from var(--palette-brand) r g b / 0.5);
 	--palette-brand-25: rgb(from var(--palette-brand) r g b / 0.25);
 
-	--palette-body-text: #252525;
+	--palette-body-text: #1a1a1a;
 	--palette-body-text-75: rgb(from var(--palette-body-text) r g b / 0.75);
 	--palette-body-text-50: rgb(from var(--palette-body-text) r g b / 0.5);
 	--palette-body-text-25: rgb(from var(--palette-body-text) r g b / 0.25);
@@ -51,6 +50,23 @@
 	--spacing-5xl: calc(var(--font-size) * 20);
 }
 
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 html {
 	background: var(--palette-body-background);
 	border-top: 5px solid var(--palette-brand);
@@ -60,15 +76,13 @@ html {
 html,
 body,
 fieldset {
-	box-sizing: border-box;
 	color: var(--palette-body-text);
 	font-family: var(--font-sans-serif);
 	font-weight: var(--font-weight);
 	line-height: var(--font-line-height);
-	margin: 0;
-	padding: 0;
 	scroll-behavior: smooth;
 	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {

@@ -1,9 +1,9 @@
-.hero {
+/* .hero {
 	padding: 0;
 
 	.inner_wrap {
 		/* border-top: 1px solid rgb(from var(--palette-body-text) r g b / 0.35);
-		border-bottom: 1px solid rgb(from var(--palette-brand) r g b / 0.5); */
+		border-bottom: 1px solid rgb(from var(--palette-brand) r g b / 0.5); 
 		padding: var(--spacing-md) 0;
 
 		@media only screen and (min-width: 1024px) {
@@ -39,5 +39,28 @@
 			line-height: 1.8em;
 			width: 70%;
 		}
+	}
+} */
+
+.hero {
+	margin-bottom: 6rem;
+	animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero_intro {
+	max-width: 42rem;
+
+	.lead {
+		font-size: 1.5rem;
+		line-height: 1.4;
+		opacity: 0.8;
+		margin-bottom: 1.5rem;
+		text-wrap: pretty;
+	}
+
+	.sub {
+		font-size: 1.125rem;
+		opacity: 0.6;
+		text-wrap: pretty;
 	}
 }
