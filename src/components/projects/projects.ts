@@ -1,12 +1,23 @@
-export const projects = {
-	'british-red-cross': {
+import { slugify } from '@/src/utilities/slugify';
+
+export type Project = {
+	title: string;
+	client: string;
+	description: string;
+	image: string;
+	link: string;
+	slug: string;
+};
+
+const projectsBase = [
+	{
 		title: 'Web Platform',
 		client: 'British Red Cross',
 		description: 'A project for the British Red Cross',
 		image: 'https://picsum.photos/seed/british-red-cross/1200/800',
 		link: 'https://www.redcross.org.uk/',
 	},
-	'experian-your-offers': {
+	{
 		title: 'Your Offers',
 		client: 'Experian',
 		description:
@@ -14,7 +25,7 @@ export const projects = {
 		image: 'https://picsum.photos/seed/experian/1200/800',
 		link: 'https://offers.experian.co.uk',
 	},
-	'experian-marketplace': {
+	{
 		title: 'Marketplace',
 		client: 'Experian',
 		description:
@@ -22,4 +33,14 @@ export const projects = {
 		image: 'https://picsum.photos/seed/marketplace/1200/800',
 		link: 'https://creditmatcher.experian.co.uk',
 	},
-};
+];
+
+const projects: Project[] = projectsBase.map((project) => {
+	const slug = `${slugify(project.client)}-${slugify(project.title)}`;
+	return {
+		...project,
+		slug,
+	};
+});
+
+export { projects };

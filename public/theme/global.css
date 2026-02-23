@@ -232,13 +232,19 @@ h2.serif-italic {
 	}
 }
 
-.project-details h3 {
-	font-family: var(--font-serif);
-	font-size: 1.8rem;
-	/* font-style: italic; */
-	font-weight: inherit;
-	line-height: 1.1;
-	margin-bottom: 1rem;
+.project-details {
+	h3 {
+		font-family: var(--font-serif);
+		font-size: 1.8rem;
+		/* font-style: italic; */
+		font-weight: inherit;
+		line-height: 1.1;
+		margin-bottom: 1rem;
+	}
+
+	a {
+		border: 0;
+	}
 }
 
 .project-tech {
@@ -262,6 +268,63 @@ h2.serif-italic {
 	font-size: 0.625rem;
 	text-transform: uppercase;
 	letter-spacing: 0.1em;
+	opacity: 0.6;
+}
+
+/* Employment History */
+.employment-list {
+	display: flex;
+	flex-direction: column;
+}
+
+.job-item {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	padding: 2rem 0;
+	border-bottom: 1px solid var(--border);
+	align-items: baseline;
+}
+
+.job-meta {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.job-tech-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem;
+}
+
+.job-tech-tag {
+	font-family: var(--font-mono);
+	font-size: 0.5rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	opacity: 0.3;
+}
+
+@media (min-width: 768px) {
+	.job-item {
+		grid-template-columns: 1fr 2fr 1fr;
+		gap: 2rem;
+	}
+}
+
+.job-item:last-child {
+	border-bottom: none;
+}
+
+.job-item h3 {
+	font-family: var(--font-serif);
+	font-size: 1.5rem;
+	font-style: italic;
+}
+
+.job-employer {
+	font-size: 1.125rem;
 	opacity: 0.6;
 }
 

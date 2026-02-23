@@ -1,22 +1,22 @@
 ---
 import Layout from '@/src/layouts/Layout.astro';
-import { projects } from '@/src/projects';
+import { projects } from '@/src/components/projects/projects';
 
 const { slug } = Astro.params;
-const project = projects[slug];
+const project = projects.find(project => project.slug === slug);
 
 ---
 <Layout>
   <section class="hero">
-    <span class="section-label">{project.client}</span>
-	<h1><span>{project.title}</span></h1>
+    <span class="section-label">{project?.client}</span>
+	<h1><span>{project?.title}</span></h1>
 </section>
-  <img src={project.image} alt={project.title} style="width: 100%; height: auto; margin-bottom: 2rem;" />
-  <p>{project.description}</p>
+  <img src={project?.image} alt={project?.title} style="width: 100%; height: auto; margin-bottom: 2rem;" />
+  <p>{project?.description}</p>
   <p>
-    <a href={project.link} class="case-study-btn" target="_blank" rel="noopener noreferrer">
-						View Project
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+    <a href={project?.link} class="case-study-btn" target="_blank" rel="noopener noreferrer">
+      View Project
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
     </a>
   </p>
 </Layout>

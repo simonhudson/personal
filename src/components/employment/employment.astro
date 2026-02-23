@@ -1,0 +1,27 @@
+---
+import { employment, type Employment } from './employment';
+---
+
+<div class="employment-list">
+    {employment.map((job: Employment) => {
+        return (
+            <div class="job-item">
+                <div class="job-meta">
+                    <span class="job-employer">{job.employer}</span>
+                    <span class="section-label">{job.startDate} &#8211; {job.endDate}</span>
+                </div>
+                <div class="job-meta">
+                    <h3 class="serif-italic">{job.jobTitle}</h3>
+                    {job.techUsed && (
+                        <div class="job-tech-list">
+                            {job.techUsed.map((tech) => (
+                                <span class="job-tech-tag">{tech}</span>
+                            ))}
+                        </div>
+                    )}
+                    {job.info && <p>{job.info}</p>}
+                </div>
+            </div> 
+        );
+    })}
+</div>

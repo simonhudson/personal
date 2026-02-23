@@ -4,8 +4,9 @@ export const prerender = true
 // import * as contentful from 'contentful';
 import Layout from '@/src/layouts/Layout.astro';
 import Hero from '@/src/components/hero/hero.astro';
-import { projects } from '@/src/projects';
-import { slugify } from '@/src/utilities/slugify';
+import Projects from '@/src/components/projects/projects.astro';
+import Employment from '@/src/components/employment/employment.astro';
+
 
 // import Header from '@/src/components/header/header.astro';
 // import  Hero from '@/src/components/hero/hero.astro';
@@ -47,6 +48,8 @@ import { slugify } from '@/src/utilities/slugify';
 		</div>
 	</section>
 
+	<Employment />
+
 	<section class="work-section">
 		<div class="work-header">
 			<div>
@@ -55,38 +58,6 @@ import { slugify } from '@/src/utilities/slugify';
 			</div>
 		</div>
 
-		<div class="work-grid">
-			{Object.keys(projects).map((key) => {
-				const project = projects[key];
-				// const slug = slugify(project.title);
-				return (
-					<div class="project-card">
-				<div class="project-image-wrapper">
-					<img src={project.image} alt={project.title} />
-					<div class="project-image-overlay"></div>
-				</div>
-				<div class="project-info">
-					<div class="project-details">
-						<span class="section-label">{project.client}</span>
-						<h3><a href={`/${key}`}>{project.title}</a></h3>
-						<button class="case-study-btn">
-							View Case Study
-							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-						</button>
-					</div>
-					<div class="project-tech">
-						<span class="tech-tag">Next.js</span>
-						<span class="tech-tag">Node.js</span>
-						<span class="tech-tag">PostgreSQL</span>
-						<span class="tech-tag">Aria-Live</span>
-					</div>
-				</div>
-			</div>
-				);
-			})}
-
-
-			
-		</div>
+		<Projects />
 	</section>
 </Layout>
