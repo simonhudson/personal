@@ -292,6 +292,12 @@ h2.serif-italic {
 	gap: 0.5rem;
 }
 
+@media (min-width: 768px) {
+	.job-meta {
+		flex-direction: row;
+	}
+}
+
 .job-tech-list {
 	display: flex;
 	flex-wrap: wrap;

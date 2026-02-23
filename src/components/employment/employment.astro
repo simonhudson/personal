@@ -7,11 +7,10 @@ import { employment, type Employment } from './employment';
         return (
             <div class="job-item">
                 <div class="job-meta">
+                    <h3 class="serif-italic">{job.jobTitle}</h3>
                     <span class="job-employer">{job.employer}</span>
                     <span class="section-label">{job.startDate} &#8211; {job.endDate}</span>
-                </div>
-                <div class="job-meta">
-                    <h3 class="serif-italic">{job.jobTitle}</h3>
+                    {job.info && <p class="job-info">{job.info}</p>}
                     {job.techUsed && (
                         <div class="job-tech-list">
                             {job.techUsed.map((tech) => (
@@ -19,7 +18,6 @@ import { employment, type Employment } from './employment';
                             ))}
                         </div>
                     )}
-                    {job.info && <p>{job.info}</p>}
                 </div>
             </div> 
         );
