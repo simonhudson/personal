@@ -10,8 +10,7 @@
 		"astro": "astro",
 		"lint": "next lint",
 		"test": "vitest",
-		"prepare": "husky",
-		"generate-contentful-types": "rimraf ./src/types/contentful.types.ts && contentful-typescript-codegen --output ./src/types/contentful.types.ts"
+		"prepare": "husky"
 	},
 	"dependencies": {
 		"@astrojs/vercel": "^9.0.4",
