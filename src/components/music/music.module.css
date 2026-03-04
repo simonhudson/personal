@@ -1,80 +1,61 @@
-.wrap {
-	display: flex;
-	flex-direction: column;
-	padding: var(--spacing-default) 0;
-	position: relative;
-	text-align: left;
-
-	@media only screen and (min-width: 1024px) {
-		max-width: 50%;
-		padding: 0;
-	}
-}
-
-.inner {
+.music {
+	animation: fadeInUp 0.8s ease forwards;
 	display: flex;
 	flex-direction: row;
-}
+	gap: var(--spacing-sm);
+	padding: var(--spacing-default) 0;
 
-.heading {
-	color: var(--palette-white);
-	font-family: var(--font-sans-serif);
-	font-size: 1.2rem;
-	font-weight: 400;
-	letter-spacing: 0.1rem;
-	margin: 0;
-	text-transform: uppercase;
-}
-
-.text {
-	font-size: 1.4rem;
-	font-weight: var(--font-weight-bold);
-	line-height: 2.4rem;
-	margin: 0;
-	text-align: left;
-
-	span {
-		em {
-			font-size: 1.4rem;
-		}
-
-		&:nth-of-type(2) {
-			display: block;
-		}
-
-		&:nth-of-type(3) {
-			display: block;
-			font-size: 1.2rem;
-			font-weight: var(--font-weight);
-		}
+	@media only screen and (min-width: 1024px) {
+		padding: 0;
 	}
 
 	a {
 		border: 0;
-		color: var(--palette-white);
 	}
-}
 
-.image {
-	border-radius: 0.75rem;
-	border: 3px solid #fff;
-	height: 6.4rem;
-	margin: 0 var(--spacing-default) 0 0;
-	width: 6.4rem;
+	p {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+		text-align: left;
 
-	@media only screen and (min-width: 1024px) {
-		margin: 0 var(--spacing-default) 0 0;
+		span {
+			&:first-of-type {
+				font-weight: bold;
+			}
+
+			&:nth-of-type(2) {
+				font-family: var(--font-serif);
+			}
+
+
+			&:last-of-type {
+				color: var(--palette-body-text-50);
+				font-size: 0.6rem;
+				text-transform: uppercase;
+				font-family: var(--font-sans);
+				font-weight: 400;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+		}
 	}
-}
 
-.sound-icon {
-	height: 3.2rem;
-	position: absolute;
-	right: var(--spacing-default);
-	top: var(--spacing-default);
-	width: 3.2rem;
+	img {
+		border: 0.25rem solid white;
+		box-shadow: 0 0 6px var(--palette-body-text-25);
+		height: auto;
+		transition: all 0.3s ease-in-out;
+		width: 4rem;
 
-	@include media.prefersReducedMotion {
-		display: none;
+		&:hover, &:focus {
+			transform: scale(1.1);
+		}
+
+		@media (prefers-reduced-motion: reduce) {
+			transition: none;
+		}
+		
 	}
+
 }
