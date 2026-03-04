@@ -1,5 +1,53 @@
-.wrap {
+.music {
+	animation: fadeInUp 0.8s ease forwards;
 	display: flex;
+	flex-direction: column-reverse;
+	gap: var(--spacing-sm);
+	padding: var(--spacing-default) 0;
+
+	@media only screen and (min-width: 1024px) {
+		flex-direction: row;
+		padding: 0;
+	}
+
+	a {
+		border: 0;
+	}
+
+	p {
+		display: flex;
+		flex-direction: column;
+		gap: 0.25rem;
+
+		span {
+			&:first-of-type {
+				font-weight: bold;
+			}
+
+			&:nth-of-type(2) {
+				font-family: var(--font-serif);
+			}
+
+
+			&:last-of-type {
+				font-family: var(--font-mono);
+				font-size: 0.7rem;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	img {
+		border: 0.25rem solid white;
+		border-radius: 1rem;
+		box-shadow: 0 0 6px var(--palette-body-text-25);
+		height: auto;
+		width: 6rem;
+	}
+
+
+
+	/* display: flex;
 	flex-direction: column;
 	padding: var(--spacing-default) 0;
 	position: relative;
@@ -8,10 +56,10 @@
 	@media only screen and (min-width: 1024px) {
 		max-width: 50%;
 		padding: 0;
-	}
+	} */
 }
 
-.inner {
+/* .inner {
 	display: flex;
 	flex-direction: row;
 }
@@ -77,4 +125,4 @@
 	@include media.prefersReducedMotion {
 		display: none;
 	}
-}
+} */

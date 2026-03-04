@@ -2,10 +2,9 @@
 import styles from './footer.module.css';
 import Music from '@/src/components/music/music.astro';
 ---
-
 <footer class={styles.footer}>
-    <div class="inner-wrap">
-        <p>Copyright &copy; Simon Hudson {new Date().getFullYear()}.</p>
-        <Music server:defer />
-    </div>
+    <p>Copyright &copy; Simon Hudson {new Date().getFullYear()}.</p>
+    <Music server:defer>
+        <p slot="fallback"><a href="https://www.last.fm/user/veryconscious">View my Last.FM profile</a></p>
+    </Music>
 </footer>

@@ -1,41 +1,15 @@
 ---
-export const prerender = true
+export const prerender = false;
 
-// import * as contentful from 'contentful';
 import Layout from '@/src/layouts/Layout.astro';
 import Hero from '@/src/components/hero/hero.astro';
-import Projects from '@/src/components/projects/projects.astro';
+import Portfolio from '@/src/components/portfolio/portfolio.astro';
 import Employment from '@/src/components/employment/employment.astro';
-
-
-// import Header from '@/src/components/header/header.astro';
-// import  Hero from '@/src/components/hero/hero.astro';
-// import  About from '@/src/components/about/about.astro';
-// import Portfolio from '@/src/components/portfolio/portfolio.astro';
-// import Footer from '@/src/components/footer/footer.astro';
-// import Links from '@/src/components/links/links.astro';
-
-// const getCmsData = async () => {	
-	
-// 	const contentfulClient = contentful.createClient({
-//       space: import.meta.env.CONTENTFUL_SPACE_ID ?? "",
-//       accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN ?? "",
-//     });
-// 	const entries = await contentfulClient.getEntries();
-// 	return entries;
-// };
-
-// const cmsData = await getCmsData();
-
-// const portfolioData = cmsData.items
-// 		.filter((item: any) => item.sys.contentType.sys.id === 'portfolioItem')
-// 		.map((item: any) => item.fields);
-
-// const aboutData = cmsData.items.find((item: any) => item.sys.contentType.sys.id === 'aboutMe')?.fields;
 ---
 <Layout>
 	<Hero />
-	<section class="philosophy">
+	{!import.meta.env.HOLDING_MODE && (
+		<section class="philosophy">
 		<div>
 			<span class="section-label">Expertise</span>
 			<h2 class="serif-italic">Who am I?</h2>
@@ -57,7 +31,7 @@ import Employment from '@/src/components/employment/employment.astro';
 				<h2 class="serif-italic" style="font-size: 2.5rem; margin-bottom: 0;">Portfolio</h2>
 			</div>
 		</div>
-
-		<Projects />
+		<Portfolio />
 	</section>
+	)}
 </Layout>
