@@ -1,0 +1,22 @@
+<!-- ---
+import Layout from '@/src/layouts/Layout.astro';
+import { portfolioData } from '@/src/components/portfolio/data';
+
+const { slug } = Astro.params;
+const portfolioItem = portfolioData.find(item => item.slug === slug);
+
+---
+<Layout>
+  <section class="hero">
+    <span class="section-label">{portfolioItem?.client}</span>
+	<h1><span>{portfolioItem?.title}</span></h1>
+</section>
+  <img src={portfolioItem?.image} alt={portfolioItem?.title} style="width: 100%; height: auto; margin-bottom: 2rem;" />
+  <p>{portfolioItem?.description}</p>
+  <p>
+    <a href={portfolioItem?.link} class="case-study-btn" target="_blank" rel="noopener noreferrer">
+      View Project
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+    </a>
+  </p>
+</Layout> -->
