@@ -1,0 +1,7 @@
+p {
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
+    line-height: 1.9;
+    margin-bottom: var(--spacing-md);
+    text-wrap: pretty;
+}

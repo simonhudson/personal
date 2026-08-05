@@ -15,12 +15,7 @@ const data: MusicResponse = await response.json();
         width={300}
     />
     <p>
-        <span class={styles.heading}>
-            <a href={data.url}> {data.artist}</a>
-        </span>
-        <span>
-            <a href={data.url}>&quot;{data.name}&quot;</a>{' '}
-        </span>
+        <a href={data.url}>&quot;{data.name}&quot; by {data.artist}</a>
         <span>{data.relativeTime}</span>
     </p>
 </div>
