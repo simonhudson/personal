@@ -19,7 +19,7 @@
 		span {
 			color: var(--palette-body-text-75);
 			display: block;
-			font-size: 2rem;
+			font-size: 1.8rem;
 			font-weight: var(--font-weight);
 
 			@media only screen and (min-width: 1024px) {
