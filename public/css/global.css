@@ -9,7 +9,6 @@
 	--font-serif-heading: 'Lora', serif;
 	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
 
-	--palette-body-background: #fcfcfc; /* #efd7ad */
 	--palette-brand: #ff9a00;
 	--palette-brand-75: rgb(from var(--palette-brand) r g b / 0.75);
 	--palette-brand-50: rgb(from var(--palette-brand) r g b / 0.5);
@@ -20,6 +19,9 @@
 	--palette-body-text-50: rgb(from var(--palette-body-text) r g b / 0.5);
 	--palette-body-text-25: rgb(from var(--palette-body-text) r g b / 0.25);
 	--palette-body-text-10: rgb(from var(--palette-body-text) r g b / 0.1);
+
+	--palette-body-background: #fcfcfc; /* #efd7ad */
+	--palette-border: var(--palette-body-text-10);
 
 	--spacing-default: var(--font-size);
 	--spacing-xs: calc(var(--font-size) / 4);
@@ -58,7 +60,6 @@ a {
 	border-bottom: 2px solid var(--palette-brand);
 	color: inherit;
 	text-decoration: none;
-	transition: all 0.3s ease-in-out;
 
 	&:hover,
 	&:focus {

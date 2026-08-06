@@ -1,12 +1,12 @@
 .header {
-	border-bottom: 1px solid var(--palette-body-text-10);
+	border-bottom: 1px solid var(--palette-border);
 	display: flex;
 	justify-content: space-between;
 	margin: 0 0 var(--spacing-md);
 	padding: var(--spacing-default) 0;
 
 	@media only screen and (min-width: 1024px) {
-		padding: 4rem 0;
+		padding: var(--spacing-md) 0;
 	}
 
 	svg {

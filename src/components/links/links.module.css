@@ -2,9 +2,8 @@
 	display: flex;
 	flex-direction: row;
 	gap: var(--spacing-default);
-	justify-content: flex-start;
+	justify-content: flex-end;
 	list-style: none;
-	margin: var(--spacing-default) 0 0;
 
 	@media only screen and (min-width: 768px) {
 		gap: var(--spacing-md);
@@ -16,11 +15,6 @@
 		span {
 			color: var(--palette-body-text-75);
 			font-size: 2rem;
-			transition: all 0.3s ease-in-out;
-
-			@media only screen and (min-width: 768px) {
-				font-size: 3rem;
-			}
 
 			@media (prefers-reduced-motion: reduce) {
 				transition: none;
@@ -32,7 +26,6 @@
 			
 			span {
 				color: var(--palette-body-text);
-				transform: translateY(-4px);
 			}
 
 		}
