@@ -19,7 +19,26 @@
 		flex-direction: column;
 		margin: 0;
 
-		span {
+		a {
+
+			span {
+				font-weight: 600;
+
+				&:first-of-type {
+					display: block;
+					font-weight: 600;
+				}
+
+				&:nth-of-type(2) {
+					font-style: italic;
+					font-weight: 400;
+				}
+				
+			}
+
+		}
+
+		> span {
 			&:last-of-type {
 				color: var(--palette-body-text-50);
 				display: block;

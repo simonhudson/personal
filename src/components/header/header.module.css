@@ -1,5 +1,9 @@
 .header {
-	padding: 2rem 0;
+	border-bottom: 1px solid var(--palette-body-text-10);
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 var(--spacing-md);
+	padding: var(--spacing-default) 0;
 
 	@media only screen and (min-width: 1024px) {
 		padding: 4rem 0;
