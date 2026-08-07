@@ -1,30 +1,43 @@
 ---
 import styles from './portfolio.module.css';
 const { item } = Astro.props;
+
+const renderLinkText = (url: string) => {
+    try {
+        const urlObj = new URL(url);
+        return urlObj.hostname;
+    } catch (e) {
+        return url;
+    }
+};
 ---
 
 <section class={styles.portfolio__wrap}>
-    <img src={`/images/${item.slug}.png`} alt={item.title} class={styles.portfolio__image} />
-    <h1>{item.title}</h1>
-    <p class={styles.portfolio__client}>{item.client}</p>
-    <p class={styles.portfolio__description}>{item.description}</p>
-    <p><a href={item.link} target="_blank" rel="noopener noreferrer">View project<span class="sr-only">&nbsp;(opens in a new tab/window)</span> &rarr;</a></p>
-    {item.madeWith?.length && (<p>Made with</p>
-    <ul>
-        {item.madeWith.map((item: string) => (
-            <li>{item}</li>
+    <div class="inner-wrap">
+        <img src={`/images/${item.slug}.png`} alt={item.title} class={styles.portfolio__image} />
+        <h1>{item.title}</h1>
+        <p class={`${styles.portfolio__client} ${styles.portfolio_details__client}`}>{item.client} / {item.date}</p>
+        <p class={styles.portfolio__description}>{item.description}</p>
+        {Array.isArray(item.link) ? (
+            <ul class={styles.portfolio_details__link_list}>
+                {item.link.map((link: string) => (
+                    <li class={styles.portfolio_details__link_item}>
+                        <a class={styles.portfolio_details__link} href={link} target="_blank" rel="noopener noreferrer">{renderLinkText(link)}<span class="sr-only">&nbsp;(opens in a new tab/window)</span></a>
+                    </li>
+                ))}
+            </ul>
+        ) : (
+            <p class={styles.portfolio_details__link}><a href={item.link} target="_blank" rel="noopener noreferrer">{renderLinkText(item.link)}<span class="sr-only">&nbsp;(opens in a new tab/window)</span></a></p>
+        )}
+        {item.meta?.length && item.meta.map((metaItem: any) => (
+            <>
+                <p class={styles.meta__heading}>{metaItem.title}</p>
+                <ul class={styles.meta__list}>
+                    {metaItem.items.sort().map((item: string) => (
+                        <li class={styles.meta__item}>{item}</li>
+                    ))}
+                </ul>
+            </>
         ))}
-    </ul>)}
-    {item.testedWith?.length && (<p>Tested with</p>
-    <ul>
-        {item.testedWith.map((item: string) => (
-            <li>{item}</li>
-        ))}
-    </ul>)}
-    {item.builtWith?.length && (<p>Built with</p>
-    <ul>
-        {item.builtWith.map((item: string) => (
-            <li>{item}</li>
-        ))}
-    </ul>)}
+    </div>
 </section>

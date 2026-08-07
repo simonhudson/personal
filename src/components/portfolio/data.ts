@@ -29,27 +29,78 @@ import {
 	VERACODE,
 	CYPRESS,
 	CONTENTFUL,
+	TYPESCRIPT,
+	MONGO_DB,
+	WORLDPAY,
+	KONTENT_AI,
 } from '@/src/constants/tech';
 
-export type PortfolioItem = {
+type MetaItem = {
 	title: string;
+	items: string[];
+};
+
+export type PortfolioItem = {
 	client: string;
 	description: string;
 	link: string;
+	meta: MetaItem[];
+	omit?: boolean;
 	slug: string;
-	madeWith: string[];
+	title: string;
 };
+
+const MADE_WITH = 'Made with';
+const TESTED_WITH = 'Tested with';
+const BUILT_WITH = 'Built with';
 
 const projectsBase = [
 	{
+		title: 'Hire a Wheelchair',
+		client: 'British Red Cross',
+		description: ``,
+		link: 'https://www.redcross.org.uk/get-help/hire-a-wheelchair/wheelchair-selection',
+		meta: [
+			{
+				title: MADE_WITH,
+				items: [NEXT_JS, TAILWIND, WORLDPAY],
+			},
+			{
+				title: TESTED_WITH,
+				items: [JEST, REACT_TESTING_LIBRARY],
+			},
+			{
+				title: BUILT_WITH,
+				items: [GITHUB, VERCEL, KONTENT_AI],
+			},
+		],
+		date: '2024 -present',
+		omit: true,
+	},
+	{
 		title: 'Web Platform',
 		client: 'British Red Cross',
-		description:
-			'Using TypeScript and Next.js to create a new cross-functional web platform, with the aim of migrating existing BRC websites onto it, and also providing a tool for future sites to be easily created, launched and managed.',
-		link: 'https://www.redcross.org.uk/',
-		madeWith: [NEXT_JS, TAILWIND],
-		testedWith: [JEST, REACT_TESTING_LIBRARY],
-		builtWith: [GITHUB, VERCEL],
+		description: `As part of the Digital Team, we built a new cross-functional web platform, with the purpose of migrating existing BRC websites, as well as providing a tool for future sites to be easily created, launched and managed. All of the sites listed here were built and launched using this Web Platform, allowing us to consolidate and more easily manage the organisation's web estate.`,
+		link: [
+			'https://www.redcross.org.uk',
+			'https://www.bridgingdivides.org.uk',
+			'https://vad.redcross.org.uk',
+			'https://www.cerplaybook.com/',
+		],
+		meta: [
+			{
+				title: MADE_WITH,
+				items: [NEXT_JS, TAILWIND],
+			},
+			{
+				title: TESTED_WITH,
+				items: [JEST, REACT_TESTING_LIBRARY],
+			},
+			{
+				title: BUILT_WITH,
+				items: [GITHUB, VERCEL, KONTENT_AI],
+			},
+		],
 		date: '2024 -present',
 	},
 	{
@@ -58,9 +109,20 @@ const projectsBase = [
 		description:
 			'A single-page web app which provides authenticated users an aggregate of their recent activity on the main Experian Marketplace site. Users are shown product results from their most recent search, plus suggestions of other products which may be of interest to them.',
 		link: 'https://offers.experian.co.uk',
-		madeWith: [NEXT_JS, STYLED_COMPONENTS, WEBPACK],
-		testedWith: [AQUASEC, CHAI_MOCHA, CYPRESS, ENZYME, JEST, NVDA, RAPID7, VERACODE],
-		builtWith: [AWS_CI_CD, CONTENTFUL, GITHUB],
+		meta: [
+			{
+				title: MADE_WITH,
+				items: [NEXT_JS, STYLED_COMPONENTS, WEBPACK],
+			},
+			{
+				title: TESTED_WITH,
+				items: [AQUASEC, CHAI_MOCHA, CYPRESS, ENZYME, JEST, NVDA, RAPID7, VERACODE],
+			},
+			{
+				title: BUILT_WITH,
+				items: [AWS_CI_CD, CONTENTFUL, GITHUB],
+			},
+		],
 		date: '2019 - 2023',
 	},
 	{
@@ -69,9 +131,20 @@ const projectsBase = [
 		description:
 			'A large-scale web app which allows users to search for, and compare, credit cards and loans. The front-end communicated with a huge range of RESTful microservices which were used to manage user authentication, profile information, and product results (amongst many other things). The app was covered by extensive unit and automation tests, and hooked into a CI/CD pipeline built on AWS, which allowed us to release multiple times a day.',
 		link: 'https://creditmatcher.experian.co.uk',
-		madeWith: [EXPRESS_JS, HANDLEBARS, JAVASCRIPT, NODE_JS, REACT, SASS, STYLED_COMPONENTS, WEBPACK],
-		testedWith: [AQUASEC, CHAI_MOCHA, ENZYME, JEST, NIGHTWATCH, NVDA, RAPID7, VERACODE],
-		builtWith: [AWS_CI_CD, GITHUB],
+		meta: [
+			{
+				title: MADE_WITH,
+				items: [EXPRESS_JS, HANDLEBARS, JAVASCRIPT, NODE_JS, REACT, SASS, STYLED_COMPONENTS, WEBPACK],
+			},
+			{
+				title: TESTED_WITH,
+				items: [AQUASEC, CHAI_MOCHA, ENZYME, JEST, NIGHTWATCH, NVDA, RAPID7, VERACODE],
+			},
+			{
+				title: BUILT_WITH,
+				items: [AWS_CI_CD, GITHUB],
+			},
+		],
 		date: '2016 - 2023',
 	},
 	{
@@ -79,8 +152,16 @@ const projectsBase = [
 		client: 'Experian',
 		description: `A simple landing page built to promote Experian's Boost proposition, whereby users can potentially improve their credit score by giving Experian a better view of their financial situation by connecting to Open Banking functionality.`,
 		link: 'https://www.experian.co.uk/experian-account/boost.html',
-		madeWith: [HTML, SASS],
-		builtWith: [AWS_CI_CD, GITHUB],
+		meta: [
+			{
+				title: MADE_WITH,
+				items: [HTML, SASS],
+			},
+			{
+				title: BUILT_WITH,
+				items: [AWS_CI_CD, GITHUB],
+			},
+		],
 		date: '2019',
 	},
 	{
@@ -88,11 +169,62 @@ const projectsBase = [
 		client: 'Capita',
 		description:
 			'One of the largest websites in Europe, the front-end code for this UK Government website was required to be highly accessible, and was built on top of a .Net/Sharepoint solution. We had regular input from groups such as R.N.I.B and AbilityNet, and would implement updates based on their recommendations and audits.',
-		image: 'https://picsum.photos/seed/nhs-choices/1200/800',
 		link: 'https://www.nhs.uk/',
-		madeWith: [CSS, HTML, JAVASCRIPT, JQUERY],
-		builtWith: [DOT_NET, SHAREPOINT],
+		meta: [
+			{
+				title: MADE_WITH,
+				items: [CSS, HTML, JAVASCRIPT, JQUERY],
+			},
+			{
+				title: BUILT_WITH,
+				items: [DOT_NET, SHAREPOINT],
+			},
+		],
 		date: '2009 - 2013',
+	},
+	{
+		title: 'Autocomplete',
+		client: 'Personal',
+		description: `Auto complete input built with a strong focus on accessibility. As the user types, matching results are returned from a data source. Support added for screen readers which announces instructions for use, how many results are available, and which result has been selected.`,
+		link: 'https://auto-complete-simonhudson.vercel.app',
+		meta: [
+			{
+				title: MADE_WITH,
+				items: [NEXT_JS, STYLED_COMPONENTS, TYPESCRIPT],
+			},
+			{
+				title: TESTED_WITH,
+				items: [JEST, NVDA, REACT_TESTING_LIBRARY],
+			},
+			{
+				title: BUILT_WITH,
+				items: [VERCEL],
+			},
+		],
+		date: '2023',
+		omit: true,
+	},
+	{
+		title: 'To-Do List',
+		client: 'Personal',
+		description: `A simple CRUD application. Data is stored in a MongoDB database and is made available via a small REST API created using the in-built API routes provided by Next.js.`,
+		link: 'https://to-do-app-simonhudson.vercel.app',
+		meta: [
+			{
+				title: MADE_WITH,
+				items: [MONGO_DB, NEXT_JS, STYLED_COMPONENTS, TYPESCRIPT],
+			},
+			{
+				title: TESTED_WITH,
+				items: [JEST, NVDA, REACT_TESTING_LIBRARY],
+			},
+			{
+				title: BUILT_WITH,
+				items: [VERCEL],
+			},
+		],
+		date: '2023',
+		omit: true,
 	},
 ];
 

@@ -5,9 +5,11 @@ import Links from '@/src/components/links/links.astro';
 const currentYear = new Date().getFullYear();
 ---
 <footer class={styles.footer}>
-    <p>&copy; Simon Hudson {currentYear}</p>
-    <Links />
-    <!-- <Music server:defer>
-        <p slot="fallback"><a href="https://www.last.fm/user/veryconscious">View my Last.FM profile</a></p>
-    </Music> -->
+    <div class="inner-wrap">
+        <Links />
+        <Music server:defer>
+            <p slot="fallback"><a href="https://www.last.fm/user/veryconscious">View my Last.FM profile</a></p>
+        </Music>
+        <p class={styles.copyright}>&copy; Simon Hudson {currentYear}</p>
+    </div>
 </footer>

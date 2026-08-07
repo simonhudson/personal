@@ -3,9 +3,8 @@ import styles from './navigation.module.css';
 ---
 
 <nav class={styles.navigation}>
-	<ul>
-		<li><a href="#home">Home</a></li>
-		<li><a href="#about">About</a></li>
-		<li><a href="#work">Work</a></li>
+	<ul class={styles.navigation__list}>
+		<li class={styles.navigation__item}><a class={styles.navigation__link} href="#about">About me</a></li>
+		<li class={styles.navigation__item}><a class={styles.navigation__link} href="#work">Work</a></li>
 	</ul>
 </nav>

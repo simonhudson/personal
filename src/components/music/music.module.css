@@ -1,5 +1,4 @@
 .music {
-	align-items: center;
 	animation: fadeInUp 0.8s ease forwards;
 	display: flex;
 	flex-direction: row;

@@ -18,6 +18,7 @@
 	--palette-body-text-75: rgb(from var(--palette-body-text) r g b / 0.75);
 	--palette-body-text-50: rgb(from var(--palette-body-text) r g b / 0.5);
 	--palette-body-text-25: rgb(from var(--palette-body-text) r g b / 0.25);
+	--palette-body-text-15: rgb(from var(--palette-body-text) r g b / 0.15);
 	--palette-body-text-10: rgb(from var(--palette-body-text) r g b / 0.1);
 
 	--palette-body-background: #fcfcfc; /* #efd7ad */
@@ -33,6 +34,8 @@
 	--spacing-3xl: calc(var(--font-size) * 10);
 	--spacing-4xl: calc(var(--font-size) * 14);
 	--spacing-5xl: calc(var(--font-size) * 20);
+
+	--border-radius: 0.35rem;
 }
 
 * {
@@ -43,6 +46,12 @@
 
 html {
 	border-top: 2px solid var(--palette-brand);
+	scroll-behavior: smooth;
+
+	@media screen and (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+	
 }
 
 body {

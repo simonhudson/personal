@@ -1,11 +1,14 @@
 section {
     background: #fff;
-    margin: 0 auto;
-	max-width: 1100px;
-	padding: var(--spacing-md) var(--spacing-default);
 
     &:nth-of-type(2n) {
         background: var(--palette-background);
     }
 
+}
+
+.inner-wrap {
+    margin: 0 auto;
+	max-width: 1100px;
+	padding: var(--spacing-md) var(--spacing-default);
 }

@@ -15,6 +15,7 @@ export const STYLED_COMPONENTS = 'Styled Components';
 export const TAILWIND = 'Tailwind';
 export const TYPESCRIPT = 'TypeScript';
 export const WEBPACK = 'Webpack';
+export const WORLDPAY = 'Worldpay';
 
 export const AQUASEC = 'AquaSec';
 export const CHAI_MOCHA = 'Chai/Mocha';
@@ -34,6 +35,7 @@ export const CLOUDFLARE = 'Cloudflare';
 export const CONTENTFUL = 'Contentful';
 export const DOT_NET = '.NET';
 export const GITHUB = 'Github';
+export const KONTENT_AI = 'Kontent.ai';
 export const NETLIFY = 'Netlify';
 export const SHAREPOINT = 'Sharepoint';
 export const SWAGGER = 'Swagger';
