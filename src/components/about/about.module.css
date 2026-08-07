@@ -24,13 +24,9 @@
 	}
 
 	p {
-		font-size: 1.6rem;
-		line-height: 1.8em;
-
-		@media only screen and (min-width: 1024px) {
-			font-size: 2rem;
-		}
+		margin: 0;
 	}
+
 }
 
 .aside {
@@ -56,6 +52,6 @@
 	box-shadow: 0 0 10px #ddd;
 	display: block;
 	height: 200px;
-	margin: 0 auto var(--spacing-md);
+	margin: 0 auto var(--spacing-default);
 	width: auto;
 }
