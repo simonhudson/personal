@@ -43,7 +43,7 @@ type MetaItem = {
 export type PortfolioItem = {
 	client: string;
 	description: string;
-	link: string;
+	link: string | string[];
 	meta: MetaItem[];
 	omit?: boolean;
 	slug: string;
