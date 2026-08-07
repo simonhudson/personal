@@ -1,0 +1,32 @@
+---
+import Layout from '@/src/layouts/Layout.astro';
+import { portfolioData } from '@/src/components/portfolio/data';
+import { slugify } from '@/src/utilities/slugify';
+import PortfolioDetails from '@/src/components/portfolio/portfolio-details.astro';
+
+type PrevNextItem = {
+  slug: string;
+  title: string;
+} | null;
+
+export function getStaticPaths() {
+
+  return [
+    ...portfolioData.map(item => ({ params: { slug: item.slug } })),
+  ];
+}
+
+const { slug } = Astro.params;
+const portfolioItem = portfolioData.find(item => item.slug === slug);
+const itemIndex = portfolioData.findIndex(item => item.slug === slug);
+const prevItem: PrevNextItem = itemIndex > 0 ? { slug: portfolioData[itemIndex - 1].slug, title: portfolioData[itemIndex - 1].title } : null;
+const nextItem: PrevNextItem = itemIndex < portfolioData.length - 1 ? { slug: portfolioData[itemIndex + 1].slug, title: portfolioData[itemIndex + 1].title } : null;
+
+if (!portfolioItem) {
+  return null;
+}
+
+---
+<Layout>
+  <PortfolioDetails item={portfolioItem} />
+</Layout>

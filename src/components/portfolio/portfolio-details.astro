@@ -1,0 +1,30 @@
+---
+import styles from './portfolio.module.css';
+const { item } = Astro.props;
+---
+
+<section class={styles.portfolio__wrap}>
+    <img src={`/images/${item.slug}.png`} alt={item.title} class={styles.portfolio__image} />
+    <h1>{item.title}</h1>
+    <p class={styles.portfolio__client}>{item.client}</p>
+    <p class={styles.portfolio__description}>{item.description}</p>
+    <p><a href={item.link} target="_blank" rel="noopener noreferrer">View project<span class="sr-only">&nbsp;(opens in a new tab/window)</span> &rarr;</a></p>
+    {item.madeWith?.length && (<p>Made with</p>
+    <ul>
+        {item.madeWith.map((item: string) => (
+            <li>{item}</li>
+        ))}
+    </ul>)}
+    {item.testedWith?.length && (<p>Tested with</p>
+    <ul>
+        {item.testedWith.map((item: string) => (
+            <li>{item}</li>
+        ))}
+    </ul>)}
+    {item.builtWith?.length && (<p>Built with</p>
+    <ul>
+        {item.builtWith.map((item: string) => (
+            <li>{item}</li>
+        ))}
+    </ul>)}
+</section>

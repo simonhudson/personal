@@ -1,73 +1,6 @@
-/* .hero {
-	padding: 0;
-
-	.inner_wrap {
-		/* border-top: 1px solid rgb(from var(--palette-body-text) r g b / 0.35);
-		border-bottom: 1px solid rgb(from var(--palette-brand) r g b / 0.5); 
-		padding: var(--spacing-md) 0;
-
-		@media only screen and (min-width: 1024px) {
-			padding: var(--spacing-lg) 0;
-		}
-	}
-
-	h1 {
-		@media only screen and (min-width: 1024px) {
-			line-height: 1em;
-		}
-
-		span {
-			color: var(--palette-body-text-75);
-			display: block;
-			font-size: 1.8rem;
-			font-weight: var(--font-weight);
-
-			@media only screen and (min-width: 1024px) {
-				font-size: 2.8rem;
-			}
-		}
-	}
-
-	p {
-		font-family: var(--font-serif);
-		font-size: 2.2rem;
-		line-height: 1.8em;
-		margin: 0;
-
-		@media only screen and (min-width: 1024px) {
-			font-size: 2.8rem;
-			line-height: 1.8em;
-			width: 70%;
-		}
-	}
-} */
-
-/* .hero {
-	margin-bottom: 6rem;
-	animation: fadeInUp 0.8s ease forwards;
-}
-
-.hero_intro {
-	max-width: 42rem;
-
-	.lead {
-		font-size: 1.5rem;
-		line-height: 1.4;
-		opacity: 0.8;
-		margin-bottom: 1.5rem;
-		text-wrap: pretty;
-	}
-
-	.sub {
-		font-size: 1.125rem;
-		opacity: 0.6;
-		text-wrap: pretty;
-	}
-}*/
-
 .hero {
 	animation: fadeInUp 0.8s ease forwards;
-	padding: 0 0 var(--spacing-default);
+	border-bottom: 1px solid var(--palette-border);
 
 	@media only screen and (min-width: 1024px) {
 		padding: 0 0 var(--spacing-md);
@@ -76,9 +9,18 @@
 	h1 {
 		font-family: var(--font-serif);
 		font-size: 1.8rem;
+		
 		font-weight: 400;
 		line-height: 1;
 		margin-bottom: var(--spacing-default);
+
+		&:after {
+			border-bottom: 4px solid var(--palette-brand);
+			content: '';
+			display: block;
+			margin-top: var(--spacing-default);
+			width: 10%;
+		}
 
 		@media only screen and (min-width: 1024px) {
 			font-size: 2.2rem;
@@ -89,6 +31,7 @@
 			display: block;
 			margin-top: 0.5rem;
 			font-size: 2.8rem;
+			font-style: normal;
 			font-weight: 700;
 
 			&::after {
@@ -107,6 +50,7 @@
 
 	.lead {
 		font-family: var(--font-serif);
+		font-size: 1.4rem;
 		line-height: 1.8;
 		margin: 0;
 

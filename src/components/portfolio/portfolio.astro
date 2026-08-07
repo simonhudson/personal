@@ -1,30 +1,18 @@
 ---
 import { portfolioData, type PortfolioItem } from './data';
+import styles from './portfolio.module.css';
 ---
-<div class="work-grid">
+<section class={styles.portfolio__wrap}>
+	<h2>Some of my work</h2>
 	{portfolioData.map((item: PortfolioItem) => {
 		return (
-			<div class="project-card">
-				<div class="project-image-wrapper">
-					<img src={item.image} alt={item.title} />
-					<div class="project-image-overlay"></div>
-				</div>
-				<div class="project-info">
-					<div class="project-details">
-						<span class="section-label">{item.client}</span>
-						<h3><a href={`/${item.slug}`}>{item.title}</a></h3>
-						<button class="case-study-btn">
-							View Case Study
-							<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-						</button>
-					</div>
-					<div class="project-tech">
-						{item.madeWith.map((tech) => (
-							<span class="tech-tag">{tech}</span>
-						))}
-					</div>
-				</div>
+			<div class={styles.portfolio__item}>
+				<a class={styles.portfolio__link} href={`/${item.slug}`}>
+					<img src={`/images/${item.slug}.png`} alt={item.title} class={styles.portfolio__image} />
+					<h3 class={styles.portfolio__title}>{item.title}</h3>
+					<p class={styles.portfolio__client}>{item.client}</p>
+				</a>
 			</div>
 		);
 	})}
-</div>
+</section>

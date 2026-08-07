@@ -1,7 +1,25 @@
 p {
     font-family: var(--font-sans);
-    font-size: 1.2rem;
+    font-size: 1rem;
     line-height: 1.9;
     margin-bottom: var(--spacing-md);
     text-wrap: pretty;
+}
+
+h2 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0;
+
+    &:after {
+        border-bottom: 2px solid var(--palette-brand);
+        content: '';
+        display: block;
+        margin: var(--spacing-sm) 0;
+        width: 3rem;
+    }
+
 }

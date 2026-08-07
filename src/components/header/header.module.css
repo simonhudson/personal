@@ -1,9 +1,9 @@
 .header {
+	background: #fff;
 	border-bottom: 1px solid var(--palette-border);
 	display: flex;
 	justify-content: space-between;
-	margin: 0 0 var(--spacing-md);
-	padding: var(--spacing-default) 0;
+	padding: var(--spacing-default);
 
 	@media only screen and (min-width: 1024px) {
 		padding: var(--spacing-md) 0;
