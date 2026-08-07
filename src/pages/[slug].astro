@@ -10,13 +10,13 @@ export function getStaticPaths() {
   return [
     { params: { slug: "about" }},
     { params: { slug: "work" }},
-    ...portfolioData.map(item => ({ params: { slug: item.slug } })),
+    ...portfolioData.map(item => ({ params: { slug: `/${WORK_ROUTE}/${item.slug}` } })),
   ];
 }
 
 const { slug } = Astro.params;
 console.log('slug', slug);
-const portfolioItem = portfolioData.find(item => item.slug === slug);
+const portfolioItem = portfolioData.find(item => `/${WORK_ROUTE}/${item.slug}` === slug);
 ---
 <Layout>
 	{slug === ABOUT_ROUTE ? (
