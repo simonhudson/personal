@@ -1,10 +1,11 @@
 ---
 import styles from './navigation.module.css';
+import { ABOUT_ROUTE, WORK_ROUTE } from '@/src/constants/routes';
 ---
 
 <nav class={styles.navigation}>
 	<ul class={styles.navigation__list}>
-		<li class={styles.navigation__item}><a class={styles.navigation__link} href="#about">About me</a></li>
-		<li class={styles.navigation__item}><a class={styles.navigation__link} href="#work">Work</a></li>
+		<li class={styles.navigation__item}><a class={styles.navigation__link} href={`/${ABOUT_ROUTE}`}>About me</a></li>
+		<li class={styles.navigation__item}><a class={styles.navigation__link} href={`/${WORK_ROUTE}`}>Work</a></li>
 	</ul>
 </nav>
