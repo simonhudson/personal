@@ -23,5 +23,7 @@ const portfolioItem = portfolioData.find(item => item.slug === slug);
 		<About />
 	) : slug === WORK_ROUTE ? (
 		<Portfolio />
+	) : portfolioItem ? (
+		<PortfolioDetails item={portfolioItem} />
 	) : null}
 </Layout>
