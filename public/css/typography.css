@@ -15,8 +15,16 @@ h1 {
 
     @media only screen and (min-width: 1024px) {
         font-size: 2.2rem;
-        margin-bottom: var(--spacing-md);
     }
+
+     &:after {
+        border-bottom: 2px solid var(--palette-brand);
+        content: '';
+        display: block;
+        margin: var(--spacing-sm) 0;
+        width: 3rem;
+    }
+
 }
 
 h2 {
@@ -26,13 +34,4 @@ h2 {
     font-weight: 600;
     line-height: 1;
     margin: 0;
-
-    &:after {
-        border-bottom: 2px solid var(--palette-brand);
-        content: '';
-        display: block;
-        margin: var(--spacing-sm) 0;
-        width: 3rem;
-    }
-
 }

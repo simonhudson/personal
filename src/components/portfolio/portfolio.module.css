@@ -7,6 +7,10 @@
     padding: var(--spacing-default) 0;
 }
 
+.portfolio__content {
+    
+}
+
 .portfolio__link {
     border: 0;
     text-decoration: none;
@@ -31,14 +35,27 @@
 }
 
 .portfolio__description {
-    margin: 0 0 var(--spacing-sm);
+    margin: 0 0 var(--spacing-default);
 }
 
-.portfolio__nav {
+.portfolio_details__content {
     display: flex;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0 0 var(--spacing-default);
+    flex-direction: column;
+}
+
+.portfolio_details__info {
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
+        gap: var(--spacing-default);
+    }
+
+}
+
+.portfolio_details__image {
+    margin: 0 0 var(--spacing-default);
 }
 
 .portfolio_details__link {
@@ -61,13 +78,18 @@
 .portfolio_details__client {
     margin: 0 0 var(--spacing-sm);
     
-    &:after {
-        border-bottom: 2px solid var(--palette-brand);
-        content: '';
-        display: block;
-        margin-top: var(--spacing-sm);
-        width: 10%;
+   
+}
+
+.meta__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-default);
+
+    @media only screen and (min-width: 1024px) {
+        flex-direction: row;
     }
+
 }
 
 .meta__heading {
@@ -82,6 +104,11 @@
     list-style: none;
     margin: 0 0 var(--spacing-sm);
     padding: 0;
+
+    @media only screen and (min-width: 1024px) {
+        display: block;
+    }
+
 }
 
 .meta__item {

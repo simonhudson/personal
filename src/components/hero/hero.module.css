@@ -9,13 +9,17 @@
 	h1 {
 		font-weight: 400;
 
+		@media only screen and (min-width: 1024px) {
+			margin-bottom: var(--spacing-md);
+		}
+
 		&:after {
 			border-bottom: 4px solid var(--palette-brand);
 			content: '';
 			display: block;
 			margin-top: var(--spacing-default);
 			width: 10%;
-    }
+    	}
 
 		span {
 			display: block;
@@ -54,12 +58,6 @@
 		font-size: 1.125rem;
 		opacity: 0.6;
 		text-wrap: pretty;
-	}
-
-	div {
-		@media only screen and (min-width: 780px) {
-			max-width: 48rem;
-		}
 	}
 
 }
