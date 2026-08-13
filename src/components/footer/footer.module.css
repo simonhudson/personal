@@ -7,12 +7,12 @@
 		gap: var(--spacing-default);
 		justify-content: space-between;
 		font-size: 1.4rem;
-	}
-	
-	p {
-		font-family: var(--font-sans);
-		font-size: 0.8rem;
-		margin: 0;
+
+		@media only screen and (min-width: 768px) {
+			flex-direction: row-reverse;
+			padding: 0 var(--spacing-default);
+		}
+
 	}
 
 	@media only screen and (min-width: 1024px) {
@@ -21,4 +21,16 @@
 		text-align: right;
 	}
 	
+}
+
+.copyright {
+	font-size: 0.8rem;
+	margin: 0;
+	padding: var(--spacing-sm) var(--spacing-default);
+	text-align: center;
+	
+	@media only screen and (min-width: 768px) {
+		text-align: unset;
+	}
+
 }

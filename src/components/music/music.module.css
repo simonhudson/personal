@@ -15,7 +15,13 @@
 	p {
 		display: flex;
 		flex-direction: column;
+		font-size: 0.8rem;
 		margin: 0;
+
+		@media only screen and (min-width: 768px) {
+			display: unset;
+			text-align: left;
+		}
 
 		a {
 
@@ -38,7 +44,7 @@
 
 		> span {
 			&:last-of-type {
-				color: var(--palette-body-text-50);
+				color: var(--palette-body-text-75);
 				display: block;
 				font-size: 0.6rem;
 				text-transform: uppercase;

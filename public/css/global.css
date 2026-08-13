@@ -63,7 +63,7 @@ body {
 }
 
 a {
-	border-bottom: 2px solid var(--palette-brand);
+	border-bottom: 1px solid var(--palette-brand);
 	color: inherit;
 	text-decoration: none;
 

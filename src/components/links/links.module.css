@@ -2,10 +2,12 @@
 	display: flex;
 	flex-direction: row;
 	gap: var(--spacing-default);
+	justify-content: center;
 	list-style: none;
 
 	@media only screen and (min-width: 768px) {
 		gap: var(--spacing-md);
+		justify-content: unset;
 	}
 
 	a {

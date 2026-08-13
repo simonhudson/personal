@@ -1,4 +1,5 @@
 ---
+import ExternalLink from '@/src/components/external-link/external-link.astro';
 import styles from './portfolio.module.css';
 const { item } = Astro.props;
 
@@ -26,12 +27,14 @@ const renderLinkText = (url: string) => {
                     <ul class={styles.portfolio_details__link_list}>
                         {item.link.map((link: string) => (
                         <li class={styles.portfolio_details__link_item}>
-                            <a class={styles.portfolio_details__link} href={link} target="_blank" rel="noopener noreferrer">{renderLinkText(link)}<span class="sr-only">&nbsp;(opens in a new tab/window)</span></a>
+                            <ExternalLink href={link}>{renderLinkText(link)}</ExternalLink>
                         </li>
                     ))}
                     </ul>
                 ) : (
-                    <p class={styles.portfolio_details__link}><a href={item.link} target="_blank" rel="noopener noreferrer">{renderLinkText(item.link)}<span class="sr-only">&nbsp;(opens in a new tab/window)</span></a></p>
+                    <p class={styles.portfolio_details__link}>
+                        <ExternalLink href={item.link}>{renderLinkText(item.link)}</ExternalLink>
+                    </p>
                 )}
                 </div>
                 <div class={styles.meta__wrap}>

@@ -1,5 +1,6 @@
 ---
 import styles from './about.module.css';
+import ExternalLink from '@/src/components/external-link/external-link.astro';
 
 const { data } = Astro.props;
 ---
@@ -16,7 +17,9 @@ const { data } = Astro.props;
 					height="200"
 				/>
 				<div>
-					<p>I've been working in web design &amp; development since 2004, and in that time I have worked on a wide range of projects, from small brochure-ware microsites through to enterprise-level single-page web apps serving millions of users. I am passionate about web accessibility and how to build for assistive technologies. I'm also a big fan of good testing, sensible code, and striving for simple solutions to complex problems.</p>
+					<p>I've been working in web design &amp; development since 2004, and in that time I have worked on a wide range of projects, from small brochure-ware microsites through to enterprise-level single-page web apps serving millions of users.</p>
+					<p>I am passionate about web accessibility and how to build for assistive technologies. I'm also a big fan of good testing, sensible code, and striving for simple solutions to complex problems.</p>
+					<p>Currently, I am working as a <strong>Senior Full Stack Developer</strong> on the Digital Team at the <strong><ExternalLink href="https://www.redcross.org.uk/">British Red Cross</ExternalLink></strong>.</p>
 				</div>
 			</div>
 		</div>
