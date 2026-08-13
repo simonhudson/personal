@@ -40,6 +40,10 @@
 	--border-radius: 0.35rem;
 }
 
+@view-transition {
+	navigation: auto;
+}
+
 * {
 	margin: 0;
 	padding: 0;
