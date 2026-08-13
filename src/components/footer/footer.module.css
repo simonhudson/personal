@@ -12,9 +12,10 @@
 	align-items: center;
 	display: flex;
 	flex-direction: row-reverse;
+	font-size: 1.4rem;
 	gap: var(--spacing-default);
 	justify-content: space-between;
-	font-size: 1.4rem;
+	padding: var(--spacing-md) var(--spacing-default) 0;
 
 	@media only screen and (min-width: 768px) {
 		padding: 0 var(--spacing-default);
@@ -25,11 +26,11 @@
 .copyright_wrap {
 	display: block;
 	padding: 0 var(--spacing-default) var(--spacing-default) var(--spacing-default);
-	text-align: center;
+	text-align: right;
 
 	@media only screen and (min-width: 768px) {
 		padding: 0 var(--spacing-default);
-		text-align: right;
+		
 	}
 
 	p {
