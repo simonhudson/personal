@@ -1,5 +1,6 @@
 .footer {
 	background: var(--palette-body-text-75);
+	border-top: 5px solid var(--palette-brand);
 	color: var(--palette-white);
 
 	p {

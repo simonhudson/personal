@@ -1,5 +1,6 @@
 .hero {
 	animation: fadeInUp 0.8s ease forwards;
+	background: var(--palette-white);
 	border-bottom: 1px solid var(--palette-border);
 
 	@media only screen and (min-width: 1024px) {
