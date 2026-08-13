@@ -2,8 +2,9 @@
 	background: var(--palette-body-text-75);
 	color: var(--palette-white);
 
-	@media only screen and (min-width: 1024px) {
-		padding: var(--spacing-md) 0;
+	p {
+		font-size: 0.8rem;
+		margin: 0;
 	}
 	
 }
@@ -15,27 +16,12 @@
 	font-size: 1.4rem;
 	gap: var(--spacing-default);
 	justify-content: space-between;
-	padding: var(--spacing-md) var(--spacing-default) 0;
 
 	@media only screen and (min-width: 768px) {
-		padding: 0 var(--spacing-default);
+		flex-direction: row;
 	}
 
 }
 
 .copyright_wrap {
-	display: block;
-	padding: 0 var(--spacing-default) var(--spacing-default) var(--spacing-default);
-	text-align: right;
-
-	@media only screen and (min-width: 768px) {
-		padding: 0 var(--spacing-default);
-		
-	}
-
-	p {
-		font-size: 0.8rem;
-		margin: 0;
-	}
-
 }
