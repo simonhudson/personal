@@ -14,7 +14,7 @@ const portfolioItems = portfolioData.filter((item: PortfolioItem) => !item.omit)
 					<a class={styles.portfolio__link} href={item.slug}>
 						<img src={`/images/${item.slug}.png`} alt={`${item.title} screenshot`} class={styles.portfolio__image} />
 						<h3 class={styles.portfolio__title}>{item.title}</h3>
-						<p class={styles.portfolio__client}>{item.client}</p>
+						<p class={styles.portfolio__client}>{item.client} / {item.date}</p>
 					</a>
 				</div>
 			);

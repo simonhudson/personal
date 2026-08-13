@@ -42,6 +42,7 @@ type MetaItem = {
 
 export type PortfolioItem = {
 	client: string;
+	date: string;
 	description: string;
 	link: string | string[];
 	meta: MetaItem[];

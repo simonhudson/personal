@@ -5,6 +5,12 @@
 .portfolio__item {
     border-bottom: 1px solid var(--palette-border);
     padding: var(--spacing-default) 0;
+
+    &:last-of-type {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+
 }
 
 .portfolio__content {
@@ -41,6 +47,11 @@
 .portfolio_details__content {
     display: flex;
     flex-direction: column;
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
 }
 
 .portfolio_details__info {
@@ -50,6 +61,7 @@
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
         gap: var(--spacing-default);
+        justify-content: space-between;
     }
 
 }
@@ -88,6 +100,7 @@
 
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
+        gap: var(--spacing-lg);
     }
 
 }
