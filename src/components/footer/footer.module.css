@@ -2,35 +2,39 @@
 	background: var(--palette-body-text-75);
 	color: var(--palette-white);
 
-	> div {
-		align-items: center;
-		display: flex;
-		flex-direction: row-reverse;
-		gap: var(--spacing-default);
-		justify-content: space-between;
-		font-size: 1.4rem;
-
-		@media only screen and (min-width: 768px) {
-			padding: 0 var(--spacing-default);
-		}
-
-	}
-
 	@media only screen and (min-width: 1024px) {
 		padding: var(--spacing-md) 0;
 	}
 	
 }
 
-.copyright {
-	font-size: 0.8rem;
-	margin: 0;
-	padding: 0 var(--spacing-default) var(--spacing-sm);
-	text-align: center;
-	
+.content_wrap {
+	align-items: center;
+	display: flex;
+	flex-direction: row-reverse;
+	gap: var(--spacing-default);
+	justify-content: space-between;
+	font-size: 1.4rem;
+
 	@media only screen and (min-width: 768px) {
-		padding: 0;
-		text-align: unset;
+		padding: 0 var(--spacing-default);
+	}
+
+}
+
+.copyright_wrap {
+	display: block;
+	padding: 0 var(--spacing-default) var(--spacing-default) var(--spacing-default);
+	text-align: center;
+
+	@media only screen and (min-width: 768px) {
+		padding: 0 var(--spacing-default);
+		text-align: right;
+	}
+
+	p {
+		font-size: 0.8rem;
+		margin: 0;
 	}
 
 }
