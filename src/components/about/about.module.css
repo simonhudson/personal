@@ -13,8 +13,8 @@
 	flex-direction: column;
 
 	@media only screen and (min-width: 768px) {
-		flex-direction: row-reverse;
-		gap: var(--spacing-lg);
+		flex-direction: row;
+		gap: var(--spacing-default);
 	}
 
 }

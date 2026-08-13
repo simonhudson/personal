@@ -29,9 +29,18 @@ h1 {
 
 h2 {
     font-family: var(--font-serif);
-    font-size: 1.4rem;
+    font-size: 2rem;
     font-style: italic;
     font-weight: 600;
     line-height: 1;
     margin: 0;
+
+     &:after {
+        border-bottom: 2px solid var(--palette-brand);
+        content: '';
+        display: block;
+        margin: var(--spacing-sm) 0;
+        width: 3rem;
+    }
+    
 }

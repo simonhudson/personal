@@ -44,7 +44,6 @@
 
 		> span {
 			&:last-of-type {
-				color: var(--palette-body-text-75);
 				display: block;
 				font-size: 0.6rem;
 				text-transform: uppercase;
@@ -57,7 +56,7 @@
 	}
 
 	img {
-		border: 0.25rem solid white;
+		border: 0.15rem solid var(--palette-white);
 		box-shadow: 0 0 6px var(--palette-body-text-25);
 		height: auto;
 		transition: all 0.3s ease-in-out;

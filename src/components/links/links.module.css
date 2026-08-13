@@ -14,7 +14,7 @@
 		border: 0;
 
 		span {
-			color: var(--palette-body-text-75);
+			color: var(--palette-white);
 			font-size: 2rem;
 
 			@media (prefers-reduced-motion: reduce) {

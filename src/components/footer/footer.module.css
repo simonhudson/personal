@@ -1,4 +1,6 @@
 .footer {
+	background: var(--palette-body-text-75);
+	color: var(--palette-white);
 
 	> div {
 		align-items: center;
@@ -26,7 +28,7 @@
 .copyright {
 	font-size: 0.8rem;
 	margin: 0;
-	padding: var(--spacing-sm) var(--spacing-default);
+	padding: 0 var(--spacing-default) var(--spacing-sm);
 	text-align: center;
 	
 	@media only screen and (min-width: 768px) {

@@ -24,6 +24,8 @@
 	--palette-body-background: #fcfcfc; /* #efd7ad */
 	--palette-border: var(--palette-body-text-10);
 
+	--palette-white: #fff;
+
 	--spacing-default: var(--font-size);
 	--spacing-xs: calc(var(--font-size) / 4);
 	--spacing-sm: calc(var(--font-size) / 2);
