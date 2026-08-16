@@ -1,0 +1,12 @@
+:root {
+    --spacing-default: var(--font-size);
+	--spacing-xs: calc(var(--font-size) / 4);
+	--spacing-sm: calc(var(--font-size) / 2);
+	--spacing-md: calc(var(--font-size) * 2);
+	--spacing-lg: calc(var(--font-size) * 4);
+	--spacing-xl: calc(var(--font-size) * 6);
+	--spacing-2xl: calc(var(--font-size) * 8);
+	--spacing-3xl: calc(var(--font-size) * 10);
+	--spacing-4xl: calc(var(--font-size) * 14);
+	--spacing-5xl: calc(var(--font-size) * 20);
+}
