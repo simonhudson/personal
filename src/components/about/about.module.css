@@ -46,7 +46,7 @@
 	box-shadow: 0 0 10px #ddd;
 	display: block;
 	height: 200px;
-	margin: -6rem auto var(--spacing-default);
+	margin: -8rem auto var(--spacing-default);
 	width: auto;
 
 	@media only screen and (min-width: 768px) {
