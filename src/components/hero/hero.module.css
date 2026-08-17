@@ -3,10 +3,6 @@
 	background: var(--palette-white);
 	border-bottom: 1px solid var(--palette-border);
 
-	@media only screen and (min-width: 1024px) {
-		padding: 0 0 var(--spacing-md);
-	}
-
 	h1 {
 		font-weight: 400;
 
@@ -47,8 +43,12 @@
 		font-family: var(--font-serif);
 		font-size: 1.4rem;
 		line-height: 1.8;
-		margin: 0;
+		margin: 0 0 var(--spacing-md);
 
+		@media only screen and (min-width: 1024px) {
+			margin: 0;
+		}
+		
 		@media only screen and (min-width: 1024px) {
 			font-size: 1.8rem;
 		}
