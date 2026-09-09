@@ -18,11 +18,15 @@
     &:not(:last-of-type) {
         border-bottom: 1px solid var(--palette-border);
         padding-bottom: var(--spacing-default);
+
+        @media only screen and (min-width: 768px) {
+            border: 0;
+            padding-bottom: 0;
+        }
+
     }
 
     @media only screen and (min-width: 768px) {
-        border: 0;
-        padding: 0;
         width: calc(50% - var(--spacing-lg));
     }
 }

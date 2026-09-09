@@ -44,7 +44,7 @@ const SWAGGER = 'Swagger';
 const VERCEL = 'Vercel';
 
 const BRC_MADE_WITH = [NEXT_JS, TAILWIND];
-const BRC_TESTED_WITH = [JEST, REACT_TESTING_LIBRARY, PLAYWRIGHT];
+const BRC_TESTED_WITH = [JEST, REACT_TESTING_LIBRARY, PLAYWRIGHT, NVDA];
 const BRC_BUILT_WITH = [GITHUB, VERCEL, KONTENT_AI];
 
 type MetaItem = {
@@ -209,7 +209,6 @@ const projectsBase = [
 			},
 		],
 		date: '2023',
-		omit: true,
 	},
 	{
 		title: 'To-Do List',
@@ -231,7 +230,6 @@ const projectsBase = [
 			},
 		],
 		date: '2023',
-		omit: true,
 	},
 ];
 
