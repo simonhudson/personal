@@ -1,20 +1,103 @@
+:root {
+    --portfolio-spacing: var(--spacing-lg);
+}
+
 .portfolio__wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: var(--portfolio-spacing);
+    padding: var(--spacing-md) 0 0;
+
+    @media only screen and (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.portfolio__item {
+    @media only screen and (min-width: 768px) {
+        width: calc(50% - var(--portfolio-spacing));
+    }
+}
+
+.portfolio__image {
+    height: auto;
+    margin: 0 0 var(--spacing-default);
+    width: 100%;
+}
+
+.portfolio__client {
+    
+}
+
+.portfolio__meta {
+
+}
+
+.portfolio__meta_item {
+
+}
+
+.portfolio__meta_title {
+    color: var(--palette-body-text-75);
+	font-size: 0.75rem;
+	letter-spacing: 0.1em;
+	margin: 0 0 var(--spacing-sm);
+	text-transform: uppercase;
+}
+
+.portfolio__meta_item_title {
+    margin: 0;
+}
+
+.portfolio__meta_list {
+    list-style: none;
+    margin: 0 0 var(--spacing-sm);
+}
+
+.portfolio__meta_list_item {
+    display: inline;
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+
+    &:not(:last-child):after {
+        content: ', ';
+        margin-right: 0.25rem;
+    }
+
+}
+
+
+/* .portfolio__wrap {
+
+}
+
+.portfolio__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) 0 0;
+
+    @media only screen and (min-width: 768px) {
+        flex-direction: row-reverse;
+    }
 
 }
 
 .portfolio__item {
-    border-bottom: 1px solid var(--palette-border);
-    padding: var(--spacing-default) 0;
+    background: var(--palette-body-background);
+    border: 1px solid var(--palette-border);
+    padding: var(--spacing-default);
 
     &:last-of-type {
         border-bottom: 0;
         padding-bottom: 0;
     }
 
-}
+    @media only screen and (min-width: 1024px) {
+        width: calc(33% - var(--spacing-md));
+    }
 
-.portfolio__content {
-    
 }
 
 .portfolio__link {
@@ -96,7 +179,7 @@
 .meta__wrap {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-default);
+    gap: var(--spacing-sm);
 
     @media only screen and (min-width: 1024px) {
         flex-direction: row;
@@ -134,4 +217,4 @@
         margin-right: 0.25rem;
     }
 
-}
+} */

@@ -14,35 +14,37 @@ const renderLinkText = (url: string) => {
 ---
 
 <section class={styles.portfolio__wrap}>
-    <div class="inner-wrap">
+    <div class=`inner-wrap ${styles.portfolio__inner}`>
         <img src={`/images/${item.slug}.png`} alt={item.title} class={`${styles.portfolio__image} ${styles.portfolio_details__image}`} />
-        <h1>{item.title}</h1>   
-        <p class={`${styles.portfolio__client} ${styles.portfolio_details__client}`}>{item.client} / {item.date}</p>
-        <div class={styles.portfolio_details__content}>
-            <p class={styles.portfolio__description}>{item.description}</p>
+        <div>
+            <h1>{item.title}</h1>   
+            <p class={`${styles.portfolio__client} ${styles.portfolio_details__client}`}>{item.client} / {item.date}</p>
+            <div class={styles.portfolio_details__content}>
+                <p class={styles.portfolio__description}>{item.description}</p>
+            </div>
         </div>
     </div>
 </section>
 <section>
     <div class="inner-wrap">
         <div class={styles.portfolio_details__info}>
-            <div>
-                <p class={styles.meta__heading}>View Project</p>
-                {Array.isArray(item.link) ? (
-                    <ul class={styles.portfolio_details__link_list}>
-                        {item.link.map((link: string) => (
-                        <li class={styles.portfolio_details__link_item}>
-                            <ExternalLink href={link}>{renderLinkText(link)}</ExternalLink>
-                        </li>
-                    ))}
-                    </ul>
-                ) : (
-                    <p>
-                        <ExternalLink href={item.link}>{renderLinkText(item.link)}</ExternalLink>
-                    </p>
-                )}
-            </div>
             <div class={styles.meta__wrap}>
+                <div class={styles.meta__item_wrap}>
+                    <p class={styles.meta__heading}>View Project</p>
+                    {Array.isArray(item.link) ? (
+                        <ul class={styles.meta__list}>
+                            {item.link.map((link: string) => (
+                                <li class={styles.meta__item}>
+                                    <ExternalLink href={link}>{renderLinkText(link)}</ExternalLink>
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>
+                            <ExternalLink href={item.link}>{renderLinkText(item.link)}</ExternalLink>
+                        </p>
+                    )}
+                </div>
                 {item.meta?.length && item.meta.map((metaItem: any) => (
                     <div class={styles.meta__item_wrap}>
                         <p class={styles.meta__heading}>{metaItem.title}</p>

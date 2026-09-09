@@ -1,39 +1,51 @@
 import { slugify } from '@/src/utilities/slugify';
-import {
-	NEXT_JS,
-	TAILWIND,
-	CSS,
-	HTML,
-	JAVASCRIPT,
-	JEST,
-	REACT_TESTING_LIBRARY,
-	GITHUB,
-	VERCEL,
-	STYLED_COMPONENTS,
-	JQUERY,
-	DOT_NET,
-	SHAREPOINT,
-	SASS,
-	AWS_CI_CD,
-	HANDLEBARS,
-	EXPRESS_JS,
-	NODE_JS,
-	REACT,
-	WEBPACK,
-	AQUASEC,
-	CHAI_MOCHA,
-	ENZYME,
-	NIGHTWATCH,
-	NVDA,
-	RAPID7,
-	VERACODE,
-	CYPRESS,
-	CONTENTFUL,
-	TYPESCRIPT,
-	MONGO_DB,
-	WORLDPAY,
-	KONTENT_AI,
-} from '@/src/constants/tech';
+
+const ASTRO = 'Astro';
+const CSS = 'CSS';
+const CSS_MODULES = 'CSS Modules';
+const EXPRESS_JS = 'Express.js';
+const HANDLEBARS = 'Handlebars';
+const HTML = 'HTML';
+const JAVASCRIPT = 'JavaScript';
+const JQUERY = 'jQuery';
+const MONGO_DB = 'MongoDB';
+const NEXT_JS = 'Next.js';
+const NODE_JS = 'Node.js';
+const REACT = 'React';
+const SASS = 'Sass';
+const STYLED_COMPONENTS = 'Styled Components';
+const TAILWIND = 'Tailwind';
+const TYPESCRIPT = 'TypeScript';
+const WEBPACK = 'Webpack';
+const WORLDPAY = 'Worldpay';
+
+const AQUASEC = 'AquaSec';
+const CHAI_MOCHA = 'Chai/Mocha';
+const CYPRESS = 'Cypress';
+const ENZYME = 'Enzyme';
+const JEST = 'Jest';
+const NIGHTWATCH = 'Nightwatch';
+const NVDA = 'NVDA';
+const PLAYWRIGHT = 'Playwright';
+const POSTMAN = 'Postman';
+const RAPID7 = 'Rapid7';
+const REACT_TESTING_LIBRARY = 'React Testing Library';
+const VERACODE = 'Veracode';
+
+const AWS_CI_CD = 'AWS (CI/CD)';
+const CLOUDFLARE = 'Cloudflare';
+const CONTENTFUL = 'Contentful';
+const DOT_NET = '.NET';
+const GITHUB = 'Github';
+const KONTENT_AI = 'Kontent.ai';
+const NETLIFY = 'Netlify';
+const SHAREPOINT = 'Sharepoint';
+const SWAGGER = 'Swagger';
+const VERCEL = 'Vercel';
+
+const BRC_MADE_WITH = [NEXT_JS, TAILWIND];
+const BRC_TESTED_WITH = [JEST, REACT_TESTING_LIBRARY, PLAYWRIGHT];
+const BRC_BUILT_WITH = [GITHUB, VERCEL, KONTENT_AI];
 
 type MetaItem = {
 	title: string;
@@ -44,7 +56,7 @@ export type PortfolioItem = {
 	client: string;
 	date: string;
 	description: string;
-	link: string | string[];
+	link: string;
 	meta: MetaItem[];
 	omit?: boolean;
 	slug: string;
@@ -59,47 +71,41 @@ const projectsBase = [
 	{
 		title: 'Hire a Wheelchair',
 		client: 'British Red Cross',
-		description: ``,
+		description: `One of the largest pieces of work undertaken on British Red Cross site was to rebuild the wheelchair hire journey.`,
 		link: 'https://www.redcross.org.uk/get-help/hire-a-wheelchair/wheelchair-selection',
 		meta: [
 			{
 				title: MADE_WITH,
-				items: [NEXT_JS, TAILWIND, WORLDPAY],
+				items: BRC_MADE_WITH,
 			},
 			{
 				title: TESTED_WITH,
-				items: [JEST, REACT_TESTING_LIBRARY],
+				items: BRC_TESTED_WITH,
 			},
 			{
 				title: BUILT_WITH,
-				items: [GITHUB, VERCEL, KONTENT_AI],
+				items: [...BRC_BUILT_WITH, WORLDPAY],
 			},
 		],
 		date: '2024 -present',
-		omit: true,
 	},
 	{
-		title: 'Web Platform',
+		title: 'redcross.org.uk',
 		client: 'British Red Cross',
-		description: `As part of the Digital Team, we built a new cross-functional web platform, with the purpose of migrating existing BRC websites, as well as providing a tool for future sites to be easily created, launched and managed. All of the sites listed here were built and launched using this Web Platform, allowing us to consolidate and more easily manage the organisation's web estate.`,
-		link: [
-			'https://www.redcross.org.uk',
-			'https://www.bridgingdivides.org.uk',
-			'https://vad.redcross.org.uk',
-			'https://www.cerplaybook.com/',
-		],
+		description: `As part of the Digital Team at British Red Cross, we built a new cross-functional web platform, with the purpose of migrating existing websites, as well as providing a tool for future sites to be easily created, launched and managed. All of the sites listed here were built and launched using this Web Platform, allowing us to consolidate and more easily manage the organisation's web estate.`,
+		link: 'https://www.redcross.org.uk',
 		meta: [
 			{
 				title: MADE_WITH,
-				items: [NEXT_JS, TAILWIND],
+				items: BRC_MADE_WITH,
 			},
 			{
 				title: TESTED_WITH,
-				items: [JEST, REACT_TESTING_LIBRARY],
+				items: BRC_TESTED_WITH,
 			},
 			{
 				title: BUILT_WITH,
-				items: [GITHUB, VERCEL, KONTENT_AI],
+				items: BRC_BUILT_WITH,
 			},
 		],
 		date: '2024 -present',

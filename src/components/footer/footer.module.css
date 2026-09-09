@@ -1,7 +1,7 @@
 .footer {
-	background: var(--palette-body-text-75);
-	border-top: 5px solid var(--palette-brand);
-	color: var(--palette-white);
+	background: var(--palette-body-text-10);
+	border-top: 1px solid var(--palette-brand);
+	color: var(--palette-body-text);
 
 	p {
 		font-size: 0.8rem;
@@ -17,12 +17,11 @@
 	font-size: 1.4rem;
 	gap: var(--spacing-default);
 	justify-content: space-between;
+	padding: var(--spacing-default) var(--spacing-default);
 
 	@media only screen and (min-width: 768px) {
 		flex-direction: row;
+		padding: var(--spacing-md) var(--spacing-default);
 	}
 
-}
-
-.copyright_wrap {
 }

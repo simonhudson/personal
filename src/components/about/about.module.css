@@ -18,7 +18,7 @@
 
 	@media only screen and (min-width: 768px) {
 		flex-direction: row;
-		gap: var(--spacing-default);
+		gap: var(--spacing-lg);
 	}
 
 }
