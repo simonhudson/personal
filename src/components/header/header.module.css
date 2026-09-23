@@ -1,8 +1,6 @@
 .header {
 	background: var(--palette-white);
 	border-bottom: 1px solid var(--palette-border);
-	position: sticky;
-	top: 0;
 
 	& > div {
 		display: flex;
