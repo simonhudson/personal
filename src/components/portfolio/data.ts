@@ -90,7 +90,7 @@ const projectsBase = [
 		date: '2024 -present',
 	},
 	{
-		title: 'redcross.org.uk',
+		title: 'Web Platform',
 		client: 'British Red Cross',
 		description: `As part of the Digital Team at British Red Cross, we built a new cross-functional web platform, with the purpose of migrating existing websites, as well as providing a tool for future sites to be easily created, launched and managed. All of the sites listed here were built and launched using this Web Platform, allowing us to consolidate and more easily manage the organisation's web estate.`,
 		link: 'https://www.redcross.org.uk',
@@ -131,6 +131,7 @@ const projectsBase = [
 			},
 		],
 		date: '2019 - 2023',
+		omit: true,
 	},
 	{
 		title: 'Marketplace',

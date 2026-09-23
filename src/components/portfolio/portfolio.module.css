@@ -53,12 +53,8 @@
     color: var(--palette-body-text-75);
 	font-size: 0.75rem;
 	letter-spacing: 0.1em;
-	margin: 0 0 var(--spacing-sm);
+	margin: 0;
 	text-transform: uppercase;
-}
-
-.portfolio__meta_item_title {
-    margin: 0;
 }
 
 .portfolio__meta_list {

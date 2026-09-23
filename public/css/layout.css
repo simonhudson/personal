@@ -2,7 +2,7 @@ section {
     background: var(--palette-white);
 
     &:nth-of-type(2n) {
-        background: var(--palette-body-background);
+        background: var(--palette-section-background);
     }
 
 }
@@ -16,4 +16,19 @@ section {
         padding: var(--spacing-lg) var(--spacing-default);
     }
     
+}
+
+.circle-image {
+	border: 5px solid var(--palette-white);
+	border-radius: 100%;
+	box-shadow: 0 0 10px #ddd;
+	display: block;
+	height: 200px;
+	margin: calc(-50% + var(--spacing-md)) auto var(--spacing-default);
+	width: auto;
+
+	@media only screen and (min-width: 768px) {
+		margin-top: unset;
+	}
+
 }

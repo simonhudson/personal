@@ -56,20 +56,9 @@
 	}
 
 	img {
-		border: 0.15rem solid var(--palette-white);
-		box-shadow: 0 0 6px var(--palette-body-text-25);
+		border-width: 2px;
 		height: auto;
-		transition: all 0.3s ease-in-out;
 		width: 4rem;
-
-		&:hover, &:focus {
-			transform: scale(1.1);
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			transition: none;
-		}
-		
 	}
 
 }

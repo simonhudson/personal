@@ -17,14 +17,14 @@ const renderLinkText = (url: string) => {
 ---
 <section id="work">
 	<div class="inner-wrap">
-		<h2>A selection of my work</h2>
+		<h2>Some of my work</h2>
 		<div class={styles.portfolio__wrap}>
 			{portfolioItems.map((item: PortfolioItem) => {
 				return (
 					<div class={styles.portfolio__item}>
 						<img src={`https://placehold.co/600x400`} alt={`${item.title} screenshot`} class={styles.portfolio__image} />
 						<h3 class={styles.portfolio__title}>{item.title}</h3>
-						<p class={styles.portfolio__meta_title}>{item.client}</p>
+						<p class={styles.portfolio__meta_title}>{item.client} / {item.date}</p>
 						<p class={styles.portfolio__link}>
                             <ExternalLink href={item.link}>{renderLinkText(item.link)}</ExternalLink>
                         </p>
@@ -33,7 +33,7 @@ const renderLinkText = (url: string) => {
 							<div class={styles.portfolio__meta}>
 								{item.meta.map((metaItem: any) => (
 									<div class={styles.portfolio__meta_item}>
-										<p class={`${styles.portfolio__meta_title} ${styles.portfolio__meta_item_title}`}>{metaItem.title}</p>
+										<p class={`${styles.portfolio__meta_title}`}>{metaItem.title}</p>
 										<ul class={styles.portfolio__meta_list}>
 											{metaItem.items.sort().map((item: string) => (
 												<li class={styles.portfolio__meta_list_item}>{item}</li>

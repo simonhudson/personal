@@ -9,7 +9,7 @@ const data: MusicResponse = await response.json();
 <div class={styles.music}>
     <img
         alt={`Now playing "${data.name}" by ${data.artist}`}
-        class={styles.image}
+        class="circle-image"
         height={300}
         src={data.image}
         width={300}

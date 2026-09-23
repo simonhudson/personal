@@ -10,8 +10,10 @@
 	--palette-body-text-25: rgb(from var(--palette-body-text) r g b / 0.25);
 	--palette-body-text-15: rgb(from var(--palette-body-text) r g b / 0.15);
 	--palette-body-text-10: rgb(from var(--palette-body-text) r g b / 0.1);
+	--palette-body-text-5: rgb(from var(--palette-body-text) r g b / 0.05);
 
-	--palette-body-background: #fcfcfc; /* #efd7ad */
+	--palette-body-background: var(--palette-white); /* #efd7ad */
+	--palette-section-background: #fcfcfc;
 	--palette-border: var(--palette-body-text-10);
 
 	--palette-white: #fff;

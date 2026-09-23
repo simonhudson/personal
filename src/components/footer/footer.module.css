@@ -1,6 +1,6 @@
 .footer {
-	background: var(--palette-body-text-10);
-	border-top: 1px solid var(--palette-brand);
+	background: var(--palette-white);
+	border-top: 1px solid var(--palette-border);
 	color: var(--palette-body-text);
 
 	p {
