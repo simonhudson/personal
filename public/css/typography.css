@@ -33,7 +33,7 @@ h2 {
     font-style: italic;
     font-weight: 600;
     line-height: 1;
-    margin: 0;
+    margin: 0 0 var(--spacing-default);
 
      &:after {
         border-bottom: 2px solid var(--palette-brand);
