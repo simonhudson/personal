@@ -9,18 +9,17 @@ const data: MusicResponse = await response.json();
 <div class={styles.music}>
     <img
         alt={`Now playing "${data.name}" by ${data.artist}`}
-        class={styles.image}
+        class="circle-image"
         height={300}
         src={data.image}
         width={300}
     />
     <p>
-        <span class={styles.heading}>
-            <a href={data.url}> {data.artist}</a>
-        </span>
-        <span>
-            <a href={data.url}>&quot;{data.name}&quot;</a>{' '}
-        </span>
+        <a href={data.url}>
+            <span>&quot;{data.name}&quot;</span>
+            <span>by</span>
+            <span>{data.artist}</span>
+        </a>
         <span>{data.relativeTime}</span>
     </p>
 </div>

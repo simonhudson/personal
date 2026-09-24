@@ -1,34 +1,14 @@
-:root {
-	--base-size: 62.5%;
-	--font-size: 1.6rem;
+@import './variables/base.css';
+@import './variables/font.css';
+@import './variables/palette.css';
+@import './variables/spacing.css';
+@import './variables/ui.css';
 
-	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-	--font-serif: Georgia, 'Times New Roman', Times, serif;
-	--font-serif-heading: 'Playfair Display', serif;
-	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+@import './typography.css';
+@import './layout.css';
 
-	--palette-body-background: #fcfcfc; /* #efd7ad */
-	--palette-brand: #ff9a00;
-	--palette-brand-75: rgb(from var(--palette-brand) r g b / 0.75);
-	--palette-brand-50: rgb(from var(--palette-brand) r g b / 0.5);
-	--palette-brand-25: rgb(from var(--palette-brand) r g b / 0.25);
-
-	--palette-body-text: #1a1a1a;
-	--palette-body-text-75: rgb(from var(--palette-body-text) r g b / 0.75);
-	--palette-body-text-50: rgb(from var(--palette-body-text) r g b / 0.5);
-	--palette-body-text-25: rgb(from var(--palette-body-text) r g b / 0.25);
-	--palette-body-text-10: rgb(from var(--palette-body-text) r g b / 0.1);
-
-	--spacing-default: var(--font-size);
-	--spacing-xs: calc(var(--font-size) / 4);
-	--spacing-sm: calc(var(--font-size) / 2);
-	--spacing-md: calc(var(--font-size) * 2);
-	--spacing-lg: calc(var(--font-size) * 4);
-	--spacing-xl: calc(var(--font-size) * 6);
-	--spacing-2xl: calc(var(--font-size) * 8);
-	--spacing-3xl: calc(var(--font-size) * 10);
-	--spacing-4xl: calc(var(--font-size) * 14);
-	--spacing-5xl: calc(var(--font-size) * 20);
+@view-transition {
+	navigation: auto;
 }
 
 * {
@@ -39,6 +19,12 @@
 
 html {
 	border-top: 2px solid var(--palette-brand);
+	scroll-behavior: smooth;
+
+	@media screen and (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	}
+	
 }
 
 body {
@@ -46,17 +32,13 @@ body {
 	color: var(--palette-body-text);
 	font-family: var(--font-serif);
 	line-height: 1.5;
-	margin: 0 auto;
-	max-width: 1100px;
-	padding: 0 2rem;
 	-webkit-font-smoothing: antialiased;
 }
 
 a {
-	border-bottom: 2px solid var(--palette-brand);
+	border-bottom: 1px solid var(--palette-brand);
 	color: inherit;
 	text-decoration: none;
-	transition: all 0.3s ease-in-out;
 
 	&:hover,
 	&:focus {

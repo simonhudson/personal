@@ -1,0 +1,6 @@
+:root {
+	--font-size: 1.6rem;
+	--font-sans: 'Open Sans', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Lora', Georgia, 'Times New Roman', Times, serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}

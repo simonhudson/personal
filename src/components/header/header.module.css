@@ -1,8 +1,16 @@
 .header {
-	padding: 2rem 0;
+	background: var(--palette-white);
+	border-bottom: 1px solid var(--palette-border);
 
-	@media only screen and (min-width: 1024px) {
-		padding: 4rem 0;
+	& > div {
+		display: flex;
+		justify-content: space-between;
+		padding: var(--spacing-default);
+
+		@media only screen and (min-width: 1024px) {
+			padding: var(--spacing-md) var(--spacing-default);
+		}
+
 	}
 
 	svg {

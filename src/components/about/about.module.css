@@ -1,36 +1,30 @@
 .about {
 	padding: 0;
+
+	p {
+		font-size: 1rem;
+
+		@media only screen and (min-width: 768px) {
+			font-size: 1.2rem;
+		}
+	}
 }
 
 .wrap {
 	gap: var(--spacing-default);
 	display: flex;
 	flex-direction: column;
-
-	@media only screen and (min-width: 1024px) {
-		flex-direction: row;
-		gap: var(--spacing-lg);
-	}
 }
 
 .content {
 	display: flex;
 	flex-direction: column;
 
-	@media only screen and (min-width: 1024px) {
-		flex-direction: row-reverse;
+	@media only screen and (min-width: 768px) {
+		flex-direction: row;
 		gap: var(--spacing-lg);
-		width: 70%;
 	}
 
-	p {
-		font-size: 1.6rem;
-		line-height: 1.8em;
-
-		@media only screen and (min-width: 1024px) {
-			font-size: 2rem;
-		}
-	}
 }
 
 .aside {
@@ -51,11 +45,11 @@
 }
 
 .image {
-	border: 5px solid var(--palette-white);
-	border-radius: 100%;
-	box-shadow: 0 0 10px #ddd;
-	display: block;
 	height: 200px;
-	margin: 0 auto var(--spacing-md);
-	width: auto;
+	margin: calc(-60% + var(--spacing-md)) auto var(--spacing-default);
+
+	@media only screen and (min-width: 768px) {
+		margin-top: unset;
+	}
+
 }

@@ -1,0 +1,28 @@
+---
+import Layout from '@/src/layouts/Layout.astro';
+import { portfolioData } from '@/src/components/portfolio/data';
+import PortfolioDetails from '@/src/components/portfolio/portfolio-details.astro';
+import Portfolio from '@/src/components/portfolio/portfolio.astro';
+import About from '@/src/components/about/about.astro';
+import { ABOUT, WORK } from '@/src/constants/routes';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: ABOUT.href }},
+    { params: { slug: WORK.href }},
+    ...portfolioData.map(item => ({ params: { slug: item.slug } })),
+  ];
+}
+
+const { slug } = Astro.params;
+const portfolioItem = portfolioData.find(item => item.slug === slug);
+---
+<Layout>
+	{slug === ABOUT.href ? (
+		<About />
+	) : slug === WORK.href ? (
+		<Portfolio />
+	) : portfolioItem ? (
+		<PortfolioDetails item={portfolioItem} />
+	) : null}
+</Layout>

@@ -3,7 +3,6 @@
 	display: flex;
 	flex-direction: row;
 	gap: var(--spacing-sm);
-	padding: var(--spacing-default) 0;
 
 	@media only screen and (min-width: 1024px) {
 		padding: 0;
@@ -16,21 +15,36 @@
 	p {
 		display: flex;
 		flex-direction: column;
-		gap: 0.25rem;
-		text-align: left;
+		font-size: 0.8rem;
+		margin: 0;
 
-		span {
-			&:first-of-type {
-				font-weight: bold;
+		@media only screen and (min-width: 768px) {
+			display: unset;
+			text-align: left;
+		}
+
+		a {
+
+			span {
+				font-weight: 600;
+
+				&:first-of-type {
+					display: block;
+					font-weight: 600;
+				}
+
+				&:nth-of-type(2) {
+					font-style: italic;
+					font-weight: 400;
+				}
+
 			}
 
-			&:nth-of-type(2) {
-				font-family: var(--font-serif);
-			}
+		}
 
-
+		> span {
 			&:last-of-type {
-				color: var(--palette-body-text-50);
+				display: block;
 				font-size: 0.6rem;
 				text-transform: uppercase;
 				font-family: var(--font-sans);
@@ -42,20 +56,9 @@
 	}
 
 	img {
-		border: 0.25rem solid white;
-		box-shadow: 0 0 6px var(--palette-body-text-25);
+		border-width: 2px;
 		height: auto;
-		transition: all 0.3s ease-in-out;
 		width: 4rem;
-
-		&:hover, &:focus {
-			transform: scale(1.1);
-		}
-
-		@media (prefers-reduced-motion: reduce) {
-			transition: none;
-		}
-		
 	}
 
 }
